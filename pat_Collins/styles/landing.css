@@ -1,9 +1,5 @@
 body.landing {
-<<<<<<< HEAD
-     background-color: rgb(58,23,63);
-=======
     background-color: rgb(117, 130, 110);
->>>>>>> bootstrap_stripped
  }
  
  .hero-content {
@@ -22,13 +18,8 @@ body.landing {
      -moz-transform: translateY(-50%);
      transform: translateY(-50%);
      width: 100%;
-<<<<<<< HEAD
      text-align: center;
-     font-size: 4rem;
-=======
-     text-align: r;
      font-size: 3.59rem;
->>>>>>> bootstrap_stripped
      font-weight: 300;
      text-transform: uppercase;
      letter-spacing: 0.5rem;
@@ -44,33 +35,18 @@ body.landing {
  
  .point {
      position: relative;
-<<<<<<< HEAD
-     padding: 2rem;
-=======
      padding: 1.4rem;
->>>>>>> bootstrap_stripped
      text-align: center;
  }
  
  .point .point-title {
-<<<<<<< HEAD
      font-size: 1.25rem;
  }
- 
- .ion-music-note,
- .ion-radio-waves,
- .ion-iphone {
-     color: rgb(233,50,117);
-     font-size: 5rem;
-=======
-     font-size: 1.5rem;
-     padding-bottom: none;
- }
+
  
  .ion-music-note,
  .ion-android-calendar,
  .ion-iphone {
      color: white;
      font-size: 4rem;
->>>>>>> bootstrap_stripped
  }

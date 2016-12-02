@@ -113,10 +113,7 @@ body.landing {
   position: relative;
   display: table;
   width: 100%;
-<<<<<<< HEAD
-=======
-   background-color: rgb(135, 144, 110);
->>>>>>> bootstrap_stripped
+  background-color: rgb(135, 144, 110);
 }
 
 .container {
@@ -130,32 +127,19 @@ body.landing {
   display: table-cell;
   position: relative;
   width: 33.3%;
-<<<<<<< HEAD
-  padding: 2rem;
-=======
   padding: 1.4rem;
->>>>>>> bootstrap_stripped
   text-align: center;
 }
 
 .point .point-title {
-<<<<<<< HEAD
   font-size: 1.25rem;
 }
 
-.ion-music-note,
-.ion-radio-waves,
-.ion-iphone {
-/*  color: rgb(0,117);*/
-  font-size: 5rem;
-=======
-  font-size: 1.5rem;
-}
+
 
 .ion-music-note,
 .ion-android-calendar,
 .ion-iphone {
   color: white;
   font-size: 4rem;
->>>>>>> bootstrap_stripped
 }
