@@ -113,6 +113,7 @@ body.landing {
   position: relative;
   display: table;
   width: 100%;
+   background-color: rgb(135, 144, 110);
 }
 
 .container {
@@ -126,17 +127,17 @@ body.landing {
   display: table-cell;
   position: relative;
   width: 33.3%;
-  padding: 2rem;
+  padding: 1.4rem;
   text-align: center;
 }
 
 .point .point-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .ion-music-note,
-.ion-radio-waves,
+.ion-android-calendar,
 .ion-iphone {
-/*  color: rgb(0,117);*/
-  font-size: 5rem;
+  color: white;
+  font-size: 4rem;
 }
