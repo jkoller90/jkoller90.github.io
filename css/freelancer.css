@@ -7,6 +7,11 @@ body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }
+
+#kristina img{
+  max-height: 30%;
+  width: auto;
+}
 p {
   font-size: 20px;
 }
