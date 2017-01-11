@@ -1,0 +1,14 @@
+{
+  "name": "jonkolller",
+  "version": "1.0.0",
+  "description": "\"Form to generate codes\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "\"Jon Koller\"",
+  "license": "ISC",
+  "dependencies": {
+    "voucher-code-generator": "^1.1.1"
+  }
+}
