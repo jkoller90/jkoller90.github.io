@@ -7,7 +7,6 @@ var charExclusions = []; //optional initial (input)
 //var wordExclusions = [];
 var toDownload; //optional process (post-submission)
 var codeGenerated;
-
 //function wordExclusionHandler(generatedCode) {
 //    var checkCode = true;
 //    var newCode;
@@ -27,7 +26,6 @@ var codeGenerated;
 //        }
 //    });
 //}
-
 function charset(name) {
     var charsets = {
         numeric: "0123456789"
@@ -42,71 +40,65 @@ $("#submit").click(function (event) {
     amount = $("#amount").val();
     charSet = $("#charSet").val().toLowerCase();
     charExclusions.push($("#charExclusions").val());
-//    wordExclusions.push($("#wordExclusions").val();
+    //    wordExclusions.push($("#wordExclusions").val();
     var inputCheck = false;
-    
-    if(length  === '' || amount === ''){
+    if (length === '' || amount === '') {
         alert("Please enter values for length and amount.");
-    }else{        
-        inputCheck = true;      
-    }
-        
-    
-if(inputCheck){
-    
-    if (charExclusions[0] !== 0) {
-        charSet = charset(charSet);
-        charSet = charSet.split("");
-        for (var i = 0; i < charExclusions[0].length; i++) {
-            console.log(charExclusions[0].length);
-            charSet.splice(charSet.indexOf(charExclusions[0][i]), 1);
-            console.log(charSet.indexOf(charExclusions[0][i]));
-        }
-        charSet.join('');
     }
     else {
-        charSet = charset(charSet);
+        inputCheck = true;
     }
-    if (amount > 10) {
-        var toDownload = confirm('The limit of codes displayed on this page is 10. You entered 11 or greater and can download a .csv file with these codes provided. Is that okay?');
-        if (toDownload) {
-            var codeGenerated = voucher_codes.generate({
-                length: length
-                , count: amount
-                , charset: charSet
-            });
-//            if (wordExclusions[0][0] !== "") {
-//                codeGenerated = wordExclusionHandler(codeGenerated);
-//            }
-            var blob = new Blob([codeGenerated], {
-                type: "text/csv"
-            });
-            saveAs(blob, "codefile.csv");
+    if (inputCheck) {
+        if (charExclusions[0] !== 0) {
+            charSet = charset(charSet);
+            charSet = charSet.split("");
+            for (var i = 0; i < charExclusions[0].length; i++) {
+                console.log(charExclusions[0].length);
+                charSet.splice(charSet.indexOf(charExclusions[0][i]), 1);
+                console.log(charSet.indexOf(charExclusions[0][i]));
+            }
+            charSet.join('');
         }
         else {
-            alert("Please re-enter a value under 10 for the amount.");
+            charSet = charset(charSet);
         }
-    }
-    else { // amount < 10 
-//        if (wordExclusions[0][0] !== "") {
-//            codeGenerated = wordExclusionHandler(codeGenerated);
-//        }
-//        else {
+        if (amount > 10) {
+            var toDownload = confirm('The limit of codes displayed on this page is 10. You entered 11 or greater and can download a .csv file with these codes provided. Is that okay?');
+            if (toDownload) {
+                var codeGenerated = voucher_codes.generate({
+                    length: length
+                    , count: amount
+                    , charset: charSet
+                });
+                //            if (wordExclusions[0][0] !== "") {
+                //                codeGenerated = wordExclusionHandler(codeGenerated);
+                //            }
+                var blob = new Blob([codeGenerated], {
+                    type: "text/csv"
+                });
+                saveAs(blob, "codefile.csv");
+            }
+            else {
+                alert("Please re-enter a value under 10 for the amount.");
+            }
+        }
+        else { // amount < 10 
+            //        if (wordExclusions[0][0] !== "") {
+            //            codeGenerated = wordExclusionHandler(codeGenerated);
+            //        }
+            //        else {
             codeGenerated = voucher_codes.generate({
                 length: length
                 , count: amount
                 , charset: charSet
             });
-//        }
-
-        for (var i = 0; i < codeGenerated.length; i++) {
-            $(".code").append("<br><p>" + codeGenerated[i] + "</p><br>");
+            //        }
+            for (var i = 0; i < codeGenerated.length; i++) {
+                $(".code").append("<br><p>" + codeGenerated[i] + "</p><br>");
+            }
         }
-            
     }
-}
 });
-
-$("#reload").click(function(event){
+$("#reload").click(function (event) {
     location.reload();
 });
