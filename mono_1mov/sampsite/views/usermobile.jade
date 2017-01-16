@@ -1,0 +1,23 @@
+doctype mobile
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Redeem Your Coupon!
+    link(rel='stylesheet', href='demo_mini.css')
+    link(rel='stylesheet',href='demo.css')
+  .main-content
+    .form-mini-container
+      h1 Redeem Your Coupon!
+      form.form-mini(method='post', action='/update')
+        .form-row
+          input(type='text', name='user', placeholder='Your Name')
+        .form-row
+          input(type='text', name='code', placeholder='Coupon Code')
+        .form-row.form-last-row
+          input.hiddenForServer(type='text', name='redeemedOn')
+          button(type='submit') Submit For
+      script(src='https://code.jquery.com/jquery-2.1.3.min.js')     
+      script. $(".hiddenForServer").value(Date());     
+

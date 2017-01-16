@@ -1,0 +1,48 @@
+<! DOCTYPE html > 
+<html> 
+	<head> 
+		<meta charset =" UTF-8" /> 
+		<title> React Demo </title>
+		<script src="./react.js"></script>
+		<script src="./react-dom.js"></script>
+	</head>
+	<body>
+		<div id="container1"></div>
+		<script>
+var hideShowBoxButton = React.createClass({
+  getInitialState: function() {
+    return {
+      display: "inline-block"
+    }
+  },
+  handleClick: function() {
+    if (this.state.display == "inline-block") {
+      this.setState({
+        display: "none"
+      });
+    } else {
+      this.setState({
+        display: "inline-block"
+      });
+    }
+  },
+  render: function() {
+    return React.createElement("div", {}, React.createElement("a", {
+      href: "#",
+      onClick: this.handleClick
+    }, "Click to Show/ Hide"), React.createElement("span", {
+      style: {
+        display: this.state.display,
+        height: 30,
+        width: 30,
+        backgroundColor: "red"
+      }
+    }));
+  }
+});
+// React.render(<hideShowBoxButton />, document.getElementById("container1"));
+ReactDOM.render(React.createElement(hideShowBoxButton, null), 
+	document.getElementById("container1"));
+		 </script>
+	</body>
+</html>

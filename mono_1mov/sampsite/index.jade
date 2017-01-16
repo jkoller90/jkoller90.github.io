@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Generate Codes
+    link(rel='stylesheet', href='assets/demo.css')
+    link(rel='stylesheet', href='assets/form-basic.css')
+  header
+    h1 Code Generator
+  .main-content
+    form.form-basic
+      .form-title-row
+        button#reload(name='data', type='button') Reload Page Form
+      .form-row
+        label
+          span Length of Codes (required)
+          input#length(type='text')
+      .form-row
+        label
+          span Amount of Codes to Output (required)
+          input#amount(type='text')
+      .form-row
+        label
+          span Character Set
+          select#charSet(name='dropdown')
+            option Numeric
+            option Alphabetic
+            option Alphanumeric
+      .form-row
+        label
+          span Optional: Characters to Exclude (format: "I, i, l, 1")
+          input#charExclusions(type='text')
+      .form-row
+        //
+          <label> <span>Optional: Words to Exclude (such as explicatives)</span>
+          <input type="text" id="wordExclusions"></input>
+          </label>
+      .form-row
+        button#submit(name='data', type='button') Submit Form
+      .form-row
+        button#showStoredData(name='showStoredData', type='button') Show Stored Data 
+      #displayCode.code.form-row
+        h3 Code Here
+      #displayStoredCodes.form-row
+        h3(style='margin-bottom:2.5%;') Stored Codes
+      script(src="/javascripts/Filesaver.min.js")
+      script(src="/javascripts/voucher-codes.js")
+      script(src="https://code.jquery.com/jquery-2.1.3.min.js")
+      script(src="/javascripts/frontend_logic.js")

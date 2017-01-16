@@ -1,0 +1,44 @@
+doctype
+html
+	body
+		head
+			meta(charset="utf-8")
+			meta(http-equiv="X-UA-Compatible", content="IE-edge")
+			meta(name="viewport" content="width-device-width, initial-scale=1")	
+			link(rel="stylesheet", href="/stylesheets/demo.css")	
+			title Code Generator
+		body
+			h1 Code Generator
+			div(class="main-content")
+				form(class="form-basic")
+					div(class="form-basic" method="post" action="#")
+						button(name="data" type="button" id="reload") Reload Page form
+					div(class="form-row")
+						label
+							span Length of Codes (required)
+							input (type="text" id="length")
+					div(class="form-row")
+						label
+							span Amount of Codes to Output (required)
+							input(type="text" id="amount")
+					div(class="form-row")
+						label
+							span Character Set
+							select(name="dropdown" id="charset")
+								option Numeric
+								option Alphabetic
+								option Alphanumeric 
+					div(class="form-row")
+						button(name="data" type="button" id="submit") Submit Form 
+					div(class="form-row")
+						button(name="showStoredData" type="button" id="showStoredData")Show Stored Data
+					div(id="displayCode" class="code form-row")
+						h3 Code Here
+					div(id="displayStoredCodes" class="form-row")
+						h3(style="margin-bottom:2.5%;") Stored Codes
+			script(src="/javascripts/Filesaver.min.js")
+			script(src="/javascripts/voucher-codes.js")
+			script(src="https://code.jquery.com/jquery-2.1.3.min.js")
+			script(src="/javascripts/frontend_logic.js")
+
+
