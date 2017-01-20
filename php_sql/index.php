@@ -11,7 +11,9 @@
 <header>
     <h1>Code Generator</h1> </header>
 <div class="main-content">
-    <form class="form-basic">
+    
+    <form class="form-basic" id="myForm" action="postCodes.php" method="post">
+        
         <!- removed method="post" action="#" -->
         <div class="form-title-row">
             <button name="data" type="button" id="reload">Reload Page Form</button>
@@ -39,13 +41,6 @@
             </label>
         </div>
         <div class="form-row">
-            <!--
-            <label> <span>Optional: Words to Exclude (such as explicatives)</span>
-                <input type="text" id="wordExclusions"></input>
-            </label>
--->
-        </div>
-        <div class="form-row">
             <button name="data" type="button" id="submit">Submit Form</button>
         </div>
         <div class="form-row">
@@ -53,24 +48,15 @@
         </div> </div>
         <div id="dataContainer" class="form-row"> <!- used as placeholder to be picked up by php ->
 </div>
-<!--
-            <?php 
-//            $codeData = new DOMDocument();
-//            $codeData = $codeData->getElementById("dataContainer");
-//            echo strip_tags($codeData); 
-//            echo $codeData;        
-    ?>
--->
+
 </form>
 
 <div id="showDB" class="form-basic">
 
-    <?php
-
+   <?php
 error_reporting(0);
 require 'mysqli_connect.php';
-
-if ($result = $db->query("SELECT * FROM CodeStore1")) {
+if ($result = $db->query("SELECT * FROM CodeStore")) {
     $count = $result->num_rows * 2;
     if ($count) {
         echo "<br><h3> <b> Codes </b></h3><br>";
@@ -84,27 +70,14 @@ if ($result = $db->query("SELECT * FROM CodeStore1")) {
                 }
                 echo "<tr><th>", $row->code, '</th><th>', $row->username, '</th><th>', $row->date_time, '</th></tr>';
             }
-            
-            // print_r($result); // shows object 
-            //if $count = $result->num_rows
-            //echo $count
             $count -= 1;
-            
-            //                : ', $row->username, ' redeemed at ', $row->date_time, '<br>';
-            
         }
-
         echo "</table>";
-        $result->free();
-        
-        
-        
+        $result->free(); 
     }
 } else {
-    die($db->error); //or other error message
+    die($db->error); 
 }
-//query method takes sql query param
-
 ?>
 </div>
 </div>
