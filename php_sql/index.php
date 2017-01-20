@@ -39,7 +39,7 @@
             </label>
         </div>
         <div class="form-row">
-<!--
+            <!--
             <label> <span>Optional: Words to Exclude (such as explicatives)</span>
                 <input type="text" id="wordExclusions"></input>
             </label>
@@ -47,18 +47,66 @@
         </div>
         <div class="form-row">
             <button name="data" type="button" id="submit">Submit Form</button>
-            </div>
-            <div class="form-row">
-            <button name="showStoredData" type="button" id="showStoredData">Show Stored Data </button>
-            </div>
-            <div  id="displayCode" class="code form-row">
-                <h3>Code Here</h3>
-                </div>
-                <div id="displayStoredCodes" class="form-row">
-                    <h3 style="margin-bottom:2.5%;">Stored Codes</h3>
-                </div>
         </div>
-    </form>
+        <div class="form-row">
+            <button name="showDB" id="showStoredData" type="button">Show Stored Data </button>
+        </div> </div>
+        <div id="dataContainer" class="form-row"> <!- used as placeholder to be picked up by php ->
+</div>
+<!--
+            <?php 
+//            $codeData = new DOMDocument();
+//            $codeData = $codeData->getElementById("dataContainer");
+//            echo strip_tags($codeData); 
+//            echo $codeData;        
+    ?>
+-->
+</form>
+
+<div id="showDB" class="form-basic">
+
+    <?php
+
+error_reporting(0);
+require 'mysqli_connect.php';
+
+if ($result = $db->query("SELECT * FROM CodeStore1")) {
+    $count = $result->num_rows * 2;
+    if ($count) {
+        echo "<br><h3> <b> Codes </b></h3><br>";
+        $row = $result->fetch_object();
+        while ($count > 0) {
+            if($count > $result->num_rows){
+                echo $row->code, '<br>';                
+            }else{
+                if($count == $result->num_rows){
+                    echo "<table> <tr> <th> <b> Codes </b> </th> <th> User Name </th> <th> Redeemed On </th></tr>";
+                }
+                echo "<tr><th>", $row->code, '</th><th>', $row->username, '</th><th>', $row->date_time, '</th></tr>';
+            }
+            
+            // print_r($result); // shows object 
+            //if $count = $result->num_rows
+            //echo $count
+            $count -= 1;
+            
+            //                : ', $row->username, ' redeemed at ', $row->date_time, '<br>';
+            
+        }
+
+        echo "</table>";
+        $result->free();
+        
+        
+        
+    }
+} else {
+    die($db->error); //or other error message
+}
+//query method takes sql query param
+
+?>
+</div>
 </div>
 <script src="FileSaver.min.js"></script>
 <script src="voucher_codes.js"></script>

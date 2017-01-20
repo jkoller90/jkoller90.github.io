@@ -59,6 +59,34 @@
                 </div>
         </div>
     </form>
+<?php 
+error_reporting(0);
+require 'mysqli_connect.php';
+
+if($result = $db->query("SELECT * FROM CodeStore1")){
+    if($count = $result->num_rows){
+//        $rows = $result->fetch_all(MYSQLI_ASSOC);
+        //MYSQLI_ASSOC associative array or _BOTH for combo
+//        foreach($rows as $row){
+//            echo $row['code'], ' : ', $row['username'], ' : ', $row['date_time'], '<br>';
+//        }
+//        while($row = $result->fetch_assoc()){
+//            echo $row['code'], ' : ', $row['username'], ' accessed at ', $row['date_time'], '<br>';
+//        }
+
+        while($row = $result->fetch_object()){
+            echo $row->code, ' : ', $row->username, ' accessed at ', $row->date_time, '<br>';
+        }
+                
+        $result->free(); 
+        
+    }
+}else{
+    die($db->error); //or other error message
+}
+//query method takes sql query param
+
+?>
 </div>
 <script src="FileSaver.min.js"></script>
 <script src="voucher_codes.js"></script>

@@ -34,8 +34,28 @@ $('html').keypress(function(e) {
         processInput();
     }
 });
+//function post(){
+//  var $data = $("#dataContainer");
+//    $.post('index.php', {postdata:$data},
+//          function(data){
+//                
+//    });
+//};
 $("#submit").click(function(event) {
     processInput();
+});
+
+$(document).ready(function(){
+    $('.button').click(function(){
+        var clickBtnValue = $(this).val();
+        var ajaxurl = 'ajax.php',
+        data =  {'action': clickBtnValue};
+        $.post(ajaxurl, data, function (response) {
+            // Response div goes here.
+            alert("action performed successfully");
+        });
+    });
+
 });
 
 function processInput() {
@@ -85,8 +105,10 @@ function processInput() {
                     charset: charSet
                 });
                 for (var i = 0; i < codeGenerated.length; i++) {
-                    $("#displayCode").append("<br><p>" + codeGenerated[i] + "</p><br>");
+                    $("#dataContainer").append(codeGenerated[i]); //placeholder for php to pickup data
+//                    $("#displayCode").append("<br><p>" + codeGenerated[i] + "</p><br>");
                 }
+                $("#dataContainer").append("<?php $codeData = new DOMDocument();$codeData = $codeData->getElementById('dataContainer'); echo strip_tags($codeData); echo $codeData; ?>");
             }
 
             //#if undefined 
@@ -120,21 +142,25 @@ $("#reload").click(function(event) {
 var storedCodesCheck = true; //limits rendering under Stored Codes
 $("#showStoredData").click(function(event) {
     //what to make this hidden then show it 
-    $("#displayStoredCodes").css("visibility", "visible");
-    if (storedCodesCheck) {
-        var tbl = $("<table/>").attr("id", "codeTable");
-        $("#displayStoredCodes").append(tbl);
-        $("#codeTable").append("<tr><td>Index</td><td>Code</td><td>User</td><td>Time Redeemed</td></tr>");
-        for (var i in storedCodes) {
-            var tr = "<tr>";
-            var td = "<td>" + i + "</td>";
-            var td1 = "<td>" + storedCodes[i]["code"] + "</td>";
-            var td2 = "<td>" + storedCodes[i]["redeemedBy"] + "</td>";
-            var td3 = "<td>" + storedCodes[i]["timeRedeemed"] + "</td></tr>";
-            $("#codeTable").append(tr + td + td1 + td2 + td3);
-        }
-        storedCodesCheck = false;
-    }
+    $("#showDB").css("visibility", "visible");
+    //
+    //
+    //
+    
+//    if (storedCodesCheck) {
+//        var tbl = $("<table/>").attr("id", "codeTable");
+//        $("#displayStoredCodes").append(tbl);
+//        $("#codeTable").append("<tr><td>Index</td><td>Code</td><td>User</td><td>Time Redeemed</td></tr>");
+//        for (var i in storedCodes) {
+//            var tr = "<tr>";
+//            var td = "<td>" + i + "</td>";
+//            var td1 = "<td>" + storedCodes[i]["code"] + "</td>";
+//            var td2 = "<td>" + storedCodes[i]["redeemedBy"] + "</td>";
+//            var td3 = "<td>" + storedCodes[i]["timeRedeemed"] + "</td></tr>";
+//            $("#codeTable").append(tr + td + td1 + td2 + td3);
+//        }
+//        storedCodesCheck = false;
+//    }
 });
 
 
