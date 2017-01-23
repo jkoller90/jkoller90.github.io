@@ -28,7 +28,7 @@ function postCodes(codeGenerated, i) {
     $.ajax({
         type: "post"
         , url: "process.php"
-        , data: "code=" + codeGenerated[i] + "&name=Unredeemed$email=N/a&redeemed=0000-00-00 00:00:00"
+        , data: "code=" + codeGenerated[i] + "&name=Unredeemed&email=N/a&redeemed=0000/00/00 00:00:00"
         , success: function (data) {
             $("#info").html(data);
             console.log("success");
@@ -44,19 +44,19 @@ function clearInput() {
         $(this).val('');
     })
 }
-$(document).ready(function () {
-    $('.button').click(function () {
-        var clickBtnValue = $(this).val();
-        var ajaxurl = 'ajax.php'
-            , data = {
-                'action': clickBtnValue
-            };
-        $.post(ajaxurl, data, function (response) {
-            // Response div goes here.
-            alert("action performed successfully");
-        });
-    });
-});
+//$(document).ready(function () {
+//    $('.button').click(function () {
+//        var clickBtnValue = $(this).val();
+//        var ajaxurl = 'ajax.php'
+//            , data = {
+//                'action': clickBtnValue
+//            };
+//        $.post(ajaxurl, data, function (response) {
+//            // Response div goes here.
+//            alert("action performed successfully");
+//        });
+//    });
+//});
 
 function processInput() {
     if (displayCodeCheck) {
@@ -125,6 +125,7 @@ function processInput() {
         //loops to complete async post request within closure of function call
         for (var i = 0; i < codeGenerated.length; i++) {
             postCodes(codeGenerated, i);
+					console.log(i);
         }
     }
 }

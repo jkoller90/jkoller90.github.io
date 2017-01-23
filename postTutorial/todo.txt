@@ -1,0 +1,10 @@
+index.js - $docready fucntion test it
+index.js - download feature
+
+
+
+
+user_error messaging/validation 
+
+overall security/anti sql injection
+ 

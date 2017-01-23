@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Generate Codes</title>
-    <link rel="stylesheet" href="assets/demo.css">
+    <link rel="stylesheet" href="./assets/demo.css">
 </head>
 <header>
     <h1>Code Generator</h1> </header>
@@ -35,7 +35,8 @@
             <div id="info" /> </form>
     </div> 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="voucher_codes.js"></script>
+		<script src="voucher_codes.js"></script>
+		<script src="FileSaver.min.js"></script>
     <script src="index.js"></script>
     </body>
 
