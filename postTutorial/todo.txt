@@ -1,4 +1,4 @@
-index.js - $docready fucntion test it
+index.js - display db feature
 index.js - download feature
 
 

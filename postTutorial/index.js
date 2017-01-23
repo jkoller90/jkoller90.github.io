@@ -23,7 +23,13 @@ $('html').keypress(function (e) {
         processInput();
     }
 });
-
+function displayCodes(){
+	$.ajax({
+		type:"get",
+		url:"displayDB.php",
+//		success: function
+	});
+}
 function postCodes(codeGenerated, i) {
     $.ajax({
         type: "post"
@@ -44,20 +50,6 @@ function clearInput() {
         $(this).val('');
     })
 }
-//$(document).ready(function () {
-//    $('.button').click(function () {
-//        var clickBtnValue = $(this).val();
-//        var ajaxurl = 'ajax.php'
-//            , data = {
-//                'action': clickBtnValue
-//            };
-//        $.post(ajaxurl, data, function (response) {
-//            // Response div goes here.
-//            alert("action performed successfully");
-//        });
-//    });
-//});
-
 function processInput() {
     if (displayCodeCheck) {
         //input 
