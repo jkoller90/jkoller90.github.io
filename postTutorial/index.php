@@ -33,10 +33,20 @@
             <div class="form-row">
                 <button id="submit">Generate Codes</button>
             </div>
+					
+						<div class="form-row">
+                <button id="downloadCode">Download Code Data Table</button>
+            </div>
+						<div class="form-row">
+                <button id="downloadUnused">Download Unused Codes 
+						</button>
+			      <div class="form-row">
+                <button id="loadCode">Load Code Data Here</button>
+            </div>
+            </div>
              </form>
-			<div id="info"></div>
+      <div id="show"></div>
     </div> 
-        <div id="show"></div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 		<script src="voucher_codes.js"></script>
 		<script src="FileSaver.min.js"></script>
