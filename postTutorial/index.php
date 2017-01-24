@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./assets/demo.css">
 </head>
 <header>
-    <h1>Code Generator</h1> </header>
+    <h1>Code Generator</h1> 
+</header>
 
 <body>
     <div class="main-content">
@@ -32,8 +33,10 @@
             <div class="form-row">
                 <button id="submit">Generate Codes</button>
             </div>
-            <div id="info" /> </form>
+             </form>
+			<div id="info"></div>
     </div> 
+        <div id="show"></div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 		<script src="voucher_codes.js"></script>
 		<script src="FileSaver.min.js"></script>

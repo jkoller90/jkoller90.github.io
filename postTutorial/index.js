@@ -9,6 +9,11 @@ var codeGenerated;
 var displayCodeCheck = true;
 var storedCodes = undefined;
 // var db = new PouchDB('CodeStorage');
+$(document).ready(function () {
+    setInterval(function () {
+        $('#show').load('data.php')
+    }, 3000);
+});
 function charset(name) {
     var charsets = {
         numeric: "0123456789"

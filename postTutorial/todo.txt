@@ -1,6 +1,8 @@
 index.js - display db feature
 index.js - download feature
-
+	//list of unredeemed codes
+	//csv
+	//csv redeemed codes
 
 
 
