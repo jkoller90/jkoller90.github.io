@@ -29,16 +29,16 @@
                 </select>
             </div>
             <div class="form-row"> <span>Excluded Characters (optional; format: "I, i, l")</span>
-                <input type="text" name="charExclusions" id="charExclusions"> </div>
+                <input type="text" name="charExclusions" id="charExclusions"> 
+						</div>
             <div class="form-row">
                 <button id="submit">Generate Codes</button>
             </div>
-					
 						<div class="form-row">
                 <button id="downloadCode">Download Code Data Table</button>
             </div>
 						<div class="form-row">
-                <button id="downloadUnused">Download Unused Codes 
+                <button id="downloadNew">Download Unused Codes 
 						</button>
 			      <div class="form-row">
                 <button id="loadCode">Load Code Data Here</button>

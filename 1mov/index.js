@@ -8,13 +8,25 @@ var toDownload; //optional process (post-submission)
 var codeGenerated;
 var displayCodeCheck = true;
 var storedCodes = undefined;
+var timedate = new Date();
+var createdTime;
 
+function formatDate(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
+}
 
 //loads code at bottom of view
 $("#loadCode").click(function (event) {
 	$.ajax({
 		type: "GET"
-		, url: "data.php"
+		, url: "loadCode.php"
 		, dataType: "html"
 		, success: function (response) {
 			if($("#show").html() == ""){
@@ -24,7 +36,6 @@ $("#loadCode").click(function (event) {
 				$("#show").html("");
 				$("#show").append(response);	
 			}
-			console.log($("#show").html());
 		}
 	});
 	event.preventDefault();
@@ -32,12 +43,13 @@ $("#loadCode").click(function (event) {
 
 
 //downloads table of all codes
-$("#downloadCode").click(function(event){
+$("#downloadCodes").click(function(event){
 	$.ajax({
 		type: "GET"
-		, url: "downloadCode.php"
+		, url: "downloadCodes.php"
 		, dataType: "text"
 		, success: function (response) {
+//			console.log(response);
         var blob = new Blob([response], {
         type: "text/csv"
     });
@@ -47,24 +59,32 @@ $("#downloadCode").click(function(event){
 	event.preventDefault();
 });
 
-
 //downloads table of unused codes
-$("#downloadUnused").click(function(event){
+$("#downloadNew").click(function(event){
+	$.ajax({
+		type: "POST"
+		, url: "downloadNew.php"
+		, data: "createdTime="+ createdTime
+		, success: function (data) {
+				console.log(data + "passed");
+		}	
+	});
+event.preventDefault();
 	$.ajax({
 		type: "GET"
-		, url: "downloadUnused.php"
+		, url: "downloadNew.php"
 		, dataType: "text"
 		, success: function (response) {
         var blob = new Blob([response], {
         type: "text/csv"
     });
-    saveAs(blob, "unusedcodes.csv");			
+    saveAs(blob, "New Codes.csv");			
 		}
 	});
 	event.preventDefault();
-});
+	});
 
-
+//add conditional for over 10 results? 
 function charset(name) {
 	var charsets = {
 		numeric: "0123456789"
@@ -80,28 +100,31 @@ $('html').keypress(function (e) {
 	}
 });
 
+//posts code
 function postCodes(codeGenerated, i) {
 	$.ajax({
 		type: "post"
-		, url: "process.php"
-		, data: "code=" + codeGenerated[i] + "&name=Unredeemed&email=N/a&redeemed=0000/00/00 00:00:00"
+		, url: "postCodes.php"
+		, data: "code=" + codeGenerated[i] + "&name=Unredeemed&email=N/a&redeemed=0000/00/00 00:00:00&createdTime=" + createdTime
 		, success: function (data) {
 			$("#info").html(data);
 		}
 	});
 }
 $("#submit").click(function (event) {
-	processInput();
+	processInput();	
 });
 
 function clearInput() {
-	$("#myForm :input").each(function () {
+	$("#form-basic :input").each(function () {
 		$(this).val('');
 	})
 }
 
+//generates code
 function processInput() {
 	if (displayCodeCheck) {
+		console.log(createdTime);
 		//input 
 		length = $("#length").val();
 		amount = $("#amount").val();
@@ -165,6 +188,7 @@ function processInput() {
 		}
 		displayCodeCheck = false;
 		//loops to complete async post request within closure of function call
+		createdTime = formatDate(timedate);
 		for (var i = 0; i < codeGenerated.length; i++) {
 			postCodes(codeGenerated, i);
 			console.log(i);
@@ -174,6 +198,9 @@ function processInput() {
 $("#reload").click(function (event) {
 	location.reload();
 });
+
+
+
 //// saveAs(blob, "storedCodes.json");
 //var storedCodesCheck = true; //limits rendering under Stored Codes
 //$("#showStoredData").click(function (event) {

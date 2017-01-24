@@ -1,7 +1,7 @@
 <?php 
 $con = mysqli_connect("sql9.freesqldatabase.com","sql9154593","I9pF9PiQIb", "sql9154593");
 
-$result = $con->query("SELECT * FROM codestore");
+$result = $con->query("SELECT * FROM codestore ORDER BY created ASC");
 if (!$result) die('Couldn\'t fetch records');
 $num_fields = mysqli_num_fields($result);
 $headers = array();
