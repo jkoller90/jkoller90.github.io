@@ -150,29 +150,11 @@ function processInput() {
 			else {
 				charSet = charset(charSet);
 			}
-			if (amount > 10) {
-				var toDownload = confirm('The limit of codes displayed on this page is 10. You entered 11 or greater and can download a .csv file with these codes provided. Is that okay?');
-				if (toDownload) {
-					var codeGenerated = voucher_codes.generate({
-						length: length
-						, count: amount
-						, charset: charSet
-					});
-					var blob = new Blob([codeGenerated], {
-						type: "text/csv"
-					});
-					saveAs(blob, "codefile.csv");
-				}
-				else {
-					alert("Please re-enter a value under 10 for the amount.");
-				}
-			}
-			else { // amount < 10 
-				codeGenerated = voucher_codes.generate({
-					length: length
-					, count: amount
-					, charset: charSet
-				});
+			codeGenerated = voucher_codes.generate({
+				length: length
+				, count: amount
+				, charset: charSet
+			});
 			}
 			console.log(codeGenerated);
 		}
@@ -192,8 +174,7 @@ function processInput() {
 		for (var i = 0; i < codeGenerated.length; i++) {
 			postCodes(codeGenerated, i);
 			console.log(i);
-		}
-	}
+		}	
 }
 $("#reload").click(function (event) {
 	location.reload();

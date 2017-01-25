@@ -35,7 +35,7 @@
                 <button id="submit">Generate Codes</button>
             </div>
 						<div class="form-row">
-                <button id="downloadCode">Download Code Data Table</button>
+                <button id="downloadCodes">Download Code Data Table</button>
             </div>
 						<div class="form-row">
                 <button id="downloadNew">Download Unused Codes 

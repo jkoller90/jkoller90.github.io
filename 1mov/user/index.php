@@ -8,14 +8,14 @@
 </head>
 
 <body>
+	<div id="show"></div>
 	<div class="main-content">
 		<form class="form-basic">
 			<div class="form-row"> <span>Enter your code </span>
 				<input type="text" name="code" id="code"> </div>
 			<div class="form-row"> <span>Full Name </span>
-				<input type="text" name="name" id="name"> </div>
-			<div class="form-row"> <span>Email</span>
-				<input type="text" name="email" id="email"> </div>
+				<input type="text" name="name" id="name"> 
+			</div>
 			<div class="form-row">
 				<button id="submit">Redeem!</button>
 			</div>
