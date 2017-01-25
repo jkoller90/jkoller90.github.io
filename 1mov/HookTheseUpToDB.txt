@@ -1,8 +1,0 @@
-The following communicate with the database:
-postCodes.php
-downloadCodes.php
-downloadNew.php
-loadCode.php
-/user/
-	test_code.php
-	user_process.php
