@@ -1,5 +1,5 @@
 <?php
-	$con = 	mysqli_connect("sql9.freesqldatabase.com","sql9154593","I9pF9PiQIb", "sql9154593");
+	$con = 	mysqli_connect();
 
 // prepare and bind
 //$stmt = $con_prepare("UPDATE codestore SET (name, redeemed) VALUES (?, ?) WHERE (code) VALUES (?)");

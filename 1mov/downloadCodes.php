@@ -1,5 +1,5 @@
 <?php 
-$con = mysqli_connect("sql9.freesqldatabase.com","sql9154593","I9pF9PiQIb", "sql9154593");
+$con = mysqli_connect();
 
 $result = $con->query("SELECT * FROM codestore ORDER BY created DESC");
 if (!$result) die('Couldn\'t fetch records');
