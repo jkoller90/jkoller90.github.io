@@ -2,26 +2,15 @@
 //in doc.ready below. this is used during submission 
 //to verify that a. the code exists and b. it hasn't been
 //redeemed 
-var availableCodes = []; 
+var availableCodes; 
 
 $(document).ready(function(){
 	$.ajax({
 		type: "get"
 		, url: "test_code.php"
-		, datatype: "text"
+		, datatype: "json"
 		, success: function (response) {
-			if($("#show").html() == ""){
-				$("#show").append(response);				
-			}else{ 
-//clears div#show so same table doesn't continuously stack
-			 	$("#show").html("");
-				$("#show").append(response);	
-			}
-			$('.code').each(function(i, obj) {
-				var thiscode = $(this).text();
-				var thisname = $(this).siblings().text();
-				availableCodes[thiscode] = thisname;
-			});
+			availableCodes = response;
 		}
 		, error: function(){
 			alert("That code is invalid.");
@@ -53,6 +42,8 @@ $("#submit").click(function (event) {
 		});
 	}else if(name === "" || code === ""){
 		alert("Please enter both your name and a code.");
+	}else if(!(availableCodes.hasOwnProperty('key'))){
+		alert("Please check your code");
 	}else if(availableCodes[code] !== "Unredeemed"){
 		alert("This code has already been submitted.");
 	}else{
