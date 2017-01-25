@@ -29,7 +29,6 @@ $("#downloadCodes").click(function (event) {
 		, url: "downloadCodes.php"
 		, dataType: "text"
 		, success: function (response) {
-			//			console.log(response);
 			var blob = new Blob([response], {
 				type: "text/csv"
 			});
@@ -104,7 +103,7 @@ function processInput() {
 				charSet = charset(charSet);
 			}
 			if (amount > 10) {
-				var toDownload = alert('The limit of codes displayed on this page is 10. You entered 11 or greater and can download a .csv file with these codes provided. Is that okay?');
+				var toDownload = confirm('The limit of codes displayed on this page is 10. You entered 11 or greater and can download a .csv file with these codes provided. Is that okay?');
 				if (toDownload) {
 					var codeGenerated = voucher_codes.generate({
 						length: length
@@ -115,17 +114,10 @@ function processInput() {
 						type: "text/csv"
 					});
 					saveAs(blob, "codefile.csv");
-				}
-				else {
+				}else {
 					alert("Please re-enter a value under 10 for the amount.");
 					return;
 				}
-				codeGenerated = voucher_codes.generate({
-					length: length
-					, count: amount
-					, charset: charSet
-				});
-			}
 			console.log(codeGenerated);
 		}	else { // amount < 10 
 			codeGenerated = voucher_codes.generate({
@@ -133,10 +125,6 @@ function processInput() {
 				, count: amount
 				, charset: charSet
 			});
-			for (var i = 0; i < codeGenerated.length; i++) {
-				$("#show").append("<br><p>" + codeGenerated[i] + "</p><br>");
-			}
-		}
 
 		//loops to complete async post request within closure of function call
 		createdTime = formatDate(timedate);
@@ -144,6 +132,7 @@ function processInput() {
 			postCodes(codeGenerated, i);
 			console.log(i);
 		}
+	}
 	}
 	$("#reload").click(function (event) {
 		location.reload();

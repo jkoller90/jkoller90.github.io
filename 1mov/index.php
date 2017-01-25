@@ -37,9 +37,7 @@
 						<div class="form-row">
                 <button id="downloadCodes">Download Full Code Data Table</button>
             </div>
-
-            </div>
-             </form>
+        </form>
       <div id="show"></div>
     </div> 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
