@@ -8,8 +8,8 @@ body {
 	font-family: Arial, sans-serif;
 	font-size: 18px;
 	color: #666;
-	width: 100%;
-	max-width: 375px;
+	width: 270px
+	max-width: 270px;
 	height: auto;
 	background-repeat: no-repeat;
 	background-size:contain;
@@ -19,12 +19,12 @@ body {
 }
 
 #loadImg{
-	max-width: 375px;
+	max-width: 270px;
 	height: auto;
 }
 
 img{
-	max-width: 100%;
+	max-width: 270px;
 	height: auto;
 	visibility:hidden;
 	display:none;

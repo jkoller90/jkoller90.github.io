@@ -6,9 +6,9 @@ var hitText = 'Hits: ';
 var hits = 0; 
 var timeText = "Time: ";
 var time = 60;  
-//setInterval(function(){ 
-//	$("#time").html(timeText + time--); 
-//}, 1000);
+setInterval(function(){ 
+	$("#time").html(timeText + time--); 
+}, 1000);
 
 
 function circleUI() {
