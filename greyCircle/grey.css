@@ -1,3 +1,7 @@
+html{
+	width: 350px;
+	height: auto;
+}
 body {
 	background-image: url("https://alastaira.files.wordpress.com/2012/03/image18.png");
 	overflow: hidden;
@@ -5,7 +9,7 @@ body {
 	font-size: 18px;
 	color: #666;
 	width: 100%;
-	max-width: 703px;
+	max-width: 375px;
 	height: auto;
 	background-repeat: no-repeat;
 	background-size:contain;
@@ -15,7 +19,7 @@ body {
 }
 
 #loadImg{
-	max-width: 100%;
+	max-width: 375px;
 	height: auto;
 }
 
