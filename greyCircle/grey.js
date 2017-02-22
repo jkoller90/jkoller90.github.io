@@ -5,10 +5,20 @@ var context;
 var hitText = 'Hits: ';
 var hits = 0; 
 var timeText = "Time: ";
-var time = 60;  
-setInterval(function(){ 
-	$("#time").html(timeText + time--); 
-}, 1000);
+var time = 60; 
+
+
+var timer = setInterval(function(){ 
+		if(time > -1){
+			$("#time").html(timeText + time--); 			
+		}else if(time == -1){
+			alert("Time's up!");
+			clearInterval(timer);
+		} 
+	}, 1000);
+
+//if(time == -1) 
+
 
 
 function circleUI() {
