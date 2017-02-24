@@ -1,13 +1,26 @@
 html{
-	height: 100%;
-	width: auto;
+	width: 100%;
+	height: auto;
+    overflow:hidden;
 }
-
+body {
+	background-image: url("rotated_unnamed.png");
+	overflow: hidden;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	color: #666;
+	width: 100%;
+/*	max-width: 270px;*/
+	height: auto;
+	background-repeat: no-repeat;
+	background-size:contain;
+	margin: 0px !important;
+	padding-right: 0;
+	display: inline !important;
+}
 .scoreboard{
-    position:absolute;
-    left: 22% !important;
-    top: 0 !important;
-    z-index: 0;
+    margin: 8% 5% 5% 5%;
+    z-index: -1;
     background-color:white;
     width:16%;
     -ms-transform: rotate(90deg); /* IE 9 */
@@ -16,44 +29,13 @@ html{
 }
 #hits{
     left: 17% !important;
+    transform:rotate(90deg);
 /*    top: 0% !important;*/
 }
 
-.bgwidth { width: 100%; }
-.bgheight { height: 100%; }
-
-img{
-    width:210%;
-    height:auto;
-    position:relative;
-/*    top:30%;*/
-        bottom: -25%;
-    left:-25%;
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-    transform: rotate(90deg);
+#time{
+    transform:rotate(90deg) !important;
 }
-
-
-body {
-/*	background-image: url("https://alastaira.files.wordpress.com/2012/03/image18.png");*/
-	overflow: hidden;
-	font-family: Arial, sans-serif;
-	font-size: 18px;
-	color: #666;
-	width: 100%;
-/*	max-width: 270px;*/
-	height: auto;
- position: absolute;
- top: 8%;
- left: -22%;
-	background-repeat: no-repeat;
-	background-size:auto;
-	margin: 0px !important;
-	padding-right: 0;
-	display: inline !important;
-}
-
 
 p {
 	margin: 10px;
