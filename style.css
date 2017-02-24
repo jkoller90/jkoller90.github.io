@@ -31,7 +31,9 @@ h4,
 h5,
 h6 {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 300;
+    -webkit-margin-before: 0.55em !important;
+    -webkit-margin-after: 0.55em !important;
 }
 
 .img-centered {
