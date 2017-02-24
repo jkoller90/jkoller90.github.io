@@ -1,32 +1,39 @@
 html{
-	width: 100%;
-	height: auto;
+	height: 100%;
+	width: auto;
 }
 
 .scoreboard{
     position:absolute;
-    left: 12% !important;
-    top: -13% !important;
+    left: 22% !important;
+    top: 0 !important;
     z-index: 0;
     background-color:white;
-    width:120px;
+    width:16%;
     -ms-transform: rotate(90deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
     transform: rotate(90deg);
 }
-
-img{
-    width:inherit;
-    height:auto;
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-    transform: rotate(90deg);
-}
-
 #hits{
     left: 17% !important;
 /*    top: 0% !important;*/
 }
+
+.bgwidth { width: 100%; }
+.bgheight { height: 100%; }
+
+img{
+    width:210%;
+    height:auto;
+    position:relative;
+/*    top:30%;*/
+        bottom: -25%;
+    left:-25%;
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
 
 body {
 /*	background-image: url("https://alastaira.files.wordpress.com/2012/03/image18.png");*/

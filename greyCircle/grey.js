@@ -23,6 +23,32 @@ var offset;
 //		} 
 //	}, 1000);
 
+//$(window).load(function() {    
+//
+//	var theWindow        = $(window),
+//	    $bg              = $("img"),
+//	    aspectRatio      = $bg.width() / $bg.height();
+//	    			    		
+//	function resizeBg() {
+//		
+//		if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+//		    $bg
+//		    	.removeClass()
+//		    	.addClass('bgheight');
+//		} else {
+//		    $bg
+//		    	.removeClass()
+//		    	.addClass('bgwidth');
+//		}
+//					
+//	}
+//	                   			
+//	theWindow.resize(resizeBg).trigger("resize");
+//
+//});
+
+
+
 
 function circleUI() {
 	this.mousedown = false;
@@ -118,7 +144,7 @@ circleUI.prototype.showControl = function (e) {
 
     
   this.x = e.pageX;
-  x_x = this.x / $("body").width(); //- offset.left;
+  x_x = this.x / $("img").width(); //- offset.left;
 		
   this.y = e.clientY;
   
