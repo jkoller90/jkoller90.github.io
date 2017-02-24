@@ -4,7 +4,7 @@ html{
 }
 body {
 	background-image: url("https://alastaira.files.wordpress.com/2012/03/image18.png");
-	overflow: hidden;
+	overflow: hidden !important;
 	font-family: Arial, sans-serif;
 	font-size: 18px;
 	color: #666;
