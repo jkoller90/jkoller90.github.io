@@ -8,6 +8,12 @@ html {
     width: 100%;
     height: auto;
     overflow: hidden;
+    background-color: beige;
+}
+
+#bodyWrap {
+    z-index: 0;
+    background-color: black;
 }
 
 body {
@@ -109,17 +115,144 @@ body {
 }
 
 
-/* ------ iPhone 6+ */ 
+/* ------ ipad pro */
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+
+    body:before {
+        overflow: hidden;
+        content: "";
+        /*        position: absolute;*/
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        z-index: -1;
+        background: url("rotated_unnamed.png");
+        background-size: contain;
+    }
+}
+
+
+/* Landscape */
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
+    body:before {
+        overflow: hidden;
+        content: "";
+        position: absolute;
+        width: 57%;
+        height: 135%;
+        top: -18%;
+        left: 21%;
+        z-index: -1;
+        background: url(rotated_unnamed.png);
+        background-size: cover;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+    .scoreboard {
+        margin: 44% 5% 5% 5%;
+        z-index: -1;
+        background-color: white;
+        width: 16%;
+        -ms-transform: rotate(0deg);
+        /* IE 9 */
+        -webkit-transform: rotate(0deg);
+        /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+    }
+    #hits {
+        left: 17% !important;
+        transform: rotate(0deg);
+        /*    top: 0% !important;*/
+    }
+    #time {
+        transform: rotate(0deg) !important;
+    }
+}
+
+
+/* ------ ipad */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    html {
+        width: 90% !important;
+        height: 107% !important;
+    }
+    body:before {
+        overflow: hidden;
+        content: "";
+        /*        position: absolute;*/
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        z-index: -1;
+        background: url("rotated_unnamed.png");
+        background-size: contain;
+    }
+}
+
+
+/* Landscape */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    body:before {
+        overflow: hidden;
+        content: "";
+        position: absolute;
+        width: 57%;
+        height: 135%;
+        top: -18%;
+        left: 21%;
+        z-index: -1;
+        background: url(rotated_unnamed.png);
+        background-size: cover;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+    .scoreboard {
+        margin: 44% 5% 5% 5%;
+        z-index: -1;
+        background-color: white;
+        width: 16%;
+        -ms-transform: rotate(0deg);
+        /* IE 9 */
+        -webkit-transform: rotate(0deg);
+        /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+    }
+    #hits {
+        left: 17% !important;
+        transform: rotate(0deg);
+        /*    top: 0% !important;*/
+    }
+    #time {
+        transform: rotate(0deg) !important;
+    }
+}
+
+
+/* ------ iPhone 6+ */
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
-        body{
+    body {
         background-size: cover;
     }
 }
 
+
 /* Landscape */
+
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
-        body:before {
+    body:before {
         overflow: hidden;
         content: "";
         position: absolute;
@@ -129,7 +262,7 @@ body {
         left: -50%;
         z-index: -1;
         background: url("rotated_unnamed.png") 0 0 repeat;
-        		background-size:contain;
+        background-size: contain;
         -webkit-transform: rotate(-90deg);
         -moz-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
@@ -176,18 +309,24 @@ body {
         transform: rotate(0deg) !important;
     }
 }
+
 
 /* , Nexus 5x(412 x 732), 6p(412x732)*/
+
+
 /* Portrait */
+
 @media only screen and (min-device-width: 412px) and (max-device-width: 732px) and (orientation: portrait) {
-        body{
+    body {
         background-size: cover;
     }
 }
 
+
 /* Landscape */
+
 @media only screen and (min-device-width: 412px) and (max-device-width: 732px) and (orientation: landscape) {
-        body:before {
+    body:before {
         overflow: hidden;
         content: "";
         position: absolute;
@@ -197,7 +336,7 @@ body {
         left: -50%;
         z-index: -1;
         background: url("rotated_unnamed.png") 0 0 repeat;
-        		background-size:contain;
+        background-size: contain;
         -webkit-transform: rotate(-90deg);
         -moz-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
@@ -244,33 +383,25 @@ body {
         transform: rotate(0deg) !important;
     }
 }
+
 
 /* ----------- iPhone 6 ----------- */
-/* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
 
-}
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px)
-  and (orientation: landscape) { 
-          body:before {
-overflow: hidden;
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: 48%;
-    left: -44%;
-    z-index: -1;
-    background: url(rotated_unnamed.png);
-    background-size: contain;
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+    body:before {
+        overflow: hidden;
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: 48%;
+        left: -44%;
+        z-index: -1;
+        background: url(rotated_unnamed.png);
+        background-size: contain;
         -webkit-transform: rotate(-90deg);
         -moz-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
@@ -316,34 +447,37 @@ overflow: hidden;
     #time {
         transform: rotate(0deg) !important;
     }
-
 }
 
 
 /* ------ iPhone 5 */
+
+
 /* Portrait */
+
 @media only screen and (min-device-width: 317px) and (max-device-width: 571px) and (orientation: portrait) {
-/*
+    /*
     body:before{
         background-size: cover;
     }
 */
 }
 
-/* Landscape */
-@media only screen and (min-device-width: 317px) and (max-device-width: 571px)and (orientation: landscape) {
-              body:before {
 
-    overflow: hidden;
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -63%;
-    left: -44%;
-    z-index: -1;
-    background: url(rotated_unnamed.png);
-    background-size: contain;
+/* Landscape */
+
+@media only screen and (min-device-width: 317px) and (max-device-width: 571px)and (orientation: landscape) {
+    body:before {
+        overflow: hidden;
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -63%;
+        left: -44%;
+        z-index: -1;
+        background: url(rotated_unnamed.png);
+        background-size: contain;
         -webkit-transform: rotate(-90deg);
         -moz-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
@@ -391,9 +525,6 @@ overflow: hidden;
     }
 }
 
-
-
-
 li {
     margin: 10px;
     opacity: 0;
@@ -402,21 +533,27 @@ li {
     -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s;
 }
+
 li.x:before {
     content: "x: ";
 }
+
 li.y:before {
     content: "y: ";
 }
+
 li:after {
     content: "%";
 }
+
 a li.active {
     opacity: 1;
 }
+
 li.x {
     color: rgba(0, 186, 255, 0.7);
 }
+
 li.y {
     color: rgba(255, 0, 102, 0.7);
 }
