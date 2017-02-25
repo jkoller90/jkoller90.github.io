@@ -1,8 +1,13 @@
+#drawing{
+	z-index:0;
+}
+
 html{
 	width: 100%;
 	height: auto;
-    overflow:hidden;
+  overflow:hidden;
 }
+
 body {
 	background-image: url("rotated_unnamed.png");
 	overflow: hidden;
@@ -17,6 +22,7 @@ body {
 	margin: 0px !important;
 	padding-right: 0;
 	display: inline !important;
+	overflow:hidden;
 }
 .scoreboard{
     margin: 8% 5% 5% 5%;
@@ -35,6 +41,65 @@ body {
 
 #time{
     transform:rotate(90deg) !important;
+}
+
+@media screen and (orientation: landscape) {
+	body:before {
+		overflow:hidden;
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  background: url("rotated_unnamed.png") 0 0 repeat;
+/*		background-size:contain;*/
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+	}
+	
+body {
+	background-image: url("rotated_unnamed.png");
+	overflow: hidden;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	color: #666;
+	width: 100%;
+/*	max-width: 270px;*/
+	height: auto;
+	background-repeat: no-repeat;
+	background-size:initial;
+	margin: 0px !important;
+	padding-right: 0;
+	display: inline !important;
+	    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+}
+.scoreboard{
+    margin:44% 5% 5% 5%;
+    z-index: -1;
+    background-color:white;
+    width:16%;
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);	
+
+}
+#hits{
+    left: 17% !important;
+    transform:rotate(0deg);
+/*    top: 0% !important;*/
+}
+
+#time{
+    transform:rotate(0deg) !important;
+}	
+	
 }
 
 p {
