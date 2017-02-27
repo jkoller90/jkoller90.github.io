@@ -1,26 +1,42 @@
-<html>
-
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="grey.css">
+</head>
 <body>
-
-    <head>
-        <link rel="stylesheet" href="untitled.css"> </head>
-    <div class="wrap">
-        <div class="circle"> <span class="text">hover on me</span> </div>
-        <div id="t1"></div>
-        <div id="t2"></div>
-
-    </div>
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-    <script>
-        $(".circle").click(function () {
-            //"placement"
-            $(".circle").css("animation", "border .2s ease 1 forwards");
-            setTimeout(function () {
-                //delete circle
-            }, 1000);
-        });
-        $("body").click(function () {});
-    </script>
+	<span id="time" style="background-color:white;width:120px;">Timer: </span><br>
+	<span id="hits" style="background-color:white;width:120px;">Hits: 0 </span>
+<ul>
+  <li class="x">0</li>
+  <li> 111 and 112 </li>
+</ul>
+<div>
+<canvas id="canvas" width="400" height="400"></canvas>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>	
+<script src="grey.js"></script>	
 </body>
 
-</html>
+
+
+<!--
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="grey.css">
+</head>
+<body>
+  <div class="scoreboard">
+	<span id="time" style="background-color:white;">Timer: </span><br>
+	<span id="hits" style="background-color:white;width:120px;">Hits: 0 </span>
+    </div>
+	<ul>
+  <li class="x">0</li>
+  <li> 111 and 112 </li>
+</ul>
+<div>
+<canvas id="canvas" width="400" height="400"></canvas>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>	
+<script src="grey.js"></script>	
+</body>
+
+-->
