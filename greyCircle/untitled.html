@@ -1,0 +1,26 @@
+<html>
+
+<body>
+
+    <head>
+        <link rel="stylesheet" href="untitled.css"> </head>
+    <div class="wrap">
+        <div class="circle"> <span class="text">hover on me</span> </div>
+        <div id="t1"></div>
+        <div id="t2"></div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        $(".circle").click(function () {
+            //"placement"
+            $(".circle").css("animation", "border .2s ease 1 forwards");
+            setTimeout(function () {
+                //delete circle
+            }, 1000);
+        });
+        $("body").click(function () {});
+    </script>
+</body>
+
+</html>

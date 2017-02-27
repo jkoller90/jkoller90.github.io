@@ -125,7 +125,6 @@ circleUI.prototype.draw = function () {
 circleUI.prototype.showControl = function (e) {
     this.x = e.clientX;
     x_x = this.x / $("body").width();
-    console.log(x_x);
     this.y = e.pageY;
     $("#drawing").addClass('active').css({
         top: this.y
