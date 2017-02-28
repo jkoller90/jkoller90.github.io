@@ -3,23 +3,58 @@
 <head>
     <link rel="stylesheet" href="grey.css"> </head>
 
-<body>
-    <div id="t1"></div>
-    <div id="t2"></div>
-    <div id="t3"></div>
-    <div id="t4"></div>
-    <!--        <div class="circle"> <span class="text">hover on me</span> </div>-->
-    <!--        <div id="t2"></div>-->
+<body> <img src="unnamed.png" usemap="#map">
+    <map name="map">
+        <area id="area1" shape="rect" href="#" alt="Lien 1" title="Lien 1" />
+        <area id="area2" shape="rect" coords="297,1,635,249" href="#" alt="lien 2" title="lien 2" />
+
+        <area id="area3" shape="rect" coords="0,247,338,475" href="#" alt="lien 3" title="lien 3" />
+        <area id="area4" shape="rect" coords="336,245,635,475" href="#" alt="lien 4" title="lien 4" />
+
+    </map>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script>
-        $(".circle").click(function () {
-            //"placement"
-            $(".circle").css("animation", "border .2s ease 1 forwards");
-            setTimeout(function () {
-                //delete circle
-            }, 1000);
+        //16:9... 4:3 12/9
+        console.log($("body").width());
+        $(window).on("load", function () {
+            //resize body to image dimensions
+                      
+          
+          //hotspot dimensions
+            $("area").css("width",$("img").width()/16 + "px");
+            $("area").css("height",$("img").height()/9+"px");
+        //hotspot placement
+            //top left
+            $("#area1").css("left", $("img").width()/8 + "px");
+            $("#area1").css("top", $("img").height()/6 + "px");;
+            //bottom left 
+            $("#area2").css("left", $("img").width()/8 + "px");
+            $("#area2").css("top", $("img").height() * .7+ "px");
+            //top right
+            $("#area3").css("left", $("img").width() * .75+ "px");
+            $("#area3").css("top", $("img").height()/6+ "px")   
+            //bottom right
+            $("#area4").css("left", $("img").width() * .75+ "px");
+            $("#area4").css("top", $("img").height() * .7+ "px");
         });
-        $("body").click(function () {});
+        $(window).resize(function () {
+          //hotspot dimensions
+            $("area").css("width",$("img").width()/16 + "px");
+            $("area").css("height",$("img").height()/9+"px");
+        //hotspot placement
+            //top left
+            $("#area1").css("left", $("img").width()/8 + "px");
+            $("#area1").css("top", $("img").height()/6 + "px");;
+            //bottom left 
+            $("#area2").css("left", $("img").width()/8 + "px");
+            $("#area2").css("top", $("img").height() * .7+ "px");
+            //top right
+            $("#area3").css("left", $("img").width() * .75+ "px");
+            $("#area3").css("top", $("img").height()/6+ "px")   
+            //bottom right
+            $("#area4").css("left", $("img").width() * .75+ "px");
+            $("#area4").css("top", $("img").height() * .7+ "px");
+        });
     </script>
 </body>
 
