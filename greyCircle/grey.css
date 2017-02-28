@@ -1,45 +1,3 @@
-/*
-@media all and (max-width:700px) {
-    div.image_map {
-        width: 480px;
-        height: 360px;
-        overflow: hidden;
-        position: relative;
-        transition: 0.5s;
-    }
-    html {
-        transition: 0.5s;
-        font-size: 20px;
-    }
-    .image_map img,
-    map {
-        position: absolute;
-        transform: scale(0.75);
-        transform-origin: 0 0
-    }
-}
-
-@media all and (max-width:500px) {
-    div.image_map {
-        border: solid blue;
-        width: 320px;
-        height: 240px;
-        overflow: hidden;
-        position: relative;
-        transition: 0.5s;
-    }
-    html {
-        transition: 0.5s;
-        font-size: 15px;
-    }
-    .image_map img,
-    map {
-        position: absolute;
-        transform: scale(0.5);
-        transform-origin: 0 0
-    }
-}*/
-
 html {
 /*    width: 100%;*/
 }
@@ -75,77 +33,19 @@ area:before {
     text-shadow: 0 0 1px #333;
 }
 
-area[title="Lien 1"] {
-    top: 0;
-    background: rgba(0, 0, 0, 0.5);
-    line-height: 248px;
-}
-
-area[title="lien 2"] {
-    top: 600px;
-/*    left: 75px;*/
-    background: rgba(0, 0, 0, 0.5);
-    line-height: 248px;
-}
-
-
-area[title="lien 3"] {
-    top: 0;
-    left: 150px;
-    background: rgba(0, 0, 0, 0.5);
-    line-height: 232px;
-}
-
-area[title="lien 4"] {
-    top: 0;
-    left: 225px;
-    background: rgba(0, 0, 0, 0.5);
-    line-height: 232px;
-}
-
 area{
+/*
     margin-top: 8px;
     margin-left: 8px;
+*/
     width: 75px;
-    height: 62px;  
-}
-
-area:hover {
-    background: none;
-}
-
-.circle .text {
-    position: absolute;
-    top: 38px;
-    left: 30px;
-    width: 60px;
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    font: 18px sans-serif;
-    transition: opacity .2s ease;
+    height: 62px;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.5);
+/*    line-height: 232px;*/
 }
 
 
-
-
-@keyframes border {
-    0% {
-        box-shadow: 60px -60px 0 2px #E94E3D, -60px -60px 0 2px #E94E3D, -60px 60px 0 2px #E94E3D, 60px 60px 0 2px #E94E3D, 0 0 0 2px #E94E3D;
-    }
-    25% {
-        box-shadow: 0 -125px 0 2px #E94E3D, -60px -60px 0 2px #E94E3D, -60px 60px 0 2px #E94E3D, 60px 60px 0 2px #E94E3D, 0 0 0 2px #fff;
-    }
-    50% {
-        box-shadow: 0 -125px 0 2px #E94E3D, -125px 0px 0 2px #E94E3D, -60px 60px 0 2px #E94E3D, 60px 60px 0 2px #E94E3D, 0 0 0 2px #fff;
-    }
-    75% {
-        box-shadow: 0 -125px 0 2px #E94E3D, -125px 0px 0 2px #E94E3D, 0px 125px 0 2px #E94E3D, 60px 60px 0 2px #E94E3D, 0 0 0 2px #fff;
-    }
-    100% {
-        box-shadow: 0 -125px 0 2px #E94E3D, -125px 0px 0 2px #E94E3D, 0px 125px 0 2px #E94E3D, 120px 40px 0 2px #E94E3D, 0 0 0 2px #fff;
-    }
-}
 .circle {
     position: relative;
     overflow: hidden;
@@ -157,16 +57,35 @@ area:hover {
   display:inline;
 }
 
-/*
-.circle:active {
-  animation: border .2s ease 1 forwards;
-  cursor: none;
-}
-*/
 
 
-/*
-.circle:hover .text {
-  opacity: 0;
+@keyframes unborder {
+  0% {
+    box-shadow: 33px 33px 33px 2px white, 33px 33px 33px 2px white, 33px 33px 33px 2px white, 33px 33px 33px 2px white, 0 0 0 2px white;
+    transform: scale(1.0);
+    -webkit-transform: scale(.5);
+  }
+  50% {
+    box-shadow: 33px 33px 33px 2px white, 33px 33px 33px 2px white, 33px 33px 33px 2px white, 33px 33px 33px 2px white, 0 0 0 2px white;      
+    transform: scale(1.25);
+    -webkit-transform: scale(1.25);
+    }
+  100% {
+    box-shadow: 33px 33px 33px 2px white, 33px 33px 33px 2px white, 33px 33px 33px 2px white, 33px 33px 33px 2px white, 0 0 0 2px rgba(233,78,61,0);     
+          transform: scale(1.0);
+    -webkit-transform: scale(.5);
+  }
 }
-*/
+
+@keyframes border {
+  0% {
+    box-shadow: 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 0 0 0 2px #E94E3D;
+    transform: scale(.5);
+    -webkit-transform: scale(.5);
+  }
+  100% {
+    box-shadow: 33px 33px 33px 0px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 0 0 0 2px #E94E3D;      
+    transform: scale(1.25);
+    -webkit-transform: scale(1.25);
+    }
+}

@@ -1,3 +1,4 @@
+<!--
 <head>
     <link rel="stylesheet" href="new.css"> </head>
 
@@ -12,4 +13,65 @@
         </map>
     </div>
 
+</body>-->
+
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="grey.css"> </head>
+
+<body> <img src="unnamed.png" usemap="#map">
+    <map name="map">
+        <!--
+        <area id="area1" shape="rect" href="#" alt="Lien 1" title="Lien 1" />      
+        <area id="area2" shape="circle" coords="297,1,635,249" href="#" alt="lien 2" title="lien 2" />
+
+        <area id="area3" shape="rect" coords="0,247,338,475" href="#" alt="lien 3" title="lien 3" />
+        <area id="area4" shape="rect" coords="336,245,635,475" href="#" alt="lien 4" title="lien 4" />
+-->
+    </map>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        function createHotspots(tupleArr) {
+            for (var i = 0; i < tupleArr.length; i++) {
+                $("map").append('<area id="hotspot' + i + '" shape="rect" href="#" />');
+                $("#hotspot" + i).css("left", $("img").width() * tupleArr[i][0] + "px");
+                $("#hotspot" + i).css("top", $("img").height() * tupleArr[i][1] + "px");
+            };
+        }
+        $(window).on("load", function () {
+            //hotspot dimensions
+            createHotspots([[1 / 8, 1 / 6], [1 / 8, .7], [.75, 1 / 6], [.75, .7]]);
+            $("area").css("width", $("img").width() / 16 + "px");
+            $("area").css("height", $("img").height() / 9 + "px");
+
+        });
+        $(window).resize(function () {
+            //hotspot dimensions
+            $("area").css("width", $("img").width() / 16 + "px");
+            $("area").css("height", $("img").height() / 9 + "px");
+            //hotspot placement
+            //top left
+            $("#area1").css("left", $("img").width() / 8 + "px");
+            $("#area1").css("top", $("img").height() / 6 + "px");;
+            //bottom left        
+            $("#area2").css("left", $("img").width() / 8 + "px");
+            $("#area2").css("top", $("img").height() * .7 + "px");
+            //top right
+            $("#area3").css("left", $("img").width() * .75 + "px");
+            $("#area3").css("top", $("img").height() / 6 + "px")
+                //bottom right
+            $("#area4").css("left", $("img").width() * .75 + "px");
+            $("#area4").css("top", $("img").height() * .7 + "px");
+        });
+        $("area").click(function () {
+            $(this).css("animation", "border .1s ease 1 forwards");
+        });
+        $("body").click(function (e) {
+            $(e).css("animation", "unborder .1s ease 1 forwards")
+        })
+    </script>
 </body>
+
+</html>
