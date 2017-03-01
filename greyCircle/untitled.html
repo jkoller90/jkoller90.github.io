@@ -1,16 +1,88 @@
+<html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="untitled.css"> </head>
 
-<body>
-    <div class="wrap">
-        <div class="circle"> </div>
+<body id="wrapper">
+    <img src="unnamed.png" usemap="#map">
+        <div class="scoreboard">
+            <p id="time">Time: </p> <br>
+            <p id="hits">Hits: </p> 
     </div>
+<!--    <div class="hit"></div>-->
+    <div class="miss"></div>
+
+    <!--    <div id="pos2"></div>-->
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script>
-        $(".circle").click(function () {
-            $(this).css("animation", "unborder .4s ease 1 forwards");
-        });
+         //tuples carrying fractiosn to be multiplied to image width to obtain dynamic widths and heights 
+        var tupleArr = [[1 / 8, 1 / 6], [1 / 8, .7], [.75, 1 / 6], [.75, .7]];
+        //coordinates and dimensions of hotspots in next three variables:        
+        //collects hotspot pixel ranges of hotspots to be used to limit miss-hit rendering
+        var hotSpot = [];
+        var areaWidth = $("#wrapper").width() / 16 - 10;
+        var areaHeight = $("#wrapper").height() / 9 - 10;       
+  function createHotspots(tupleArr) {
+            for (var i = 0; i < tupleArr.length; i++) {
+                var hotSpotTuple = []; //contains measurements to be used to add divs to page
+                $("body").prepend('<div class="hit" id="hit' + i + '"/>');
+                var hotSpotWidth = $("img").width() * tupleArr[i][0];
+                hotSpotTuple.push(hotSpotWidth);
+                var hotSpotHeight = $("img").height() * tupleArr[i][1];
+                hotSpotTuple.push(hotSpotHeight);
+                hotSpot.push(hotSpotTuple);
+                $("#hit" + i).css("left", hotSpotWidth + "px");
+                $("#hit" + i).css("top", hotSpotHeight + "px");
+            };
+        }
 
+        function updateHotSpots(tupleArr) {
+            for (var i = 0; i < tupleArr.length++; i++) {
+                $("#hit" + i).css("left", $("img").width() * tupleArr[i][0] + "px");
+                $("#hit" + i).css("top", $("img").height() * tupleArr[i][1] + "px");
+            }
+        }       
+ 
+var score = 0;
+        
+        $(".hit").click(function () {
+             $(this).data('clicked', true);
+            $(this).css("animation", "border .5s ease 1 forwards");
+           alert('woah');
+       });
+        
+$("#wrapper").click(function (e) {
+            if (e.clientX && e.clientY) { 
+                $(".miss").css("width", areaWidth - 11 + "px");
+                $(".miss").css("height", areaHeight - 11 + "px");
+                //left
+                $(".miss").css("left", e.clientX - ($(".miss").width()) / 2 + "px");
+                //top
+                $(".miss").css("top", e.clientY - ($(".miss").height()) / 2 + "px");
+                //animation
+                $(".miss").css("animation", "unborder .5s ease 1 forwards");
+                setTimeout(function () {
+                    $(".miss").css("animation", "");
+                }, 350)
+            }
+        });        
+        $(window).on("load", function () {
+            //hotspot dimensions
+            createHotspots(tupleArr);
+            $(".hit").css("width", areaWidth + "px");
+            $(".hit").css("height", areaHeight + "px");
+            $(".hit").click(function () {
+                $(this).css("animation", "border .1s ease 1 forwards");
+            });
+        });
+        $(window).resize(function () {
+            $("area").css("width", areaWidth + "px");
+            $("area").css("height", areaHeight + "px");
+            updateHotSpots(tupleArr);
+            $("area").click(function () {
+                $(this).css("animation", "border .1s ease 1 forwards");
+            });
+        });
     </script>
 </body>

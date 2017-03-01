@@ -10,13 +10,12 @@
     <script>
         //tuples carrying fractiosn to be multiplied to image width to obtain dynamic widths and heights 
         var tupleArr = [[1 / 8, 1 / 6], [1 / 8, .7], [.75, 1 / 6], [.75, .7]];
-        
         //coordinates and dimensions of hotspots in next three variables:        
         //collects hotspot pixel ranges of hotspots to be used to limit miss-hit rendering
         var hotSpot = [];
-        var areaWidth = $("img").width() / 16 - 10 ;
-        var areaHeight = $("img").height() / 9 - 10 ;
-        
+        var areaWidth = $("img").width() / 16 - 10;
+        var areaHeight = $("img").height() / 9 - 10;
+
         function createHotspots(tupleArr) {
             for (var i = 0; i < tupleArr.length; i++) {
                 var hotSpotTuple = [];
@@ -29,10 +28,9 @@
                 hotSpotTuple.push(hotSpotHeight);
                 hotSpot.push(hotSpotTuple);
                 $("#hotspot" + i).css("left", hotSpotWidth + "px");
-                $("#hotspot" + i).css("top", hotSpotHeight + "px" );
+                $("#hotspot" + i).css("top", hotSpotHeight + "px");
             };
         }
-
 
         function updateHotSpots(tupleArr) {
             for (var i = 0; i < tupleArr.length++; i++) {
@@ -43,8 +41,8 @@
         $("area, img").click(function (e) {
             if (e.clientX && e.clientY) { //window registers clientX and Y vals if not clicking hotspots
                 console.log(e.clientX);
-                $("#offHit").css("width", areaWidth -11+ "px");
-                $("#offHit").css("height", areaHeight-11 + "px");
+                $("#offHit").css("width", areaWidth - 11 + "px");
+                $("#offHit").css("height", areaHeight - 11 + "px");
                 //left
                 $("#offHit").css("left", e.clientX - ($("#offHit").width()) / 2 + "px");
                 //top
@@ -73,8 +71,6 @@
                 $(this).css("animation", "border .1s ease 1 forwards");
             });
         });
-                
-
     </script>
 </body>
 
