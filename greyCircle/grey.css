@@ -1,13 +1,6 @@
-html {
-/*    width: 100%;*/
-}
 
 img{
     width: 100%;
-}
-
-
-img {
     vertical-align: top;
 }
 
@@ -30,48 +23,36 @@ map {
 area:before {
 /*    content: attr(title);*/
     color: white;
-    text-shadow: 0 0 1px #333;
+/*    text-shadow: 0 0 1px #333;*/
 }
 
 area{
-/*
-    margin-top: 8px;
-    margin-left: 8px;
-*/
-    width: 75px;
-    height: 62px;
+    cursor:default !important;
     border-radius: 100%;
     background: rgba(0, 0, 0, 0.5);
-/*    line-height: 232px;*/
 }
 
-
-.circle {
-    position: relative;
-    overflow: hidden;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: #E94E3D;
-    box-shadow: 60px -60px 0 2px #E94E3D, -60px -60px 0 2px #E94E3D, -60px 60px 0 2px #E94E3D, 60px 60px 0 2px #E94E3D, 0 0 0 2px #E94E3D;
-  display:inline;
+#offHit{
+    background: rgba(0,0,0,0);
 }
-
 
 
 @keyframes unborder {
   0% {
-    box-shadow: 33px 33px 33px 2px white, 33px 33px 33px 2px white, 33px 33px 33px 2px white, 33px 33px 33px 2px white, 0 0 0 2px white;
+    box-shadow: 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 0 0 0 2px white;
+    transform: scale(.5);
     transform: scale(1.0);
     -webkit-transform: scale(.5);
   }
   50% {
-    box-shadow: 33px 33px 33px 2px white, 33px 33px 33px 2px white, 33px 33px 33px 2px white, 33px 33px 33px 2px white, 0 0 0 2px white;      
+    box-shadow: 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 0 0 0 2px white;
+    transform: scale(.5);     
     transform: scale(1.25);
     -webkit-transform: scale(1.25);
     }
   100% {
-    box-shadow: 33px 33px 33px 2px white, 33px 33px 33px 2px white, 33px 33px 33px 2px white, 33px 33px 33px 2px white, 0 0 0 2px rgba(233,78,61,0);     
+    box-shadow: 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 33px 33px 33px 2px rgba(233,78,61,0), 0 0 0 2px white;
+    transform: scale(.5);    
           transform: scale(1.0);
     -webkit-transform: scale(.5);
   }
