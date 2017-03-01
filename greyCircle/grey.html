@@ -14,8 +14,8 @@
         //coordinates and dimensions of hotspots in next three variables:        
         //collects hotspot pixel ranges of hotspots to be used to limit miss-hit rendering
         var hotSpot = [];
-        var areaWidth = $("img").width() / 16;
-        var areaHeight = $("img").height() / 9;
+        var areaWidth = $("img").width() / 16 - 10 ;
+        var areaHeight = $("img").height() / 9 - 10 ;
         
         function createHotspots(tupleArr) {
             for (var i = 0; i < tupleArr.length; i++) {
@@ -40,11 +40,11 @@
                 $("#hotspot" + i).css("top", $("img").height() * tupleArr[i][1] + "px");
             }
         }
-        $("window, area, img").click(function (e) {
+        $("area, img").click(function (e) {
             if (e.clientX && e.clientY) { //window registers clientX and Y vals if not clicking hotspots
                 console.log(e.clientX);
-                $("#offHit").css("width", areaWidth + "px");
-                $("#offHit").css("height", areaHeight + "px");
+                $("#offHit").css("width", areaWidth -11+ "px");
+                $("#offHit").css("height", areaHeight-11 + "px");
                 //left
                 $("#offHit").css("left", e.clientX - ($("#offHit").width()) / 2 + "px");
                 //top
