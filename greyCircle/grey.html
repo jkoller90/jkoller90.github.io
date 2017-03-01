@@ -33,7 +33,15 @@
             };
         }
 
-
+        $(window).on("load", function () {
+            //hotspot dimensions
+            createHotspots(tupleArr);
+            $("area").css("width", areaWidth + "px");
+            $("area").css("height", areaHeight + "px");
+            $("area").click(function () {
+                $(this).css("animation", "border .1s ease 1 forwards");
+            });
+        });
         function updateHotSpots(tupleArr) {
             for (var i = 0; i < tupleArr.length++; i++) {
                 $("#hotspot" + i).css("left", $("img").width() * tupleArr[i][0] + "px");
@@ -56,15 +64,7 @@
                 }, 350)
             }
         });
-        $(window).on("load", function () {
-            //hotspot dimensions
-            createHotspots(tupleArr);
-            $("area").css("width", areaWidth + "px");
-            $("area").css("height", areaHeight + "px");
-            $("area").click(function () {
-                $(this).css("animation", "border .1s ease 1 forwards");
-            });
-        });
+
         $(window).resize(function () {
             $("area").css("width", areaWidth + "px");
             $("area").css("height", areaHeight + "px");
