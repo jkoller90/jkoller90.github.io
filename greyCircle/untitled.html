@@ -2,15 +2,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="untitled.css"> </head>
-
-<body id="wrapper"> <img src="unnamed.png" usemap="#map">
-    <div class="scoreboard">
-        <p id="time">Time:60</p>
-        <br>
-        <p id="hits">Hits:0</p>
-    </div>
-    <div class="miss"></div>
+    <link rel="stylesheet" href="untitled.css"> 
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script>
         //tuples carrying fractiosn to be multiplied to image width to obtain dynamic widths and heights 
@@ -20,8 +12,8 @@
         //coordinates and dimensions of hotspots in next three variables:        
         //collects hotspot pixel ranges of hotspots to be used to limit miss-hit rendering
         var hotSpot = [];
-        var areaWidth = $("#wrapper").width() / 16 - 10;
-        var areaHeight = $("#wrapper").height() / 9 - 10;
+        var areaWidth = $(window).width() / 16 - 35;
+        var areaHeight = $(window).height() / 9 - 35;
         var time = 60;
         if (time > 0) {
             setInterval(function () {
@@ -105,13 +97,23 @@
             //            console.log(ranges + " ranges for reference");
         });
         $(window).resize(function () {
-            $("area").css("width", areaWidth + "px");
-            $("area").css("height", areaHeight + "px");
+            $(".miss").css("width", areaWidth + "px");
+            $(".miss").css("height", areaHeight + "px");
             updateHotSpots(tupleArr);
-            $("area").click(function () {
+            $(".miss").click(function () {
                 $(this).css("animation", "border .1s ease 1 forwards");
             });
             ranges = getHitRanges();
         });
-    </script>
+    </script>    
+    </head>
+
+<body id="wrapper"> <img src="unnamed.png" usemap="#map">
+    <div class="scoreboard">
+        <p id="time">Time:60</p>
+        <br>
+        <p id="hits">Hits:0</p>
+    </div>
+    <div class="miss"></div>
+
 </body>
