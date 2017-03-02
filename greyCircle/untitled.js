@@ -30,7 +30,7 @@ function createHotspots(tupleArr) {
 }
 
 function updateHotSpots(tupleArr) {
-    for (var i = 0; i < tupleArr.length++; i++) {
+    for (var i = 0; i < tupleArr.length; i++) {
         $("#hit" + i).css("left", $("img").width() * tupleArr[i][0] + "px");
         $("#hit" + i).css("top", $("img").height() * tupleArr[i][1] + "px");
     }
@@ -77,9 +77,9 @@ $("#wrapper").click(function (e) {
 var ranges;
 $(window).on("load", function () {
     //hotspot dimensions
-    createHotspots(tupleArr);
     $(".hit").css("width", areaWidth + "px");
     $(".hit").css("height", areaHeight + "px");
+    createHotspots(tupleArr);
     $(".hit").click(function () {
         $(this).css("animation", "border .1s ease 1 forwards");
     });
