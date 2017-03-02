@@ -15,6 +15,10 @@
             }, 1000);
         }
 
+$(window).on("orientationchange",function(){
+ $(window).reload();
+});
+
         function createHotspots(tupleArr) {
             for (var i = 0; i < tupleArr.length; i++) {
                 var hotSpotTuple = []; //contains measurements to be used to add divs to page
