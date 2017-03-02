@@ -47,6 +47,8 @@ div {
 
 .hit {
     background-color: rgba(244, 0, 0, 0.4);
+    width: 5% !important;
+    height: 9% !important;
 }
 
 @media screen and (min-width: 768px) {
