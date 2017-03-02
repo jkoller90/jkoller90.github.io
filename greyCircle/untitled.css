@@ -13,33 +13,44 @@ img {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-
-.scoreboard{
+.scoreboard {
     top: 5%;
     left: 5%;
     font-family: monospace;
     font-size: 18;
-    background-color: rgba(100,14,4,0.5);
+    background-color: rgba(100, 14, 4, 0.5);
 }
 
 div,
-body, p {
+body,
+p {
     /*    position:absolute;*/
     display: inline !important;
+}
+
+p {
+    padding: 8%;
+    color: snow;
 }
 
 div {
     position: absolute;
     border-width: 1px;
     border-color: aqua;
+    z-index: 1;
 }
 
-.hit, .miss{
+.hit,
+.miss {
     border-radius: 50%;
 }
 
+.hit {
+    background-color: rgba(244, 0, 0, 0.4);
+}
+
 @media screen and (min-width: 768px) {
-    body{
+    body {
         border: 4%;
         border-width: 1%;
         border-color: black;

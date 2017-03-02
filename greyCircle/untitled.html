@@ -4,36 +4,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="untitled.css"> </head>
 
-<body id="wrapper">
-    <img src="unnamed.png" usemap="#map">
-        <div class="scoreboard">
-            <p id="time">Time: </p> <br>
-            <p id="hits">Hits: </p> 
+<body id="wrapper"> <img src="unnamed.png" usemap="#map">
+    <div class="scoreboard">
+        <p id="time">Time:60</p>
+        <br>
+        <p id="hits">Hits:0</p>
     </div>
-<!--    <div class="hit"></div>-->
     <div class="miss"></div>
-
-    <!--    <div id="pos2"></div>-->
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script>
-         //tuples carrying fractiosn to be multiplied to image width to obtain dynamic widths and heights 
-        var tupleArr = [[1 / 8, 1 / 6], [1 / 8, .7], [.75, 1 / 6], [.75, .7]];
+        //tuples carrying fractiosn to be multiplied to image width to obtain dynamic widths and heights 
+        var tupleArr = [[1 / 8, 1 / 6], [1 / 8, .7]];
+        //        [.75, 1 / 6], [.75, .7]];
+        var hit_score = 0;
         //coordinates and dimensions of hotspots in next three variables:        
         //collects hotspot pixel ranges of hotspots to be used to limit miss-hit rendering
         var hotSpot = [];
         var areaWidth = $("#wrapper").width() / 16 - 10;
-        var areaHeight = $("#wrapper").height() / 9 - 10;       
-  function createHotspots(tupleArr) {
+        var areaHeight = $("#wrapper").height() / 9 - 10;
+        var time = 60;
+        if (time > 0) {
+            setInterval(function () {
+                --time;
+                $("#time").text("Time:" + time)
+            }, 1000);
+        }
+
+        function createHotspots(tupleArr) {
             for (var i = 0; i < tupleArr.length; i++) {
                 var hotSpotTuple = []; //contains measurements to be used to add divs to page
                 $("body").prepend('<div class="hit" id="hit' + i + '"/>');
-                var hotSpotWidth = $("img").width() * tupleArr[i][0];
-                hotSpotTuple.push(hotSpotWidth);
-                var hotSpotHeight = $("img").height() * tupleArr[i][1];
-                hotSpotTuple.push(hotSpotHeight);
+                var hit_x = $("img").width() * tupleArr[i][0];
+                hotSpotTuple.push(hit_x);
+                var hit_y = $("img").height() * tupleArr[i][1];
+                hotSpotTuple.push(hit_y);
                 hotSpot.push(hotSpotTuple);
-                $("#hit" + i).css("left", hotSpotWidth + "px");
-                $("#hit" + i).css("top", hotSpotHeight + "px");
+                $("#hit" + i).css("left", hit_x + "px");
+                $("#hit" + i).css("top", hit_y + "px");
             };
         }
 
@@ -42,18 +49,25 @@
                 $("#hit" + i).css("left", $("img").width() * tupleArr[i][0] + "px");
                 $("#hit" + i).css("top", $("img").height() * tupleArr[i][1] + "px");
             }
-        }       
- 
-var score = 0;
-        
-        $(".hit").click(function () {
-             $(this).data('clicked', true);
-            $(this).css("animation", "border .5s ease 1 forwards");
-           alert('woah');
-       });
-        
-$("#wrapper").click(function (e) {
-            if (e.clientX && e.clientY) { 
+        }
+
+        function getHitRanges() {
+            var ranges = [];
+            for (var i = 0; i < tupleArr.length; i++) {
+                var hit_x = $("img").width() * tupleArr[i][0];
+                var hit_y = $("img").height() * tupleArr[i][1];
+                var rangeObj = {
+                    horizontalRange: [hit_x, hit_x + areaWidth]
+                    , verticalRange: [hit_y, hit_y + areaHeight]
+                };
+                ranges.push(rangeObj);
+            }
+            return ranges;
+        }
+        var clickedHitDivs = [];
+        $("#wrapper").click(function (e) {
+            var target = $(e.target);
+            if (!target.is("div")) {
                 $(".miss").css("width", areaWidth - 11 + "px");
                 $(".miss").css("height", areaHeight - 11 + "px");
                 //left
@@ -66,7 +80,16 @@ $("#wrapper").click(function (e) {
                     $(".miss").css("animation", "");
                 }, 350)
             }
-        });        
+            else {
+                if (clickedHitDivs.indexOf(target.attr("id")) === -1) {
+                    console.log(clickedHitDivs.indexOf(target.attr("id")));
+                    clickedHitDivs.push(target.attr("id"));
+                    ++hit_score;
+                    $("#hits").text("Hits:" + hit_score);
+                }
+            }
+        });
+        var ranges;
         $(window).on("load", function () {
             //hotspot dimensions
             createHotspots(tupleArr);
@@ -75,6 +98,8 @@ $("#wrapper").click(function (e) {
             $(".hit").click(function () {
                 $(this).css("animation", "border .1s ease 1 forwards");
             });
+            ranges = getHitRanges();
+            //            console.log(ranges + " ranges for reference");
         });
         $(window).resize(function () {
             $("area").css("width", areaWidth + "px");
@@ -83,6 +108,7 @@ $("#wrapper").click(function (e) {
             $("area").click(function () {
                 $(this).css("animation", "border .1s ease 1 forwards");
             });
+            ranges = getHitRanges();
         });
     </script>
 </body>
