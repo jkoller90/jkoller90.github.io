@@ -2,16 +2,8 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="untitled.css"> </head>
-
-<body id="wrapper"> <img src="unnamed.png" usemap="#map">
-    <div class="scoreboard">
-        <p id="time">Time:60</p>
-        <br>
-        <p id="hits">Hits:0</p>
-    </div>
-    <div class="miss"></div>
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <link rel="stylesheet" href="untitled.css">
+   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script>
         //tuples carrying fractiosn to be multiplied to image width to obtain dynamic widths and heights 
         var tupleArr = [[1 / 8, 1 / 6], [1 / 8, .7]];
@@ -48,7 +40,7 @@
         }
 
         function updateHotSpots(tupleArr) {
-            for (var i = 0; i < tupleArr.length; i++) {
+            for (var i = 0; i < tupleArr.lengt++; i++) {
                 $("#hit" + i).css("left", $("img").width() * tupleArr[i][0] + "px");
                 $("#hit" + i).css("top", $("img").height() * tupleArr[i][1] + "px");
             }
@@ -113,5 +105,15 @@
             });
             ranges = getHitRanges();
         });
-    </script>
+    </script>    
+    </head>
+
+<body id="wrapper"> <img src="unnamed.png" usemap="#map">
+    <div class="scoreboard">
+        <p id="time">Time:60</p>
+        <br>
+        <p id="hits">Hits:0</p>
+    </div>
+    <div class="miss"></div>
+ 
 </body>
