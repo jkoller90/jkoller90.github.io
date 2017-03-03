@@ -104,11 +104,13 @@
             ranges = getHitRanges();
             //            console.log(ranges + " ranges for reference");
         });
+			
+			//formally .miss 
         $(window).resize(function () {
-            $(".miss").css("width", areaWidth + "px");
-            $(".miss").css("height", areaHeight + "px");
             updateHotSpots(tupleArr);
-            $(".miss").click(function () {
+            $(".hit").css("width", areaWidth + "px");
+            $(".hit").css("height", areaHeight + "px");
+            $(".hit").click(function () {
                 $(this).css("animation", "border .1s ease 1 forwards");
             });
             ranges = getHitRanges();
