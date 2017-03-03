@@ -20,8 +20,8 @@
         //coordinates and dimensions of hotspots in next three variables:        
         //collects hotspot pixel ranges of hotspots to be used to limit miss-hit rendering
         var hotSpot = [];
-        var areaWidth = $("img").width() / 16 ;
-        var areaHeight = $("img").height() / 9;
+        var imgWidth = $("img").width() / 16 ;
+        var imgHeight = $("img").height() / 9;
         var time = 60;
         if (time > 0) {
             setInterval(function () {
@@ -60,8 +60,8 @@
                 var hit_x = $("img").width() * tupleArr[i][0];
                 var hit_y = $("img").height() * tupleArr[i][1];
                 var rangeObj = {
-                    horizontalRange: [hit_x, hit_x + areaWidth]
-                    , verticalRange: [hit_y, hit_y + areaHeight]
+                    horizontalRange: [hit_x, hit_x + imgWidth]
+                    , verticalRange: [hit_y, hit_y + imgHeight]
                 };
                 ranges.push(rangeObj);
             }
@@ -71,8 +71,8 @@
         $("#wrapper").click(function (e) {
             var target = $(e.target);
             if (!target.is("div")) {
-                $(".miss").css("width", areaWidth - 11 + "px");
-                $(".miss").css("height", areaHeight - 11 + "px");
+                $(".miss").css("width", imgWidth - 11 + "px");
+                $(".miss").css("height", imgHeight - 11 + "px");
                 //left
                 $(".miss").css("left", e.clientX - ($(".miss").width()) / 2 + "px");
                 //top
@@ -96,8 +96,8 @@
         $(window).on("load", function () {
             //hotspot dimensions
             createHotspots(tupleArr);
-            $(".hit").css("width", areaWidth + "px");
-            $(".hit").css("height", areaHeight + "px");
+            $(".hit").css("width", imgWidth + "px");
+            $(".hit").css("height", imgHeight + "px");
             $(".hit").click(function () {
                 $(this).css("animation", "border .1s ease 1 forwards");
             });
@@ -108,9 +108,9 @@
 			//formally .miss 
         $(window).resize(function () {
             updateHotSpots(tupleArr);
-            $(".hit").css("width", areaWidth + "px");
-            $(".hit").css("height", areaHeight + "px");
-            $(".hit").click(function () {
+            $(".miss").css("width", imgWidth + "px");
+            $(".miss").css("height", imgHeight + "px");
+            $(".miss").click(function () {
                 $(this).css("animation", "border .1s ease 1 forwards");
             });
             ranges = getHitRanges();
