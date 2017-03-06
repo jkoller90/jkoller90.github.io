@@ -3,9 +3,11 @@
 <head>
 	<link rel="stylesheet" href="untitled.css"> </head>
 
-<body onload="init()">
+<body>
 	<div id="container">
-		<div class="time" id="overlay">Time: 60</div>
+		<div class="time" id="overlay">Time: 60
+			<br> </div>
+		<br>
 		<br>
 		<div class="score" id="overlay">Hits: 0</div>
 		<div class="miss" id="overlay"></div>
@@ -27,39 +29,29 @@
 		];
 		var score = 0;
 		var time = 60;
-
-		function init() {
-			createHotspots();
-			var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-			var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-			document.getElementById("container").style.width = w;
-			document.getElementById("container").style.height = h;
-			circleWidth = w / 25;
-			circleHeight = w / 25;
-			$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
-			$("#mycanvas").attr("width", w + "px");
-			$("#mycanvas").attr("height", h + "px");
-			// Get a reference to our touch-sensitive element
-			var touchzone = document.getElementById("mycanvas");
-			touchzone.addEventListener("touchstart", drawCircle, false);
-			$(".hit").click(function (event) {
-				var targetId = $(event.target).attr("id");
-				console.log(targetId);
-				$("#" + targetId).css("animation", "border .5s ease 1 forwards");
-				if (already_hit_spots.indexOf(targetId) == -1) {
-					already_hit_spots.push(targetId);
-					++score;
-					$(".score").text("Hits: " + score);
-				}
-			});
-			setTimeout(function () {
+		createHotspots();
+		var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		document.getElementById("container").style.width = w;
+		document.getElementById("container").style.height = h;
+		circleWidth = w / 25;
+		circleHeight = w / 25;
+		$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
+		$("#mycanvas").attr("width", w + "px");
+		$("#mycanvas").attr("height", h + "px");
+		//
+		var touchzone = document.getElementById("mycanvas");
+		touchzone.addEventListener("touchstart", drawCircle, false);
+		touchzone.addEventListener("mousedown", mouse_drawCircle, false);
+		setInterval(function () {
+			if (time > 0) {
 				--time;
-				$(".time").text("Time: " + time);
-			}, 1000);
-		}
-			$(window).on("orientationchange", function () {
-				location.reload();
-			});
+			}
+			$(".time").text("Time: " + time);
+		}, 1000);
+		$(window).on("orientationchange", function () {
+			location.reload();
+		});
 
 		function createHotspots() {
 			for (var i = 0; i < hotspots.length; i++) {
@@ -70,6 +62,21 @@
 				$("#hit" + i).css("height", "7%");
 			};
 		}
+
+		var clicked = {};
+		var hotspots = document.getElementsByClassName("hit");
+		for(var i =0 ; i<hotspots.length; i++){
+			var id = hotspots[i].getAttribute("id");
+			clicked[id] = false;
+		}
+		$(".hit").click(function (event) {
+			if (!clicked[this.getAttribute("id")]) {
+				$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
+				++score;
+				$(".score").text("Hits: " + score);
+				clicked[this.getAttribute("id")] = true;
+			}
+		})
 
 		function drawCircle(event) {
 			$(".miss").css("width", circleWidth + "px");
@@ -87,6 +94,22 @@
 				$(".miss").css("top", 0);
 			}, 350);
 		}
+		function mouse_drawCircle(event) {
+			$(".miss").css("width", circleWidth + "px");
+			$(".miss").css("height", circleHeight + "px");
+			//left
+			$(".miss").css("left", event.pageX - circleWidth / 2);
+			//top
+			$(".miss").css("top", event.pageY - circleHeight / 2);
+			$(".miss").css("animation", "unborder .5s ease 1 forwards");
+			setTimeout(function () {
+				$(".miss").css("animation", "");
+				//left reset for reclicking 
+				$(".miss").css("left", 0);
+				//top reset for reclicking 
+				$(".miss").css("top", 0);
+			}, 350);
+		}		
 	</script>
 </body>
 
