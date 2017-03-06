@@ -5,7 +5,8 @@
 
 <body onload="init()">
 	<div id="container">
-		<div class="time" id="overlay">Time: 60</div><br>
+		<div class="time" id="overlay">Time: 60</div>
+		<br>
 		<div class="score" id="overlay">Hits: 0</div>
 		<div class="miss" id="overlay"></div>
 	</div>
@@ -42,23 +43,23 @@
 			var touchzone = document.getElementById("mycanvas");
 			touchzone.addEventListener("touchstart", drawCircle, false);
 			$(".hit").click(function (event) {
-				
 				var targetId = $(event.target).attr("id");
 				console.log(targetId);
-
-				$("#"+targetId).css("animation", "border .5s ease 1 forwards");
+				$("#" + targetId).css("animation", "border .5s ease 1 forwards");
 				if (already_hit_spots.indexOf(targetId) == -1) {
 					already_hit_spots.push(targetId);
 					++score;
 					$(".score").text("Hits: " + score);
-					
 				}
 			});
-			setTimeout(function(){
+			setTimeout(function () {
 				--time;
 				$(".time").text("Time: " + time);
 			}, 1000);
 		}
+			$(window).on("orientationchange", function () {
+				location.reload();
+			});
 
 		function createHotspots() {
 			for (var i = 0; i < hotspots.length; i++) {
