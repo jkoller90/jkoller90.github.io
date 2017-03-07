@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" href="untitled.css"> </head>
 
-<body>
+<body id="hello">
 	<div id="container">
 		<div class="time" id="overlay">Time: 60
 			<br> </div>
@@ -14,20 +14,43 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 	<script>
+		var image_width = $("body").width()
+			, image_height = $("body").height();
 		//synonymous variables for circle circumference...names carried over from previous version...to be changed
-		var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;		
-		
-		var circleWidth, circleHeight;
+		var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+		var circleWidth = image_width/25;
+		var circleHeight; //= image_height
 		var already_hit_spots = [];
 		var hotspots = [
 			{
-				top: "10%"
-				, left: "10%"
-			}
+				top: (image_height * .53) + "px"
+				, left: (image_width * .51) + "px"
+			} //chair 1
 			, {
-				top: "70%"
-				, left: "70%"
-			}
+				top: (image_height * .52) + "px"
+				, left: (image_width * .365) + "px"
+			} //chair 2 
+						, {
+				top: (image_height * .52) + "px"
+				, left: (image_width * .21) + "px"
+			} //chair 3 
+				, {
+				top: (image_height * .52) + "px"
+				, left: (image_width * .10) + "px"
+			} // chair 4
+			, {
+				top: (image_height * .38) + "px"
+				, left: (image_width * .02) + "px"
+			} // boat 
+						, {
+				top: (image_height*.28)+"px"
+				, left: (image_width*.245)+"px"
+			} //bell
+						, {
+				top: (image_height*.125)+"px"
+				, left: (image_width*.515)+"px"
+			} //window
+
 		];
 		var score = 0;
 		var time = 60;
@@ -44,8 +67,8 @@
 		//
 		var touchzone = document.getElementById("mycanvas");
 		touchzone.addEventListener("touchstart", drawCircle, false);
-		if (!iOS){
-			touchzone.addEventListener("mousedown", mouse_drawCircle, false);			
+		if (!iOS) {
+			touchzone.addEventListener("mousedown", mouse_drawCircle, false);
 		}
 		setInterval(function () {
 			if (time > 0) {
@@ -62,14 +85,13 @@
 				$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
 				$("#hit" + i).css("left", hotspots[i].left);
 				$("#hit" + i).css("top", hotspots[i].top);
-				$("#hit" + i).css("width", "4%");
-				$("#hit" + i).css("height", "7%");
+				$("#hit" + i).css("width", circleWidth + "px");
+				$("#hit" + i).css("height", circleWidth + "px");
 			};
 		}
-
 		var clicked = {};
 		var hotspots = document.getElementsByClassName("hit");
-		for(var i =0 ; i<hotspots.length; i++){
+		for (var i = 0; i < hotspots.length; i++) {
 			var id = hotspots[i].getAttribute("id");
 			clicked[id] = false;
 		}
@@ -98,6 +120,7 @@
 				$(".miss").css("top", 0);
 			}, 350);
 		}
+
 		function mouse_drawCircle(event) {
 			$(".miss").css("width", circleWidth + "px");
 			$(".miss").css("height", circleHeight + "px");
@@ -113,7 +136,7 @@
 				//top reset for reclicking 
 				$(".miss").css("top", 0);
 			}, 350);
-		}		
+		}
 	</script>
 </body>
 

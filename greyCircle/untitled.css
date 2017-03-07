@@ -1,5 +1,7 @@
 body {
 	margin: 0px !important;
+	width:100%;
+	height: auto;
 }
 
 #coords {
@@ -8,7 +10,7 @@ body {
 }
 
 .hit {
-	background-color: yellow;
+/*	background-color: yellow;*/
 	position: absolute;
 	border-radius: 50%;
 }
