@@ -114,7 +114,7 @@ function getBackgroundSize(elem) {
     };
 }
 
-// Stuff for debugging
+// paired with getBackgroundSize 
 var background = {width: "", height: ""}	
 function updateData(background) {
     background = getBackgroundSize(document.body);
@@ -123,8 +123,6 @@ function updateData(background) {
     document.getElementById('winWidth').innerHTML = getComputedStyle(document.body).width;
     document.getElementById('winHeight').innerHTML = getComputedStyle(document.body).height;
 
-	console.log(background.height +"<-h w-> "+ background.width);
-	console.log(background);
 var bh = background.width;
 var bw = background.height;		
 //struct array for coordinate input
