@@ -9,11 +9,10 @@
 			<br> </div>
 		<br>
 		<br>
-		<div class="score" id="overlay">Hits: 0</div>
+		<div class="score" id="overlay"><img class="scoreboard_glasses" src="Full.png"><img class="scoreboard_glasses" src="Full.png"><img class="scoreboard_glasses" src="Full.png"><img class="scoreboard_glasses" src="Full.png"></div>
 		<div class="miss" id="overlay"></div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-<!--	<script src="https://raw.githubusercontent.com/xobotyi/jquery.viewport/master/jquery.viewport.min.js"></script>-->
 	<script>
 //orientation change requires refresh for alignment			
 $(window).on("orientationchange", function () {
@@ -23,7 +22,7 @@ $(window).on("orientationchange", function () {
 //def later completed in getBackgroundSize
 var background = {
 	width: 0, height: 0
-}		
+}	
 function getBackgroundSize(elem) {
     // This:
     //       * Gets elem computed styles:
@@ -116,14 +115,15 @@ function getBackgroundSize(elem) {
 }
 
 // Stuff for debugging
-	
-function updateData() {
+var background = {width: "", height: ""}	
+function updateData(background) {
     background = getBackgroundSize(document.body);
     document.getElementById('width').innerHTML = background.width + 'px';
     document.getElementById('height').innerHTML = background.height + 'px';
     document.getElementById('winWidth').innerHTML = getComputedStyle(document.body).width;
     document.getElementById('winHeight').innerHTML = getComputedStyle(document.body).height;
-		console.log(background.height +"<-h w-> "+ background.width);
+
+	console.log(background.height +"<-h w-> "+ background.width);
 	console.log(background);
 var bh = background.width;
 var bw = background.height;		
@@ -144,7 +144,23 @@ var hotspots = [
 	{
 		top: bh * .4
 		, left: bw * .2	
-	}, //chair 2	
+	}, //chair 4	
+	{
+		top: bh * .28
+		, left: bw * .035	
+	}, //boat	
+	{
+		top: bh * .22
+		, left: bw * .42
+	}, //bell	
+	{
+		top: bh * .11
+		, left: bw * .92
+	}, //palm tree window	
+	{
+		top: bh * .275
+		, left: bw * 1.56
+	}, //gopher shadow 	
 ];
 (function createHotspots() {		
 		for (var i = 0; i < hotspots.length; i++) {
@@ -155,10 +171,24 @@ var hotspots = [
 			$("#hit" + i).css("height", circleWidth + "px");
 		};
 })();	
-	
+//object/struct checked against to block future rendering of red circles on repeated clicks 	
+var clicked = {};
+var hotspots = document.getElementsByClassName("hit");
+for (var i = 0; i < hotspots.length; i++) {
+	var id = hotspots[i].getAttribute("id");
+	clicked[id] = false;
+}
+$(".hit").click(function(event){
+	if (!clicked[this.getAttribute("id")]){
+		$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
+				clicked[this.getAttribute("id")] = true;
+		
+	}
+});
+
 }
 // Execute onload, so that the background image is already loaded.
-window.onload = window.onresize = updateData;		
+window.onload = window.onresize = updateData;	
 			
 		
 //requires redefinition for some reason. 
@@ -169,7 +199,7 @@ document.getElementById("container").style.height = h;
 		
 
 //"init"/"public static void main" block
-{
+
 //boolean variable to check for safari 
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
@@ -183,15 +213,6 @@ var circleHeight = w / 25;
 //setting body to fit screen 	
 $("body").attr("width", w);
 $("body").attr("height", h);	
-//(function createHotspots() {		
-//		for (var i = 0; i < hotspots.length; i++) {
-//			$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
-//			$("#hit" + i).css("top", hotspots[i].top + "px");
-//			$("#hit" + i).css("left", hotspots[i].left + "px");
-//			$("#hit" + i).css("width", circleWidth + "px");
-//			$("#hit" + i).css("height", circleWidth + "px");
-//		};
-//})();
 (function setupContainer(){
 	$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 })();	
@@ -210,38 +231,12 @@ $("body").attr("height", h);
 			--time;
 		}
 	$(".time").text("Time: " + time);
-		}, 1000);	
+		}, 1000);		
 })();	
-}
 
-//object/struct checked against to block future rendering of red circles on repeated clicks 
-var clicked = {};
-var hotspots = document.getElementsByClassName("hit");
-for (var i = 0; i < hotspots.length; i++) {
-	var id = hotspots[i].getAttribute("id");
-	clicked[id] = false;
-}
-$(".hit").click(function (event) {
-	if (!clicked[this.getAttribute("id")]) {
-		$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
-		++score;
-		switch(score){
-			case 0:
-				break;
-			case 1:
-				break;
-			case 2: 
-				break;
-			case 3: 
-				break;
-			default:
-				break;
-		}
-		$(".score").text("Hits: " + score);
-		clicked[this.getAttribute("id")] = true;
-	}
-})
-
+var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
+var halfGlass= '<img class="scoreboard_glasses" src="Half_empty.png">';	
+		
 function drawCircle(event) {
 	$(".miss").css("width", circleWidth + "px");
 	$(".miss").css("height", circleHeight + "px");
@@ -257,8 +252,40 @@ function drawCircle(event) {
 		//top reset for reclicking 
 		$(".miss").css("top", 0);
 	}, 350);
+++score;
+		switch(score){
+			case 1:
+				$(".score").html(fullGlass+fullGlass+fullGlass+halfGlass);				
+				break;
+			case 2:
+				$(".score").html(fullGlass+fullGlass+fullGlass);
+				break;
+			case 3:
+				$(".score").html(fullGlass+fullGlass+halfGlass);
+				break;
+			case 4:
+				$(".score").html(fullGlass+fullGlass);
+				break;
+			case 5:
+				$(".score").html(fullGlass+halfGlass);		
+				break;
+			case 6:
+				$(".score").html(fullGlass);
+				break;
+			case 7:
+				$(".score").html(halfGlass);
+				break;
+			case 8:
+				$(".score").html('<p> FAILURE! </p>');
+				break;
+			default:
+				break;
+		}	
 }
 
+	
+		
+		
 function mouse_drawCircle(event) {
 	$(".miss").css("width", circleWidth + "px");
 	$(".miss").css("height", circleHeight + "px");
@@ -274,6 +301,35 @@ function mouse_drawCircle(event) {
 		//top reset for reclicking 
 		$(".miss").css("top", 0);
 	}, 350);
+++score;
+		switch(score){
+			case 1:
+				$(".score").html(fullGlass+fullGlass+fullGlass+halfGlass);				
+				break;
+			case 2:
+				$(".score").html(fullGlass+fullGlass+fullGlass);
+				break;
+			case 3:
+				$(".score").html(fullGlass+fullGlass+halfGlass);
+				break;
+			case 4:
+				$(".score").html(fullGlass+fullGlass);
+				break;
+			case 5:
+				$(".score").html(fullGlass+halfGlass);		
+				break;
+			case 6:
+				$(".score").html(fullGlass);
+				break;
+			case 7:
+				$(".score").html(halfGlass);
+				break;
+			case 8:
+				$(".score").html('<p> FAILURE! </p>');
+				break;
+			default:
+				break;
+		}	
 }
 				
 	</script>
@@ -285,7 +341,7 @@ function mouse_drawCircle(event) {
     Body width: <span id="winWidth"></span>
     <br>
     Body height: <span id="winHeight"></span>
-</div>	
+</div>
 </body>
 
 </html>

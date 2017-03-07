@@ -8,10 +8,6 @@ body {
 	background-position: center top;
 	position: absolute;
 	background-image: url("http://i.imgur.com/xbMvidl.png");
-/*
-	width:100%;
-	height: auto;
-*/
 }
 
 #coords {
@@ -19,10 +15,17 @@ body {
 	position: absolute;
 }
 
+.scoreboard_glasses{
+	display: inline;
+	width: 2rem;
+	height: auto;
+}
+
 .hit {
 	background-color: yellow;
 	position: absolute;
 	border-radius: 50%;
+	z-index: 1;
 }
 
 #touchzone {
