@@ -12,7 +12,7 @@ body {
 }
 
 .hit {
-	background-color: yellow;
+/*	background-color: yellow;*/
 	position: absolute;
 	border-radius: 50%;
 }

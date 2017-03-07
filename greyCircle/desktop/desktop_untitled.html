@@ -13,56 +13,43 @@
 		<div class="miss" id="overlay"></div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-<!--	<script src="https://raw.githubusercontent.com/xobotyi/jquery.viewport/master/jquery.viewport.min.js"></script>-->
 	<script>
-		$(window).on("orientationchange", function () {
-			location.reload();
-		});
-		var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-		console.log(h = " <- h");
 		var image_width = $("body").width()
 			, image_height = $("body").height();
-		$("body").attr("width", image_width);
-		$("body").attr("height", image_height);
 		//synonymous variables for circle circumference...names carried over from previous version...to be changed
 		var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-		var circleWidth = image_width / 25;
+		var circleWidth = image_width/25;
 		var circleHeight; //= image_height
 		var already_hit_spots = [];
 		var hotspots = [
 			{
-				top: 11
-				, left: .525	
+				top: (image_height * .53) + "px"
+				, left: (image_width * .51) + "px"
 			} //chair 1
-//						{
-//				top: (h * .53) + "px"
-//				, left: (w * .51) + "px"
-//			} //chair 1
-//			, {
-//				top: (h * .52) + "px"
-//				, left: (w * .365) + "px"
-//			} //chair 2 
-//						, {
-//				top: (h * .52) + "px"
-//				, left: (w * .21) + "px"
-//			} //chair 3 
-//				, {
-//				top: (image_height * .52) + "px"
-//				, left: (image_width * .10) + "px"
-//			} // chair 4
-//			, {
-//				top: (image_height * .38) + "px"
-//				, left: (image_width * .02) + "px"
-//			} // boat 
-//						, {
-//				top: (image_height * .28) + "px"
-//				, left: (image_width * .245) + "px"
-//			} //bell
-//						, {
-//				top: (image_height * .125) + "px"
-//				, left: (image_width * .515) + "px"
-//			} //window
+			, {
+				top: (image_height * .52) + "px"
+				, left: (image_width * .365) + "px"
+			} //chair 2 
+						, {
+				top: (image_height * .52) + "px"
+				, left: (image_width * .21) + "px"
+			} //chair 3 
+				, {
+				top: (image_height * .52) + "px"
+				, left: (image_width * .10) + "px"
+			} // chair 4
+			, {
+				top: (image_height * .38) + "px"
+				, left: (image_width * .02) + "px"
+			} // boat 
+						, {
+				top: (image_height*.28)+"px"
+				, left: (image_width*.245)+"px"
+			} //bell
+						, {
+				top: (image_height*.125)+"px"
+				, left: (image_width*.515)+"px"
+			} //window
 
 		];
 		var score = 0;
@@ -89,14 +76,15 @@
 			}
 			$(".time").text("Time: " + time);
 		}, 1000);
+		$(window).on("orientationchange", function () {
+			location.reload();
+		});
 
 		function createHotspots() {
 			for (var i = 0; i < hotspots.length; i++) {
 				$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
-				$("#hit" + i).css("top",			$("#container").height() * hotspots[i].top + "px");
-				$("#hit" + i).css("left", 			$("#container").width() * hotspots[i].left + "px");
-//				$("#hit" + i).css("left", hotspots[i].left);
-//				$("#hit" + i).css("top", hotspots[i].top);
+				$("#hit" + i).css("left", hotspots[i].left);
+				$("#hit" + i).css("top", hotspots[i].top);
 				$("#hit" + i).css("width", circleWidth + "px");
 				$("#hit" + i).css("height", circleWidth + "px");
 			};
