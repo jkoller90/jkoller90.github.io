@@ -15,141 +15,277 @@
 	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <!--	<script src="https://raw.githubusercontent.com/xobotyi/jquery.viewport/master/jquery.viewport.min.js"></script>-->
 	<script>
-		$(window).on("orientationchange", function () {
-			location.reload();
-		});
-		var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-		console.log(h = " <- h");
-		var image_width = $("body").width()
-			, image_height = $("body").height();
-		$("body").attr("width", image_width);
-		$("body").attr("height", image_height);
-		//synonymous variables for circle circumference...names carried over from previous version...to be changed
-		var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-		var circleWidth = image_width / 25;
-		var circleHeight; //= image_height
-		var already_hit_spots = [];
-		var hotspots = [
-			{
-				top: 11
-				, left: .525	
-			} //chair 1
-//						{
-//				top: (h * .53) + "px"
-//				, left: (w * .51) + "px"
-//			} //chair 1
-//			, {
-//				top: (h * .52) + "px"
-//				, left: (w * .365) + "px"
-//			} //chair 2 
-//						, {
-//				top: (h * .52) + "px"
-//				, left: (w * .21) + "px"
-//			} //chair 3 
-//				, {
-//				top: (image_height * .52) + "px"
-//				, left: (image_width * .10) + "px"
-//			} // chair 4
-//			, {
-//				top: (image_height * .38) + "px"
-//				, left: (image_width * .02) + "px"
-//			} // boat 
-//						, {
-//				top: (image_height * .28) + "px"
-//				, left: (image_width * .245) + "px"
-//			} //bell
-//						, {
-//				top: (image_height * .125) + "px"
-//				, left: (image_width * .515) + "px"
-//			} //window
+//orientation change requires refresh for alignment			
+$(window).on("orientationchange", function () {
+	location.reload();
+});
 
-		];
-		var score = 0;
-		var time = 60;
-		createHotspots();
-		var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-		document.getElementById("container").style.width = w;
-		document.getElementById("container").style.height = h;
-		circleWidth = w / 25;
-		circleHeight = w / 25;
-		$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
-		$("#mycanvas").attr("width", w + "px");
-		$("#mycanvas").attr("height", h + "px");
-		//
-		var touchzone = document.getElementById("mycanvas");
-		touchzone.addEventListener("touchstart", drawCircle, false);
-		if (!iOS) {
-			touchzone.addEventListener("mousedown", mouse_drawCircle, false);
-		}
-		setInterval(function () {
-			if (time > 0) {
-				--time;
-			}
-			$(".time").text("Time: " + time);
-		}, 1000);
+//def later completed in getBackgroundSize
+var background = {
+	width: 0, height: 0
+}		
+function getBackgroundSize(elem) {
+    // This:
+    //       * Gets elem computed styles:
+    //             - CSS background-size
+    //             - element's width and height
+    //       * Extracts background URL
+    var computedStyle = getComputedStyle(elem),
+        image = new Image(),
+        src = computedStyle.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2'),
+        cssSize = computedStyle.backgroundSize,
+        elemW = parseInt(computedStyle.width.replace('px', ''), 10),
+        elemH = parseInt(computedStyle.height.replace('px', ''), 10),
+        elemDim = [elemW, elemH],
+        computedDim = [],
+        ratio;
+    // Load the image with the extracted URL.
+    // Should be in cache already.
+    image.src = src;
+    // Determine the 'ratio'
+    ratio = image.width > image.height ? image.width / image.height : image.height / image.width;
+    // Split background-size properties into array
+    cssSize = cssSize.split(' ');
+    // First property is width. It is always set to something.
+    computedDim[0] = cssSize[0];
+    // If height not set, set it to auto
+    computedDim[1] = cssSize.length > 1 ? cssSize[1] : 'auto';
+    if(cssSize[0] === 'cover') {
+        // Width is greater than height
+        if(elemDim[0] > elemDim[1]) {
+            // Elem's ratio greater than or equal to img ratio
+            if(elemDim[0] / elemDim[1] >= ratio) {
+                computedDim[0] = elemDim[0];
+                computedDim[1] = 'auto';
+            } else {
+                computedDim[0] = 'auto';
+                computedDim[1] = elemDim[1];
+            }
+        } else {
+            computedDim[0] = 'auto';
+            computedDim[1] = elemDim[1];
+        }
+    } else if(cssSize[0] === 'contain') {
+        // Width is less than height
+        if(elemDim[0] < elemDim[1]) {
+            computedDim[0] = elemDim[0];
+            computedDim[1] = 'auto';
+        } else {
+            // elem's ratio is greater than or equal to img ratio
+            if(elemDim[0] / elemDim[1] >= ratio) {
+                computedDim[0] = 'auto';
+                computedDim[1] = elemDim[1];
+            } else {
+                computedDim[1] = 'auto';
+                computedDim[0] = elemDim[0];
+            }
+        }
+    } else {
+        // If not 'cover' or 'contain', loop through the values
+        for(var i = cssSize.length; i--;) {
+            // Check if values are in pixels or in percentage
+            if (cssSize[i].indexOf('px') > -1) {
+                // If in pixels, just remove the 'px' to get the value
+                computedDim[i] = cssSize[i].replace('px', '');
+            } else if (cssSize[i].indexOf('%') > -1) {
+                // If percentage, get percentage of elem's dimension
+                // and assign it to the computed dimension
+                computedDim[i] = elemDim[i] * (cssSize[i].replace('%', '') / 100);
+            }
+        }
+    }
+    // If both values are set to auto, return image's 
+    // original width and height
+    if(computedDim[0] === 'auto' && computedDim[1] === 'auto') {
+        computedDim[0] = image.width;
+        computedDim[1] = image.height;
+    } else {
+        // Depending on whether width or height is auto,
+        // calculate the value in pixels of auto.
+        // ratio in here is just getting proportions.
+        ratio = computedDim[0] === 'auto' ? image.height / computedDim[1] : image.width / computedDim[0];
+        computedDim[0] = computedDim[0] === 'auto' ? image.width / ratio : computedDim[0];
+        computedDim[1] = computedDim[1] === 'auto' ? image.height / ratio : computedDim[1];
+    }
+    // Finally, return an object with the width and height of the
+    // background image.
+    return {
+        width: computedDim[0],
+        height: computedDim[1]
+    };
+}
 
-		function createHotspots() {
-			for (var i = 0; i < hotspots.length; i++) {
-				$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
-				$("#hit" + i).css("top",			$("#container").height() * hotspots[i].top + "px");
-				$("#hit" + i).css("left", 			$("#container").width() * hotspots[i].left + "px");
-//				$("#hit" + i).css("left", hotspots[i].left);
-//				$("#hit" + i).css("top", hotspots[i].top);
-				$("#hit" + i).css("width", circleWidth + "px");
-				$("#hit" + i).css("height", circleWidth + "px");
-			};
-		}
-		var clicked = {};
-		var hotspots = document.getElementsByClassName("hit");
+// Stuff for debugging
+	
+function updateData() {
+    background = getBackgroundSize(document.body);
+    document.getElementById('width').innerHTML = background.width + 'px';
+    document.getElementById('height').innerHTML = background.height + 'px';
+    document.getElementById('winWidth').innerHTML = getComputedStyle(document.body).width;
+    document.getElementById('winHeight').innerHTML = getComputedStyle(document.body).height;
+		console.log(background.height +"<-h w-> "+ background.width);
+	console.log(background);
+var bh = background.width;
+var bw = background.height;		
+//struct array for coordinate input
+var hotspots = [
+	{
+		top: bh * .4
+		, left: bw * .9	
+	}, //chair 1
+		{
+		top: bh * .4
+		, left: bw * .64	
+	}, //chair 2
+	{
+		top: bh * .4
+		, left: bw * .4	
+	}, //chair 3
+	{
+		top: bh * .4
+		, left: bw * .2	
+	}, //chair 2	
+];
+(function createHotspots() {		
 		for (var i = 0; i < hotspots.length; i++) {
-			var id = hotspots[i].getAttribute("id");
-			clicked[id] = false;
-		}
-		$(".hit").click(function (event) {
-			if (!clicked[this.getAttribute("id")]) {
-				$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
-				++score;
-				$(".score").text("Hits: " + score);
-				clicked[this.getAttribute("id")] = true;
-			}
-		})
+			$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
+			$("#hit" + i).css("top", hotspots[i].top + "px");
+			$("#hit" + i).css("left", hotspots[i].left + "px");
+			$("#hit" + i).css("width", circleWidth + "px");
+			$("#hit" + i).css("height", circleWidth + "px");
+		};
+})();	
+	
+}
+// Execute onload, so that the background image is already loaded.
+window.onload = window.onresize = updateData;		
+			
+		
+//requires redefinition for some reason. 
+h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+document.getElementById("container").style.width = w;
+document.getElementById("container").style.height = h;
+		
 
-		function drawCircle(event) {
-			$(".miss").css("width", circleWidth + "px");
-			$(".miss").css("height", circleHeight + "px");
-			//left
-			$(".miss").css("left", event.touches[0].pageX - circleWidth / 2);
-			//top
-			$(".miss").css("top", event.touches[0].pageY - circleHeight / 2);
-			$(".miss").css("animation", "unborder .5s ease 1 forwards");
-			setTimeout(function () {
-				$(".miss").css("animation", "");
-				//left reset for reclicking 
-				$(".miss").css("left", 0);
-				//top reset for reclicking 
-				$(".miss").css("top", 0);
-			}, 350);
-		}
+//"init"/"public static void main" block
+{
+//boolean variable to check for safari 
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-		function mouse_drawCircle(event) {
-			$(".miss").css("width", circleWidth + "px");
-			$(".miss").css("height", circleHeight + "px");
-			//left
-			$(".miss").css("left", event.pageX - circleWidth / 2);
-			//top
-			$(".miss").css("top", event.pageY - circleHeight / 2);
-			$(".miss").css("animation", "unborder .5s ease 1 forwards");
-			setTimeout(function () {
-				$(".miss").css("animation", "");
-				//left reset for reclicking 
-				$(".miss").css("left", 0);
-				//top reset for reclicking 
-				$(".miss").css("top", 0);
-			}, 350);
+		
+//scoreboard		
+var score = 0;
+var time = 60;	
+//def of circle dimensions 
+var circleWidth = w / 25;
+var circleHeight = w / 25;	
+//setting body to fit screen 	
+$("body").attr("width", w);
+$("body").attr("height", h);	
+//(function createHotspots() {		
+//		for (var i = 0; i < hotspots.length; i++) {
+//			$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
+//			$("#hit" + i).css("top", hotspots[i].top + "px");
+//			$("#hit" + i).css("left", hotspots[i].left + "px");
+//			$("#hit" + i).css("width", circleWidth + "px");
+//			$("#hit" + i).css("height", circleWidth + "px");
+//		};
+//})();
+(function setupContainer(){
+	$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
+})();	
+(function alignCanvas(){
+	$("#mycanvas").attr("width", w + "px");
+	$("#mycanvas").attr("height", h + "px" );	
+})();		
+(function setupMissedClicks(){
+	var touchzone = document.getElementById("mycanvas");
+	touchzone.addEventListener("touchstart", drawCircle, false);
+	if (!iOS) {
+		touchzone.addEventListener("mousedown", mouse_drawCircle, false);
+	}
+	setInterval(function () {
+		if (time > 0) {
+			--time;
 		}
+	$(".time").text("Time: " + time);
+		}, 1000);	
+})();	
+}
+
+//object/struct checked against to block future rendering of red circles on repeated clicks 
+var clicked = {};
+var hotspots = document.getElementsByClassName("hit");
+for (var i = 0; i < hotspots.length; i++) {
+	var id = hotspots[i].getAttribute("id");
+	clicked[id] = false;
+}
+$(".hit").click(function (event) {
+	if (!clicked[this.getAttribute("id")]) {
+		$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
+		++score;
+		switch(score){
+			case 0:
+				break;
+			case 1:
+				break;
+			case 2: 
+				break;
+			case 3: 
+				break;
+			default:
+				break;
+		}
+		$(".score").text("Hits: " + score);
+		clicked[this.getAttribute("id")] = true;
+	}
+})
+
+function drawCircle(event) {
+	$(".miss").css("width", circleWidth + "px");
+	$(".miss").css("height", circleHeight + "px");
+	//left
+	$(".miss").css("left", event.touches[0].pageX - circleWidth / 2);
+	//top
+	$(".miss").css("top", event.touches[0].pageY - circleHeight / 2);
+	$(".miss").css("animation", "unborder .5s ease 1 forwards");
+	setTimeout(function () {
+		$(".miss").css("animation", "");
+		//left reset for reclicking 
+		$(".miss").css("left", 0);
+		//top reset for reclicking 
+		$(".miss").css("top", 0);
+	}, 350);
+}
+
+function mouse_drawCircle(event) {
+	$(".miss").css("width", circleWidth + "px");
+	$(".miss").css("height", circleHeight + "px");
+	//left
+	$(".miss").css("left", event.pageX - circleWidth / 2);
+	//top
+	$(".miss").css("top", event.pageY - circleHeight / 2);
+	$(".miss").css("animation", "unborder .5s ease 1 forwards");
+	setTimeout(function () {
+		$(".miss").css("animation", "");
+		//left reset for reclicking 
+		$(".miss").css("left", 0);
+		//top reset for reclicking 
+		$(".miss").css("top", 0);
+	}, 350);
+}
+				
 	</script>
+<div id="data">
+    Background width: <span id="width"></span>
+    <br>
+    Background height: <span id="height"></span>
+    <hr>
+    Body width: <span id="winWidth"></span>
+    <br>
+    Body height: <span id="winHeight"></span>
+</div>	
 </body>
 
 </html>

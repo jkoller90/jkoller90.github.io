@@ -1,5 +1,13 @@
 body {
+	height: 100%;
 	margin: 0px !important;
+	background-attachment: scroll;
+	    background-repeat: no-repeat;
+/*    background-size: 100% auto;*/
+	background-size: contain;
+	background-position: center top;
+	position: absolute;
+	background-image: url("http://i.imgur.com/xbMvidl.png");
 /*
 	width:100%;
 	height: auto;
@@ -48,12 +56,16 @@ body {
 }
 
 canvas {
+	border: 0px;
+	
+/*
 	background-image: url("http://i.imgur.com/xbMvidl.png");
 	background-attachment: scroll;
 	background-size: contain;
 	background-position: center top;
 	position: absolute;
 	background-repeat: no-repeat;
+*/
 }
 
 @keyframes unborder {
