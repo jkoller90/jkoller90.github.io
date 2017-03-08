@@ -1,10 +1,10 @@
 //fix: 
 /*		*/
-//strictly only hit or a miss 
+//strictly only hit or a miss ..safari_mousedown
 //make bottles count up -- one at a time 
-//build debug library to include coordinate tap
-//orientation change requires refresh for alignment			
+////build debug library to include coordinate tap
 
+//orientation change requires refresh for alignment		
 $(window).on("orientationchange", function () {
 	location.reload();
 });
@@ -181,6 +181,7 @@ function updateData(background) {
 		if (!clicked[this.getAttribute("id")] && safari_mousedown === false) {
 			$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
 			clicked[this.getAttribute("id")] = true;
+			$(".score").append(fullGlass);
 		}
 	});
 }
@@ -240,36 +241,7 @@ function drawCircle(event) {
 		$(".miss").css("left", 0);
 		//top reset for reclicking 
 		$(".miss").css("top", 0);
-	}, 350);
-	++score;
-	switch (score) {
-	case 1:
-		$(".score").html(fullGlass + fullGlass + fullGlass + halfGlass);
-		break;
-	case 2:
-		$(".score").html(fullGlass + fullGlass + fullGlass);
-		break;
-	case 3:
-		$(".score").html(fullGlass + fullGlass + halfGlass);
-		break;
-	case 4:
-		$(".score").html(fullGlass + fullGlass);
-		break;
-	case 5:
-		$(".score").html(fullGlass + halfGlass);
-		break;
-	case 6:
-		$(".score").html(fullGlass);
-		break;
-	case 7:
-		$(".score").html(halfGlass);
-		break;
-	case 8:
-		$(".score").html('<p> FAILURE! </p>');
-		break;
-	default:
-		break;
-	}
+	}, 350);	
 }
 /*boolean*/var safari_mousedown = false; 
 function mouse_drawCircle(event) {
@@ -287,35 +259,8 @@ function mouse_drawCircle(event) {
 		$(".miss").css("left", 0);
 		//top reset for reclicking 
 		$(".miss").css("top", 0);
-		safari_mousedown = false;
 	}, 350);
-	++score;
-	switch (score) {
-	case 1:
-		$(".score").html(fullGlass + fullGlass + fullGlass + halfGlass);
-		break;
-	case 2:
-		$(".score").html(fullGlass + fullGlass + fullGlass);
-		break;
-	case 3:
-		$(".score").html(fullGlass + fullGlass + halfGlass);
-		break;
-	case 4:
-		$(".score").html(fullGlass + fullGlass);
-		break;
-	case 5:
-		$(".score").html(fullGlass + halfGlass);
-		break;
-	case 6:
-		$(".score").html(fullGlass);
-		break;
-	case 7:
-		$(".score").html(halfGlass);
-		break;
-	case 8:
-		$(".score").html('<p> FAILURE! </p>');
-		break;
-	default:
-		break;
-	}
+	setTimeout(function(){
+		safari_mousedown = false;
+	},1000);
 }
