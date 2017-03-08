@@ -1,7 +1,6 @@
 //fix: 
 /*		*/
 //strictly only hit or a miss ..safari_mousedown
-//make bottles count up -- one at a time 
 ////build debug library to include coordinate tap
 
 //orientation change requires refresh for alignment		
@@ -214,9 +213,13 @@ $("body").attr("height", h);
 (function setupMissedClicks() {
 	var touchzone = document.getElementById("mycanvas");
 	touchzone.addEventListener("touchstart", drawCircle, false);
-	if (!iOS) {
+	if (iOS) {
+		alert("ios");
 		touchzone.addEventListener("mousedown", mouse_drawCircle, false);
 	}
+//	else{
+//			touchzone.addEventListener("touchstart", drawCircle, false);
+//	}
 	setInterval(function () {
 		if (time > 0) {
 			--time;
