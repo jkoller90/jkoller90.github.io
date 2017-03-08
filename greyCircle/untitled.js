@@ -216,38 +216,38 @@ var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
 var halfGlass = '<img class="scoreboard_glasses" src="Half_empty.png">';
 
 
-(function setupHits() {
-	//object checked against to block future rendering of red circles on repeated clicks 	
-	var clicked = {};
-	var hotspots = document.getElementsByClassName("hit");
-	for (var i = 0; i < hotspots.length; i++) {
-		if (iOS) {
-			safari
-			hotspots[i].addEventListener("mousedown", mouse_drawCircle, false);
-		}
-		else {
-			hotspots[i].addEventListener("touchstart", drawCircle, false);
-		}
-		hotspots[i].addEventListener("")
-			//add setup data to object
-		var id = hotspots[i].getAttribute("id");
-		clicked[id] = false;
-	}
-})();
-//$(".hit").click(function (event) {
-//	if (!clicked[this.getAttribute("id")] && safari_mousedown === false) {
-//		$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
-//		clicked[this.getAttribute("id")] = true;
-//		$(".score").append(fullGlass);
+//(function setupHits() {
+//	//object checked against to block future rendering of red circles on repeated clicks 	
+//	var clicked = {};
+//	var hotspots = document.getElementsByClassName("hit");
+//	for (var i = 0; i < hotspots.length; i++) {
+//		if (iOS) {
+//			safari
+//			hotspots[i].addEventListener("mousedown", mouse_drawCircle, false);
+//		}
+//		else {
+//			hotspots[i].addEventListener("touchstart", drawCircle, false);
+//		}
+//		hotspots[i].addEventListener("")
+//			//add setup data to object
+//		var id = hotspots[i].getAttribute("id");
+//		clicked[id] = false;
 //	}
-//});
-function (event) {
+//})();
+$(".hit").click(function (event) {
 	if (!clicked[this.getAttribute("id")] && safari_mousedown === false) {
 		$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
 		clicked[this.getAttribute("id")] = true;
 		$(".score").append(fullGlass);
 	}
-}
+});
+//function (event) {
+//	if (!clicked[this.getAttribute("id")] && safari_mousedown === false) {
+//		$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
+//		clicked[this.getAttribute("id")] = true;
+//		$(".score").append(fullGlass);
+//	}
+//}
 
 //var safari_mousedown = false;
 //function drawCircle(event) {
