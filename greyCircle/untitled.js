@@ -246,6 +246,7 @@ function drawCircle(event) {
 /*boolean*/var safari_mousedown = false; 
 function mouse_drawCircle(event) {
 	safari_mousedown = true;
+	console.log(safari_mousedown);
 	$(".miss").css("width", circleWidth + "px");
 	$(".miss").css("height", circleHeight + "px");
 	//left
@@ -262,5 +263,6 @@ function mouse_drawCircle(event) {
 	}, 350);
 	setTimeout(function(){
 		safari_mousedown = false;
+		console.log(safari_mousedown);
 	},1000);
 }
