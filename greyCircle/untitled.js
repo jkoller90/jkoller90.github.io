@@ -212,14 +212,14 @@ $("body").attr("height", h);
 })();
 (function setupMissedClicks() {
 	var touchzone = document.getElementById("mycanvas");
-	touchzone.addEventListener("touchstart", drawCircle, false);
+//	touchzone.addEventListener("touchstart", drawCircle, false);
 	if (iOS) {
 		alert("ios");
 		touchzone.addEventListener("mousedown", mouse_drawCircle, false);
 	}
-//	else{
-//			touchzone.addEventListener("touchstart", drawCircle, false);
-//	}
+	else{
+			touchzone.addEventListener("touchstart", drawCircle, false);
+	}
 	setInterval(function () {
 		if (time > 0) {
 			--time;
