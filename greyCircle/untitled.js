@@ -2,7 +2,6 @@
 /*		*/
 //strictly only hit or a miss ..safari_mousedown
 ////build debug library to include coordinate tap
-
 //orientation change requires refresh for alignment		
 $(window).on("orientationchange", function () {
 	location.reload();
@@ -169,20 +168,6 @@ function updateData(background) {
 			$("#hit" + i).css("height", circleWidth + "px");
 		};
 	})();
-	//object/struct checked against to block future rendering of red circles on repeated clicks 	
-	var clicked = {};
-	var hotspots = document.getElementsByClassName("hit");
-	for (var i = 0; i < hotspots.length; i++) {
-		var id = hotspots[i].getAttribute("id");
-		clicked[id] = false;
-	}
-	$(".hit").click(function (event) {
-		if (!clicked[this.getAttribute("id")] && safari_mousedown === false) {
-			$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
-			clicked[this.getAttribute("id")] = true;
-			$(".score").append(fullGlass);
-		}
-	});
 }
 // Execute onload, so that the background image is already loaded.
 window.onload = window.onresize = updateData;
@@ -210,15 +195,15 @@ $("body").attr("height", h);
 	$("#mycanvas").attr("width", w + "px");
 	$("#mycanvas").attr("height", h + "px");
 })();
-(function setupMissedClicks() {
+(function setupMisses() {
 	var touchzone = document.getElementById("mycanvas");
-//	touchzone.addEventListener("touchstart", drawCircle, false);
+	//	touchzone.addEventListener("touchstart", drawCircle, false);
 	if (iOS) {
-		alert("ios");
-		touchzone.addEventListener("mousedown", mouse_drawCircle, false);
+		alert("drawcircle in place for bool ");
+		touchzone.addEventListener("mousedown", drawCircle, false);
 	}
-	else{
-			touchzone.addEventListener("touchstart", drawCircle, false);
+	else {
+		touchzone.addEventListener("touchstart", drawCircle, false);
 	}
 	setInterval(function () {
 		if (time > 0) {
@@ -230,26 +215,61 @@ $("body").attr("height", h);
 var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
 var halfGlass = '<img class="scoreboard_glasses" src="Half_empty.png">';
 
-function drawCircle(event) {
-	$(".miss").css("width", circleWidth + "px");
-	$(".miss").css("height", circleHeight + "px");
-	//left
-	$(".miss").css("left", event.touches[0].pageX - circleWidth / 2);
-	//top
-	$(".miss").css("top", event.touches[0].pageY - circleHeight / 2);
-	$(".miss").css("animation", "unborder .5s ease 1 forwards");
-	setTimeout(function () {
-		$(".miss").css("animation", "");
-		//left reset for reclicking 
-		$(".miss").css("left", 0);
-		//top reset for reclicking 
-		$(".miss").css("top", 0);
-	}, 350);	
+
+(function setupHits() {
+	//object checked against to block future rendering of red circles on repeated clicks 	
+	var clicked = {};
+	var hotspots = document.getElementsByClassName("hit");
+	for (var i = 0; i < hotspots.length; i++) {
+		if (iOS) {
+			safari
+			hotspots[i].addEventListener("mousedown", mouse_drawCircle, false);
+		}
+		else {
+			hotspots[i].addEventListener("touchstart", drawCircle, false);
+		}
+		hotspots[i].addEventListener("")
+			//add setup data to object
+		var id = hotspots[i].getAttribute("id");
+		clicked[id] = false;
+	}
+})();
+//$(".hit").click(function (event) {
+//	if (!clicked[this.getAttribute("id")] && safari_mousedown === false) {
+//		$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
+//		clicked[this.getAttribute("id")] = true;
+//		$(".score").append(fullGlass);
+//	}
+//});
+function (event) {
+	if (!clicked[this.getAttribute("id")] && safari_mousedown === false) {
+		$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
+		clicked[this.getAttribute("id")] = true;
+		$(".score").append(fullGlass);
+	}
 }
-/*boolean*/var safari_mousedown = false; 
-function mouse_drawCircle(event) {
+
+//var safari_mousedown = false;
+//function drawCircle(event) {
+//	$(".miss").css("width", circleWidth + "px");
+//	$(".miss").css("height", circleHeight + "px");
+//	//left
+//	$(".miss").css("left", event.touches[0].pageX - circleWidth / 2);
+//	//top
+//	$(".miss").css("top", event.touches[0].pageY - circleHeight / 2);
+//	$(".miss").css("animation", "unborder .5s ease 1 forwards");
+//	setTimeout(function () {
+//		$(".miss").css("animation", "");
+//		//left reset for reclicking 
+//		$(".miss").css("left", 0);
+//		//top reset for reclicking 
+//		$(".miss").css("top", 0);
+//	}, 350);
+//}
+/*boolean*/
+var safari_mousedown = false;
+function drawCircle(event) {
 	safari_mousedown = true;
-	console.log(safari_mousedown);
 	$(".miss").css("width", circleWidth + "px");
 	$(".miss").css("height", circleHeight + "px");
 	//left
@@ -264,8 +284,8 @@ function mouse_drawCircle(event) {
 		//top reset for reclicking 
 		$(".miss").css("top", 0);
 	}, 350);
-	setTimeout(function(){
+	setTimeout(function () {
 		safari_mousedown = false;
 		console.log(safari_mousedown);
-	},1000);
+	}, 1000);
 }
