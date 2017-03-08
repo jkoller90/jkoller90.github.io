@@ -1,3 +1,6 @@
+var safari_mousedown = false;
+var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
+var halfGlass = '<img class="scoreboard_glasses" src="Half_empty.png">';
 //fix: 
 /*		*/
 //strictly only hit or a miss ..safari_mousedown
@@ -188,18 +191,21 @@ var circleHeight = w / 25;
 //setting body to fit screen 	
 $("body").attr("width", w);
 $("body").attr("height", h);
+
 (function setupContainer() {
 	$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 })();
+
 (function alignCanvas() {
 	$("#mycanvas").attr("width", w + "px");
 	$("#mycanvas").attr("height", h + "px");
 })();
+
 (function setupMisses() {
 	var touchzone = document.getElementById("mycanvas");
 	//	touchzone.addEventListener("touchstart", drawCircle, false);
 	if (iOS) {
-		alert("drawcircle in place for bool ");
+		alert("drawcircle in place for bool :D");
 		touchzone.addEventListener("mousedown", drawCircle, false);
 	}
 	else {
@@ -212,8 +218,7 @@ $("body").attr("height", h);
 		$(".time").text("Time: " + time);
 	}, 1000);
 })();
-var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
-var halfGlass = '<img class="scoreboard_glasses" src="Half_empty.png">';
+
 
 
 //(function setupHits() {
@@ -222,8 +227,7 @@ var halfGlass = '<img class="scoreboard_glasses" src="Half_empty.png">';
 //	var hotspots = document.getElementsByClassName("hit");
 //	for (var i = 0; i < hotspots.length; i++) {
 //		if (iOS) {
-//			safari
-//			hotspots[i].addEventListener("mousedown", mouse_drawCircle, false);
+//			hotspots[i].addEventListener("mousedown", drawCircle, false);
 //		}
 //		else {
 //			hotspots[i].addEventListener("touchstart", drawCircle, false);
@@ -234,6 +238,8 @@ var halfGlass = '<img class="scoreboard_glasses" src="Half_empty.png">';
 //		clicked[id] = false;
 //	}
 //})();
+	var clicked = {};
+	var hotspots = document.getElementsByClassName("hit");
 $(".hit").click(function (event) {
 	if (!clicked[this.getAttribute("id")] && safari_mousedown === false) {
 		$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
@@ -249,7 +255,7 @@ $(".hit").click(function (event) {
 //	}
 //}
 
-//var safari_mousedown = false;
+
 //function drawCircle(event) {
 //	$(".miss").css("width", circleWidth + "px");
 //	$(".miss").css("height", circleHeight + "px");
@@ -266,8 +272,7 @@ $(".hit").click(function (event) {
 //		$(".miss").css("top", 0);
 //	}, 350);
 //}
-/*boolean*/
-var safari_mousedown = false;
+
 function drawCircle(event) {
 	safari_mousedown = true;
 	$(".miss").css("width", circleWidth + "px");
@@ -286,6 +291,5 @@ function drawCircle(event) {
 	}, 350);
 	setTimeout(function () {
 		safari_mousedown = false;
-		console.log(safari_mousedown);
 	}, 1000);
 }
