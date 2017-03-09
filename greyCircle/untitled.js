@@ -5,6 +5,7 @@
 //build debug library to include coordinate tap
 
 var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
+var clickedBool = false;
 
 //orientation change requires refresh for alignment			
 $(window).on("orientationchange", function () {
@@ -176,7 +177,7 @@ for (var i = 0; i < hotspots.length; i++) {
 	
 	
 $(".hit").on("click", function(event){
-	if (!clicked[this.getAttribute("id")]){
+	if (!clicked[this.getAttribute("id")] && clickedBool === false){
 		$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
 				clicked[this.getAttribute("id")] = true;
 				$(".score").append(fullGlass);
@@ -236,6 +237,12 @@ var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
 var halfGlass= '<img class="scoreboard_glasses" src="Half_empty.png">';	
 		
 function drawCircle(event) {
+	clickedBool = true;
+	aler(clickedBool);
+	setTimeout(function(){
+		clickedBool = false;
+		alert(clickedBool);
+	},900);
 	$(".miss").css("width", circleWidth + "px");
 	$(".miss").css("height", circleHeight + "px");
 	//left
@@ -250,13 +257,17 @@ function drawCircle(event) {
 		//top reset for reclicking 
 		$(".miss").css("top", 0);
 	}, 350);
-
+	
 }
 
-	
-		
 		
 function mouse_drawCircle(event) {
+	clickedBool = true;
+	alert(clickedBool);
+	setTimeout(function(){
+		clickedBool = false;
+		alert(clickedBool);
+	},900);
 	$(".miss").css("width", circleWidth + "px");
 	$(".miss").css("height", circleHeight + "px");
 	//left
