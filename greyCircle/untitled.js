@@ -4,7 +4,7 @@
 //make bottles count up -- one at a time 
 //build debug library to include coordinate tap
 
-
+var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
 
 //orientation change requires refresh for alignment			
 $(window).on("orientationchange", function () {
@@ -167,11 +167,19 @@ var hotspots = document.getElementsByClassName("hit");
 for (var i = 0; i < hotspots.length; i++) {
 	var id = hotspots[i].getAttribute("id");
 	clicked[id] = false;
+//	id = document.getElementById("mycanvas");
+//	touchzone.addEventListener("touchstart", drawCircle, false);
+//	if (!iOS) {
+//		touchzone.addEventListener("mousedown", mouse_drawCircle, false);
+//	}
 }
-$(".hit").click(function(event){
+	
+	
+$(".hit").on("click", function(event){
 	if (!clicked[this.getAttribute("id")]){
 		$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
 				clicked[this.getAttribute("id")] = true;
+				$(".score").append(fullGlass);
 		
 	}
 });
@@ -242,35 +250,7 @@ function drawCircle(event) {
 		//top reset for reclicking 
 		$(".miss").css("top", 0);
 	}, 350);
-++score;
-		switch(score){
-			case 1:
-				$(".score").html(fullGlass+fullGlass+fullGlass+halfGlass);				
-				break;
-			case 2:
-				$(".score").html(fullGlass+fullGlass+fullGlass);
-				break;
-			case 3:
-				$(".score").html(fullGlass+fullGlass+halfGlass);
-				break;
-			case 4:
-				$(".score").html(fullGlass+fullGlass);
-				break;
-			case 5:
-				$(".score").html(fullGlass+halfGlass);		
-				break;
-			case 6:
-				$(".score").html(fullGlass);
-				break;
-			case 7:
-				$(".score").html(halfGlass);
-				break;
-			case 8:
-				$(".score").html('<p> FAILURE! </p>');
-				break;
-			default:
-				break;
-		}	
+
 }
 
 	
@@ -291,35 +271,7 @@ function mouse_drawCircle(event) {
 		//top reset for reclicking 
 		$(".miss").css("top", 0);
 	}, 350);
-++score;
-		switch(score){
-			case 1:
-				$(".score").html(fullGlass+fullGlass+fullGlass+halfGlass);				
-				break;
-			case 2:
-				$(".score").html(fullGlass+fullGlass+fullGlass);
-				break;
-			case 3:
-				$(".score").html(fullGlass+fullGlass+halfGlass);
-				break;
-			case 4:
-				$(".score").html(fullGlass+fullGlass);
-				break;
-			case 5:
-				$(".score").html(fullGlass+halfGlass);		
-				break;
-			case 6:
-				$(".score").html(fullGlass);
-				break;
-			case 7:
-				$(".score").html(halfGlass);
-				break;
-			case 8:
-				$(".score").html('<p> FAILURE! </p>');
-				break;
-			default:
-				break;
-		}	
-}
+
 				
+}
 	
