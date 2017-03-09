@@ -1,7 +1,4 @@
-//fix: 
-/*		*/ 
-//strictly only hit or a miss 
-//make bottles count up -- one at a time 
+var debug = true; //adjust for debug info to show on site 
 //build debug library to include coordinate tap
 
 var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
@@ -110,7 +107,35 @@ function getBackgroundSize(elem) {
 // paired with getBackgroundSize 
 var background = {width: "", height: ""}	
 function updateData(background) {
-    background = getBackgroundSize(document.body);
+
+(function debug_click() {
+  // Get a reference to our touch-sensitive element
+  var touchzone = document.getElementById("container");
+  // Add an event handler for the touchstart event
+	if(debug === true){
+		touchzone.addEventListener("click", clickHandler, false);
+		touchzone.addEventListener("touchdown", touchHandler, false);
+	} 
+})();
+
+function clickHandler(event) {
+  // Get a reference to our coordinates div
+  var coords = document.getElementById("coords");
+  // Write the coordinates of the touch to the div
+  coords.innerHTML = 'x: ' + event.pageX + ', y: ' + event.pageY;
+}
+
+function touchHandler(event) {
+  // Get a reference to our coordinates div
+  var coords = document.getElementById("coords");
+  // Write the coordinates of the touch to the div
+  coords.innerHTML = 'x: ' + event.touches[0].pageX + ', y: ' + event.touches[0].pageY;
+}		
+	
+  background = getBackgroundSize(document.body);
+	
+	if(debug) $(".debug").css("display","block");
+	else $(".debug").css("display","none");
     document.getElementById('width').innerHTML = background.width + 'px';
     document.getElementById('height').innerHTML = background.height + 'px';
     document.getElementById('winWidth').innerHTML = getComputedStyle(document.body).width;
@@ -162,17 +187,12 @@ var hotspots = [
 			$("#hit" + i).css("height", circleWidth + "px");
 		};
 })();	
+	
 //object/struct checked against to block future rendering of red circles on repeated clicks 	
 var clicked = {};
 var hotspots = document.getElementsByClassName("hit");
 for (var i = 0; i < hotspots.length; i++) {
 	var id = hotspots[i].getAttribute("id");
-	clicked[id] = false;
-//	id = document.getElementById("mycanvas");
-//	touchzone.addEventListener("touchstart", drawCircle, false);
-//	if (!iOS) {
-//		touchzone.addEventListener("mousedown", mouse_drawCircle, false);
-//	}
 }
 	
 	
@@ -223,7 +243,7 @@ $("body").attr("height", h);
 	var touchzone = document.getElementById("mycanvas");
 	touchzone.addEventListener("touchstart", drawCircle, false);
 	if (!iOS) {
-		touchzone.addEventListener("mousedown", mouse_drawCircle, false);
+		touchzone.addEventListener("mousedown", mouse_drawCircle, false);	
 	}
 	setInterval(function () {
 		if (time > 0) {
@@ -232,9 +252,6 @@ $("body").attr("height", h);
 	$(".time").text("Time: " + time);
 		}, 1000);		
 })();	
-
-var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
-var halfGlass= '<img class="scoreboard_glasses" src="Half_empty.png">';	
 		
 function drawCircle(event) {
 	clickedBool = true;
@@ -242,7 +259,7 @@ function drawCircle(event) {
 	setTimeout(function(){
 		clickedBool = false;
 //		alert(clickedBool);
-	},900);
+	},750);
 	$(".miss").css("width", circleWidth + "px");
 	$(".miss").css("height", circleHeight + "px");
 	//left
@@ -274,6 +291,7 @@ function mouse_drawCircle(event) {
 	$(".miss").css("left", event.pageX - circleWidth / 2);
 	//top
 	$(".miss").css("top", event.pageY - circleHeight / 2);
+	//coordinates for debugging
 	$(".miss").css("animation", "unborder .5s ease 1 forwards");
 	setTimeout(function () {
 		$(".miss").css("animation", "");
