@@ -238,10 +238,10 @@ var halfGlass= '<img class="scoreboard_glasses" src="Half_empty.png">';
 		
 function drawCircle(event) {
 	clickedBool = true;
-	alert(clickedBool);
+//	alert(clickedBool);
 	setTimeout(function(){
 		clickedBool = false;
-		alert(clickedBool);
+//		alert(clickedBool);
 	},900);
 	$(".miss").css("width", circleWidth + "px");
 	$(".miss").css("height", circleHeight + "px");
@@ -263,10 +263,10 @@ function drawCircle(event) {
 		
 function mouse_drawCircle(event) {
 	clickedBool = true;
-	alert(clickedBool);
+//	alert(clickedBool);
 	setTimeout(function(){
 		clickedBool = false;
-		alert(clickedBool);
+//		alert(clickedBool);
 	},900);
 	$(".miss").css("width", circleWidth + "px");
 	$(".miss").css("height", circleHeight + "px");
