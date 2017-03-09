@@ -220,7 +220,7 @@ $("body").attr("height", h);
 	touchzone.addEventListener("touchstart", drawCircle, false);
 	if (!iOS) {
 		touchzone.addEventListener("mousedown", mouse_drawCircle, false);
-	}
+	}else alert('ios');
 	setInterval(function () {
 		if (time > 0) {
 			--time;
