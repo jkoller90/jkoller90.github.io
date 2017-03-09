@@ -238,7 +238,7 @@ var halfGlass= '<img class="scoreboard_glasses" src="Half_empty.png">';
 		
 function drawCircle(event) {
 	clickedBool = true;
-	aler(clickedBool);
+	alert(clickedBool);
 	setTimeout(function(){
 		clickedBool = false;
 		alert(clickedBool);
