@@ -9,3 +9,13 @@ h2{
 .question{
 	display:none;
 }
+
+
+#understood{
+	background-color:grey;
+	color: white;
+}
+
+#quiz{
+	display:none;
+}

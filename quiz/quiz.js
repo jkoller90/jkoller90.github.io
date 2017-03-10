@@ -26,12 +26,12 @@ function renderQuestion(question) {
 }
 
 function renderQuiz(randomized_questions) {
-	$("body").prepend("<h1>Quiz</h1>");
+	$("#quiz").prepend("<h1>Quiz</h1>");
 	for (var i = 0; i < 5; i++) {
 		//	for (var i = 0; i < randomized_questions.length; i++) { 
 		//swap these for statements to debug string rendering of all  questions
 		var appendStr = renderQuestion(randomized_questions[i]);
-		$("body").append(appendStr);
+		$("#quiz").append(appendStr);
 	}
 }
 var randomized_questions = getRandomOrder(questions);
@@ -53,3 +53,8 @@ $(".choice").click(function () {
 	}
 	else alert("Try again!");
 });
+
+$("#understood").click(function(){
+	$("#info_splash").css("display","none");
+	$("#quiz").css("display","block");
+})
