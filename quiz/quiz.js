@@ -37,21 +37,38 @@ function renderQuiz(randomized_questions) {
 var randomized_questions = getRandomOrder(questions);
 renderQuiz(randomized_questions);
 //final code is a mechanism to swap properly answered questions for new questions
+var score = 0;
 var ObjDivArray = document.getElementsByClassName("question");
 var i = 0;
 var currId = ObjDivArray[i].id;
 $("#" + currId).css("display", "block");
 $(".choice").click(function () {
 	if ($(this).text() == $(this).attr("answer")) {
-		$("#" + currId).attr("style", "display: none");
+		++score; 
+		alert("Great job!");
+//		$("#" + currId).attr("style", "display: none");
+//		++i;
+//		currId = ObjDivArray[i].id;
+//		(function () {
+//			var currId = ObjDivArray[i].id;
+//			$("#" + currId).css("display", "block");
+//		})();
+	}
+//	else alert("Try again!");
+	else {alert("Woops!");}
+$("#" + currId).attr("style", "display: none");
 		++i;
+		if(i !== 5){
 		currId = ObjDivArray[i].id;
 		(function () {
 			var currId = ObjDivArray[i].id;
 			$("#" + currId).css("display", "block");
-		})();
-	}
-	else alert("Try again!");
+		})();			
+		}else{
+			$("#results").html("Your score: " + score + ". <a href='quiz.html'> Try again? </a>");
+			$("#results").css("display","block");
+		}
+	
 });
 
 $("#understood").click(function(){
