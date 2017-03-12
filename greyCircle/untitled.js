@@ -3,7 +3,8 @@ var debug = false; //adjust for debug info to show on site
 var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
 var clickedBool = false;
 
-var ios_inc_flag = false;
+var ios_inc_flag = false; //without implementation of this flag with a boolean on hit click listener, safari will inexplicably double the amount of bottles on scoreboard and will add two bottles on each hit. 
+
 //orientation change requires refresh for alignment			
 $(window).on("orientationchange", function () {
     location.reload();
