@@ -16,11 +16,12 @@ header {
 /*    padding-bottom: 2%;*/
     width:100%;
     position:absolute;
+    display:block;
 
 }
 
 span{
-    font-size: 2rem !important;
+    font-size: 1.75rem !important;
 }
 
 #back {
