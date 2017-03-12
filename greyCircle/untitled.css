@@ -39,14 +39,14 @@ span{
 .time {
     position: absolute;
     right: 3%;
-     margin: 2%;
+/*     margin: 2%;*/
 
 }
 
 .score{
     position:absolute;
     right: 30%;
-     margin: 2%
+/*     margin: 2%*/
     
 }
 #coords {
