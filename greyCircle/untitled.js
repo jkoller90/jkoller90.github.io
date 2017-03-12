@@ -2,6 +2,8 @@ var debug = false; //adjust for debug info to show on site
 //build debug library to include coordinate tap
 var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
 var clickedBool = false;
+
+var ios_inc_flag = false;
 //orientation change requires refresh for alignment			
 $(window).on("orientationchange", function () {
     location.reload();
@@ -201,7 +203,7 @@ function updateData(background) {
     for (var i = 0; i < hotspots.length; i++) {
         var id = hotspots[i].getAttribute("id");
     }
-    var ios_inc_flag = false; 
+ 
     $(".hit").on("click", function (event) {
         if (!clicked[this.getAttribute("id")] && clickedBool === false) {
             $("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
