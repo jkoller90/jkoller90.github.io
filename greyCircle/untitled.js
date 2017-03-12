@@ -1,4 +1,4 @@
-var debug = true; //adjust for debug info to show on site 
+var debug = false; //adjust for debug info to show on site 
 //build debug library to include coordinate tap
 
 var fullGlass = '<img class="scoreboard_glasses" src="Full.png">';
@@ -8,6 +8,7 @@ var clickedBool = false;
 $(window).on("orientationchange", function () {
 	location.reload();
 });
+
 
 //def later completed in getBackgroundSize
 var background = {
@@ -178,6 +179,11 @@ var hotspots = [
 		, left: bw * 1.56
 	}, //gopher shadow 	
 ];
+    
+//set score total
+$(".score").html("0 of "+hotspots.length+" found");
+
+    
 (function createHotspots() {		
 		for (var i = 0; i < hotspots.length; i++) {
 			$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
@@ -200,7 +206,9 @@ $(".hit").on("click", function(event){
 	if (!clicked[this.getAttribute("id")] && clickedBool === false){
 		$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
 				clicked[this.getAttribute("id")] = true;
-				$(".score").append(fullGlass);
+				$(".bottles").append(fullGlass);
+     ++score;
+    $(".score").text(score+" of "+ hotspots.length +" found");
 		
 	}
 });
@@ -208,7 +216,6 @@ $(".hit").on("click", function(event){
 }
 // Execute onload, so that the background image is already loaded.
 window.onload = window.onresize = updateData;	
-			
 		
 //requires redefinition for some reason. 
 h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -245,12 +252,6 @@ $("body").attr("height", h);
 	if (!iOS) {
 		touchzone.addEventListener("mousedown", mouse_drawCircle, false);	
 	}
-	setInterval(function () {
-		if (time > 0) {
-			--time;
-		}
-	$(".time").text("Time: " + time);
-		}, 1000);		
 })();	
 		
 function drawCircle(event) {
@@ -304,3 +305,32 @@ function mouse_drawCircle(event) {
 				
 }
 	
+function time_count( elementName, minutes, seconds )
+{
+    var element, endTime, hours, mins, msLeft, time;
+
+    function twoDigits( n )
+    {
+        return (n <= 9 ? "0" + n : n);
+    }
+
+    function updateTimer()
+    {
+        msLeft = endTime - (+new Date);
+        if ( msLeft < 1000 ) {
+            element.innerHTML = "Time's up!";
+        } else {
+            time = new Date( msLeft );
+            timelabel = "Time: ";
+            mins = time.getUTCMinutes();
+            element.innerHTML = (timelabel ? timelabel  + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+            setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+        }
+    }
+
+    element = document.getElementsByClassName( elementName )[0];
+    endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+    updateTimer();
+}
+
+time_count( "time", 1, 0 );
