@@ -16,7 +16,7 @@ function getRandomOrder(choices) {
 
 function renderQuestion(question) {
 	var questionId = questions.indexOf(question);
-	var render_string = "<div class='question' id='" + questionId + "'><h2>" + questions[questionId].title + "</h2>" + "<h4>" + questions[questionId].q + "</h4>";
+	var render_string = "<div class='question' id='" + questionId + "'><h4>" + questions[questionId].q + "</h4>";
 	var choices = getRandomOrder(question.choices);
 	for (var i = 0; i < choices.length; i++) {
 		render_string += "<div class='choice'; answer='" + questions[questionId].a + "'>" + choices[i] + "</div>";
@@ -26,7 +26,6 @@ function renderQuestion(question) {
 }
 
 function renderQuiz(randomized_questions) {
-	$("#quiz").prepend("<h1>Quiz</h1>");
 	for (var i = 0; i < 5; i++) {
 		//	for (var i = 0; i < randomized_questions.length; i++) { 
 		//swap these for statements to debug string rendering of all  questions
@@ -74,4 +73,19 @@ $("#" + currId).attr("style", "display: none");
 $("#understood").click(function(){
 	$("#info_splash").css("display","none");
 	$("#quiz").css("display","block");
-})
+ $("header").append('<div class="score">0 of 5</div><div id="myProgress"><div id="myBar"></div></div>');
+});
+
+function move() {
+    var elem = document.getElementById("myBar"); 
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+        }
+    }
+}
