@@ -26,12 +26,13 @@ function renderQuestion(question) {
 }
 
 function renderQuiz(randomized_questions) {
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i < 4; i++) {
 		//	for (var i = 0; i < randomized_questions.length; i++) { 
 		//swap these for statements to debug string rendering of all  questions
 		var appendStr = renderQuestion(randomized_questions[i]);
 		$("#quiz").append(appendStr);
 	}
+  $("#quiz").append('<div id="next">Next </div>')    
 }
 var randomized_questions = getRandomOrder(questions);
 renderQuiz(randomized_questions);
@@ -41,31 +42,32 @@ var ObjDivArray = document.getElementsByClassName("question");
 var i = 0;
 var currId = ObjDivArray[i].id;
 $("#" + currId).css("display", "block");
+var myBarValue = 0; //red bar = 0
 $(".choice").click(function () {
 	if ($(this).text() == $(this).attr("answer")) {
-		++score; 
-		alert("Great job!");
-//		$("#" + currId).attr("style", "display: none");
-//		++i;
-//		currId = ObjDivArray[i].id;
-//		(function () {
-//			var currId = ObjDivArray[i].id;
-//			$("#" + currId).css("display", "block");
-//		})();
+		//give white highlight, blue text
+
+    $(this).attr("style","background-color:white; color: rgba(0, 10, 20, .85);");
+     ++score; 
+  $(".score").text(score+" of 4");
+  myBarValue+=25;
+  $("#myBar").attr("style", "height: 20px;background-color: red; width:"+(myBarValue+"%;"));
+          
 	}
 //	else alert("Try again!");
-	else {alert("Woops!");}
-$("#" + currId).attr("style", "display: none");
+	else {
+     alert("Please try again.");}
+//$("#" + currId).attr("style", "display: none"); //makes current question disappear
 		++i;
-		if(i !== 5){
+		if(i !== 4){
 		currId = ObjDivArray[i].id;
 		(function () {
 			var currId = ObjDivArray[i].id;
-			$("#" + currId).css("display", "block");
+//			$("#" + currId).css("display", "block");
 		})();			
 		}else{
 			$("#results").html("Your score: " + score + ". <a href='quiz.html'> Try again? </a>");
-			$("#results").css("display","block");
+//			$("#results").css("display","block");
 		}
 	
 });
@@ -73,7 +75,7 @@ $("#" + currId).attr("style", "display: none");
 $("#understood").click(function(){
 	$("#info_splash").css("display","none");
 	$("#quiz").css("display","block");
- $("header").append('<div class="score">0 of 5</div><div id="myProgress"><div id="myBar"></div></div>');
+ $("header").append('<div class="score">0 of 4</div><div id="myProgress"><div id="myBar"></div></div>');
 });
 
 function move() {
