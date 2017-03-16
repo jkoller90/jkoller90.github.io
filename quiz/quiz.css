@@ -1,140 +1,146 @@
-html {
-    background-image: url("bricks.jpg");
-    color: white;
-    font-family: sans-serif;
-    line-height: 2.8;
-       display: block;
-
-}
-
 body {
-    width: 100%;
-    margin: 0 !important;
-	  padding-top: 5%;
-    height: auto;
-    background: rgba(0, 10, 20, .85);
+	width: 100%;
+	margin: 0 !important;
+	padding-top: 5%;
+	height: auto;
+/*	background: rgba(0, 10, 20, .85);*/
 }
-
-
 
 h2 {
-    margin-top: 0;
-		margin: 0 20% 0 20%;
-	line-height:1;
+	margin-top: 0;
+	margin: 0 20% 0 20%;
+	line-height: 1;
 	font-size: 1.2em;
-	font-weight:normal;
-/*	padding-top: 2%;*/
-
+	font-weight: normal;
+	/*	padding-top: 2%;*/
 }
 
-.header {
-    text-align: left;	  
-}
-
-span{
-	 margin:2%;
-}
-
-.choice {
-		font-size: 25px;
-    background-color: rgba(0, 0, 0, 0);
-    border: 5px solid white;
-    width: 50%;
-    margin: 7% auto;
-    text-align: center;
-    border: 1px solid white;
-    border-radius: 14px;
-    margin-left: 25%;
-}
-
-#next{
-    background-color: rgba(0, 0, 0, 0);
-		width: 50%;
-    font-size: 25px;
-		position:absolute;
-    text-align: center;
-    border: 1px solid white;
-    border-radius: 14px;
-    margin-left: 25%;   
-}
-
-.question {
-    display: none;
-    text-align: center;
-}
-#next{
-    display:none;
-    background-color:red;
-}
-
-.score{
- text-align:center;
-	margin: 2% 0 2% 0;
+html {
+/*	background-image: url("bricks.jpg");*/
+	background-image: url("dark-BG.png");
+	color: white;
+	font-family: sans-serif;
+	line-height: 2.8;
+	display: block;
 }
 
 #back {
-    width: 13%;
-    height: auto;
-    top: 1%;
+	width: 13%;
+	height: auto;
+	top: 1%;
 }
 
-#myProgress {    
-    left: 25%;
-    width: 50%;
-    background-color: grey;
-    position: absolute;
-	margin: 1% 0 1% 0;
+.choice {
+	font-size: 25px;
+	background-color: rgba(0, 0, 0, 0);
+	border: 5px solid white;
+	width: 50%;
+	margin: 7% auto;
+	text-align: center;
+	border: 1px solid white;
+	border-radius: 14px;
+	margin-left: 25%;
 }
 
-#myBar {
-    width: 0%;
-    height: 20px;
-    background-color: red;
-	margin: 1% 0 1% 0;
+.header {
+	text-align: left;
 }
 
 #info_splash {
-		width:100%;
-		height: auto;
-    position: absolute;
-    align-content: center;
-    text-align: center;
-		
+	width: 100%;
+	height: auto;
+	position: absolute;
+	align-content: center;
+	text-align: center;
 }
-#instructions{
-	margin-top:25%
+
+#instructions {
+	margin-top: 5%;
+	width: 100%;
+	height: auto;
+	font-size: 30;
 }
-#understood {
-		font-size: 25px;
-		padding: 1% !important;
-  	width: 55%;
-    position:absolute;
-		top: 150%;
-    margin: 16% auto;
-    text-align: center;
-    border-radius: 14px;
-    margin-left: 22%;
-    background-color: red;
-    color: white;
+
+#myBar {
+	width: 0%;
+	height: 15px !important;
+	background-color: dimgrey;
+	border-radius: 10px;
+}
+
+#myProgress {
+	left: 30%;
+	width: 40%;
+	height: 15px !important;
+	border-radius: 10px;	
+	background-color: rgba(55, 70, 70, .9);
+	position: absolute;
+	margin: 1% 0 1% 0;
+}
+
+#next {
+	background-color: rgba(0, 0, 0, 0);
+	width: 50%;
+	font-size: 25px;
+	position: absolute;
+	text-align: center;
+	border: 1px solid white;
+	border-radius: 14px;
+	margin-left: 25%;
+}
+
+#next {
+	display: none;
+	background-color: red;
+}
+
+.question {
+	display: none;
+	text-align: center;
+	font-size: 30;
 }
 
 #quiz {
-    display: none;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    align-content: center;
-    text-align: center;	
+	display: none;
+	width: 100%;
+	height: auto;
+	position: absolute;
+	align-content: center;
+	text-align: center;
 }
 
 #results {
-    display: none;
-		text-align:center;
+	display: none;
+	text-align: center;
+}
+
+.score {
+	text-align: center;
+	margin: 2% 0 2% 0;
+	font-size: 30;
+}
+
+span {
+	margin: 2%;
 }
 
 #title {
-    position: absolute;
-    left: 44%;
-    font-size: 267%;
-    top: 4%;
+	position: absolute;
+	left: 44%;
+	font-size: 55;
+	top: 4%;
+}
+
+#understood {
+	font-size: 25px;
+	padding: 1% !important;
+	width: 55%;
+	position: absolute;
+	top: 125%;
+	margin: 16% auto;
+	text-align: center;
+	border-radius: 14px;
+	margin-left: 22%;
+	background-color: red;
+	color: white;
 }
