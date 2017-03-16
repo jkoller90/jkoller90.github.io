@@ -16,10 +16,10 @@ function getRandomOrder(choices) {
 
 function renderQuestion(question) {
 	var questionId = questions.indexOf(question);
-	var render_string = "<div class='question' id='" + questionId + "'><h4>" + questions[questionId].q + "</h4>";
+	var render_string = "<div class='question' id='" + questionId + "'><h2>" + questions[questionId].q + "</h2>";
 	var choices = getRandomOrder(question.choices);
 	for (var i = 0; i < choices.length; i++) {
-		render_string += "<div class='choice'; answer='" + questions[questionId].a + "'>" + choices[i] + "</div>";
+		render_string += "<div class='choice'; answer='" + questions[questionId].a + "'><p>" + choices[i] + "</p></div>";
 	}
 	render_string += "</div>";
 	return render_string;
@@ -44,38 +44,47 @@ var currId = ObjDivArray[i].id;
 $("#" + currId).css("display", "block");
 var myBarValue = 0; //red bar = 0
 $(".choice").click(function () {
+	console.log(i);
+	//right answer 
 	if ($(this).text() == $(this).attr("answer")) {
+		 i++;
 		//give white highlight, blue text
-
     $(this).attr("style","background-color:white; color: rgba(0, 10, 20, .85);");
+		$("#next").attr("style", "display: block");
      ++score; 
   $(".score").text(score+" of 4");
   myBarValue+=25;
   $("#myBar").attr("style", "height: 20px;background-color: red; width:"+(myBarValue+"%;"));
-          
-	}
-//	else alert("Try again!");
-	else {
-     alert("Please try again.");}
-//$("#" + currId).attr("style", "display: none"); //makes current question disappear
-		++i;
+
+  $("#next").click(function(){
+		console.log(i, score);
+		$("#next").attr("style", "display: none");
+		//makes current question disappear
+		$("#" + currId).attr("style", "display: none");
 		if(i !== 4){
 		currId = ObjDivArray[i].id;
 		(function () {
 			var currId = ObjDivArray[i].id;
-//			$("#" + currId).css("display", "block");
+			$("#" + currId).css("display", "block");
 		})();			
-		}else{
-			$("#results").html("Your score: " + score + ". <a href='quiz.html'> Try again? </a>");
-//			$("#results").css("display","block");
-		}
+		}else{//can report score in modifications 
+			$("#results").html("<h1>Great job!<a href='quiz.html'>Play again? </a></h1>");
+			$("#results").css("display","block");
+		}		
+		console.log(i, score);
+	});       
+	}
+	else {
+     alert("Please try again.");
+	}
+
 	
 });
 
 $("#understood").click(function(){
 	$("#info_splash").css("display","none");
 	$("#quiz").css("display","block");
- $("header").append('<div class="score">0 of 4</div><div id="myProgress"><div id="myBar"></div></div>');
+ $(".header").append('<div class="score">0 of 4</div><div id="myProgress"><div id="myBar"></div></div>');
 });
 
 function move() {
