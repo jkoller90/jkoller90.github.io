@@ -1,5 +1,5 @@
 html {
-/*	background-image: url("bricks.jpg");*/
+	/*	background-image: url("bricks.jpg");*/
 	background-image: url("dark-BG.png");
 	color: white;
 	font-family: sans-serif;
@@ -12,7 +12,7 @@ body {
 	margin: 0 !important;
 	padding-top: 5%;
 	height: auto;
-/*	background: rgba(0, 10, 20, .85);*/
+	/*	background: rgba(0, 10, 20, .85);*/
 }
 
 h2 {
@@ -23,8 +23,6 @@ h2 {
 	font-weight: normal;
 	/*	padding-top: 2%;*/
 }
-
-
 
 #back {
 	width: 13%;
@@ -74,7 +72,7 @@ h2 {
 	left: 30%;
 	width: 40%;
 	height: 15px !important;
-	border-radius: 10px;	
+	border-radius: 10px;
 	background-color: rgba(55, 70, 70, .9);
 	position: absolute;
 	margin: 1% 0 1% 0;
@@ -147,66 +145,77 @@ span {
 	color: white;
 }
 
-
 @media only screen and (min-device-width: 700px) and (max-device-width: 1024px) {
-		h1{
-			font-size: 1.2em;	
-		}
-	h2{
-		font-size: .75em;
+	h1 {
+		font-size: 1.7em;
 	}
-		#back{
-			width:7%;
+	h2 {
+		font-size: 1em;
 	}
-	.choice{
-		margin: 3% auto;
+	#back {
+		width: 7%;
 	}
-	#title{
-		left:45%;
-		font-size:40;
+	.choice {
+		margin: 7% auto;
 	}
-	.score{
-		margin: 0;
-		font-size:20;
+/*
+	.header{
+		padding: 5%;
 	}
-	#quiz{
-		top:30%;
+*/
+	#next{
+		top:100%;
 	}
-	#understood{
+	#myProgress{
+		margin:0;
+	}
+	#title {
+		left: 45%;
+		font-size: 55;
+	}
+	.score {
+		font-size: 20;
+		margin-top: 8%;
+	}
+	#quiz {
+		top: 25%;
+	}
+	#understood {
 		top: 100%;
 	}
 }
 
-
 @media only screen and (min-device-width: 1025px) {
-     html {
-			 line-height:normal;			 
-     }
-		h1{
-			font-size: 1.2em;	
-		}
-	h2{
+	html {
+		line-height: 1.5;
+	}
+	h1 {
+		font-size: 1.2em;
+	}
+	h2 {
 		font-size: .75em;
 	}
-		#back{
-			width:7%;
+	#back {
+		width: 7%;
 	}
-	.choice{
+	.choice {
 		margin: 3% auto;
 	}
-	#title{
-		left:45%;
-		font-size:40;
+	#instructions{
+		margin:0;
 	}
-	.score{
+	#title {
+		left: 45%;
+		font-size: 40;
+	}
+	.score {
 		margin: 0;
-		font-size:20;
+		font-size: 20;
 	}
-	#quiz{
-		top:30%;
+	#quiz {
+		top: 30%;
 	}
-	#understood{
+	#understood {
 		top: 75%;
 	}
 }
-
