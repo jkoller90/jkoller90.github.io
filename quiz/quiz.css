@@ -166,11 +166,11 @@ span {
 		margin-top: 45%;
 	}
 	#next {
-/*		top: 115%;*/
+		/*		top: 115%;*/
 	}
 	@media screen and (min-width: 375) {
 		#next {
-/*			top: 128%;*/
+			/*			top: 128%;*/
 		}
 	}
 }
@@ -184,20 +184,18 @@ span {
 		margin-top: 55%;
 	}
 	#next {
-/*		top: 128%;*/
+		/*		top: 128%;*/
 	}
 }
 
 @media screen and (min-width: 415px) {
 	#next {
-/*		top: 128%;*/
+		/*		top: 128%;*/
 	}
-	#understood{
-		margin-top:28%;	
-
-				width:40%;
-			margin-left: 28%	
-	
+	#understood {
+		margin-top: 28%;
+		width: 40%;
+		margin-left: 28%
 	}
 }
 
@@ -207,11 +205,14 @@ span {
 		top: .5em;
 	}
 }
-@media screen and (min-width:500px){
-	.choice{
-		width:45%;
+
+@media screen and (min-width:500px) {
+	.choice,
+	#next {
+		width: 45%;
 	}
 }
+
 @media screen and (min-width: 555px) {
 	#title {
 		left: 47%;
@@ -230,6 +231,7 @@ span {
 		margin-bottom: 8%;
 	}
 }
+
 @media screen and (min-width: 600px) {
 	.choice {
 		margin: 4% auto;
@@ -237,80 +239,109 @@ span {
 	#myProgress {
 		left: 33%;
 	}
+	#next {
+		margin-left: 27.5%;
+	}
 	#title {
 		left: 47.5%;
 		top: .5em;
 		font-size: 1.15em;
 	}
-		#understood{
-/*
-		width:50%;
-			margin-left: 25%
-*/
+	#understood {
+		margin-left: 29%
 	}
 }
+
 @media screen and (min-width: 700px) {
 	h2 {
-	line-height: 1;
-	font-size: .95rem;
-}
+		line-height: 1;
+		font-size: .95rem;
+	}
+	.choice,
+	#next {
+		width: 40%;
+	}
 	.choice {
-		width:40%;
 		margin: 4% auto;
 	}
 	#myProgress {
 		left: 33%;
 	}
+	#next {
+		margin-left: 30%;
+	}
 	#title {
 		left: 47.5%;
 		top: .5em;
 		font-size: 1.15em;
 	}
-		#understood{
-		margin-top:18%;	
-				width:38%;
-			margin-left: 30%	
+	#understood {
+		margin-top: 18%;
+		width: 38%;
+		margin-left: 30%
 	}
 }
 
 @media screen and (min-width: 800px) {
-	.choice{width:42%;}
+	.choice,
+	#next {
+		width: 42%;
+	}
+	#next {
+		margin-left: 29%;
+	}
 	#title {
 		left: 47.5%;
 		top: .5em;
 	}
-			#understood{
-				width:35%;
-			margin-left: 32%	
+	#understood {
+		width: 35%;
+		margin-left: 32%
 	}
 }
 
-
-
 @media screen and (min-width: 900px) {
-	.choice{width:40%;}
+	.choice,
+	#next {
+		width: 40%;
+	}
+	#next {
+		margin-left: 30%;
+	}
 	#title {
 		left: 48%;
 		top: .5em;
 		font-size: 1.15em;
 	}
-				#understood{
-				width:30%;
-			margin-left: 33.5%	
+	#understood {
+		width: 30%;
+		margin-left: 33.5%
 	}
 }
 
 @media screen and (min-width: 950px) {
-	.choice{width:37.5%;}
-	#understood{
-		margin-top:11.5%;	
-				width:28%;
-			margin-left: 34.5%	
+	.choice,
+	#next {
+		width: 37.5%;
+	}
+	#next {
+		margin-left: 31%;
+	}
+	#understood {
+		margin-top: 11.5%;
+		width: 28%;
+		margin-left: 34.5%
 	}
 }
 
 @media screen and (min-width: 1000px) {
-	.choice{width:30%;}
+	.choice,
+	#next {
+		width: 35%;
+	}
+	#next {
+		margin-left: 29%;
+	}
 	h2 {
 		margin: 0 10% 5% 10%;
 	}
@@ -324,12 +355,17 @@ span {
 }
 
 @media screen and (min-width: 1150px) {
+/*
+	#next {
+		margin-left: 29%;
+	}
+*/
 	#title {
 		left: 48.25%;
 		top: .5em;
 	}
-		#understood{
-				width:22%;
-			margin-left: 38.5%	
+	#understood {
+		width: 22%;
+		margin-left: 38.5%
 	}
 }
