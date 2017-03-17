@@ -129,7 +129,7 @@ span {
 	height: auto;
 	position: absolute;
 	/*	top: 20em;*/
-	margin: 16% auto;
+	margin-top: 40%;
 	text-align: center;
 	border-radius: 7px;
 	margin-left: 22%;
@@ -139,13 +139,25 @@ span {
 }
 @media screen and (min-width: 360px){
 	#title{
-		left:45%;
+		left:45.5%;
 		top: .5em;
 	}
+	#understood {
+	margin-top: 45%;
+}
+}
+@media screen and (min-width: 400px){
+	#title{
+		left:45.5%;
+		top: .5em;
+	}
+	#understood {
+	margin-top: 55%;
+}
 }
 @media screen and (min-width: 450px){
 	#title{
-		left:46%;
+		left:46.5%;
 		top: .5em;
 	}	
 }
@@ -158,17 +170,26 @@ span {
 		left:33%;
 	}
 }
+
+@media screen and (min-width: 555px){
+	h2{
+		margin: 0 10% 10% 10%;
+	}
+	.header{
+		margin-bottom: 8%;
+	}
+}
 @media screen and (min-width: 700px){
 	#title{
-		left:47%;
+		left:47.5%;
 		top: .5em;
 		font-size:1.15em;
 	}	
 	#myProgress{
 		left:33%;
 	}
-	.score{
-		
+	.choice{
+		margin: 4% auto;
 	}
 }
 @media screen and (min-width: 800px){
@@ -185,6 +206,12 @@ span {
 	}	
 }
 @media screen and (min-width: 1000px){
+	h2{
+		margin: 0 10% 5% 10%;
+	}
+	.header{
+/*		margin-bottom*/
+	}
 	#title{
 		left:48%;
 		top: .5em;
