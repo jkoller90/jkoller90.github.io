@@ -340,7 +340,7 @@ span {
 		width: 35%;
 	}
 	#next {
-		margin-left: 29%;
+		margin-left: 32.5%;
 	}
 	h2 {
 		margin: 0 10% 5% 10%;
@@ -355,11 +355,13 @@ span {
 }
 
 @media screen and (min-width: 1150px) {
-/*
+	.choice,
 	#next {
-		margin-left: 29%;
+		width: 30%;
 	}
-*/
+	#next {
+		margin-left: 35%;
+	}    
 	#title {
 		left: 48.25%;
 		top: .5em;
@@ -368,4 +370,55 @@ span {
 		width: 22%;
 		margin-left: 38.5%
 	}
+}
+
+
+@media screen and (min-width: 1400px) {
+    .choice{
+        margin: 3% auto;
+    }
+	.choice,
+	#next {
+		width: 25%;
+	}
+	#next {
+		margin-left: 37.5%;
+	}
+    	#title {
+		left: 48.5%;
+		top: .5em;
+	}
+}
+
+@media screen and (min-width: 1660px) {
+    html{
+        line-height: 2.0;
+    }    
+}
+
+@media screen and (min-width: 1700px) {
+	.choice,
+	#next {
+		width: 20%;
+	}
+	#next {
+		margin-left: 40%;
+	}     
+}
+@media screen and (min-width: 1750px) {
+
+	#title {
+		left: 49%;
+		top: .5em;
+	}
+	#understood {
+		width: 16%;
+		margin-left: 40.5%
+	}
+}
+
+@media screen and (min-width:2050px){
+    .header{
+        margin-bottom:5%;
+    }
 }
