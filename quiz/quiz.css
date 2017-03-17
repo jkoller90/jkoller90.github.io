@@ -207,7 +207,11 @@ span {
 		top: .5em;
 	}
 }
-
+@media screen and (min-width:500px){
+	.choice{
+		width:45%;
+	}
+}
 @media screen and (min-width: 555px) {
 	#title {
 		left: 47%;
@@ -246,7 +250,12 @@ span {
 	}
 }
 @media screen and (min-width: 700px) {
+	h2 {
+	line-height: 1;
+	font-size: .95rem;
+}
 	.choice {
+		width:40%;
 		margin: 4% auto;
 	}
 	#myProgress {
@@ -265,6 +274,7 @@ span {
 }
 
 @media screen and (min-width: 800px) {
+	.choice{width:42%;}
 	#title {
 		left: 47.5%;
 		top: .5em;
@@ -278,6 +288,7 @@ span {
 
 
 @media screen and (min-width: 900px) {
+	.choice{width:40%;}
 	#title {
 		left: 48%;
 		top: .5em;
@@ -290,6 +301,7 @@ span {
 }
 
 @media screen and (min-width: 950px) {
+	.choice{width:37.5%;}
 	#understood{
 		margin-top:11.5%;	
 				width:28%;
@@ -298,6 +310,7 @@ span {
 }
 
 @media screen and (min-width: 1000px) {
+	.choice{width:30%;}
 	h2 {
 		margin: 0 10% 5% 10%;
 	}
