@@ -34,7 +34,7 @@ function renderQuiz(randomized_questions) {
 		var appendStr = renderQuestion(randomized_questions[i]);
 		$("#quiz").append(appendStr);
 	}
-	$("#quiz").append('<div id="next">Next </div>')
+	$("#quiz").append('<div id="next"> <p> Next </p> </div>')
 }
 var score = 0;
 var ObjDivArray = document.getElementsByClassName("question");
