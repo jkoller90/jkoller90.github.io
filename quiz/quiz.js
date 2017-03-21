@@ -43,6 +43,14 @@ var answered = false; //blocks simultanous answers
 var currId = ObjDivArray[i].id;
 $("#" + currId).css("display", "block");
 var myBarValue = 0;
+
+var resultMessages = ["Great Job!", "Way to go!", "Far-out!","Crushed it."];
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 $(".choice").click(function () {
 	if(!answered){
 		//right answer 
@@ -70,7 +78,10 @@ $(".choice").click(function () {
 						})();
 					}
 					else { //can report score in modifications 
-						$("#results").html("<h1>Great job!<br><a href='quiz.html'>Play again? </a></h1>");
+						var m = getRandomInt(0,4);
+						$("#results").html(
+							"<h1>"+resultMessages[m]+"</h1><a href='quiz.html'><div class='choice' id='playagain'><p style='text-decoration:none;'>Play Again?</></div></a>"
+						);
 						$("#results").css("display", "block");
 					}
 				});
@@ -94,6 +105,11 @@ $("#understood").click(function () {
 	$("#quiz").css("display", "block");
 	$(".header").append('<div class="score">0 of 4</div><div id="myProgress"><div id="myBar"></div></div>');
 });
+
+//$("#playagain").click(function(){
+//	window.location.href = "http://www.google.com";
+//});
+
 /*public void*/
 function move() {
 	var elem = document.getElementById("myBar");
