@@ -81,9 +81,6 @@ h2 {
 }
 
 @media screen and (max-width: 323px) {
-	html{
-		line-height:1.65;
-	}
 	#instructions {
 		font-size: .98rem;
 	}
@@ -163,7 +160,6 @@ span {
 
 #title {
 	visibility: hidden;
-	display:none;
 	position: absolute;
 	left: 44%;
 	font-weight: normal;

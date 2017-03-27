@@ -44,7 +44,8 @@ var currId = ObjDivArray[i].id;
 $("#" + currId).css("display", "block");
 var myBarValue = 0;
 
-var resultMessages = ["Great Job!", "Way to go!", "Far-out!","Crushed it."];
+var resultMessages = ["Sensational!", "Way to Go!", "Good Going!","Perfect!", "That's Great!","Outstanding!","Superb!","Marvelous!","Terrific!","Congratulations!","Tremendous!","Fantastic!","Excellent!"];
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
