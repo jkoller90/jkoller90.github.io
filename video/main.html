@@ -1,9 +1,16 @@
 <html>
 
-<head> </head>
+<head>
+<script>
+	var elem = document.getElementById("myvideo");
+if (elem.requestFullscreen) {
+  elem.requestFullscreen();
+}
+	</script>	
+	</head>
 
 <body>
-	<video muted autoplay>
+	<video muted autoplay playsinline id="myvideo">
 		<source src="bottle_movie_with_text.mp4" type="video/mp4"> Your browser does not support the video tag. 
 	</video>
 </body>
