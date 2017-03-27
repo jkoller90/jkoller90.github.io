@@ -1,0 +1,3 @@
+rootProject.name = 'vid'
+
+include ':app'

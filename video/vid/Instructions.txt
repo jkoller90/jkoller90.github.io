@@ -1,0 +1,12 @@
+Instructions:
+***** **** **** 
+I. Command-line 
+react-native init vid
+npm install react-native --save
+
+II. In x-code
+1. Right-click on Libraries and click Add Files to "vid"... -> add RCTVideo.xcodeproj .This should be under node_modules/react-native-video.
+2. Add video framework to build process: Under Build Phases (click on vid on left and then in viewport click on Build Phases), under Link Binary With Libraries, click "+" and add libRCTVideo.a 
+3. Import mp4 by right-clicking and Add Files to "vid"... again. 
+4. Add a copy of the mp4 in vid and then video/ then video/vid/ 
+5. Run/compile and voila, hopefully. 
