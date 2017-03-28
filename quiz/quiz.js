@@ -14,8 +14,7 @@ $(document).ready(function () {
 		$.ajax({
 			type: 'POST'
 			, url: 'http://rest.learncode.academy/api/johnbob/friends'
-				//			, data: {name: 'Billy Bob', age: 27}
-				
+				//			, data: {name: 'Billy Bob', age: 27}				
 			, data: payload
 			, processData: true
 			, success: function (data) {

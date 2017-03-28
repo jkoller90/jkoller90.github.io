@@ -1,4 +1,4 @@
-//load image - screenshot of os - detect browser os 
+
 
 var incrementScoreVar = 0; //reference for hooking up backend
 var wallpaper; // will be used in css image-background property for the user to download 

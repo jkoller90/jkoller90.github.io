@@ -1,3 +1,27 @@
+var window_url, token_qstring; 
+$(document).ready(function () {
+		window_url = window.location.href;
+		token_qstring = window_url.indexOf("token=") + 6;
+		var payload = {
+			"token": token_qstring
+			, "submissionId": "1234"
+			, "challengeResults": {
+				"status": "approved/rejected/in_progress"
+				, "message": ""
+			}
+		};
+		console.log(window.location.href);
+		$.ajax({
+			type: 'POST'
+			, url: 'http://rest.learncode.academy/api/johnbob/friends'
+				//			, data: {name: 'Billy Bob', age: 27}				
+			, data: payload
+			, processData: true
+			, success: function (data) {
+				console.log(data); //the new item is returned with an ID
+			}
+		});
+	})
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
