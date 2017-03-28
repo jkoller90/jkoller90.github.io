@@ -186,6 +186,11 @@ span {
 	line-height: 1;
 }
 
+@media screen and (width:320px) and (height:460px){
+	html{
+		line-height: 1.65;
+	}
+}
 @media screen and (min-width: 360px) {
 	#title {
 		left: 45.5%;
@@ -193,14 +198,6 @@ span {
 	}
 	#understood {
 		margin-top: 45%;
-	}
-	#next {
-		/*		top: 115%;*/
-	}
-	@media screen and (min-width: 375) {
-		#next {
-			/*			top: 128%;*/
-		}
 	}
 }
 
