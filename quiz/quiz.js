@@ -1,15 +1,27 @@
+var window_url, token_qstring; 
 $(document).ready(function () {
-//		$.ajax({
-//			url: "/hi"
-//			, type: "POST"
-//			, data: {
-//				foo: "bar"
-//			}
-//			, processData: true
-//			, contentType: 'application/json'
-//		});
-var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?foo=bar';
-window.history.pushState({path:newurl},'',newoffurl);	
+		window_url = window.location.href;
+		token_qstring = window_url.indexOf("token=") + 6;
+		var payload = {
+			"token": token_qstring
+			, "submissionId": "1234"
+			, "challengeResults": {
+				"status": "approved/rejected/in_progress"
+				, "message": ""
+			}
+		};
+		console.log(window.location.href);
+		$.ajax({
+			type: 'POST'
+			, url: 'http://rest.learncode.academy/api/johnbob/friends'
+				//			, data: {name: 'Billy Bob', age: 27}
+				
+			, data: payload
+			, processData: true
+			, success: function (data) {
+				console.log(data); //the new item is returned with an ID
+			}
+		});
 	})
 	/* public Object[] */
 function getRandomOrder(choices) {
