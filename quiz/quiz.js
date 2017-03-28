@@ -1,4 +1,17 @@
-/* public Object[] */
+$(document).ready(function () {
+//		$.ajax({
+//			url: "/hi"
+//			, type: "POST"
+//			, data: {
+//				foo: "bar"
+//			}
+//			, processData: true
+//			, contentType: 'application/json'
+//		});
+var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?foo=bar';
+window.history.pushState({path:newurl},'',newoffurl);	
+	})
+	/* public Object[] */
 function getRandomOrder(choices) {
 	var used = [];
 	var randomized = [];
@@ -43,17 +56,15 @@ var answered = false; //blocks simultanous answers
 var currId = ObjDivArray[i].id;
 $("#" + currId).css("display", "block");
 var myBarValue = 0;
-
-var resultMessages = ["Sensational!", "Way to Go!", "Good Going!","Perfect!", "That's Great!","Outstanding!","Superb!","Marvelous!","Terrific!","Congratulations!","Tremendous!","Fantastic!","Excellent!"];
+var resultMessages = ["Sensational!", "Way to Go!", "Good Going!", "Perfect!", "That's Great!", "Outstanding!", "Superb!", "Marvelous!", "Terrific!", "Congratulations!", "Tremendous!", "Fantastic!", "Excellent!"];
 
 function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min;
 }
-
 $(".choice").click(function () {
-	if(!answered){
+	if (!answered) {
 		//right answer 
 		if ($(this).text() == $(this).attr("answer")) {
 			answered = true; //blocks simultanous answers 
@@ -79,10 +90,8 @@ $(".choice").click(function () {
 						})();
 					}
 					else { //can report score in modifications 
-						var m = getRandomInt(0,4);
-						$("#results").html(
-							"<h1>"+resultMessages[m]+"</h1><a href='quiz.html'><div class='choice' id='playagain'><p style='text-decoration:none;'>Play Again?</></div></a>"
-						);
+						var m = getRandomInt(0, 4);
+						$("#results").html("<h1>" + resultMessages[m] + "</h1><a href='quiz.html'><div class='choice' id='playagain'><p style='text-decoration:none;'>Play Again?</></div></a>");
 						$("#results").css("display", "block");
 					}
 				});
@@ -95,10 +104,15 @@ $(".choice").click(function () {
 			var x = $(this); //placeholder because "this" changes in setTimeout callback
 			setTimeout(function () {
 				answered = false; //unblocks answering
-				alert("Please try again.");
+				swal({
+					title: " "
+					, text: "Please try again."
+					, confirmButtonColor: "red"
+					, confirmButtonText: "Okay"
+				});
 				x.attr("style", "background-color:rgba(0,0,0,0); color: white;");
 			}, 500);
-		}	
+		}
 	}
 });
 $("#understood").click(function () {
@@ -106,11 +120,9 @@ $("#understood").click(function () {
 	$("#quiz").css("display", "block");
 	$(".header").append('<div class="score">0 of 4</div><div id="myProgress"><div id="myBar"></div></div>');
 });
-
 //$("#playagain").click(function(){
 //	window.location.href = "http://www.google.com";
 //});
-
 /*public void*/
 function move() {
 	var elem = document.getElementById("myBar");
