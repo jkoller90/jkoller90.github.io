@@ -1,28 +1,4 @@
-var window_url, token_qstring; 
-$(document).ready(function () {
-		window_url = window.location.href;
-		token_qstring = window_url.indexOf("token=") + 6;
-		var payload = {
-			"token": token_qstring
-			, "submissionId": "1234"
-			, "challengeResults": {
-				"status": "approved/rejected/in_progress"
-				, "message": ""
-			}
-		};
-		console.log(window.location.href);
-		$.ajax({
-			type: 'POST'
-			, url: 'http://rest.learncode.academy/api/johnbob/friends'
-				//			, data: {name: 'Billy Bob', age: 27}				
-			, data: payload
-			, processData: true
-			, success: function (data) {
-				console.log(data); //the new item is returned with an ID
-			}
-		});
-	})
-	/* public Object[] */
+/* public Object[] */
 function getRandomOrder(choices) {
 	var used = [];
 	var randomized = [];
@@ -101,6 +77,24 @@ $(".choice").click(function () {
 						})();
 					}
 					else { //can report score in modifications 
+						var data_out = {
+							"token": 12345566667777
+							, "submissionId": "1234"
+							, "challengeResults": {
+								"status": "approved" 
+								, "message": "It's ah-me: Mario."
+							}
+						};
+						$.ajax({
+							type: 'POST'
+							, url: "https://some.api-server/api/v1/tokens/earn-stripes"
+							, data: data_out
+							, dataType: "JSON"
+							, processData: true
+							, success: function (data) {
+								//
+							}
+						});
 						var m = getRandomInt(0, 4);
 						$("#results").html("<h1>" + resultMessages[m] + "</h1><a href='quiz.html'><div class='choice' id='playagain'><p style='text-decoration:none;'>Play Again?</></div></a>");
 						$("#results").css("display", "block");
