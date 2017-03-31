@@ -22,8 +22,10 @@
 	<link href='bevquiz.hyperesources/sweetalert.css' rel='stylesheet'>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="bevquiz.hyperesources/sweetalert.min.js" type="text/javascript"></script>
+	<script src="void_Load.js"></script>
 	<script>
 		"use strict";
+		var stage = 1;
 		var answer;
 		$(window).on("load", function () {
 			var loading = 0;
@@ -52,16 +54,32 @@
 								, html: true
 							});
 						});
-							loading++;
-					}
-					else if (loading === 1) {
-						$("#answer").click(function () {
-							$(".q1").remove();
+						$('.q1').on("touchstart", function () {
+							swal({
+								confirmButtonColor: "#C1C1C1"
+								, confirmButtonText: "Ok!"
+								, closeOnConfirm: false
+								, title: "Incorrect"
+								, text: "<span" + "style='background-color:black'>Try again!"
+								, html: true
+							});
 						});
 						loading++;
 					}
-					else 
+					else if (loading === 1) {
+						$("#answer").click(function () {
+							++stage;
+							$(".q1").remove();
+							load(stage);
+						});
+						$("#answer").on("touchstart", function () {
+							++stage;
+							$(".q1").remove();
+							load(stage);
+						});
 						loading++;
+					}
+					else loading++;
 				};
 			}, 3500);
 		});
