@@ -1,237 +1,190 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
 	<title>_liquor_quiz</title>
 	<style>
 		html {
-			height:100%;
+			height: 100%;
 		}
+		
 		body {
-			background-color:#000000;
-			margin:0;
-			height:100%;
+			background-color: #000000;
+			margin: 0;
+			height: 100%;
 		}
 	</style>
 	<!-- copy these lines to your document head: -->
-
 	<meta name="viewport" content="user-scalable=yes, width=640" />
 	<link href='https://fonts.googleapis.com/css?family=Fira+Sans+Condensed&subset=latin' rel='stylesheet' type='text/css'>
 	<link href='bevquiz.hyperesources/sweetalert.css' rel='stylesheet'>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="bevquiz.hyperesources/sweetalert.min.js" type="text/javascript"></script>
 	<script>
-		var wait = false;
-		function _alert() {
-			if(wait == false){
-				swal({
-					confirmButtonColor: "#C1C1C1"
-					, confirmButtonText: "Ok!"
-					, closeOnConfirm: false
-					, title: "Incorrect"
-					, text: "<span" + "style='background-color:black'>Try again!"
-					, html: true
-				});
-				wait = true;
-				setTimeout(function(){wait=false;},1550);
-			}
-//			wait = false;
-			
-		}
-</script>
-	
+		"use strict";
+		var answer;
+		$(window).on("load", function () {
+			var loading = 0;
+			setTimeout(function () {
+				while (loading < 2) {
+					console.log(loading);
+					if (loading === 0) {
+						$("#liquorquiz_hype_container").prepend('<div class="q1 q1ch1"></div>');
+						$("#liquorquiz_hype_container").prepend('<div class="q1 q1ch2"></div>');
+						$("#liquorquiz_hype_container").prepend('<div class="q1 q1ch3"></div>');
+						$('div').filter(function () {
+							return $(this).css("width") == '343px';
+						}).remove();
+						answer = $('div').filter(function () {
+							return this.style.width == '327px';
+						});
+						answer[0].setAttribute("id", "answer");
+						$("#answer").attr('style', 'pointer-events: auto; position: absolute; border-style: none; cursor: pointer; border-width: 0px; border-color: rgb(229, 196, 0); overflow: visible; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 44; width: 327px; height: 327px; transform-origin: 50% 50% 0px; transform: translateX(311px) translateY(615px) rotateY(0deg);');
+						$('.q1').click(function () {
+							swal({
+								confirmButtonColor: "#C1C1C1"
+								, confirmButtonText: "Ok!"
+								, closeOnConfirm: false
+								, title: "Incorrect"
+								, text: "<span" + "style='background-color:black'>Try again!"
+								, html: true
+							});
+						});
+							loading++;
+					}
+					else if (loading === 1) {
+						$("#answer").click(function () {
+							$(".q1").remove();
+						});
+						loading++;
+					}
+					else 
+						loading++;
+				};
+			}, 3500);
+		});
 
+		function _alert() {}
+	</script>
 	<!-- end copy -->
-  </head>
-  <body>
-	<!-- copy these lines to your document: -->
+</head>
 
+<body>
+	<!-- copy these lines to your document: -->
 	<div id="liquorquiz_hype_container" style="margin:auto;position:relative;width:640px;height:960px;overflow:hidden;">
 		<script type="text/javascript" charset="utf-8" src="bevquiz.hyperesources/liquorquiz_hype_generated_script.js?43141"></script>
 	</div>
-
 	<!-- end copy -->
-	
-
-
 	<!-- text content for search engines: -->
-
 	<div style="display:none" aria-hidden=true>
-
 		<div></div>
-		<div>What kind of glass do you use to make this cocktail?
-</div>
-		<div>Hangar One Bloody Mary
-</div>
+		<div>What kind of glass do you use to make this cocktail? </div>
+		<div>Hangar One Bloody Mary </div>
 		<div>New Text</div>
 		<div>Tap the correct answer</div>
-		<div>
-
-
-
-</div>
+		<div> </div>
 		<div>Stirred</div>
 		<div>Is this cocktail shaken or stirred?</div>
-		<div>Shaken
-
-</div>
-		<div>Lemon Wedge
-</div>
+		<div>Shaken </div>
+		<div>Lemon Wedge </div>
 		<div>What garnish is not used in this cocktail?</div>
-		<div>Celery Stalk
-</div>
-		<div>Grape Tomato
-</div>
+		<div>Celery Stalk </div>
+		<div>Grape Tomato </div>
 		<div>Stuffed Olive</div>
-		<div>The Islander
-</div>
+		<div>The Islander </div>
 		<div>You just earned 14 points by answering 4 questions correctly.</div>
 		<div>Congratulations!</div>
-		<div>Continue Playing
-</div>
+		<div>Continue Playing </div>
 		<div>Orange and Pineapple</div>
-		<div>Pineapple and Lime
-</div>
+		<div>Pineapple and Lime </div>
 		<div>What two types of juice are used?</div>
-		<div>Orange and Cranberry
-</div>
-		<div>Cranberry and Pineapple
-</div>
-		<div>2 OZ.
-</div>
-		<div>2.5 OZ.
-</div>
+		<div>Orange and Cranberry </div>
+		<div>Cranberry and Pineapple </div>
+		<div>2 OZ. </div>
+		<div>2.5 OZ. </div>
 		<div>1 OZ.</div>
-		<div>1.5 OZ.
-</div>
+		<div>1.5 OZ. </div>
 		<div>How many ounces of each juice are used?</div>
 		<div>Lime Wedge</div>
-		<div>Cherry
-</div>
-		<div>Orange Wedge
-</div>
+		<div>Cherry </div>
+		<div>Orange Wedge </div>
 		<div>What type of garnish is used in this cocktail?</div>
-		<div>Strawberry Bellini
-</div>
+		<div>Strawberry Bellini </div>
 		<div>Strawberry</div>
-		<div>None
-</div>
-		<div>What type of garnish is used?
-
-</div>
-		<div>197 ml
-</div>
-		<div>177 ml
-</div>
-		<div>187 ml
-</div>
+		<div>None </div>
+		<div>What type of garnish is used? </div>
+		<div>197 ml </div>
+		<div>177 ml </div>
+		<div>187 ml </div>
 		<div>157 ml</div>
 		<div>What size is the Corbel Brut bottle?</div>
-		<div>0.75 OZ.
-</div>
+		<div>0.75 OZ. </div>
 		<div>0.5 OZ.</div>
-		<div>1 OZ.
-</div>
+		<div>1 OZ. </div>
 		<div>How many ounces of Strawberry puree are use in this cocktail?</div>
-		<div>Southbound Flight
-</div>
+		<div>Southbound Flight </div>
 		<div>What brand of liquor is used to make this cocktail?</div>
 		<div>1800 Reposado</div>
-		<div>Absolut Citron
-</div>
-		<div>Hendrick’s Gin
-</div>
-		<div>Captain Morgan Spiced Rum
-</div>
-		<div>2
-</div>
-		<div>4
-</div>
-		<div>3
-</div>
+		<div>Absolut Citron </div>
+		<div>Hendrick’s Gin </div>
+		<div>Captain Morgan Spiced Rum </div>
+		<div>2 </div>
+		<div>4 </div>
+		<div>3 </div>
 		<div>1</div>
 		<div>How many lime wedges are used in this cocktail?</div>
-		<div>Mint Leaves
-</div>
-		<div>Cucumber Slice
-</div>
+		<div>Mint Leaves </div>
+		<div>Cucumber Slice </div>
 		<div>What garnish is used in this cocktail?</div>
 		<div>Lime Wheel</div>
-		<div>Strawberry Mint Lemonade
-</div>
-		<div>Smirnoff
-</div>
-		<div>Patron Citronge
-</div>
-		<div>Stolichnaya
-</div>
+		<div>Strawberry Mint Lemonade </div>
+		<div>Smirnoff </div>
+		<div>Patron Citronge </div>
+		<div>Stolichnaya </div>
 		<div>Absolut Citron</div>
 		<div>How many garnishes are used in this cocktail?</div>
-		<div>Dobel Rita
-</div>
-		<div>Gin & Ginger
-</div>
-		<div>Pomegranate Mojito
-</div>
-		<div>Peach Smash
-</div>
-		<div>Yes
-</div>
+		<div>Dobel Rita </div>
+		<div>Gin & Ginger </div>
+		<div>Pomegranate Mojito </div>
+		<div>Peach Smash </div>
+		<div>Yes </div>
 		<div>Is a lime used in this cocktail?</div>
 		<div>No</div>
 		<div>How many ounces of Finest Call Sour is in this cocktail?</div>
-		<div>Lemon Wheel
-</div>
+		<div>Lemon Wheel </div>
 		<div>Orange Wedge</div>
-		<div>Ming Sprig
-</div>
+		<div>Ming Sprig </div>
 		<div>Yes</div>
-		<div>No
-</div>
+		<div>No </div>
 		<div>Is this cocktail garnished with a lime wedge?</div>
-		<div>0.50 OZ.
-</div>
+		<div>0.50 OZ. </div>
 		<div>0.25 OZ.</div>
 		<div>How many ounces of Lime Juice is used in this cocktail?</div>
 		<div>6 OZ.</div>
-		<div>7 OZ. 
-</div>
-		<div>9 OZ.
-</div>
+		<div>7 OZ.  </div>
+		<div>9 OZ. </div>
 		<div>How many ounces is the glass used in this cocktail?</div>
-		<div>8 OZ.
-</div>
-		<div>3 
-</div>
+		<div>8 OZ. </div>
+		<div>3  </div>
 		<div>What is the cocktail topped off with?</div>
-		<div>Pomegranate Juice
-</div>
-		<div>Club Soda
-</div>
+		<div>Pomegranate Juice </div>
+		<div>Club Soda </div>
 		<div>Cranberry Juice</div>
-		<div>Lime Juice 
-</div>
-		<div>Apple Juice 
-</div>
+		<div>Lime Juice  </div>
+		<div>Apple Juice  </div>
 		<div>What type of juice is used in this cocktail?</div>
-		<div>9 OZ. 
-</div>
-		<div>7 OZ.
-</div>
+		<div>9 OZ.  </div>
+		<div>7 OZ. </div>
 		<div>How many ounces is the glass is used in this cocktail?</div>
-		<div>Mint Sprig
-</div>
-		<div>Basil Leaf 
-</div>
-		<div>Lime Wheel
-</div>
+		<div>Mint Sprig </div>
+		<div>Basil Leaf  </div>
+		<div>Lime Wheel </div>
 		<div>How many ounces of Bloody Mary Mix is in this cocktail?</div>
-		<div>Answer the following questions about the above cocktail correctly to earn points.
-</div>
-
+		<div>Answer the following questions about the above cocktail correctly to earn points. </div>
 	</div>
-
 	<!-- end text content: -->
+</body>
 
-  </body>
 </html>

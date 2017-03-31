@@ -1,3 +1,32 @@
+.q1{
+	width:310px;
+	height: 333px;
+	position:absolute;
+	z-index:44;
+	display:block;
+}
+.q1ch1{
+	transform-origin:50% 50% 0px;
+	transform: translateX(0px) translateY(287px) rotateY(0deg);
+		border: 1px solid red;
+}
+.q1ch2{
+	transform-origin:50% 50% 0px;
+	transform: translateX(312px) translateY(285px) rotateY(0deg);
+		border: 1px solid green;
+}
+.q1ch3{
+	transform-origin:50% 50% 0px;
+	transform: translateX(0px) translateY(615px) rotateY(0deg);
+		border: 1px solid blue;
+}
+/*
+.q1ch4{
+	transform-origin:50% 50% 0px;
+	transform: translateX(311px) translateY(615px) rotateY(0deg);
+		border: 1px solid violet;
+}
+*/
 html{
 	overflow:hidden;
 }
@@ -34,6 +63,7 @@ body.stop-scrolling {
   margin-left: -256px;
   margin-top: -200px;
   overflow: hidden;
+	visibility: none;
   display: none;
   z-index: 99999; }
   @media all and (max-width: 540px) {
