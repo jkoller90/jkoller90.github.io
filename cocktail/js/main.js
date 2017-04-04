@@ -1,5 +1,6 @@
 var drink_count = 0;
 var question_count = 1;
+var delay = 3000;
 $(document).click(function () {
 	if (question_count == 5) {
 		question_count = 1;
@@ -48,7 +49,8 @@ function switchSequence() {
 						$('.glassquestion').css('display', 'block');
 						$('body').attr('id', 'backgroundGrid');
 						$('.intro').css('display', 'none');
-					}, 3000);
+					}, delay);
+					delay = 0;
 				}
 				else {
 					setRightGlass(questions[drink_count][question_count].choices.a);
