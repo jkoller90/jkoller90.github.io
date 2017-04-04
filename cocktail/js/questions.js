@@ -29,7 +29,7 @@ questions.push(bloodymary);
 var islander = ['url("http://i.imgur.com/6WVVkS1.jpg")'];
 islander.push(new Question('The Islander', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
-	, a: 0
+	, a: 3
 }));
 islander.push(new Question('The Islander', 'What two types of juice are used?', 'Four-choice', {
 	choices: ['Oranges and Pineapple', 'Orange and Cranberry', 'Cranberry and Pineapple', 'Pineapple and Lime']
