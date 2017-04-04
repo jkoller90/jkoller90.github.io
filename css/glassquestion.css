@@ -1,0 +1,79 @@
+.glassquestion {
+	display: none;
+}
+
+#backgroundGrid {
+	height: 100%;
+	background-color: black;
+		background-image: url("http://i.imgur.com/MaH93Cg.png");
+	width: 100%;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+
+#aztecaIMG {
+	left: 58%;
+	top: 35%;
+	width: 30%;
+	height: 30%;
+	background-image: url("http://i.imgur.com/ulBlQvc.png");
+	z-index: 6;
+	-webkit-background-size: 100%;
+	overflow: visible;
+	opacity: 1;
+	background-repeat: no-repeat no-repeat;
+}
+
+#catalinaIMG {
+	left: 57%;
+	top: 68.5%;
+	width: 30%;
+	height: 30%;
+	background-image: url("http://i.imgur.com/W5uacoX.png");
+	z-index: 5;
+	-webkit-background-size: 100%;
+	overflow: visible;
+	opacity: 1;
+	background-repeat: no-repeat no-repeat;
+}
+
+#fluteIMG {
+	left: 12%;
+	top: 33%;
+	width: 30%;
+	height: 33%;
+	background-image: url("http://i.imgur.com/YbpJXch.png");
+	z-index: 7;
+	-webkit-background-size: 100%;
+	overflow: visible;
+	opacity: 1;
+	background-repeat: no-repeat no-repeat;
+}
+
+#rocksIMG {
+	left: 14%;
+	top: 68.5%;
+	width: 28%;
+	height: 30%;
+	background-image: url("http://i.imgur.com/yIX7riU.png");
+	z-index: 8;
+	-webkit-background-size: 100%;
+	overflow: visible;
+	opacity: 1;
+	background-repeat: no-repeat no-repeat;
+}
+
+#tapdirections {
+	font-weight: bold;
+	font-size: 14px;
+	letter-spacing: 0px;
+	word-wrap: break-word;
+	transform: translateX(0px) translateY(113px) rotateY(0deg);
+	height: 15px;
+	text-align: center;
+	width: 100%;
+	z-index: 2;
+	overflow: visible;
+	color: rgb(255, 255, 255);
+	opacity: 1;
+}

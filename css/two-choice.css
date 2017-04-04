@@ -1,0 +1,55 @@
+.Two-choice {
+	display: none;	
+}
+
+#twobarrier1 {
+	top: 35%;
+	height: 5px;
+	background-image: url("http://i.imgur.com/9K2uCwE.png");
+	z-index: 6;
+	width: 100%;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+
+#twobarrier2 {
+	top: 60%;
+	height: 5px;
+	background-image: url("http://i.imgur.com/9K2uCwE.png");
+	z-index: 6;
+	width: 100%;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+
+#twobarrier3 {
+	top: 85%;
+	z-index: 6;
+	height: 5px;
+	background-image: url("http://i.imgur.com/9K2uCwE.png");
+	width: 100%;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+
+#twochoice1 {
+	top: 40%;
+	z-index: 6;
+	width: 100%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	text-align: center;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+
+#twochoice2 {
+	top: 65%;
+	z-index: 6;
+	width: 100%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	text-align: center;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}

@@ -1,0 +1,143 @@
+* {
+	overflow: hidden !important;
+}
+h2{
+	font-size: 22px !important;
+	line-height: normal !imporant;
+}
+body {
+	margin: 0;
+}
+
+html {
+	background-color: black;
+	font-family: 'Gill Sans', 'Lucida Grande', Helvetica, sans-serif;
+	overflow: hidden;
+	color: white;
+}
+
+div {
+	position: absolute;
+}
+
+.intro{
+/*	display:none;*/
+}
+.sa-button-container{
+	left:33%;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 420px) {
+	#drinktitle_container {
+		color: rgb(255, 255, 255);
+		font-weight: normal;
+		letter-spacing: 0px;
+		word-wrap: break-word;
+		height: 0.875em;
+		text-align: center;
+		width: 100%;
+		z-index: 6;
+		overflow: visible !important;
+		color: rgb(255, 255, 255);
+		opacity: 1;
+		top: 8%;
+	}
+	#question {
+		color: rgb(255, 255, 255);
+		font-size: .875em;
+		word-wrap: break-word;
+		transform: translateX(0px) translateY(5.25em) rotateY(0deg);
+		height: 2.938em;
+		text-align: center;
+		z-index: 5;
+		width: 100%;
+		overflow: visible;
+		opacity: 1;
+		top:2.5%
+	}
+	#shaker {
+		transform: translateX(50%) translateY(38%) rotateY(0deg);
+		height: 74.3%;
+		background-image: url('../bevshaker.png');
+/*			url('http://i.imgur.com/ygwLN4g.png');*/
+		z-index: 4;
+		width: 52.2%;
+		-webkit-background-size: 100%;
+		overflow: visible;
+		opacity: 1;
+		background-repeat: no-repeat no-repeat;
+	}
+	#shakercontainer {
+		height: 100%;
+		z-index: 4;
+		width: 100%;
+		-webkit-background-size: 100%;
+		overflow: visible;
+		opacity: 1;
+		background-repeat: no-repeat no-repeat;
+		align-content: center;
+	}
+}
+
+
+/*
+
+@media only screen and (min-width:720px) {
+	#drinktitle_container {
+		color: rgb(255, 255, 255);
+		font-weight: normal;
+		padding: 8px;
+		font-size: 42px;
+		letter-spacing: 0px;
+		word-wrap: break-word;
+		transform: translateX(355px) translateY(115px) rotateY(0deg);
+		height: 46px;
+		text-align: center;
+		width: 473px;
+		z-index: 2;
+		overflow: visible;
+		color: rgb(0, 0, 0);
+		opacity: 1;
+		top: 115px;
+		left: 355px;
+	}
+	#drinktitle {
+		color: rgb(255, 255, 255);
+		font-style: normal;
+		font-variant-caps: normal;
+		text-align: center;
+		text-transform: none;
+		text-indent: 0px;
+		white-space: normal;
+		word-spacing: 0px;
+	}
+	#question {
+		padding: 8px;
+		font-size: 42px;
+		letter-spacing: 0px;
+		word-wrap: break-word;
+		transform: translateX(7px) translateY(193px) rotateY(0deg);
+		height: 87px;
+		text-align: center;
+		z-index: 1;
+		width: 1169px;
+		overflow: visible;
+		color: rgb(255, 255, 255);
+		opacity: 1;
+		top: 193px;
+		left: 7px;
+	}
+	#shaker {
+		transform: translateX(412px) translateY(343px) rotateY(0deg);
+		height: 757px;
+		background-image: url('http://i.imgur.com/ygwLN4g.png');
+		z-index: 3;
+		width: 440px;
+		-webkit-background-size: 100%;
+		overflow: visible;
+		opacity: 1;
+		background-repeat: no-repeat no-repeat;
+		top: 343px;
+		left: 412px;
+	}
+}*/

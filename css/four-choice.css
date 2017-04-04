@@ -1,0 +1,99 @@
+.Four-choice {
+		display: none;
+}
+
+#fourbarrier0 {
+	top: 15%;
+	height: 5px;
+	background-image: url("http://i.imgur.com/9K2uCwE.png");
+	z-index: 6;
+	width: 100%;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+
+#fourbarrier1 {
+	top: 26.5%;
+	height: 5px;
+	background-image: url("http://i.imgur.com/9K2uCwE.png");
+	z-index: 6;
+	width: 100%;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+#fourchoice1 {
+    top: 29%;
+    z-index: 6;
+    width: 100%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+	text-align: center;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+#fourbarrier2 {
+	top: 40.5%;
+	height: 5px;
+	background-image: url("http://i.imgur.com/9K2uCwE.png");
+	z-index: 6;
+	width: 100%;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+#fourchoice2 {
+    top: 43%;
+    z-index: 6;
+    width: 100%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+	text-align: center;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+#fourbarrier3 {
+	top: 54.5%;
+	height: 5px;
+	background-image: url("http://i.imgur.com/9K2uCwE.png");
+	z-index: 6;
+	width: 100%;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+#fourchoice3 {
+    top: 57%;
+    z-index: 6;
+    width: 100%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+	text-align: center;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+#fourbarrier4 {
+	top: 68.5%;
+	height: 5px;
+	background-image: url("http://i.imgur.com/9K2uCwE.png");
+	z-index: 6;
+	width: 100%;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+#fourchoice4 {
+    top: 71%;
+    z-index: 6;
+    width: 100%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+	text-align: center;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+#fourbarrier5 {
+	top: 83%;
+	height: 5px;
+	background-image: url("http://i.imgur.com/9K2uCwE.png");
+	z-index: 6;
+	width: 100%;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
