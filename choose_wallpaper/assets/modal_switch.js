@@ -13,15 +13,7 @@ $("#introNextBTN").click(function (e) {
 	$("#gameModal").css("visibility", "visible");
 	$("li a.DLimg").css("visibility", "visible");
 });
-//download link on selected carousel image
-$(".DLimg").click(function (event) {
-	wallpaper = $(this).parent().find("img").attr("src");
-	$("#gameModal").css("visibility", "hidden"); //hide modal to show new modal
-	$("#wallpaperModal").attr("style", "visibility:visible; padding-top: 73px; padding-bottom: 54px;");
-	$("#tobedownloaded").attr("src", wallpaper);
-	$("li a.DLimg").css("visibility", "hidden");
-	//	$(".bg").css("visibility", "hidden");
-});
+
 //pressing "got it" on instructions page:
 $("#gotitBTN").click(function () {
 	$("#instructions").css("visibility", "hidden");
@@ -47,20 +39,25 @@ $("#gotitBTN").click(function () {
 	});
 });
 var modal = document.getElementById('instructions');
-$(".DLimg").click(function () {
-	$("#instructions").css("display", "block");
-	//check for user os
-	var isMac = /(mac)/i.test(navigator.userAgent);
-	var isAndroid = /(android)/i.test(navigator.userAgent);
-	if (isMac) {
-		$("#iosPhoto").css("display", "inline");
-	}
-	else if (isAndroid) {
-		$("#androidPhoto").css("display", "inline");
-	}
-	else {
-		//
-	}
+$(".bg").click(function () {
+		if($(this).parent()[0].className == "slider__slide glide__slide active"){
+			wallpaper = $(this).parent().find("img").attr("src");
+		$("#gameModal").css("visibility", "hidden"); //hide modal to show new modal
+		$("#wallpaperModal").attr("style", "visibility:visible; padding-top: 73px; padding-bottom: 54px;");
+		$("#tobedownloaded").attr("src", wallpaper);
+		$("li a.DLimg").css("visibility", "hidden");
+		$("#instructions").css("display", "block");
+		//check for user os
+		var isMac = /(mac)/i.test(navigator.userAgent);
+		var isAndroid = /(android)/i.test(navigator.userAgent);
+		if (isMac) {
+			$("#iosPhoto").css("display", "inline");
+		}
+		else if (isAndroid) {
+			$("#androidPhoto").css("display", "inline");
+		}
+			
+		}
 });
 $(window).click(function (e) {
 	if (e.target == modal) modal.style.display = "none";
