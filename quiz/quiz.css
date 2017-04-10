@@ -185,10 +185,13 @@ span {
 	font-size: 1rem;
 	line-height: 1;
 }
+h3{
+	line-height:1.6;
+}
 
 @media screen and (width:320px) and (height:460px){
 	html{
-		line-height: 1.65;
+		line-height: 1.45;
 	}
 }
 @media screen and (min-width: 360px) {
