@@ -1,6 +1,7 @@
-a{
+a {
 	text-decoration: none !important;
 }
+
 html {
 	background-image: url("dark-BG.png");
 	color: floralwhite;
@@ -21,7 +22,7 @@ h1 {
 }
 
 h2 {
-	margin-top: 0;	
+	margin-top: 0;
 	margin: -2.5% 10% 10% 10%;
 	line-height: 1;
 	font-size: .85rem;
@@ -121,11 +122,11 @@ h2 {
 	line-height: 1;
 }
 
-#playagain{
-	font-size:1rem;
-	border-color:white;
-	background-color:white;
-	color:red;
+#playagain {
+	font-size: 1rem;
+	border-color: white;
+	background-color: white;
+	color: red;
 }
 
 .question {
@@ -185,16 +186,21 @@ span {
 	font-size: 1rem;
 	line-height: 1;
 }
-h3{
-	line-height:1.6;
+
+h3 {
+	line-height: 1.6;
 }
 
-@media screen and (width:320px) and (height:460px){
-	html{
+@media screen and (width:320px) and (height:460px) {
+	#instructions {
 		line-height: 1.45;
 	}
 }
+
 @media screen and (min-width: 360px) {
+	#instructions {
+		line-height: 1.45;
+	}
 	#title {
 		left: 45.5%;
 		top: .5em;
@@ -205,6 +211,9 @@ h3{
 }
 
 @media screen and (min-width: 400px) {
+	#instructions {
+		line-height: 1.45;
+	}
 	#title {
 		left: 45.5%;
 		top: .5em;
@@ -218,6 +227,9 @@ h3{
 }
 
 @media screen and (min-width: 415px) {
+	#instructions {
+		line-height: 1.45;
+	}
 	#next {
 		/*		top: 128%;*/
 	}
@@ -250,9 +262,6 @@ h3{
 	#myProgress {
 		left: 33%;
 	}
-}
-
-@media screen and (min-width: 555px) {
 	h2 {
 		margin: 0 10% 10% 10%;
 	}
