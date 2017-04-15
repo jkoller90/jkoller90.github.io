@@ -7,7 +7,7 @@ var Question = function (drink, query, category, choices) {
 
 var questions = [];
 
-var bloodymary = ['url("http://i.imgur.com/IdqDvS5.png")'];
+var bloodymary = ['bloodycongrats'];
 bloodymary.push(new Question('Hangar One Bloody Mary', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
 	, a: 3
@@ -17,7 +17,7 @@ bloodymary.push(new Question('Hangar One Bloody Mary', 'Is this cocktail shaken 
 	, a: 1
 }));
 bloodymary.push(new Question('Hangar One Bloody Mary', 'How many ounces of Bloody Mary Mix is in this cocktail?', 'Four-choice', {
-	choices: [1, 2, 3, 4]
+	choices: ['1 OZ.', '2 OZ.', '3 OZ.', '4 OZ.']
 	, a: 3
 }));
 bloodymary.push(new Question('Hangar One Bloody Mary', 'What garnish is not used in this cocktail?', 'Four-choice', {
@@ -26,7 +26,7 @@ bloodymary.push(new Question('Hangar One Bloody Mary', 'What garnish is not used
 }));
 questions.push(bloodymary);
 
-var islander = ['url("http://i.imgur.com/6WVVkS1.jpg")'];
+var islander = ['islandercongratscongrats'];
 islander.push(new Question('The Islander', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
 	, a: 3
@@ -45,7 +45,7 @@ islander.push(new Question('The Islander', 'What type of garnish is used in this
 }));
 questions.push(islander);
 
-var strawbellini = ['url("http://i.imgur.com/CYhRb4m.png")'];
+var strawbellini = ['strawbellinicongrats'];
 strawbellini.push(new Question('Strawberry Bellini', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
 	, a: 0
@@ -63,7 +63,7 @@ strawbellini.push(new Question('Strawberry Bellini', 'How many ounces of Strawbe
 }));
 questions.push(strawbellini);
 
-var southbound = ['url("http://i.imgur.com/2awG9fv.png")'];
+var southbound = ['southboundcongrats'];
 southbound.push(new Question('Southbound Flight', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
 	, a: 2
@@ -82,7 +82,7 @@ southbound.push(new Question('Southbound Flight', 'What garnish is used in this 
 }));
 questions.push(southbound);
 
-var strawmint = ['url("http://i.imgur.com/ekrXMim.png")'];
+var strawmint = ['strawmintcongrats'];
 strawmint.push(new Question('Strawberry Mint Lemonade', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
 	, a: 3
@@ -101,7 +101,7 @@ strawmint.push(new Question('Strawberry Mint Lemonade', 'How many garnishes are 
 }));
 questions.push(strawmint);
 
-var dobel = ['url("http://i.imgur.com/oTJkBK4.png")'];
+var dobel = ['dobelcongrats'];
 dobel.push(new Question('Dobel Rita', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
 	, a: 1
@@ -120,7 +120,7 @@ dobel.push(new Question('Dobel Rita', 'How many garnishes are used in this cockt
 }));
 questions.push(dobel);
 
-var ginginger = ['url("http://i.imgur.com/f0NBuO6.png")'];
+var ginginger = ['gingingercongrats'];
 ginginger.push(new Question('Gin & Ginger', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
 	, a: 2
@@ -139,7 +139,7 @@ ginginger.push(new Question('Gin & Ginger', 'How many ounces is the glass used i
 }));
 questions.push(ginginger);
 
-var pom = ['url("http://i.imgur.com/SU9xlbp.png")'];
+var pom = ['pomcongrats'];
 pom.push(new Question('Pomegranate Mojito', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
 	, a: 2
@@ -158,7 +158,7 @@ pom.push(new Question('Pomegranate Mojito', 'What is the cocktail topped off wit
 }));
 questions.push(pom);
 
-var peach = ['url("http://i.imgur.com/BhahFoV.png")'];
+var peach = ['peachcongrats'];
 peach.push(new Question('Peach Smash', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
 	, a: 2

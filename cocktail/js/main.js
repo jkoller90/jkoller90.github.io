@@ -25,15 +25,16 @@ function switchSequence() {
 			$('#drinktitle_container').css('display', 'none');
 			$('.congrats').css('display', 'block');
 			$('body').css('background-size', 'cover');
-			$('body').css('background-image', questions[drink_count][0]);
+		//change bellow line to an class with this as the image 
+			$('body').attr('id', questions[drink_count][0]);
 			$('#continue').click(function () {
 				if (drink_count == 9) {
 					drink_count = 0;
 				}
-				$('body').css('background-image', 'none');
+//				$('body').attr('id', '');
 				$('.congrats').css('display', 'none');
 				switchSequence();
-				$('body').css('background-image', 'url("http://i.imgur.com/MaH93Cg.png")');
+//				$('body').css('background-image', 'url("http://i.imgur.com/MaH93Cg.png")');
 				$('#drinktitle_container').css('display', 'inline');
 				$('#question').css('display', 'inline');
 			});

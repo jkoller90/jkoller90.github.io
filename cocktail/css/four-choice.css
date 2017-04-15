@@ -3,7 +3,7 @@
 }
 
 #fourbarrier0 {
-	top: 15%;
+	top: 19%;
 	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
 	z-index: 6;
@@ -13,7 +13,7 @@
 }
 
 #fourbarrier1 {
-	top: 26.5%;
+	top: 28%;
 	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
 	z-index: 6;
@@ -22,7 +22,7 @@
 	background-repeat: no-repeat no-repeat;
 }
 #fourchoice1 {
-    top: 29%;
+    top: 32%;
     z-index: 6;
     width: 100%;
     padding-top: 4%;
@@ -32,7 +32,7 @@
 	background-repeat: no-repeat no-repeat;
 }
 #fourbarrier2 {
-	top: 40.5%;
+	top: 44%;
 	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
 	z-index: 6;
@@ -41,7 +41,7 @@
 	background-repeat: no-repeat no-repeat;
 }
 #fourchoice2 {
-    top: 43%;
+    top: 47.5%;
     z-index: 6;
     width: 100%;
     padding-top: 4%;
@@ -51,7 +51,7 @@
 	background-repeat: no-repeat no-repeat;
 }
 #fourbarrier3 {
-	top: 54.5%;
+	top: 60%;
 	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
 	z-index: 6;
@@ -60,7 +60,7 @@
 	background-repeat: no-repeat no-repeat;
 }
 #fourchoice3 {
-    top: 57%;
+    top: 63.5%;
     z-index: 6;
     width: 100%;
     padding-top: 4%;
@@ -70,7 +70,7 @@
 	background-repeat: no-repeat no-repeat;
 }
 #fourbarrier4 {
-	top: 68.5%;
+	top: 76%;
 	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
 	z-index: 6;
@@ -79,7 +79,7 @@
 	background-repeat: no-repeat no-repeat;
 }
 #fourchoice4 {
-    top: 71%;
+    top: 80%;
     z-index: 6;
     width: 100%;
     padding-top: 4%;
@@ -89,7 +89,7 @@
 	background-repeat: no-repeat no-repeat;
 }
 #fourbarrier5 {
-	top: 83%;
+	top: 92%;
 	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
 	z-index: 6;
