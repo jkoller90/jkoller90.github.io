@@ -4,9 +4,7 @@ var Question = function (drink, query, category, choices) {
 	this.category = category;
 	this.choices = choices;
 }
-
 var questions = [];
-
 var bloodymary = ['bloodycongrats'];
 bloodymary.push(new Question('Hangar One Bloody Mary', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
@@ -25,7 +23,6 @@ bloodymary.push(new Question('Hangar One Bloody Mary', 'What garnish is not used
 	, a: 2
 }));
 questions.push(bloodymary);
-
 var islander = ['islandercongratscongrats'];
 islander.push(new Question('The Islander', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
@@ -44,7 +41,6 @@ islander.push(new Question('The Islander', 'What type of garnish is used in this
 	, a: 2
 }));
 questions.push(islander);
-
 var strawbellini = ['strawbellinicongrats'];
 strawbellini.push(new Question('Strawberry Bellini', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
@@ -55,14 +51,14 @@ strawbellini.push(new Question('Strawberry Bellini', 'What type of garnish is us
 	, a: 3
 }));
 strawbellini.push(new Question('Strawberry Bellini', 'What size is the Corbel Brut bottle?', 'Four-choice', {
-	choices: ['157ml', '177ml', '187ml', '197ml'], a: 2
+	choices: ['157ml', '177ml', '187ml', '197ml']
+	, a: 2
 }));
 strawbellini.push(new Question('Strawberry Bellini', 'How many ounces of Strawberry Puree are used in this cocktail?', 'Four-choice', {
 	choices: ['0.5 OZ.', '0.75 OZ.', '1 OZ.', '2 OZ.']
 	, a: 0
 }));
 questions.push(strawbellini);
-
 var southbound = ['southboundcongrats'];
 southbound.push(new Question('Southbound Flight', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
@@ -81,7 +77,6 @@ southbound.push(new Question('Southbound Flight', 'What garnish is used in this 
 	, a: 2
 }));
 questions.push(southbound);
-
 var strawmint = ['strawmintcongrats'];
 strawmint.push(new Question('Strawberry Mint Lemonade', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
@@ -100,7 +95,6 @@ strawmint.push(new Question('Strawberry Mint Lemonade', 'How many garnishes are 
 	, a: 1
 }));
 questions.push(strawmint);
-
 var dobel = ['dobelcongrats'];
 dobel.push(new Question('Dobel Rita', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
@@ -115,11 +109,10 @@ dobel.push(new Question('Dobel Rita', 'How many ounces of Finest Hour Sour is in
 	, a: 2
 }));
 dobel.push(new Question('Dobel Rita', 'How many garnishes are used in this cocktail?', 'Four-choice', {
-	choices: [1,2,3,4]
+	choices: [1, 2, 3, 4]
 	, a: 1
 }));
 questions.push(dobel);
-
 var ginginger = ['gingingercongrats'];
 ginginger.push(new Question('Gin & Ginger', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
@@ -138,7 +131,6 @@ ginginger.push(new Question('Gin & Ginger', 'How many ounces is the glass used i
 	, a: 1
 }));
 questions.push(ginginger);
-
 var pom = ['pomcongrats'];
 pom.push(new Question('Pomegranate Mojito', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
@@ -157,7 +149,6 @@ pom.push(new Question('Pomegranate Mojito', 'What is the cocktail topped off wit
 	, a: 3
 }));
 questions.push(pom);
-
 var peach = ['peachcongrats'];
 peach.push(new Question('Peach Smash', 'What kind of glass do you use to make this cocktail?', 'Glass', {
 	choices: [0, 1, 2, 3]
@@ -176,11 +167,3 @@ peach.push(new Question('Peach Smash', 'What type of garnish is used in this coc
 	, a: 1
 }));
 questions.push(peach);
-
-//questions.forEach(function (q) {
-//	q[3].choices.choices.forEach(function (ch) {
-//		if (typeof ch != 'number') {
-//			console.log(ch + ": " + ch.length)
-//		}
-//	})
-//})

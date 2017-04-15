@@ -1,6 +1,7 @@
-.congrats{
-	display:none;
+.congrats {
+	display: none;
 }
+
 #bloodyback {
 	background-size: 100% 109%;
 	background-repeat: no-repeat;
@@ -40,49 +41,41 @@
 	border-bottom-left-radius: 1px;
 	border-top-left-radius: 1px;
 	opacity: 1;
+	line-height: 2;
 }
 
-
-/*
-	#drinktitle_container {
-		width: 90%;
-	}
-	#question {
-		width: 90%;
-	}*/
-
-#bloodycongrats{
-	background-image:url("http://i.imgur.com/IdqDvS5.png");
+#bloodycongrats {
+	background-image: url("http://i.imgur.com/IdqDvS5.png");
 }
 
-#islandercongratscongrats{
-	background-image:url("http://i.imgur.com/6WVVkS1.jpg");
+#islandercongratscongrats {
+	background-image: url("http://i.imgur.com/6WVVkS1.jpg");
 }
 
-#strawbellinicongrats{
-	background-image:url("http://i.imgur.com/CYhRb4m.png");
+#strawbellinicongrats {
+	background-image: url("http://i.imgur.com/CYhRb4m.png");
 }
 
-#southboundcongrats{
-	background-image:url("http://i.imgur.com/2awG9fv.png");
+#southboundcongrats {
+	background-image: url("http://i.imgur.com/2awG9fv.png");
 }
 
-#strawmintcongrats{
-	background-image:url("http://i.imgur.com/ekrXMim.png");
+#strawmintcongrats {
+	background-image: url("http://i.imgur.com/ekrXMim.png");
 }
 
-#dobelcongrats{
-	background-image:url("http://i.imgur.com/oTJkBK4.png");
+#dobelcongrats {
+	background-image: url("http://i.imgur.com/oTJkBK4.png");
 }
 
-#gingingercongrats{
-	background-image:url("http://i.imgur.com/f0NBuO6.png");
+#gingingercongrats {
+	background-image: url("http://i.imgur.com/f0NBuO6.png");
 }
 
-#pomcongrats{
-	background-image:url("http://i.imgur.com/SU9xlbp.png");
+#pomcongrats {
+	background-image: url("http://i.imgur.com/SU9xlbp.png");
 }
 
-#peachcongrats{
-	background-image:url("http://i.imgur.com/BhahFoV.png");
+#peachcongrats {
+	background-image: url("http://i.imgur.com/BhahFoV.png");
 }
