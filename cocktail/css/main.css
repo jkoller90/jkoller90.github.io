@@ -30,7 +30,7 @@ div {
 	left: 33%;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 480px) {
+@media only screen and (min-width: 300px) and (max-width: 700px) {
 	#drinktitle_container {
 		font-size: .8em;
 		letter-spacing: 0px;

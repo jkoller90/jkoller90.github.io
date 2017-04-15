@@ -1,7 +1,6 @@
 var drink_count = 0;
 var question_count = 1;
 var delay = 3000;
-alert(window.innerWidth + " width< height > " + window.innerHeight);
 $(document).click(function () {
 	if (question_count == 5) {
 		question_count = 1;
