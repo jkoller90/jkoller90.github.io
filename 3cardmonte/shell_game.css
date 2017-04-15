@@ -1,0 +1,101 @@
+
+html {
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow:hidden;
+}
+	body {	
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: absolute;
+		margin-left:auto;
+	}
+
+.hidden {
+	display: none;
+}
+
+
+
+	#gameboard {
+		width: 50%;
+		height: 200%;
+		background-color: green;
+		border-radius: 20px;
+		box-shadow: 5px 5px black;
+		position: absolute;
+		left:1%;
+}
+
+	#info{
+		width:50%;
+		text-align: center;
+		height:auto;
+		font-size:auto;
+	}
+	.card {
+		position: absolute;
+		transition-property: left;
+		transition-duration: 0.8s;
+		transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		height: 80px;
+		width: 50px;
+		background-color: red;
+		padding: 10px;
+		box-shadow: 4px 4px black;
+		background-image: url(cardback280x100.jpg);
+		border-radius: 5px;
+		top: 28%;
+	}
+
+	#left {
+		left: 4%;
+	}
+	#center {
+		left: 38%;
+	}
+	#right {
+		left: 72%;
+	}
+
+#ball {
+	display: inline-block;
+	position: relative;
+	left: 5px;
+	top: 20px;
+	background: #5cabff;
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	margin: 0;
+	background: radial-gradient(circle at 30px 30px, #5cabff, #000);
+}
+
+#ball.hidden {
+	display: none;
+}
+
+#buttons {
+	width: 600px;
+	display: inline-flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 10px;
+}
+
+button {
+    font-size: 2em;
+    border-radius: 3px;
+    position: absolute;
+    top: 242%;
+    left: 18%;
+}
+
+
+
+#start{
+	padding: 0 2.5% 0 2.5%;
+}
+#reset{
+	padding: 0 1.5% 0 1.5%;
+}
