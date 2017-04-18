@@ -7,6 +7,9 @@ function setfourchoice(a) {
 		$('#fourchoice1').click(function () {
 			question_count++;
 			$('div').off('click');
+			$('#minutes').text('00');
+			$('#seconds').text('00');
+			totalSeconds = 0;			
 			switchSequence();
 		});
 		$('#fourchoice2').click(function () {
@@ -38,6 +41,9 @@ function setfourchoice(a) {
 		$('#fourchoice2').click(function () {
 			question_count++;
 			$('div').off('click');
+			$('#minutes').text('00');
+			$('#seconds').text('00');
+			totalSeconds = 0;			
 			switchSequence();
 		});
 		$('#fourchoice3').click(function () {
@@ -69,6 +75,9 @@ function setfourchoice(a) {
 		$('#fourchoice3').click(function () {
 			question_count++;
 			$('div').off('click');
+			$('#minutes').text('00');
+			$('#seconds').text('00');
+			totalSeconds = 0;			
 			switchSequence();
 		});
 		$('#fourchoice4').click(function () {
@@ -100,6 +109,9 @@ function setfourchoice(a) {
 		$('#fourchoice4').click(function () {
 			question_count++;
 			$('div').off('click');
+			$('#minutes').text('00');
+			$('#seconds').text('00');
+			totalSeconds = 0;			
 			switchSequence();
 		});
 	}
@@ -113,6 +125,9 @@ function settwochoice(a) {
 			question_count++;
 			$('div').off('click');
 			switchSequence();
+			$('#minutes').text('00');
+			$('#seconds').text('00');
+			totalSeconds = 0;			
 		});
 		$('#twochoice2').click(function () {
 			swal({
@@ -132,6 +147,9 @@ function settwochoice(a) {
 			question_count++;
 			$('div').off('click');
 			switchSequence();
+			$('#minutes').text('00');
+			$('#seconds').text('00');
+			totalSeconds = 0;			
 		});
 	}
 }

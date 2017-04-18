@@ -3,7 +3,7 @@
 }
 
 #twobarrier1 {
-	top: 35%;
+	top: 32%;
 	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
 	z-index: 6;
@@ -23,7 +23,7 @@
 }
 
 #twobarrier3 {
-	top: 85%;
+	top: 88%;
 	z-index: 6;
 	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
@@ -33,7 +33,7 @@
 }
 
 #twochoice1 {
-	top: 40%;
+	top: 39%;
 	z-index: 6;
 	width: 100%;
 	padding-top: 10%;
@@ -44,7 +44,7 @@
 }
 
 #twochoice2 {
-	top: 65%;
+	top: 66%;
 	z-index: 6;
 	width: 100%;
 	padding-top: 10%;

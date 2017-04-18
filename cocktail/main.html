@@ -11,7 +11,11 @@
 	<link rel='stylesheet' href='css/congrats.css'>
 </head>
 
-<body> <span class="intro">
+<body>
+	<div id="timer">
+	<label id="minutes">00</label>:<label id="seconds">00</label>
+	</div>
+	<span class="intro">
 	<div id="shakercontainer">
 		<div id="shaker"></div>
 	</div>
@@ -47,6 +51,7 @@
 	<div id="continue">Continue Playing</div>
 	</span>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src='js/timer.js'></script>
 	<script src='js/setCongrats.js'></script>
 	<script src="js/setRightGlass.js"></script>
 	<script src='js/choiceListeners.js'></script>

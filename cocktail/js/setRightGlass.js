@@ -4,6 +4,9 @@ function setRightGlass(a) {
 			question_count++;
 			$('body').css('background-image', '');
 			$('div').off('click');
+			$('#minutes').text('00');
+			$('#seconds').text('00');
+			totalSeconds = 0;			
 			switchSequence();
 		});
 		$('#aztecaIMG').click(function () {
@@ -40,6 +43,9 @@ function setRightGlass(a) {
 			question_count++;
 			$('body').css('background-image', '');
 			$('div').off('click');
+			$('#minutes').text('00');
+			$('#seconds').text('00');
+			totalSeconds = 0;			
 			switchSequence();
 		});
 		$('#rocksIMG').click(function () {
@@ -76,6 +82,9 @@ function setRightGlass(a) {
 			question_count++;
 			$('body').css('background-image', '');
 			$('div').off('click');
+			$('#minutes').text('00');
+			$('#seconds').text('00');
+			totalSeconds = 0;			
 			switchSequence();
 		});
 		$('#catalinaIMG').click(function () {
@@ -112,6 +121,9 @@ function setRightGlass(a) {
 			question_count++;
 			$('body').css('background-image', '');
 			$('div').off('click');
+			$('#minutes').text('00');
+			$('#seconds').text('00');
+			totalSeconds = 0;
 			switchSequence();
 		});
 	}

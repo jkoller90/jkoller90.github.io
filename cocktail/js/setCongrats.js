@@ -1,3 +1,3 @@
-function setCongrats(){
-$('.congrats').css('display','block');
+function setCongrats() {
+	$('.congrats').css('display', 'block');
 }

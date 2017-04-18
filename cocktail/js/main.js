@@ -24,32 +24,38 @@ function switchSequence() {
 			$('#question').css('display', 'none');
 			$('#drinktitle_container').css('display', 'none');
 			$('.congrats').css('display', 'block');
+			$('#timer').css('display','none');
 			$('body').css('background-size', 'cover');
 		//change bellow line to an class with this as the image 
 			$('body').attr('id', questions[drink_count][0]);
-			$('#continue').click(function () {
+				totalSeconds = -3;
+			setTimeout(function(){
+				$('#timer').css('display','inline');
 				if (drink_count == 9) {
 					drink_count = 0;
 				}
-//				$('body').attr('id', '');
 				$('.congrats').css('display', 'none');
 				switchSequence();
-//				$('body').css('background-image', 'url("http://i.imgur.com/MaH93Cg.png")');
 				$('#drinktitle_container').css('display', 'inline');
 				$('#question').css('display', 'inline');
-			});
+			}, 2700)
+//			$('#continue').click(function () {
+//				
+//			});
 		}
 		else {
 			switch (questions[drink_count][question_count].category) {
 			case 'Glass':
 				if (drink_count === 0) {
 					setTimeout(function () {
+						$('#timer').css('display','inline');
 						setRightGlass(questions[drink_count][question_count].choices.a);
 						$('#drinktitle_container').text(questions[drink_count][question_count].drink);
 						$('#question').text(questions[drink_count][question_count].query);
 						$('.glassquestion').css('display', 'block');
 						$('body').attr('id', 'backgroundGrid');
 						$('.intro').css('display', 'none');
+						setInterval(setTime, 1000);
 					}, delay);
 					delay = 0;
 				}
@@ -71,7 +77,6 @@ function switchSequence() {
 				$('.two-choice').css('display', 'block');
 				break;
 			case "Four-choice":
-				console.log(questions[drink_count][question_count].choices.a);
 				setfourchoice(questions[drink_count][question_count].choices.a);
 				$('#drinktitle_container').text(questions[drink_count][question_count].drink);
 				$('#question').text(questions[drink_count][question_count].query);
@@ -84,4 +89,5 @@ function switchSequence() {
 				return;
 			}
 		}
+
 	}
