@@ -49,11 +49,6 @@ var questions = [{
 	, "a": 1962
 	, "choices": [1962, 1958, 1953]
 }, {
-	"title": "Stateside Production"
-	, "q": "For a few years, production of the U.S. supply of Red Stripe was moved from Jamaica to which U.S. state?"
-	, "a": "Pennslyvania"
-	, "choices": ["Pennslyvania", "New York", "Connecticut"]
-}, {
 	"title": "Green and Red with a Dark, Yellow Brew?"
 	, "q": "True or False: Red Stripe first arrived in the United States in green bottles instead of their iconic squat brown bottles."
 	, "a": "True"

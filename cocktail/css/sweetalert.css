@@ -1,7 +1,10 @@
 body.stop-scrolling {
   height: 100%;
   overflow: hidden; }
-
+.sa-button-container{
+	    positioN: absolute;
+    top: 60%;
+}
 .sweet-overlay {
   background-color: black;
   /* IE8 */
@@ -28,6 +31,7 @@ body.stop-scrolling {
   top: 50%;
   margin-left: -256px;
   margin-top: -200px;
+	margin-bottom: 30px;
   overflow: hidden;
   display: none;
   z-index: 99999; }
@@ -44,8 +48,10 @@ body.stop-scrolling {
     text-align: center;
     font-weight: 600;
     text-transform: none;
-    position: relative;
-    margin: 25px 0;
+    position: absolute;
+		top: -9%;
+		left: 31%;
+/*    margin: 25px 0;	*/
     padding: 0;
     line-height: 40px;
     display: block; }
@@ -57,6 +63,7 @@ body.stop-scrolling {
     position: relative;
     text-align: inherit;
     float: none;
+		top: 36%;
     margin: 0;
     padding: 0;
     line-height: normal; }
@@ -181,7 +188,7 @@ body.stop-scrolling {
     -webkit-border-radius: 4px;
     border-radius: 5px;
     padding: 10px 32px;
-    margin: 26px 5px 0 5px;
+    margin-bottom: 10%;
     cursor: pointer; }
     .sweet-alert button:focus {
       outline: none;
@@ -367,7 +374,9 @@ body.stop-scrolling {
       border: none;
       background-position: center center;
       background-repeat: no-repeat; }
-
+.showSweetAlert{
+	padding: 20%;
+}
 /*
  * Animations
  */

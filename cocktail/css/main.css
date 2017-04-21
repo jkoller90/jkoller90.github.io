@@ -17,8 +17,17 @@ html {
 div {
 	position: absolute;
 }
+.sweet-alert p{
+    position: absolute !important;
+    left: 38.5%;
+    top: 65%;
+}
 .intro {
 	/*	display:none;*/
+}
+.sweet-alert button{
+margin: 0;
+	margin-bottom: 10%;
 }
 .sa-button-container {
 	left: 33%;

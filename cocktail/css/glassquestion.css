@@ -5,18 +5,18 @@
 #backgroundGrid {
 	height: 100%;
 	background-color: black;
-	background-image: url("http://i.imgur.com/MaH93Cg.png");
+	background-image: url("https://i.imgur.com/MaH93Cg.png");
 	width: 100%;
 	-webkit-background-size: 100%;
 	background-repeat: no-repeat no-repeat;
 }
 
 #aztecaIMG {
-	left: 60.5%;
-	top: 36%;
-	width: 22%;
-	height: 22%;
-	background-image: url("http://i.imgur.com/ulBlQvc.png");
+left: 61.5%;
+    top: 35%;
+    width: 22%;
+    height: 26%;
+	background-image: url("https://i.imgur.com/ulBlQvc.png");
 	z-index: 6;
 	-webkit-background-size: 100%;
 	overflow: visible;
@@ -25,11 +25,11 @@
 }
 
 #catalinaIMG {
-    left: 59.75%;
+left: 60.2%;
     top: 70.5%;
 	width: 22%;
 	height: 22%;
-	background-image: url("http://i.imgur.com/W5uacoX.png");
+	background-image: url("https://i.imgur.com/W5uacoX.png");
 	z-index: 5;
 	-webkit-background-size: 100%;
 	overflow: visible;
@@ -38,11 +38,11 @@
 }
 
 #fluteIMG {
-	left: 14%;
-	top: 34%;
-	width: 20%;
-	height: 27%;
-	background-image: url("http://i.imgur.com/YbpJXch.png");
+	left: 15%;
+	top: 34.5%;
+	width: 21%;
+	height: 28%;
+	background-image: url("https://i.imgur.com/rDgU2EZ.png");
 	z-index: 7;
 	-webkit-background-size: 100%;
 	overflow: visible;
@@ -51,7 +51,7 @@
 }
 
 #rocksIMG {
-    left: 16%;
+    left: 16.5%;
     top: 70.5%;
 	width: 19%;
 	height: 20%;
