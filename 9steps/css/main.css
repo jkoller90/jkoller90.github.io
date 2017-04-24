@@ -1,5 +1,5 @@
 html{
-	overflow:hidden;
+	overflow-y:hidden;
 }
 .pagination
 {
@@ -20,9 +20,12 @@ html{
 }
 
 .container
-{
-	max-width:768px;
-	margin-bottom:20px;
+{	
+	height: 100%;
+margin:0;
+	padding:0;
+	position:absolute;
+/*	top: -7.5%;*/
 }
 
 .box
@@ -44,6 +47,17 @@ html{
 	line-height: 36px;
 	
 	overflow:hidden;
+}
+.carousel{
+	    width: 97%;
+    height: auto;
+    left: 1.5%;
+}
+
+
+.carousel-indicators .active {
+    width: 10px;
+    height: 10px;
 }
 
 body
@@ -110,4 +124,36 @@ p {
 .events code {
 	cursor: pointer;
 	text-decoration: underline;
+}
+
+
+#content {
+	height: 340px;
+	width: 500px;
+	overflow: hidden;
+	position: relative;
+}
+
+#imgs {
+	float: left;
+	display: inline;
+	padding: 0;
+	margin: 0;
+	width: 1510px;
+	transition-property: transform;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-out;
+	/*apply a transform to kick in the hardware acceleration.  Without this, the first
+            time we add the transform you get odd rendering of the divs (half missing) */
+	transform: translate(0, 0);
+}
+
+#imgs img {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: auto;
+	/*apply aautotransform to kick in the hardware acceleration.  Without this, the first
+            time we add the transform you get odd rendering of the divs (half missing) */
+	transform: translate(0, 0);
 }
