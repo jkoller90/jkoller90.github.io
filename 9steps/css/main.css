@@ -1,3 +1,6 @@
+html{
+	overflow:hidden;
+}
 .pagination
 {
 	width:100%;
