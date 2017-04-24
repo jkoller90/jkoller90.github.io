@@ -1,9 +1,5 @@
 /* public Object[] */
-
-
 function getRandomOrder(choices) {
-	var num_tf = 2;
-	var num_mc = 2; 
 	var used = [];
 	var randomized = [];
 	var l = 0;
@@ -18,39 +14,6 @@ function getRandomOrder(choices) {
 	return randomized;
 }
 var randomized_questions = getRandomOrder(questions);
-
-function getFour(choices) {
-	var num_tf = 0;
-	var num_mc = 0;
-	var used = [];
-	var randomized = [];
-	var l = 0;
-	var q_index = 0;
-	while (q_index < 4) {
-	 if(choices[l].choices.length == 2){
-	   if(num_tf < 2){
-	     randomized[q_index] = choices[l];
-	     q_index++;
-	     num_tf++;
-	   }
-	   
-	 } else if(choices[l].choices.length >= 3){
-	   if(num_mc < 2){
-	     randomized[q_index] = choices[l];
-	     q_index++;
-	     num_mc++;
-	   }
-	 }
-	   l++;
-	}
-	console.log(randomized);
-	return randomized;
-}
-
-randomized_questions = getFour(randomized_questions);
-
-
-
 renderQuiz(randomized_questions);
 /*public String*/
 function renderQuestion(question) {
