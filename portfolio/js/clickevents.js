@@ -1,18 +1,18 @@
 $('#threecm').click(function(){
-	window.location.href = "http://www.jonkoller.com/3cardmonte/main";
+	window.location.href = "https://jkoller90.github.io/3cardmonte/main";
 });
 $('#cockquiz').click(function(){
-	window.location.href = "http://www.jonkoller.com/cocktail/main";
+	window.location.href = "https://jkoller90.github.io/cocktail/main";
 })
 $('#msg').click(function(){
-	window.location.href = "http://www.jonkoller.com/greyCircle/untitled.html";
+	window.location.href = "https://jkoller90.github.io/greyCircle/untitled.html";
 })
 $('#rs_triv').click(function(){
-	window.location.href = "http://www.jonkoller.com/quiz/quiz.html";
+	window.location.href = "https://jkoller90.github.io/quiz/quiz.html";
 })
 $('#rs_wallp').click(function(){
-	window.location.href = "http://www.jonkoller.com/choose_	wallpaper/index";
+	window.location.href = "https://jkoller90.github.io/choose_	wallpaper/index";
 })
 $('#stelar').click(function(){
-	window.location.href = "http://www.jonkoller.com/9steps/index";
+	window.location.href = "https://jkoller90.github.io/9steps/index";
 })
