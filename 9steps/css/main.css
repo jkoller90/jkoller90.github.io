@@ -1,0 +1,192 @@
+body{
+/*	overflow-y:hidden;*/
+}
+.pagination
+{
+	width:100%;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.clear
+{
+	clear:both;
+}
+.carousel-indicators{
+	top: 105% !important;
+}
+.pagination a
+{
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.container
+{	
+	height: 100%;
+margin:0;
+	padding:0;
+	position:absolute;
+/*	top: -7.5%;*/
+}
+
+.box
+{
+	margin-top:20px;
+	margin-bottom:20px;
+	max-width:768px;
+	height:300px;
+	
+	padding: 10px;
+	background-color: #EEE;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	
+	text-align:center;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 36px;
+	
+	overflow:hidden;
+}
+.carousel{
+	    width: 100%;
+    height: auto;
+    left: 0;
+}
+
+
+.carousel-indicators .active {
+    width: 10px;
+    height: 10px;
+}
+
+body
+{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+	color: #333;
+}
+
+h1
+{
+	margin-top:36px;
+	margin-bottom:5px;
+}
+
+h2
+{
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 300;
+	margin-bottom:0px;
+
+}
+
+h3
+{
+	margin-top:0px;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 300;
+	color:#999;
+}
+
+h4
+{
+	margin-top:0px;
+	font-size: 12px;
+	line-height: 24px;
+	font-weight: 300;
+	color:#333;
+}
+
+a
+{
+	text-decoration:none;
+	color:#333;	
+}
+
+p {
+	margin-top:10px;
+}
+
+.prettyprint {
+	font-size:10px;
+}
+
+.example_btn {
+	margin-bottom:10px;
+}
+
+.properties code,
+.methods code,
+.events code {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+
+#content {
+	height: 340px;
+	width: 500px;
+	overflow: hidden;
+	position: relative;
+}
+
+#imgs {
+	float: left;
+	display: inline;
+	padding: 0;
+	margin: 0;
+	width: 1510px;
+	transition-property: transform;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-out;
+	/*apply a transform to kick in the hardware acceleration.  Without this, the first
+            time we add the transform you get odd rendering of the divs (half missing) */
+	transform: translate(0, 0);
+}
+
+#imgs img {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: auto;
+	/*apply aautotransform to kick in the hardware acceleration.  Without this, the first
+            time we add the transform you get odd rendering of the divs (half missing) */
+	transform: translate(0, 0);
+}
+
+#content {
+			height: 340px;
+			width: 500px;
+			overflow: hidden;
+			position: relative;
+		}
+		
+		#imgs {
+			float: left;
+			display: inline;
+			padding: 0;
+			margin: 0;
+			width: 1510px;
+			transition-property: transform;
+			transition-duration: 0.5s;
+			transition-timing-function: ease-out;
+			/*apply a transform to kick in the hardware acceleration.  Without this, the first
+            time we add the transform you get odd rendering of the divs (half missing) */
+			transform: translate(0, 0);
+		}
+		
+		#imgs img {
+			padding: 0;
+			margin: 0;
+			width: 500px;
+			height: 340px;
+			/*apply a transform to kick in the hardware acceleration.  Without this, the first
+            time we add the transform you get odd rendering of the divs (half missing) */
+			transform: translate(0, 0);
+		}
