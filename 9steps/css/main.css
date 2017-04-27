@@ -1,6 +1,13 @@
-body{
-/*	overflow-y:hidden;*/
-}
+	body{
+		background-color: white;
+	}
+	.carousel-indicators li{
+		margin:0;
+	}
+	.carousel-indicators{
+		bottom:0;
+		top:100%;
+	}
 .pagination
 {
 	width:100%;
