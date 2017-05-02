@@ -1,5 +1,5 @@
 	body{
-		background-color: white;
+		background-color: rgba(45,45,45,1);
 	}
 	.carousel-indicators li{
 		margin:0;
@@ -20,7 +20,7 @@
 	clear:both;
 }
 .carousel-indicators{
-	top: 97.5% !important;
+	top: 96.5% !important;
 }
 .pagination a
 {
