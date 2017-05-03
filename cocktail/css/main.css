@@ -53,22 +53,22 @@ margin: 0;
 		font-size: 1.35em;
 		word-wrap: break-word;
 		top:11.5%;
-		height: 2.938em;
+		width: 98%;
+/*		height: 2.938em;*/
 		text-align: center;
 		z-index: 5;
-		width: 90%;
-		left: 5%;
+		left: 1%;
 		overflow: visible;
 		opacity: 1;
 		padding-bottom: 3%;
 	}
 #shaker {
-		transform: translateX(48%) translateY(38%) rotateY(0deg);
-		height: 74.3%;
+		transform: translateX(50%) translateY(60%) rotateY(0deg);
+		height: 54.3%;
+		width: 50.2%;
 		background-image: url('../bevshaker.png');
 		/*			url('http://i.imgur.com/ygwLN4g.png');*/
 		z-index: 4;
-		width: 52.2%;
 		-webkit-background-size: 100%;
 		overflow: visible;
 		opacity: 1;
