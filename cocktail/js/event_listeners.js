@@ -17,7 +17,7 @@ window.onload = function () {
 		function shakeEventDidOccur() {
 
 			//put your own code here etc.
-			alert('Shake!');
+//			alert('Shake!');
 			$( '#shaker' ).effect( 'shake' );
 		}
 	};
