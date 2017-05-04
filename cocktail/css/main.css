@@ -51,6 +51,7 @@ margin: 0;
 #question {
 		color: rgb(255, 255, 255);
 		font-size: 1.90em;
+	font-weight:bolder;
 		word-wrap: break-word;
 		top:11.5%;
 		width: 90%;
