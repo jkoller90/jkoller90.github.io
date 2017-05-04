@@ -7,7 +7,7 @@ window.onload = function () {
 		$('#drinktitle_container').css('display','none');
 		//create a new instance of shake.js.
 		var myShakeEvent = new Shake({
-			threshold: 15
+			threshold: 9
 		});
 		// start listening to device motion
 		myShakeEvent.start();
@@ -18,7 +18,7 @@ window.onload = function () {
 
 			//put your own code here etc.
 //			alert('Shake!');
-			$( '#shaker' ).effect( 'shake', {direction:[right,left]} );
+			$( '#shaker' ).effect( 'shake' );
 		}
 	};
 	$(document).click(function () {
