@@ -15,10 +15,10 @@ window.onload = function () {
 		window.addEventListener('shake', shakeEventDidOccur, false);
 		//shake event callback
 		function shakeEventDidOccur() {
-//			$( '#shaker' ).effect( 'shake' );
 
 			//put your own code here etc.
 			alert('Shake!');
+			$( '#shaker' ).effect( 'shake' );
 		}
 	};
 	$(document).click(function () {
