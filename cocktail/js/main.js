@@ -1,22 +1,26 @@
 var drink_count = 0;
 var question_count = 1;
 var delay = 3000000;
-$(document).click(function () {
-	if (question_count == 5) {
-		question_count = 1;
-		drink_count++;
+window.onload = function () {
+	//create a new instance of shake.js.
+	var myShakeEvent = new Shake({
+		threshold: 15
+	});
+	// start listening to device motion
+	myShakeEvent.start();
+	// register a shake event
+	window.addEventListener('shake', shakeEventDidOccur, false);
+	//shake event callback
+	function shakeEventDidOccur() {
+		//put your own code here etc.
+		alert('Shake!');
 	}
-})
-$(document).ready(function () {
-	switchSequence();
-	$('#drinktitle_container').text(questions[drink_count][question_count].drink);
-});
+};
 var shake = true;
 
 function switchSequence() {
 	if (shake) {
-		
-		shake = false; 
+		shake = false;
 	}
 	else {
 		if (question_count == 5) {
