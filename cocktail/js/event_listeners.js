@@ -1,4 +1,9 @@
-	window.onload = function () {
+$('#shaker').click(function(){
+//	$('#shaker').css()
+$('#shaker').effect('shake');	
+//	$('#shaker').css()
+})
+window.onload = function () {
 		$('#drinktitle_container').css('display','none');
 		//create a new instance of shake.js.
 		var myShakeEvent = new Shake({
@@ -13,7 +18,7 @@
 			$( '#shaker' ).effect( 'shake' );
 
 			//put your own code here etc.
-			alert('Shake!');
+//			alert('Shake!');
 		}
 	};
 	$(document).click(function () {
