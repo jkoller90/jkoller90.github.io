@@ -68,8 +68,8 @@ margin: 0;
 /*		padding-bottom: 3%;*/
 	}
 #shaker {
-		transform: translateX(50%) translateY(60%) rotateY(0deg);
-		height: 55%;
+		transform: translateX(50%) translateY(55%) rotateY(0deg);
+		height: 58%;
 		width: 49%;
 		background-image: url('../bevshaker.png');
 		/*			url('http://i.imgur.com/ygwLN4g.png');*/
