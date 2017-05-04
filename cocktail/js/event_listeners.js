@@ -18,7 +18,7 @@ window.onload = function () {
 
 			//put your own code here etc.
 //			alert('Shake!');
-			$( '#shaker' ).effect( 'shake', {distance:10, direction:right} );
+			$( '#shaker' ).effect( 'shake', {direction:[right,left]} );
 		}
 	};
 	$(document).click(function () {
