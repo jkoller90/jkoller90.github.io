@@ -1,8 +1,8 @@
-$('#shaker').click(function(){
-//	$('#shaker').css()
-$('#shaker').effect('shake');	
-//	$('#shaker').css()
-})
+//$('#shaker').click(function(){
+////	$('#shaker').css()
+//$('#shaker').effect('shake');	
+////	$('#shaker').css()
+//})
 window.onload = function () {
 		$('#drinktitle_container').css('display','none');
 		//create a new instance of shake.js.
