@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300);
 * {
 	overflow: hidden !important;
 }
@@ -10,7 +11,7 @@ body {
 }
 html {
 	background-color: black;
-	font-family: 'Open Sans';
+	font-family: 'Open Sans'; /* gil sans */
 	overflow: hidden;
 	color: white;
 }
@@ -49,9 +50,11 @@ margin: 0;
 		letter-spacing: .08em;
 	}
 #question {
+	font-family: 'Roboto', sans-serif;
 		color: rgb(255, 255, 255);
 		font-size: 1.90em;
-	font-weight:bolder;
+	font-weight:100;
+	letter-spacing: 1px;
 		word-wrap: break-word;
 		top:11.5%;
 		width: 90%;
@@ -66,8 +69,8 @@ margin: 0;
 	}
 #shaker {
 		transform: translateX(50%) translateY(60%) rotateY(0deg);
-		height: 54.3%;
-		width: 50.2%;
+		height: 55%;
+		width: 49%;
 		background-image: url('../bevshaker.png');
 		/*			url('http://i.imgur.com/ygwLN4g.png');*/
 		z-index: 4;
