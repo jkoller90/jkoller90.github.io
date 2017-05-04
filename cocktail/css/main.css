@@ -2,120 +2,125 @@
 * {
 	overflow: hidden !important;
 }
+
 h2 {
 	font-size: 22px !important;
 	line-height: normal !imporant;
 }
+
 body {
 	margin: 0;
 }
+
 html {
 	background-color: black;
-	font-family: 'Open Sans'; /* gil sans */
+	font-family: 'Open Sans';
+	/* gil sans */
 	overflow: hidden;
 	color: white;
 }
+
 div {
 	position: absolute;
 }
-.sweet-alert p{
-    position: absolute !important;
-    left: 38.5%;
-    top: 65%;
+
+.sweet-alert p {
+	position: absolute !important;
+	left: 38.5%;
+	top: 65%;
 }
+
 .intro {
 	/*	display:none;*/
 }
-.sweet-alert button{
-margin: 0;
+
+.sweet-alert button {
+	margin: 0;
 	margin-bottom: 10%;
 }
+
 .sa-button-container {
 	left: 33%;
 }
+
 #drinktitle_container {
-		font-size: 1em;
-		padding-bottom: 1em;
-		letter-spacing: 0px;
-		word-wrap: break-word;
-		top: 26%;
-		left:5%;
-		height: 15px;
-		text-align: center;
-		width: 90%;
-		z-index: 2;
-		overflow: visible;
-		color: rgb(255, 255, 255);
-		opacity: 1;	
-		letter-spacing: .08em;
-	}
-#question {
-	font-family: 'Roboto', sans-serif;
-		color: rgb(255, 255, 255);
-		font-size: 1.95em;
-	font-weight:lighter;
-	letter-spacing: 1px;
-		word-wrap: break-word;
-		top:11.5%;
-		width: 90%;
-	margin: 0 5% 0 5%;
-/*		height: 2.938em;*/
-		text-align: center;
-		z-index: 5;
-/*		left: 1%;*/
-		overflow: visible;
-		opacity: .9;
-/*		padding-bottom: 3%;*/
-	}
-#shaker {
-		transform: translateX(50%) translateY(53%) rotateY(0deg);
-		height: 58%;
-		width: 49%;
-		background-image: url('../bevshaker.png');
-		/*			url('http://i.imgur.com/ygwLN4g.png');*/
-		z-index: 4;
-		-webkit-background-size: 100%;
-		overflow: visible;
-		opacity: 1;
-		background-repeat: no-repeat no-repeat;
-	}
-#shakercontainer {
-		height: 100%;
-		z-index: 4;
-		width: 100%;
-		-webkit-background-size: 100%;
-		overflow: visible;
-		opacity: 1;
-		background-repeat: no-repeat no-repeat;
-		align-content: center;
-	}
-#timer{
-	    left: 44.5%;
-    font-size: 1em;
-    top: 7%;
-    width: 15%;
-	display:none;
+	font-size: 1em;
+	padding-bottom: 1em;
+	letter-spacing: 0px;
+	word-wrap: break-word;
+	top: 26%;
+	left: 5%;
+	height: 15px;
+	text-align: center;
+	width: 90%;
+	z-index: 2;
+	overflow: visible;
+	color: rgb(255, 255, 255);
+	opacity: 1;
+	letter-spacing: .08em;
 }
 
-@media screen and (max-width: 360px){
-	
-	
-	
-	#drinktitle_container{
-		font-size:.85em;
-		top:26%;
+#question {
+	font-family: 'Roboto', sans-serif;
+	color: rgb(255, 255, 255);
+	font-size: 1.95em;
+	letter-spacing: 1px;
+	word-wrap: break-word;
+	top: 11.5%;
+	width: 90%;
+	margin: 0 5% 0 5%;
+	text-align: center;
+	z-index: 5;
+	overflow: visible;
+	opacity: .9;
+}
+
+#shaker {
+	transform: translateX(50%) translateY(53%) rotateY(0deg);
+	height: 58%;
+	width: 49%;
+	background-image: url('../bevshaker.png');
+	/*			url('http://i.imgur.com/ygwLN4g.png');*/
+	z-index: 4;
+	-webkit-background-size: 100%;
+	overflow: visible;
+	opacity: 1;
+	background-repeat: no-repeat no-repeat;
+}
+
+#shakercontainer {
+	height: 100%;
+	z-index: 4;
+	width: 100%;
+	-webkit-background-size: 100%;
+	overflow: visible;
+	opacity: 1;
+	background-repeat: no-repeat no-repeat;
+	align-content: center;
+}
+
+#timer {
+	left: 44.5%;
+	font-size: 1em;
+	top: 7%;
+	width: 15%;
+	display: none;
+}
+
+@media screen and (max-width: 360px) {
+	#drinktitle_container {
+		font-size: .85em;
+		top: 26%;
 	}
-	#question{
+	#question {
 		width: 97%;
 		top: 13.5%;
 		left: 1.5%;
 		padding-bottom: 3%;
 		font-size: 1.12em;
-/*		line-height: normal;*/
+		/*		line-height: normal;*/
 	}
-	#shaker{
+	#shaker {
 		top: 1.5%;
 	}
-	
-	
 }
