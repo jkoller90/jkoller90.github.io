@@ -34,9 +34,9 @@ navigator.vibrate(500);
 		setTimeout(function () {}, 5000);
 	}
 }
-$('#shaker').click(function () {
-	vibratetransition();
-})
+//$('#shaker').click(function () {
+//	vibratetransition();
+//})
 window.onload = function () {
 	$('#drinktitle_container').css('display', 'none');
 	//create a new instance of shake.js.
