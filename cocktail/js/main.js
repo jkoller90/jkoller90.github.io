@@ -33,7 +33,7 @@ function switchSequence() {
 						direction: 'up'
 						, distance: 14
 					}, 500);
-					navigator.vibrate(500);
+//					navigator.vibrate(500);
 				}, 1000);
 
 				$('#question').css({

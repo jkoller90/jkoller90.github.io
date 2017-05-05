@@ -6,7 +6,7 @@ function vibratetransition() {
 			direction: 'up'	
 			, distance: 14
 		}, 500);
-		navigator.vibrate(500);
+//		navigator.vibrate(500);
 		$('#drinktitle_container').text('Answer the following questions about the above cocktail correctly to earn points.');
 		setTimeout(function () {
 			$('#question').css({
