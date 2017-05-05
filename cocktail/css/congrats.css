@@ -8,15 +8,14 @@
 }
 
 #congrats_line {
-	top: 3%;
-
+	top: 4%;
     left: 27%;
-    font-size: 1.5em;
+    font-size: 1.55em;
 }
 
 #earned {
-	top: 10%;
-	left: 1%;
+	top: 12%;
+	left: 2.5%;
 	font-size: 1em;
 	width: 93%;
 	text-align: center;
@@ -24,8 +23,8 @@
 }
 
 #continue {
-	top: 20%;
-	left: 54%;
+	top: 22%;
+	left: 55%;
 	border: 1px solid rgb(160, 160, 160);
 	-webkit-box-shadow: rgb(0, 0, 0) 1px 1px 0px;
 	box-shadow: rgb(0, 0, 0) 1px 1px 0px;
@@ -45,7 +44,7 @@
 	line-height: 1.9;
 }
 #leaderboard {
-	top: 20%;
+	top: 22%;
 	left: 3%;
 	border: 1px solid rgb(160, 160, 160);
 	-webkit-box-shadow: rgb(0, 0, 0) 1px 1px 0px;
@@ -68,37 +67,44 @@
 
 
 #bloodycongrats {
-	background-image: url("http://i.imgur.com/IdqDvS5.png");
+/*	background-image: url("http://i.imgur.com/IdqDvS5.png");*/
+	background-image:url("http://i.imgur.com/JN5P5XS.png");
 }
 
 #islandercongratscongrats {
-	background-image: url("http://i.imgur.com/6WVVkS1.jpg");
+/*	background-image: url("http://i.imgur.com/6WVVkS1.jpg");*/
+		background-image:url("http://i.imgur.com/ena7zeU.png");
 }
 
 #strawbellinicongrats {
-	background-image: url("http://i.imgur.com/CYhRb4m.png");
+	background-image: url("http://i.imgur.com/zIgLaTu.png");
+	
 }
 
 #southboundcongrats {
-	background-image: url("http://i.imgur.com/2awG9fv.png");
+	background-image: url("http://i.imgur.com/uODw4A4.png");
+	
 }
 
 #strawmintcongrats {
-	background-image: url("http://i.imgur.com/ekrXMim.png");
+	background-image: url("http://i.imgur.com/rw6mqfE.png");
+/*		background-image:url(*/
 }
 
 #dobelcongrats {
-	background-image: url("http://i.imgur.com/oTJkBK4.png");
+	background-image: url("http://i.imgur.com/InGIUuy.png");
+/*		background-image:url(*/
 }
 
 #gingingercongrats {
-	background-image: url("http://i.imgur.com/f0NBuO6.png");
+	background-image: url("http://i.imgur.com/rqWXRPE.png");
+/*		background-image:url(*/
 }
 
 #pomcongrats {
-	background-image: url("http://i.imgur.com/SU9xlbp.png");
+	background-image: url("http://i.imgur.com/eK9oXXp.png");
 }
 
 #peachcongrats {
-	background-image: url("http://i.imgur.com/BhahFoV.png");
+	background-image: url("http://i.imgur.com/NhBRhTu.png");
 }
