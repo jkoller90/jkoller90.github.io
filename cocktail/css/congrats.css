@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 .congrats {
 	display: none;
 }
@@ -8,13 +9,15 @@
 }
 
 #congrats_line {
+	font-family: 'Roboto';
 	top: 4%;
     left: 27%;
-    font-size: 1.55em;
+    font-size: 1.50em;
 	text-shadow: 1px 1px black;
 }
 
 #earned {
+	font-family: 'Roboto';
 	text-shadow: 1px 1px black;
 	top: 12%;
 	left: 2.5%;
