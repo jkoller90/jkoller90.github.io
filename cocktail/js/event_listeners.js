@@ -1,3 +1,4 @@
+$('#shaker').vibrate(); 
 function vibratetransition() {
 	if (shake) {
 		//https://illyism.github.io/jquery.vibrate.js/ 
