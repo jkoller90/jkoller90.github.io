@@ -39,25 +39,32 @@ if (window.navigator && window.navigator.vibrate) {
 				}, 1000);
 				$('#question').css({
 					'font-size': '1.78em'
-					, 'margin': '0 0% 0 0%'
+//					, 'margin': '0 0% 0 0%'
 				});
 				$('#drinktitle_container').css({
-					'top': '26%'
+					'font-size': '.9em'
 					, 'padding-bottom': '2em'
-					, 'left': '0'
-					, 'width': '96%'
-					, 'font-size': '.9em'
+					, 'letter-spacing':'0px'
+					,'top': '26%'
+					, 'left': '5%'
+					,'height':'15px'
+					, 'text-align':'center'
+					, 'width': '90%'
+					,'z-index':'2'
+					,'letter-spacing':'.08em'
+					,'display':'block'
 				});
 				$('#question').text(questions[drink_count][question_count].drink);
 				$('#question').widowFix();
 				$('#drinktitle_container').text('Answer the following questions about the above cocktail correctly to earn points.');
 				$('#question').css('display', 'block');
-				$('#drinktitle_container').css({'display': 'block','font-size':'1em','width':'92%'});
+//				$('#drinktitle_container').css({'display': 'block','font-size':'1em','width':'92%'});
 				setTimeout(function () {
 					$('#question').css({
 						'font-size': '1.35em'
-						, 'margin': '0 2% 0 0'
+//						, 'margin': '0 2% 0 0'
 						, 'width': '100%'
+						, 'left':'0'
 						, 'top': '14%'
 					});
 					$('.intro').css('display', 'none');
@@ -68,7 +75,7 @@ if (window.navigator && window.navigator.vibrate) {
 					$('.congrats').css('display', 'none');
 					switchSequence();
 					$('body').css('background-image', 'url("https://i.imgur.com/MaH93Cg.png")');
-					$('#drinktitle_container').css('display', 'inline');
+					$('#drinktitle_container').css({'display': 'inline'});
 					$('#question').css('display', 'inline');
 					totalSeconds = 0;
 				}, 5000);
@@ -86,8 +93,9 @@ if (window.navigator && window.navigator.vibrate) {
 						$('#question').widowFix();
 						$('#question').css({
 							'font-size': '1.35em'
-							, 'margin': '0 0% 0 5%'
+//							, 'margin': '0 0% 0 5%'
 							, 'width': '90%'
+							, 'left': '5%'
 							, 'top': '14%'
 						});
 						$('#timer').css('display', 'inline');
