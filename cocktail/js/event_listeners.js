@@ -14,6 +14,7 @@ navigator.vibrate(500);
 			$('#question').css({
 				'font-size': '1.78em'
 				, 'margin': '0 0% 0 5%'
+				, 'top': '14%'
 			});
 			$('#drinktitle_container').css({
 				'top': '26%'

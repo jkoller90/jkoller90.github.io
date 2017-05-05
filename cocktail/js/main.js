@@ -42,7 +42,7 @@ if (window.navigator && window.navigator.vibrate) {
 					, 'margin': '0 0% 0 0%'
 				});
 				$('#drinktitle_container').css({
-					'top': '27%'
+					'top': '26%'
 					, 'padding-bottom': '2em'
 					, 'left': '0'
 					, 'width': '96%'
@@ -52,13 +52,13 @@ if (window.navigator && window.navigator.vibrate) {
 				$('#question').widowFix();
 				$('#drinktitle_container').text('Answer the following questions about the above cocktail correctly to earn points.');
 				$('#question').css('display', 'block');
-				$('#drinktitle_container').css('display', 'block');
+				$('#drinktitle_container').css({'display': 'block','font-size':'1em','width':'92%'});
 				setTimeout(function () {
 					$('#question').css({
 						'font-size': '1.35em'
 						, 'margin': '0 2% 0 0'
 						, 'width': '100%'
-						, 'top': '13.5%'
+						, 'top': '14%'
 					});
 					$('.intro').css('display', 'none');
 					$('#timer').css('display', 'inline');
@@ -88,7 +88,7 @@ if (window.navigator && window.navigator.vibrate) {
 							'font-size': '1.35em'
 							, 'margin': '0 0% 0 5%'
 							, 'width': '90%'
-							, 'top': '13.5%'
+							, 'top': '14%'
 						});
 						$('#timer').css('display', 'inline');
 						$('#drinktitle_container').text(questions[drink_count][question_count].drink);
