@@ -48,7 +48,7 @@ div {
 	padding-bottom: 1em;
 	letter-spacing: 0px;
 	word-wrap: break-word;
-	top: 26%;
+	top: 27%;
 	left: 5%;
 	height: 15px;
 	text-align: center;
@@ -100,7 +100,7 @@ to {
 #shaker {
 	position:absolute;
 	left: 25%;
-	top:32%;
+	top:33%;
 	height: 58%;
 	width: 49%;
 	background-image: url('../bevshaker.png');

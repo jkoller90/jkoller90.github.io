@@ -31,26 +31,23 @@ function switchSequence() {
 				setTimeout(function () {
 					$('#shaker').effect('shake', {
 						direction: 'up'
-						, distance: 5
-					}, 300);
+						, distance: 14
+					}, 500);
 				}, 1000);
-				//				$('#drinktitle_container').text(questions[drink_count][question_count].drink);
-				//				$('#question').text('Answer the following questions about the above cocktail correctly to earn points.');
+
 				$('#question').css({
 					'font-size': '1.78em'
-						//				, 'left': '-1.55%'
-						
 					, 'margin': '0 0% 0 0%'
 				});
 				$('#drinktitle_container').css({
-					'top': '26%'
+					'top': '27%'
 					, 'padding-bottom': '2em'
 					, 'left': '0'
 					, 'width': '96%'
 					, 'font-size': '.9em'
 				});
 				$('#question').text(questions[drink_count][question_count].drink);
-					$('#question').widowFix();
+				$('#question').widowFix();
 				$('#drinktitle_container').text('Answer the following questions about the above cocktail correctly to earn points.');
 				$('#question').css('display', 'block');
 				$('#drinktitle_container').css('display', 'block');
@@ -71,25 +68,22 @@ function switchSequence() {
 					$('body').css('background-image', 'url("https://i.imgur.com/MaH93Cg.png")');
 					$('#drinktitle_container').css('display', 'inline');
 					$('#question').css('display', 'inline');
-				}, 3700);
+					totalSeconds=0;
+				}, 4000);
 			});
 		}
 		else {
 			switch (questions[drink_count][question_count].category) {
 			case 'Glass':
 				if (drink_count === 0) {
-
-					
 					$('#drinktitle_container').css('display', 'block');
 					$('#question').css('display', 'block');
 					//needs to set question text to drink 
 					//need to set drink title to instructions
 					setTimeout(function () {
-				$('#question').widowFix();
+						$('#question').widowFix();
 						$('#question').css({
 							'font-size': '1.35em'
-//							, 'margin': '0 0% 0 5%'
-//							, 'width': '90%'
 							, 'margin': '0 0% 0 5%'
 							, 'width': '90%'
 							, 'top': '13.5%'
@@ -97,9 +91,8 @@ function switchSequence() {
 						$('#timer').css('display', 'inline');
 						$('#drinktitle_container').text(questions[drink_count][question_count].drink);
 						setRightGlass(questions[drink_count][question_count].choices.a);
-						//						$('#drinktitle_container').text(questions[drink_count][question_count].drink);
 						$('#question').text(questions[drink_count][question_count].query);
-							$('#question').widowFix();
+						$('#question').widowFix();
 						$('.glassquestion').css('display', 'block');
 						$('body').attr('id', 'backgroundGrid');
 						$('.intro').css('display', 'none');
@@ -112,7 +105,7 @@ function switchSequence() {
 					setRightGlass(questions[drink_count][question_count].choices.a);
 					$('#drinktitle_container').text(questions[drink_count][question_count].drink);
 					$('#question').text(questions[drink_count][question_count].query);
-						$('#question').widowFix();
+					$('#question').widowFix();
 					$('.glassquestion').css('display', 'block');
 					$('body').attr('id', 'backgroundGrid');
 				}
@@ -121,7 +114,7 @@ function switchSequence() {
 				settwochoice(questions[drink_count][question_count].choices.a);
 				$('#drinktitle_container').text(questions[drink_count][question_count].drink);
 				$('#question').text(questions[drink_count][question_count].query);
-						$('#question').widowFix();
+				$('#question').widowFix();
 				$('body').attr('id', '');
 				$('.glassquestion').css('display', 'none');
 				$('.four-choice').css('display', 'none');
@@ -131,7 +124,7 @@ function switchSequence() {
 				setfourchoice(questions[drink_count][question_count].choices.a);
 				$('#drinktitle_container').text(questions[drink_count][question_count].drink);
 				$('#question').text(questions[drink_count][question_count].query);
-						$('#question').widowFix();
+				$('#question').widowFix();
 				$('body').attr('id', '');
 				$('.glassquestion').css('display', 'none');
 				$('.two-choice').css('display', 'none');

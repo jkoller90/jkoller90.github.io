@@ -1,17 +1,15 @@
 function vibratetransition() {
+	if (shake) {
 		//https://illyism.github.io/jquery.vibrate.js/ 
-		$('#shaker').attr('class', 'shake-hard');
 		$('#shaker').effect('shake', {
-			direction: 'up'
-			, distance: 7.5
-		}, 750);
+			direction: 'up'	
+			, distance: 14
+		}, 500);
 		$('#drinktitle_container').text('Answer the following questions about the above cocktail correctly to earn points.');
 		setTimeout(function () {
 			$('#shaker').attr('class', '');
-			//		$('#question').attr('style','font-size: 1.78em)
 			$('#question').css({
 				'font-size': '1.78em'
-//				, 'left': '-1.55%'
 				, 'margin': '0 0% 0 5%'
 			});
 			$('#drinktitle_container').css({
@@ -24,16 +22,16 @@ function vibratetransition() {
 			$('#question').text(questions[drink_count][question_count].drink);
 		}, 600);
 		setTimeout(function () {
-			//	switchSequence(); //main.js
 			switchSequence();
 		}, 600);
 		shake = false; //in main.js
 		//	http://elrumordelaluz.github.io/csshake/
 		//	https://api.jqueryui.com/shake-effect/
 		setTimeout(function () {
-			switchSequence();
-		}, 3600);
+			$('#shaker').attr('class', 'shake-hard');
+		}, 3700);
 	}
+}
 $('#shaker').click(function () {
 	vibratetransition();
 })
@@ -49,15 +47,6 @@ window.onload = function () {
 	window.addEventListener('shake', shakeEventDidOccur, false);
 	//shake event callback
 	function shakeEventDidOccur() {
-		//put your own code here etc.
-		//			alert('Shake!');
-//		$('#shaker').effect('shake', {
-//			direction: ['up']
-//			, distance: 5
-//		}, 500);
-//		//		$('#shaker').effect('shake');
-//		shake = false; //in main.js
-//		switchSequence(); //main.js
 		vibratetransition();
 	}
 };
@@ -67,8 +56,7 @@ $(document).click(function () {
 		drink_count++;
 	}
 })
-$(document).ready(function () {	
+$(document).ready(function () {
 	switchSequence();
 	$('#drinktitle_container').text(questions[drink_count][question_count].drink);
 });
-//Answer the following questions about the above cocktail correctly to earn points.
