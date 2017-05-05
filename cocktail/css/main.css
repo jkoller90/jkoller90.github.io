@@ -68,12 +68,34 @@ div {
 	word-wrap: break-word;
 	top: 11.5%;
 	width: 90%;
-	margin: 0 5% 0 5%;
+	margin: 0 5% 0 2.5%;
 	text-align: center;
 	z-index: 5;
 	overflow: visible;
 	opacity: .9;
 }
+
+
+/*
+#shaker_move {
+-webkit-animation-name: cssAnimation;
+-webkit-animation-duration:3s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-timing-function: ease;
+-webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes cssAnimation {
+from {
+-webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(100px);
+}
+to {
+-webkit-transform: rotate(0deg) scale(2) skew(0deg) translate(100px);
+}
+}
+*/
+
+
+
 
 #shaker {
 	position:absolute;
@@ -102,7 +124,7 @@ div {
 }
 
 #timer {
-	left: 44.5%;
+	left: 43%;
 	font-size: 1em;
 	top: 7%;
 	width: 15%;

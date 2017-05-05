@@ -1,4 +1,5 @@
 function setRightGlass(a) {
+		$('#question').widowFix();
 	if (a == 0) {
 		$('#fluteIMG').click(function () {
 			question_count++;
