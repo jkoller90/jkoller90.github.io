@@ -46,13 +46,13 @@ div {
 #drinktitle_container {
 	font-size: 1em;
 	padding-bottom: 1em;
-	letter-spacing: 0px;
+	letter-spacing: .85em;
 	word-wrap: break-word;
 	top: 27%;
-	left: 5%;
+	left: 3% !important;
 	height: 15px;
 	text-align: center;
-	width: 90%;
+	width: 92% !important;
 	z-index: 2;
 	overflow: visible;
 	color: rgb(255, 255, 255);
