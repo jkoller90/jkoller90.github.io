@@ -19,8 +19,8 @@ navigator.vibrate(500);
 			$('#drinktitle_container').css({
 				'top': '26%'
 				, 'padding-bottom': '2em'
-				, 'left': '0'
-				, 'width': '96%'
+				, 'left': '5%'
+				, 'width': '90%'
 				, 'font-size': '.9em'
 			});
 			$('#question').text(questions[drink_count][question_count].drink);
@@ -34,9 +34,9 @@ navigator.vibrate(500);
 		setTimeout(function () {}, 5000);
 	}
 }
-//$('#shaker').click(function () {
-//	vibratetransition();
-//})
+$('#shaker').click(function () {
+	vibratetransition();
+})
 window.onload = function () {
 	$('#drinktitle_container').css('display', 'none');
 	//create a new instance of shake.js.
