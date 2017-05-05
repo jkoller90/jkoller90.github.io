@@ -2,6 +2,17 @@
 		display: none;
 }
 
+.fourch{
+	font-size: 1.2em;
+	    z-index: 6;
+    width: 100%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+	text-align: center;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+
 #fourbarrier0 {
 	top: 23%;
 	height: 5px;
@@ -23,13 +34,6 @@
 }
 #fourchoice1 {
     top: 36%;
-    z-index: 6;
-    width: 100%;
-    padding-top: 4%;
-    padding-bottom: 4%;
-	text-align: center;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 #fourbarrier2 {
 	top: 48%;
@@ -42,13 +46,6 @@
 }
 #fourchoice2 {
     top: 52%;
-    z-index: 6;
-    width: 100%;
-    padding-top: 4%;
-    padding-bottom: 4%;
-	text-align: center;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 #fourbarrier3 {
 	top: 64%;
@@ -61,13 +58,6 @@
 }
 #fourchoice3 {
     top: 68%;
-    z-index: 6;
-    width: 100%;
-    padding-top: 4%;
-    padding-bottom: 4%;
-	text-align: center;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 #fourbarrier4 {
 	top: 80%;
@@ -80,13 +70,6 @@
 }
 #fourchoice4 {
     top: 84%;
-    z-index: 6;
-    width: 100%;
-    padding-top: 4%;
-    padding-bottom: 4%;
-	text-align: center;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 #fourbarrier5 {
 	top: 96%;
