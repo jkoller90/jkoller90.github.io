@@ -13,7 +13,7 @@ $('#shaker').click(function () {
 			$('#question').css({
 				'font-size': '1.78em'
 //				, 'left': '-1.55%'
-				, 'margin': '0 0% 0 3%'
+				, 'margin': '0 0% 0 5%'
 			});
 			$('#drinktitle_container').css({
 				'top': '26%'

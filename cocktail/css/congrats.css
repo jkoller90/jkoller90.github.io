@@ -9,8 +9,9 @@
 
 #congrats_line {
 	top: 3%;
-	left: 8%;
-	font-size: 1.15em;
+
+    left: 27%;
+    font-size: 1.5em;
 }
 
 #earned {
@@ -24,25 +25,47 @@
 
 #continue {
 	top: 20%;
-	left: 25%;
+	left: 54%;
 	border: 1px solid rgb(160, 160, 160);
 	-webkit-box-shadow: rgb(0, 0, 0) 1px 1px 0px;
 	box-shadow: rgb(0, 0, 0) 1px 1px 0px;
-	background-color: rgb(117, 117, 118);
-	font-size: 16px;
+	background-color: black;
+	font-size: .95em;
 	border-top-right-radius: 1px;
-	color: rgb(255, 255, 255);
+	color: white;
 	height: 5%;
 	text-align: center;
-	padding: 4px;
+	padding: .1em;
 	z-index: 4;
-	width: 45%;
+	width: 39%;
 	border-bottom-right-radius: 1px;
 	border-bottom-left-radius: 1px;
 	border-top-left-radius: 1px;
 	opacity: 1;
-	line-height: 2;
+	line-height: 1.9;
 }
+#leaderboard {
+	top: 20%;
+	left: 3%;
+	border: 1px solid rgb(160, 160, 160);
+	-webkit-box-shadow: rgb(0, 0, 0) 1px 1px 0px;
+	box-shadow: rgb(0, 0, 0) 1px 1px 0px;
+	background-color: black;
+	font-size: .95em;
+	border-top-right-radius: 1px;
+	color: white;
+	height: 5%;
+	text-align: center;
+	padding: .1em;
+	z-index: 4;
+	width: 39%;
+	border-bottom-right-radius: 1px;
+	border-bottom-left-radius: 1px;
+	border-top-left-radius: 1px;
+	opacity: 1;
+	line-height: 1.9;
+}
+
 
 #bloodycongrats {
 	background-image: url("http://i.imgur.com/IdqDvS5.png");

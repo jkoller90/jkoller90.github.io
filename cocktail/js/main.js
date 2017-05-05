@@ -59,7 +59,7 @@ function switchSequence() {
 						'font-size': '1.35em'
 						, 'margin': '0 2% 0 0'
 						, 'width': '100%'
-						, 'top': '11.5%'
+						, 'top': '13.5%'
 					});
 					$('.intro').css('display', 'none');
 					$('#timer').css('display', 'inline');
@@ -92,7 +92,7 @@ function switchSequence() {
 //							, 'width': '90%'
 							, 'margin': '0 0% 0 5%'
 							, 'width': '90%'
-							, 'top': '11.5%'
+							, 'top': '13.5%'
 						});
 						$('#timer').css('display', 'inline');
 						$('#drinktitle_container').text(questions[drink_count][question_count].drink);
