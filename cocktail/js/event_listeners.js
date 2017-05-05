@@ -3,10 +3,12 @@ function vibratetransition() {
 	if (shake) {
 		//https://illyism.github.io/jquery.vibrate.js/ 
 		$('#shaker').effect('shake', {
-			direction: 'up'	
+			direction: 'up'
 			, distance: 14
 		}, 500);
-//		navigator.vibrate(500);
+		if (navigator.vibrate) {
+			navigator.vibrate(500);
+		}
 		$('#drinktitle_container').text('Answer the following questions about the above cocktail correctly to earn points.');
 		setTimeout(function () {
 			$('#question').css({
@@ -28,13 +30,11 @@ function vibratetransition() {
 		shake = false; //in main.js
 		//	http://elrumordelaluz.github.io/csshake/
 		//	https://api.jqueryui.com/shake-effect/
-		setTimeout(function () {
-		}, 3700);
+		setTimeout(function () {}, 3700);
 	}
 }
-//$('#shaker').vibrate(); 
 $('#shaker').click(function () {
-	vibratetransition();	
+	vibratetransition();
 })
 window.onload = function () {
 	$('#drinktitle_container').css('display', 'none');
@@ -49,7 +49,7 @@ window.onload = function () {
 	//shake event callback
 	function shakeEventDidOccur() {
 		vibratetransition();
-		$('#shaker').vibrate(); 
+		$('#shaker').vibrate();
 	}
 };
 $(document).click(function () {

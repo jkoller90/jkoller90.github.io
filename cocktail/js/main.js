@@ -33,9 +33,10 @@ function switchSequence() {
 						direction: 'up'
 						, distance: 14
 					}, 500);
-//					navigator.vibrate(500);
+					if (navigator.vibrate) {
+						navigator.vibrate(500);
+					}
 				}, 1000);
-
 				$('#question').css({
 					'font-size': '1.78em'
 					, 'margin': '0 0% 0 0%'
@@ -69,7 +70,7 @@ function switchSequence() {
 					$('body').css('background-image', 'url("https://i.imgur.com/MaH93Cg.png")');
 					$('#drinktitle_container').css('display', 'inline');
 					$('#question').css('display', 'inline');
-					totalSeconds=0;
+					totalSeconds = 0;
 				}, 4000);
 			});
 		}
