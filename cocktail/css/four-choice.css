@@ -1,9 +1,15 @@
 .Four-choice {
 		display: none;
 }
-
+.fourbarr{
+		height: 5px;
+	z-index: 6;
+	width: 100%;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
 .fourch{
-	font-size: 1.2em;
+	font-size: 1.15em;
 	    z-index: 6;
     width: 100%;
     padding-top: 4%;
@@ -15,70 +21,40 @@
 
 #fourbarrier0 {
 	top: 23%;
-	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
-	z-index: 6;
-	width: 100%;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 
 #fourbarrier1 {
 	top: 32%;
-	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
-	z-index: 6;
-	width: 100%;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 #fourchoice1 {
     top: 36%;
 }
 #fourbarrier2 {
 	top: 48%;
-	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
-	z-index: 6;
-	width: 100%;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 #fourchoice2 {
     top: 52%;
 }
 #fourbarrier3 {
 	top: 64%;
-	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
-	z-index: 6;
-	width: 100%;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 #fourchoice3 {
     top: 68%;
 }
 #fourbarrier4 {
 	top: 80%;
-	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
-	z-index: 6;
-	width: 100%;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 #fourchoice4 {
     top: 84%;
 }
 #fourbarrier5 {
 	top: 96%;
-	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
-	z-index: 6;
-	width: 100%;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 
 @media screen and (max-length: 558px){

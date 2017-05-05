@@ -1,55 +1,45 @@
 .Two-choice {
-	display: none;	
+	display: none;
+}
+
+.twoch {
+	font-size: 1.15em;
+	z-index: 6;
+	width: 100%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	text-align: center;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
+}
+
+.twobarr {
+	height: 5px;
+	z-index: 6;
+	width: 100%;
+	-webkit-background-size: 100%;
+	background-repeat: no-repeat no-repeat;
 }
 
 #twobarrier1 {
 	top: 32%;
-	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
-	z-index: 6;
-	width: 100%;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 
 #twobarrier2 {
 	top: 60%;
-	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
-	z-index: 6;
-	width: 100%;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 
 #twobarrier3 {
 	top: 88%;
-	z-index: 6;
-	height: 5px;
 	background-image: url("http://i.imgur.com/9K2uCwE.png");
-	width: 100%;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 
 #twochoice1 {
 	top: 39%;
-	z-index: 6;
-	width: 100%;
-	padding-top: 10%;
-	padding-bottom: 10%;
-	text-align: center;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
 
 #twochoice2 {
 	top: 66%;
-	z-index: 6;
-	width: 100%;
-	padding-top: 10%;
-	padding-bottom: 10%;
-	text-align: center;
-	-webkit-background-size: 100%;
-	background-repeat: no-repeat no-repeat;
 }
