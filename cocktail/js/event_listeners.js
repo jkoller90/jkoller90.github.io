@@ -1,11 +1,10 @@
-$('#shaker').click(function () {
-	(function vibratetransition() {
+function vibratetransition() {
 		//https://illyism.github.io/jquery.vibrate.js/ 
-		$(this).attr('class', 'shake');
+		$('#shaker').attr('class', 'shake-hard');
 		$('#shaker').effect('shake', {
 			direction: 'up'
-			, distance: 5
-		}, 300);
+			, distance: 7.5
+		}, 750);
 		$('#drinktitle_container').text('Answer the following questions about the above cocktail correctly to earn points.');
 		setTimeout(function () {
 			$('#shaker').attr('class', '');
@@ -34,7 +33,9 @@ $('#shaker').click(function () {
 		setTimeout(function () {
 			switchSequence();
 		}, 3600);
-	})();
+	}
+$('#shaker').click(function () {
+	vibratetransition();
 })
 window.onload = function () {
 	$('#drinktitle_container').css('display', 'none');
@@ -50,13 +51,14 @@ window.onload = function () {
 	function shakeEventDidOccur() {
 		//put your own code here etc.
 		//			alert('Shake!');
-		$('#shaker').effect('shake', {
-			direction: ['up']
-			, distance: 5
-		}, 500);
-		//		$('#shaker').effect('shake');
-		shake = false; //in main.js
-		switchSequence(); //main.js
+//		$('#shaker').effect('shake', {
+//			direction: ['up']
+//			, distance: 5
+//		}, 500);
+//		//		$('#shaker').effect('shake');
+//		shake = false; //in main.js
+//		switchSequence(); //main.js
+		vibratetransition();
 	}
 };
 $(document).click(function () {
