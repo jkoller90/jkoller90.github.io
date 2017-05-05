@@ -32,8 +32,10 @@ function vibratetransition() {
 		}, 3700);
 	}
 }
+//$('#shaker').vibrate(); 
 $('#shaker').click(function () {
 	vibratetransition();
+	$('#shaker').vibrate(); 
 })
 window.onload = function () {
 	$('#drinktitle_container').css('display', 'none');
@@ -48,6 +50,7 @@ window.onload = function () {
 	//shake event callback
 	function shakeEventDidOccur() {
 		vibratetransition();
+		$('#shaker').vibrate(); 
 	}
 };
 $(document).click(function () {
