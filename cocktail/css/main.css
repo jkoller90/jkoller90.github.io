@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
 * {
 	overflow: hidden !important;
 }
@@ -58,6 +58,7 @@ div {
 	color: rgb(255, 255, 255);
 	opacity: 1;
 	letter-spacing: .08em;
+	font-weight: 500;
 }
 
 #question {
