@@ -96,7 +96,7 @@ if (window.navigator && window.navigator.vibrate) {
 //							, 'margin': '0 0% 0 5%'
 							, 'width': '90%'
 							, 'left': '5%'
-							, 'top': '14%'
+							, 'top': '13%'
 						});
 						$('#timer').css('display', 'inline');
 						$('#drinktitle_container').text(questions[drink_count][question_count].drink);
