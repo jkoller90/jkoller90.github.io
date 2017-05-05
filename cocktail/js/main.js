@@ -30,12 +30,12 @@ function switchSequence() {
 				$('.intro').css('display', 'block'); //shows shaker again
 				setTimeout(function () {
 					$('#shaker').effect('shake', {
-						direction: 'up'
-						, distance: 14
+						direction: 'down'
+						, distance: 10
 					}, 500);
-					if (navigator.vibrate) {
-						navigator.vibrate(500);
-					}
+if (window.navigator && window.navigator.vibrate) {
+   navigator.vibrate(500);
+}
 				}, 1000);
 				$('#question').css({
 					'font-size': '1.78em'
@@ -71,7 +71,7 @@ function switchSequence() {
 					$('#drinktitle_container').css('display', 'inline');
 					$('#question').css('display', 'inline');
 					totalSeconds = 0;
-				}, 4000);
+				}, 5000);
 			});
 		}
 		else {

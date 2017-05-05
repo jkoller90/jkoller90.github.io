@@ -3,12 +3,12 @@ function vibratetransition() {
 	if (shake) {
 		//https://illyism.github.io/jquery.vibrate.js/ 
 		$('#shaker').effect('shake', {
-			direction: 'up'
-			, distance: 14
+			direction: 'down'
+			, distance: 10
 		}, 500);
-		if (navigator.vibrate) {
-			navigator.vibrate(500);
-		}
+if (window.navigator && window.navigator.vibrate) {
+navigator.vibrate(500);
+}
 		$('#drinktitle_container').text('Answer the following questions about the above cocktail correctly to earn points.');
 		setTimeout(function () {
 			$('#question').css({
@@ -23,14 +23,14 @@ function vibratetransition() {
 				, 'font-size': '.9em'
 			});
 			$('#question').text(questions[drink_count][question_count].drink);
-		}, 600);
+		shake = false; //in main.js
+		}, 1000);
 		setTimeout(function () {
 			switchSequence();
-		}, 600);
-		shake = false; //in main.js
+		}, 1000);
 		//	http://elrumordelaluz.github.io/csshake/
 		//	https://api.jqueryui.com/shake-effect/
-		setTimeout(function () {}, 3700);
+		setTimeout(function () {}, 5000);
 	}
 }
 $('#shaker').click(function () {
