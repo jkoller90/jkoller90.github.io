@@ -1,6 +1,6 @@
 var drink_count = 0;
 var question_count = 1;
-var delay = 5000; //intro w/ shake before question
+var delay = 3000; //intro w/ shake before question
 var shake = true;
 
 function switchSequence() {
