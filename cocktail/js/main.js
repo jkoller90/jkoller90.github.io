@@ -60,14 +60,14 @@ function switchSequence() {
 						'font-size': '1.78em'
 					});
 					$('#drinktitle_container').css({
-						'font-size': '1em'
+						'font-size': '.9em'
 						, 'padding-bottom': '2em'
 						, 'letter-spacing': '0px'
-						, 'top': '25%'
+						, 'top': '26%'
 						, 'left': '4%'
 						, 'height': '15px'
 						, 'text-align': 'center'
-						, 'width': '92%'
+						, 'width': '93%'
 						, 'z-index': '2'
 						, 'letter-spacing': '.08em'
 						, 'display': 'block'
@@ -77,7 +77,6 @@ function switchSequence() {
 				$('#question').widowFix();
 				$('#drinktitle_container').text('Answer the following questions about the above cocktail correctly to earn points.');
 				$('#question').css('display', 'block');
-				//				$('#drinktitle_container').css({'display': 'block','font-size':'1em','width':'92%'});
 				setTimeout(function () {
 					if (($(window).width() == 320) && ($(window).height() == 460)) {
 						$('#question').css({

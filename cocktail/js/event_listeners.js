@@ -35,14 +35,14 @@ function vibratetransition() {
 			//iphone 6:
 			else {
 					$('#question').css({
-						'font-size': '1.78em'
-						, 'top': '10%'
+						'font-size': '1.85em'
+						, 'top': '12%'
 					});
 					$('#drinktitle_container').css({
-						'font-size': '1em'
+						'font-size': '.9em'
 						, 'padding-bottom': '2em'
 						, 'letter-spacing': '0px'
-						, 'top': '20%'
+						, 'top': '26%'
 						, 'left': '4%'
 						, 'height': '15px'
 						, 'text-align': 'center'
@@ -64,9 +64,9 @@ function vibratetransition() {
 		//	https://api.jqueryui.com/shake-effect/
 	}
 }
-$('#shaker').click(function () {
-	vibratetransition();
-})
+//$('#shaker').click(function () {
+//	vibratetransition();
+//})
 window.onload = function () {
 	$('#drinktitle_container').css('display', 'none');
 	//create a new instance of shake.js.
