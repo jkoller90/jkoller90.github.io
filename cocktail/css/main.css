@@ -111,7 +111,7 @@ div {
 }
 
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 320px) {
 	#drinktitle_container {
 		font-size: .85em;
 		top: 23%;
