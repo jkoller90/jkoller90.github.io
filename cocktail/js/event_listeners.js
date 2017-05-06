@@ -39,7 +39,7 @@ function vibratetransition() {
 						, 'top': '12%'
 					});
 					$('#drinktitle_container').css({
-						'font-size': '.9em'
+						'font-size': '1em'
 						, 'padding-bottom': '2em'
 						, 'letter-spacing': '0px'
 						, 'top': '26%'
