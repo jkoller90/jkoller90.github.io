@@ -103,28 +103,21 @@ div {
 }
 
 #timer {
-	left: 43%;
+	left: 42%;
 	font-size: 1em;
 	top: 6%;
 	width: 15%;
 	display: none;
 }
 
-/*
+
 @media screen and (max-width: 360px) {
 	#drinktitle_container {
 		font-size: .85em;
-		top: 26%;
+		top: 23%;
 	}
 	#question {
-		width: 97%;
-		top: 13.5%;
-		left: 1.5%;
-		padding-bottom: 3%;
-		font-size: 1.12em;
-				line-height: normal;
+		top: 10%;
 	}
-	#shaker {
-		top: 1.5%;
-	}
-}*/
+
+}

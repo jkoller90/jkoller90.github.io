@@ -113,3 +113,17 @@
 #peachcongrats {
 	background-image: url("http://i.imgur.com/NhBRhTu.png");
 }
+
+
+@media screen and (max-width: 360px) {
+	#congrats_line{
+		left: 24%;
+		font-size: 1.4em;			
+	}
+	#earned{
+		font-size: .9em;
+	}
+	#leaderboard, #continue{
+		font-size:.85em;
+	}	
+}

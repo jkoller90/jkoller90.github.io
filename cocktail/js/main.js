@@ -33,40 +33,73 @@ function switchSequence() {
 						direction: 'down'
 						, distance: 10
 					}, 500);
-if (window.navigator && window.navigator.vibrate) {
-   navigator.vibrate(500);
-}
+					if (window.navigator && window.navigator.vibrate) {
+						navigator.vibrate(500);
+					}
 				}, 1000);
-				$('#question').css({
-					'font-size': '1.78em'
-//					, 'margin': '0 0% 0 0%'
-				});
-				$('#drinktitle_container').css({
-					'font-size': '.9em'
-					, 'padding-bottom': '2em'
-					, 'letter-spacing':'0px'
-					,'top': '26%'
-					, 'left': '4%'
-					,'height':'15px'
-					, 'text-align':'center'
-					, 'width': '90%'
-					,'z-index':'2'
-					,'letter-spacing':'.08em'
-					,'display':'block'
-				});
+				if (($(window).width() == 360) && ($(window).height() == 460)) {
+					$('#question').css({
+						'font-size': '1.5em'
+							//					, 'margin': '0 0% 0 0%'
+					});
+					$('#drinktitle_container').css({
+						'font-size': '.9em'
+						, 'padding-bottom': '2em'
+						, 'letter-spacing': '0px'
+						, 'top': '23%'
+						, 'left': '4%'
+						, 'height': '15px'
+						, 'text-align': 'center'
+						, 'width': '90%'
+						, 'z-index': '2'
+						, 'letter-spacing': '.08em'
+						, 'display': 'block'
+					});
+				}
+				else {
+					$('#question').css({
+						'font-size': '1.78em'
+							//					, 'margin': '0 0% 0 0%'
+					});
+					$('#drinktitle_container').css({
+						'font-size': '.9em'
+						, 'padding-bottom': '2em'
+						, 'letter-spacing': '0px'
+						, 'top': '26%'
+						, 'left': '4%'
+						, 'height': '15px'
+						, 'text-align': 'center'
+						, 'width': '90%'
+						, 'z-index': '2'
+						, 'letter-spacing': '.08em'
+						, 'display': 'block'
+					});
+				}
 				$('#question').text(questions[drink_count][question_count].drink);
 				$('#question').widowFix();
 				$('#drinktitle_container').text('Answer the following questions about the above cocktail correctly to earn points.');
 				$('#question').css('display', 'block');
-//				$('#drinktitle_container').css({'display': 'block','font-size':'1em','width':'92%'});
+				//				$('#drinktitle_container').css({'display': 'block','font-size':'1em','width':'92%'});
 				setTimeout(function () {
-					$('#question').css({
-						'font-size': '1.35em'
-//						, 'margin': '0 2% 0 0'
-						, 'width': '100%'
-						, 'left':'0'
-						, 'top': '14%'
-					});
+					if (($(window).width() == 320) && ($(window).height() == 460)) {
+						$('#question').css({
+							'font-size': '1.25em'
+							, //					, 'margin': '0 0% 0 0%'
+							'width': '100%'
+							, 'left': '0'
+							, 'top': '13%'
+						});
+					}
+					else {
+						$('#question').css({
+							'font-size': '1.35em'
+								//						, 'margin': '0 2% 0 0'
+								
+							, 'width': '100%'
+							, 'left': '0'
+							, 'top': '14%'
+						});
+					}
 					$('.intro').css('display', 'none');
 					$('#timer').css('display', 'inline');
 					if (drink_count == 9) {
@@ -75,7 +108,9 @@ if (window.navigator && window.navigator.vibrate) {
 					$('.congrats').css('display', 'none');
 					switchSequence();
 					$('body').css('background-image', 'url("https://i.imgur.com/MaH93Cg.png")');
-					$('#drinktitle_container').css({'display': 'inline'});
+					$('#drinktitle_container').css({
+						'display': 'inline'
+					});
 					$('#question').css('display', 'inline');
 					totalSeconds = 0;
 				}, 5000);
@@ -91,13 +126,25 @@ if (window.navigator && window.navigator.vibrate) {
 					//need to set drink title to instructions
 					setTimeout(function () {
 						$('#question').widowFix();
-						$('#question').css({
-							'font-size': '1.35em'
-//							, 'margin': '0 0% 0 5%'
-							, 'width': '90%'
-							, 'left': '4%'
-							, 'top': '13%'
-						});
+						if (($(window).width() == 320) && ($(window).height() == 460)) {
+							$('#question').css({
+								'font-size': '1.25em'
+								, //					, 'margin': '0 0% 0 0%'
+								'width': '100%'
+								, 'left': '0'
+								, 'top': '13%'
+							});
+						}
+						else {
+							$('#question').css({
+								'font-size': '1.35em'
+									//						, 'margin': '0 2% 0 0'
+									
+								, 'width': '100%'
+								, 'left': '0'
+								, 'top': '14%'
+							});
+						}
 						$('#timer').css('display', 'inline');
 						$('#drinktitle_container').text(questions[drink_count][question_count].drink);
 						setRightGlass(questions[drink_count][question_count].choices.a);
