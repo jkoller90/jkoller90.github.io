@@ -46,7 +46,7 @@ if (window.navigator && window.navigator.vibrate) {
 					, 'padding-bottom': '2em'
 					, 'letter-spacing':'0px'
 					,'top': '26%'
-					, 'left': '5%'
+					, 'left': '4%'
 					,'height':'15px'
 					, 'text-align':'center'
 					, 'width': '90%'
@@ -95,7 +95,7 @@ if (window.navigator && window.navigator.vibrate) {
 							'font-size': '1.35em'
 //							, 'margin': '0 0% 0 5%'
 							, 'width': '90%'
-							, 'left': '5%'
+							, 'left': '4%'
 							, 'top': '13%'
 						});
 						$('#timer').css('display', 'inline');
