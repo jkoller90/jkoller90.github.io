@@ -15,7 +15,6 @@ function vibratetransition() {
 				$('#question').css({
 					'font-size': '1.5em'
 					, 'top': '12%'
-						//					, 'margin': '0 0% 0 0%'
 				});
 				$('#drinktitle_container').css({
 					'font-size': '.8em'
@@ -34,9 +33,7 @@ function vibratetransition() {
 			}
 			else {
 				$('#question').css({
-					'font-size': '1.78em'
-						//				, 'margin': '0 0% 0 5%'
-						
+					'font-size': '1.78em'						
 					, 'top': '13%'
 				});
 				$('#drinktitle_container').css({
@@ -50,7 +47,6 @@ function vibratetransition() {
 					$('#question').css({
 						'font-size': '1.78em'
 						, 'top': '10%'
-							//					, 'margin': '0 0% 0 0%'
 					});
 					$('#drinktitle_container').css({
 						'font-size': '.9em'
@@ -77,7 +73,6 @@ function vibratetransition() {
 		}, 1000);
 		//	http://elrumordelaluz.github.io/csshake/
 		//	https://api.jqueryui.com/shake-effect/
-		setTimeout(function () {}, 5000);
 	}
 }
 $('#shaker').click(function () {
