@@ -1,6 +1,6 @@
 var drink_count = 0;
 var question_count = 1;
-var delay = 30000000; //intro w/ shake before question
+var delay = 3000; //intro w/ shake before question
 var shake = true;
 
 function switchSequence() {
@@ -37,10 +37,9 @@ function switchSequence() {
 						navigator.vibrate(500);
 					}
 				}, 1000);
-				if (($(window).width() == 360) && ($(window).height() == 460)) {
+				if (($(window).width() == 320) && ($(window).height() == 460)) {
 					$('#question').css({
 						'font-size': '1.5em'
-							//					, 'margin': '0 0% 0 0%'
 					});
 					$('#drinktitle_container').css({
 						'font-size': '.9em'
@@ -59,17 +58,16 @@ function switchSequence() {
 				else {
 					$('#question').css({
 						'font-size': '1.78em'
-							//					, 'margin': '0 0% 0 0%'
 					});
 					$('#drinktitle_container').css({
-						'font-size': '.9em'
+						'font-size': '1em'
 						, 'padding-bottom': '2em'
 						, 'letter-spacing': '0px'
-						, 'top': '26%'
+						, 'top': '25%'
 						, 'left': '4%'
 						, 'height': '15px'
 						, 'text-align': 'center'
-						, 'width': '90%'
+						, 'width': '92%'
 						, 'z-index': '2'
 						, 'letter-spacing': '.08em'
 						, 'display': 'block'
@@ -83,8 +81,7 @@ function switchSequence() {
 				setTimeout(function () {
 					if (($(window).width() == 320) && ($(window).height() == 460)) {
 						$('#question').css({
-							'font-size': '1.25em'
-							, //					, 'margin': '0 0% 0 0%'
+							'font-size': '1.25em', 
 							'width': '100%'
 							, 'left': '0'
 							, 'top': '13%'
@@ -92,9 +89,7 @@ function switchSequence() {
 					}
 					else {
 						$('#question').css({
-							'font-size': '1.35em'
-								//						, 'margin': '0 2% 0 0'
-								
+							'font-size': '1.35em'								
 							, 'width': '100%'
 							, 'left': '0'
 							, 'top': '14%'
@@ -129,8 +124,7 @@ function switchSequence() {
 						if (($(window).width() == 320) && ($(window).height() == 460)) {
 							$('#question').css({
 								'font-size': '1.25em'
-								, //					, 'margin': '0 0% 0 0%'
-								'width': '100%'
+								, 'width': '100%'
 								, 'left': '0'
 								, 'top': '13%'
 							});
@@ -138,8 +132,6 @@ function switchSequence() {
 						else {
 							$('#question').css({
 								'font-size': '1.35em'
-									//						, 'margin': '0 2% 0 0'
-									
 								, 'width': '100%'
 								, 'left': '0'
 								, 'top': '14%'

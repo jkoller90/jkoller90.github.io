@@ -10,6 +10,7 @@ function vibratetransition() {
 			navigator.vibrate(500);
 		}
 		$('#drinktitle_container').text('Answer the following questions about the above cocktail correctly to earn points.');
+		//intro after shake/before each new drink:
 		setTimeout(function () {
 			if (($(window).width() == 320) && ($(window).height() == 460)) {
 				$('#question').css({
@@ -21,7 +22,7 @@ function vibratetransition() {
 					, 'padding-bottom': '2em'
 					, 'letter-spacing': '0px'
 					, 'top': '26%'
-					, 'margin-bottom':'1%'	
+					, 'margin-bottom': '1%'
 					, 'left': '4%'
 					, 'height': '15px'
 					, 'text-align': 'center'
@@ -31,37 +32,25 @@ function vibratetransition() {
 					, 'display': 'block'
 				});
 			}
+			//iphone 6:
 			else {
-				$('#question').css({
-					'font-size': '1.78em'						
-					, 'top': '13%'
-				});
-				$('#drinktitle_container').css({
-					'top': '26%'
-					, 'padding-bottom': '2em'
-					, 'left': '5%'
-					, 'width': '90%'
-					, 'font-size': '.9em'
-				});
-				if (($(window).width() == 360) && ($(window).height() == 460)) {
 					$('#question').css({
 						'font-size': '1.78em'
 						, 'top': '10%'
 					});
 					$('#drinktitle_container').css({
-						'font-size': '.9em'
+						'font-size': '1em'
 						, 'padding-bottom': '2em'
 						, 'letter-spacing': '0px'
 						, 'top': '20%'
 						, 'left': '4%'
 						, 'height': '15px'
 						, 'text-align': 'center'
-						, 'width': '90%'
+						, 'width': '93%'
 						, 'z-index': '2'
 						, 'letter-spacing': '.08em'
 						, 'display': 'block'
 					});
-				}
 			}
 			$('#question').text(questions[drink_count][question_count].drink);
 			$('#question').widowFix();
