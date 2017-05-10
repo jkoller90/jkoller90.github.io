@@ -1,5 +1,3 @@
-
-
 (function setupMissedClicks(){
 	var touchzone = document.getElementById("mycanvas");
 	touchzone.addEventListener("touchstart", drawCircle, false);

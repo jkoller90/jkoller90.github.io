@@ -2,10 +2,11 @@
 function vibratetransition() {
 	if (shake) {
 		//https://illyism.github.io/jquery.vibrate.js/ 
-		$('#shaker').effect('shake', {
-			direction: 'down'
-			, distance: 10
-		}, 500);
+//		$('#shaker').effect('shake', {
+//			direction: 'down'
+//			, distance: 10
+//		}, 500);
+		$('#shaker').effect('shake');
 		if (window.navigator && window.navigator.vibrate) {
 			navigator.vibrate(500);
 		}
@@ -64,9 +65,10 @@ function vibratetransition() {
 		//	https://api.jqueryui.com/shake-effect/
 	}
 }
-//$('#shaker').click(function () {
-//	vibratetransition();
-//})
+$('#shaker').click(function () {
+//	$('#shaker').effect('shake');
+	vibratetransition();
+})
 window.onload = function () {
 	$('#drinktitle_container').css('display', 'none');
 	//create a new instance of shake.js.
