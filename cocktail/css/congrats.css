@@ -31,29 +31,31 @@
 	top: 22%;
 	left: 56%;
 /*	border: 1px solid rgb(160, 160, 160);*/
-	-webkit-box-shadow: rgb(0, 0, 0) 1px 1px 0px;
-	box-shadow: rgb(0, 0, 0) 1px 1px 0px;
+/*	-webkit-box-shadow: rgb(0, 0, 0) 1px 1px 0px;*/
+/*	box-shadow: rgb(0, 0, 0) 1px 1px 0px;*/
 	background-color: black;
 	font-size: .95em;
 	border-top-right-radius: 1px;
 	color: white;
-	height: 5.125%;
+	height: 5%;
 	text-align: center;
-	padding: .2em;
+/*	padding: .2em;*/
+	padding: .235em;
 	z-index: 4;
 	width: 39%;
 	border-bottom-right-radius: 1px;
 	border-bottom-left-radius: 1px;
 	border-top-left-radius: 1px;
 	opacity: 1;
-	line-height: 1.9;
+/*	line-height: 1.9;*/
+	line-height: 1.85;
 }
 #leaderboard {
 	top: 22%;
 	left: 3%;
 /*	border: 1px solid rgb(160, 160, 160);*/
-	-webkit-box-shadow: rgb(0, 0, 0) 1px 1px 0px;
-	box-shadow: rgb(0, 0, 0) 1px 1px 0px;
+/*	-webkit-box-shadow: rgb(0, 0, 0) 1px 1px 0px;*/
+/*	box-shadow: rgb(0, 0, 0) 1px 1px 0px;*/
 	background-color: black;
 	font-size: .95em;
 	border-top-right-radius: 1px;

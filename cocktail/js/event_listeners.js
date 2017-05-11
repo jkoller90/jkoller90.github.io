@@ -65,10 +65,10 @@ function vibratetransition() {
 		//	https://api.jqueryui.com/shake-effect/
 	}
 }
-$('#shaker').click(function () {
-//	$('#shaker').effect('shake');
-	vibratetransition();
-})
+//$('#shaker').click(function () {
+////	$('#shaker').effect('shake');
+//	vibratetransition();
+//})
 window.onload = function () {
 	$('#drinktitle_container').css('display', 'none');
 	//create a new instance of shake.js.

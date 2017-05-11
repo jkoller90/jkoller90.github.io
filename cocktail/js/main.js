@@ -15,7 +15,8 @@ function switchSequence() {
 			$('.' + pre_cat).css('display', 'none');
 			$('#question').css('display', 'none');
 			$('#drinktitle_container').css('display', 'none');
-			$('.congrats').css('display', 'block');
+			setCongrats();
+//			$('.congrats').css('display', 'block');
 			$('#timer').css('display', 'none');
 			$('body').css('background-size', 'cover');
 			//change bellow line to an class with this as the image 
@@ -29,10 +30,11 @@ function switchSequence() {
 				$('.congrats').css('display', 'none');
 				$('.intro').css('display', 'block'); //shows shaker again
 				setTimeout(function () {
-					$('#shaker').effect('shake', {
-						direction: 'down'
-						, distance: 10
-					}, 500);
+//					$('#shaker').effect('shake', {
+//						direction: 'down'
+//						, distance: 10
+//					}, 500);
+					$('#shaker').effect('shake');
 					if (window.navigator && window.navigator.vibrate) {
 						navigator.vibrate(500);
 					}
@@ -137,15 +139,14 @@ function switchSequence() {
 								, 'top': '14%'
 							});
 						}
-						$('#timer').css('display', 'inline');
-						$('#drinktitle_container').text(questions[drink_count][question_count].drink);
+						$('#timer').css('display', 'inline');						$('#drinktitle_container').text(questions[drink_count][question_count].drink);
 						setRightGlass(questions[drink_count][question_count].choices.a);
 						$('#question').text(questions[drink_count][question_count].query);
 						$('#question').widowFix();
 						$('.glassquestion').css('display', 'block');
 						$('body').attr('id', 'backgroundGrid');
 						$('.intro').css('display', 'none');
-						setInterval(setTime, 1000);
+						setInterval(setTime, 1000);						
 					}, delay);
 					delay = 0;
 				}
