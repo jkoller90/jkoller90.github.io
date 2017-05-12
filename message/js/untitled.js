@@ -142,8 +142,16 @@ function updateData(background) {
 	document.getElementById('height').innerHTML = background.height + 'px';
 	document.getElementById('winWidth').innerHTML = getComputedStyle(document.body).width;
 	document.getElementById('winHeight').innerHTML = getComputedStyle(document.body).height;
+	
+	
+	
+	/* 
+	coordinates 
+	*/
+	
 	var bh = background.width;
 	var bw = background.height;
+//	console.log(bh);
 	//struct array for coordinate input
 	//beach coordinates
 	var hotspots = [

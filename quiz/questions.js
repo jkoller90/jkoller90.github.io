@@ -10,7 +10,7 @@ var questions = [{
 		, "choices": ["True", "False"]
 }, {
 		"title": "'Tis a Ruby Treat"
-		, "q": "True or False: Red Stripe offers a Christmas lager that capitalizes on the sweet and spicy taste of sorrel, a Jamaican favorite."
+		, "q": "True or False: Red Stripe offers a tasty lager that capitalizes on the sweet and spicy taste of sorrel, a Jamaican favorite."
 		, "a": "True"
 		, "choices": ["True", "False"]
 }, {

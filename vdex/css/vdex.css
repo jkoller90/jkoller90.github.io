@@ -1,0 +1,42 @@
+
+#framebody{
+	position:absolute;
+	background-image:url('https://s-media-cache-ak0.pinimg.com/originals/8b/6b/cc/8b6bcc8c73c62625d572d973641190e9.jpg');
+	padding: 100%;
+	background-size:cover;
+	background-repeat:no-repeat;
+	
+}
+iframe{
+	border:0;
+	position:absolute;
+	left:12%;
+	height: 100%;
+	width: 90%;
+	top:0;
+	
+}
+.indent{
+	font-size:1.2em;
+}
+#indent{
+/*	font-size:1em;*/
+	position:absolute;
+	z-index:2;
+	left: 2.5%;
+	top:10.5%
+}
+#menu{
+	position:absolute;
+	border: 3px solid black;
+	padding-right: 11.5%;
+	height: 100%;
+	left:0;
+	top:0%;
+}
+#menuTitle{
+	position:absolute;
+	left:1%;
+		font-size: 1.2em;
+	top:3%
+}
