@@ -337,35 +337,6 @@ function mouse_drawCircle(event) {
 //}
 //time_count("time", 1, 0);
 
-/* counting up */
-//function time_count(elementName, minutes, seconds) {
-//    var element, endTime, hours, mins, msLeft, time;
-//
-//    function twoDigits(n) {
-//        return (n <= 9 ? "0" + n : n);
-//    }
-//
-//    function updateTimer() {
-//        msLeft = endTime - (+new Date);
-//			console.log(msLeft);
-////        if (msLeft < 1000) {
-////            element.innerHTML = "Time's up!";
-////        }
-////        else {
-//            time = new Date(msLeft);
-//            timelabel = "";
-//            mins = time.getUTCMinutes();
-//            element.innerHTML = (timelabel ? timelabel + twoDigits(mins) : mins) + ':' + twoDigits(time.getUTCSeconds());
-//            setTimeout(updateTimer, time.getUTCMilliseconds() + 500);
-////        }
-//    }
-//    element = document.getElementsByClassName(elementName)[0];
-//    endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
-//    updateTimer();
-//}
-//time_count("time", 1, 0);
-
-
 var sec = 0;
 
 function pad(val) {
