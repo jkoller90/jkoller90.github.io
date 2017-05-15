@@ -307,31 +307,59 @@ function mouse_drawCircle(event) {
 	}, 350);
 }
 
+/* keeping the time */
+//function time_count(elementName, minutes, seconds) {
+//	var element, endTime, hours, mins, msLeft, time;
+//
+//	function twoDigits(n) {
+//		return (n <= 9 ? "0" + n : n);
+//	}
+//
+//	function updateTimer() {
+//		msLeft = endTime - (+new Date);
+////		if (msLeft < 1000) {
+////			element.innerHTML = "Time's up!";
+////		}
+////		else {
+////			time = new Date(msLeft);
+//			time = new Date();
+//			timelabel = "";
+//			//					timelabel = "Time: ";
+//			mins = time.getUTCMinutes();
+//			element.innerHTML = time.getHours() + ":" + time.getMinutes();
+////			element.innerHTML = '0' + (timelabel ? timelabel + twoDigits(mins) : mins) + ':' + twoDigits(time.getUTCSeconds());
+//			setTimeout(updateTimer, time.getUTCMilliseconds() + 1000);
+////		}
+//	}
+//	element = document.getElementsByClassName(elementName)[0];
+//	endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
+//	updateTimer();
+//}
+//time_count("time", 1, 0);
+
+/* counting up */
 function time_count(elementName, minutes, seconds) {
-	var element, endTime, hours, mins, msLeft, time;
+    var element, endTime, hours, mins, msLeft, time;
 
-	function twoDigits(n) {
-		return (n <= 9 ? "0" + n : n);
-	}
+    function twoDigits(n) {
+        return (n <= 9 ? "0" + n : n);
+    }
 
-	function updateTimer() {
-		msLeft = endTime - (+new Date);
-//		if (msLeft < 1000) {
-//			element.innerHTML = "Time's up!";
-//		}
-//		else {
-//			time = new Date(msLeft);
-			time = new Date();
-			timelabel = "";
-			//					timelabel = "Time: ";
-			mins = time.getUTCMinutes();
-			element.innerHTML = time.getHours() + ":" + time.getMinutes();
-//			element.innerHTML = '0' + (timelabel ? timelabel + twoDigits(mins) : mins) + ':' + twoDigits(time.getUTCSeconds());
-			setTimeout(updateTimer, time.getUTCMilliseconds() + 1000);
-//		}
-	}
-	element = document.getElementsByClassName(elementName)[0];
-	endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
-	updateTimer();
+    function updateTimer() {
+        msLeft = endTime - (+new Date);
+//        if (msLeft < 1000) {
+//            element.innerHTML = "Time's up!";
+//        }
+//        else {
+            time = new Date(msLeft);
+            timelabel = "";
+            mins = time.getUTCMinutes();
+            element.innerHTML = (timelabel ? timelabel + twoDigits(mins) : mins) + ':' + twoDigits(time.getUTCSeconds());
+            setTimeout(updateTimer, time.getUTCMilliseconds() + 500);
+//        }
+    }
+    element = document.getElementsByClassName(elementName)[0];
+    endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
+    updateTimer();
 }
 time_count("time", 1, 0);
