@@ -151,43 +151,10 @@ function updateData(background) {
 	
 	var bh = background.width;
 	var bw = background.height;
-//	console.log(bh);
+	console.log("bw " + bw);
+	console.log("bh " + bh);
 	//struct array for coordinate input
 	//beach coordinates
-	var hotspots = [
-		{
-			top: bh * .4
-			, left: bw * .9
-	}, //chair 1
-		{
-			top: bh * .4
-			, left: bw * .64
-	}, //chair 2
-		{
-			top: bh * .4
-			, left: bw * .4
-	}, //chair 3
-		{
-			top: bh * .4
-			, left: bw * .2
-	}, //chair 4	
-		{
-			top: bh * .28
-			, left: bw * .035
-	}, //boat	
-		{
-			top: bh * .22
-			, left: bw * .42
-	}, //bell	
-//		{
-//			top: bh * .11
-//			, left: bw * .92
-//	}, //palm tree window	
-//		{
-//			top: bh * .275
-//			, left: bw * 1.56
-//	}, //gopher shadow 	
-];
 	//set score total
 	$(".score").html("0 of " + hotspots.length + " found");
 	(function createHotspots() {
@@ -346,7 +313,3 @@ var timer = setInterval(function () {
     document.getElementsByClassName("time")[0].innerHTML = pad(parseInt(sec / 60, 10)) + ":" + pad(++sec % 60); // + ":" + pad(parseInt(sec / 60, 10));
 //    document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
 }, 1000);
-
-setTimeout(function () {
-    clearInterval(timer);
-}, 11000);
