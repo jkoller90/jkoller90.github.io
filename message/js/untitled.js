@@ -153,6 +153,33 @@ function updateData(background) {
 	var bw = background.height;
 	console.log("bw " + bw);
 	console.log("bh " + bh);
+	
+		var hotspots = [
+		{
+			top: bh * .4
+			, left: bw * .9
+	}, //chair 1
+		{
+			top: bh * .4
+			, left: bw * .64
+	}, //chair 2
+		{
+			top: bh * .4
+			, left: bw * .4
+	}, //chair 3
+		{
+			top: bh * .4
+			, left: bw * .2
+	}, //chair 4	
+		{
+			top: bh * .28
+			, left: bw * .035
+	}, //boat	
+		{
+			top: bh * .22
+			, left: bw * .42
+	}
+];
 	//struct array for coordinate input
 	//beach coordinates
 	//set score total
