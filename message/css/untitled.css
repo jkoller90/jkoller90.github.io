@@ -65,6 +65,7 @@ body {
 	background-size: contain;
 	background-position: center top;
 	position: absolute;
+	background-image:url('http://i.imgur.com/IaaJX20.jpg');
 /*	background-image: url("http://i.imgur.com/xbMvidl.png");*/
 /*	background-image: url('http://i.imgur.com/vXYAuAL.png');*/
 }
@@ -105,6 +106,7 @@ span {
 	position: absolute;
 	border-radius: 50%;
 	z-index: 1;
+	
 }
 
 .miss {

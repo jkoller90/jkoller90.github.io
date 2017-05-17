@@ -156,28 +156,25 @@ function updateData(background) {
 	
 		var hotspots = [
 		{
-			top: bh * .4
-			, left: bw * .9
-	}, //chair 1
+			top: bh * .22
+			, left: bw * .24
+	}, 
+		
 		{
-			top: bh * .4
-			, left: bw * .64
+			top: bh * .35
+			, left: bw * .13
 	}, //chair 2
 		{
-			top: bh * .4
-			, left: bw * .4
+			top: bh * .73
+			, left: bw * .27
 	}, //chair 3
 		{
-			top: bh * .4
-			, left: bw * .2
+			top: bh * .6
+			, left: bw * .83
 	}, //chair 4	
 		{
-			top: bh * .28
-			, left: bw * .035
-	}, //boat	
-		{
-			top: bh * .22
-			, left: bw * .42
+			top: bh * .43
+			, left: bw * .82
 	}
 ];
 	//struct array for coordinate input
