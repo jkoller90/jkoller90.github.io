@@ -158,24 +158,25 @@ function updateData(background) {
 		{
 			top: bh * .22
 			, left: bw * .24
-	}, 
-		
-		{
-			top: bh * .35
-			, left: bw * .13
-	}, //chair 2
-		{
-			top: bh * .73
-			, left: bw * .27
-	}, //chair 3
-		{
-			top: bh * .6
-			, left: bw * .83
-	}, //chair 4	
-		{
-			top: bh * .43
-			, left: bw * .82
 	}
+	// , 
+		
+	// 	{
+	// 		top: bh * .35
+	// 		, left: bw * .13
+	// }, //chair 2
+	// 	{
+	// 		top: bh * .73
+	// 		, left: bw * .27
+	// }, //chair 3
+	// 	{
+	// 		top: bh * .6
+	// 		, left: bw * .83
+	// }, //chair 4	
+	// 	{
+	// 		top: bh * .43
+	// 		, left: bw * .82
+	// }
 ];
 	//struct array for coordinate input
 	//beach coordinates
