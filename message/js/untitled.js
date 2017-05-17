@@ -135,7 +135,8 @@ function updateData(background) {
 		// Write the coordinates of the touch to the div
 		coords.innerHTML = 'x: ' + event.touches[0].pageX + ', y: ' + event.touches[0].pageY;
 	}
-	background = getBackgroundSize(document.body);
+	// background = getBackgroundSize(document.body);
+	background = getBackgroundSize(document.getElementById('body'));
 	if (debug) $(".debug").css("display", "block");
 	else $(".debug").css("display", "none");
 	document.getElementById('width').innerHTML = background.width + 'px';
@@ -159,12 +160,23 @@ function updateData(background) {
 			top: bh * .22
 			, left: bw * .24
 	}
-	// , 
-		
-	// 	{
-	// 		top: bh * .35
-	// 		, left: bw * .13
-	// }, //chair 2
+	, 	
+		{
+			top: bh * .43
+			, left: bw * .31
+	}, 
+			{
+			top: bh * .415
+			, left: bw * .485
+	}, 
+		{
+			top: bh * .34
+			, left: bw * 1.485
+	},
+			{
+			top: bh * .25
+			, left: bw * 1.475
+	},
 	// 	{
 	// 		top: bh * .73
 	// 		, left: bw * .27
