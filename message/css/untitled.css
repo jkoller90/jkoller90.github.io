@@ -25,9 +25,10 @@ section{
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center top;
-	position: absolute;
+	display:block;
+/*	position: absolute;*/
 	background-image:url('http://i.imgur.com/IaaJX20.jpg');
-	top: 8.6%;
+/*	top: 8.6%;*/
 
 }
 
