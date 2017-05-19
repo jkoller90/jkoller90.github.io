@@ -1,4 +1,5 @@
-	var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z.png">';
+
+var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z.png">';
 	var score = 0;
 	var bh, bw, background, hotspots;
 	var clickedBool = false;
@@ -21,9 +22,9 @@
 		}
 	})
 	$(document).on('tap', '#body', function (event) {
-		$(".score").text(score + " of " + hotspots.length + " found");
+//		$(".score").text(score + " of " + hotspots.length + " found");
 		if (clickedBool == false) {
-			$(".score").text(score + " of " + hotspots.length + " found");
+//			$(".score").text(score + " of " + hotspots.length + " found");
 			$(".miss").css("width", circleWidth + "px");
 			$(".miss").css("height", circleHeight + "px");
 			$(".miss").css("left", event.pageX - circleWidth / 2);
@@ -33,7 +34,7 @@
 				$(".miss").css("animation", "");
 				$(".miss").css("left", 0);
 				$(".miss").css("top", 0);
-				$(".score").text(score + " of " + hotspots.length + " found");
+//				$(".score").text(score + " of " + hotspots.length + " found");
 			}, 250);
 		}
 	});
@@ -131,3 +132,8 @@
 		e.stopPropagation();
 		e.stopImmediatePropagation();
 	}
+	
+var $scoreboard = $(".score");
+setInterval(function(){
+			$scoreboard.text(score + " of 5 found");
+}, 650);
