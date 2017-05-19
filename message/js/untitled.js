@@ -3,24 +3,27 @@
 	var bh, bw, background, hotspots;
 	var clickedBool = false;
 	var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-	var hitCoordObjs = [];
+	var scored_hits = [];
 	var clickHandler, index = 1;
 	$(document).on('tap', '.hit', function () {
 		clickedBool = true;
-		$("#" + this.getAttribute("id")).css("animation", "border .25s ease 1 forwards");
-		$('#bottle' + index).css('opacity', '1');
-		if (iOS) {
-			score++;
-			$(".score").text(score + " of " + hotspots.length + " found");
+		if (scored_hits.indexOf($(this).attr('id')) == -1) {
+			$("#" + this.getAttribute("id")).css("animation", "border .25s ease 1 forwards");
+			$('#bottle' + index).css('opacity', '1');
+//			if (iOS) {
+//				score++;
+//				$(".score").text(score + " of " + hotspots.length + " found");
+//			}
+//			else {
+				score++;
+				$(".score").text(score + " of " + hotspots.length + " found");
+//			}
+			index++;
+			setTimeout(function () {
+				clickedBool = false;
+			}, 300)
+			scored_hits.push($(this).attr('id'));
 		}
-		else {
-			score++;
-			$(".score").text(score + " of " + hotspots.length + " found");
-		}
-		index++;
-		setTimeout(function () {
-			clickedBool = false;
-		}, 300)
 	})
 	$(document).on('tap', '#body', function (event) {
 		if (clickedBool == false) {
@@ -77,8 +80,8 @@
 				$("#hit" + i).css("height", circleWidth + circleWidth * .13 + "px");
 			};
 		})();
-		$('#body').attr('height',bh - $('header').height());
-		$('#body').css('background-size','cover');
+		$('#body').attr('height', bh - $('header').height());
+		$('#body').css('background-size', 'cover');
 	}
 	window.onload = window.onresize = updateData;
 	h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
