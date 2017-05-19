@@ -247,8 +247,8 @@ var time = 60;
 var circleWidth = w / 25;
 var circleHeight = w / 25;
 //setting body to fit screen 	
-$("body").attr("width", w);
-$("body").attr("height", h);
+//$("body").attr("width", w);
+//$("body").attr("height", h);
 (function setupContainer() {
 	$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 })();

@@ -1,6 +1,12 @@
 var headerSize;
 $(document).ready(function(){
 	headerSize = $("header").height();
-	$("#body").height(window.height - headerSize);
-	console.log(headerSize);
+	var secBodyH = $('body').height() - headerSize*2;
+	setTimeout(function(){
+		
+	$("#body").attr('height', secBodyH);
+	}, 1000)
+	console.log($('body').height())
+	console.log(secBodyH);
+		console.log(headerSize);
 })
