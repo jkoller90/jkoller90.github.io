@@ -1,3 +1,4 @@
+	var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z.png">';
 	var score = 0;
 	var bh, bw, background, hotspots;
 	var clickedBool = false;
@@ -35,15 +36,15 @@
 			}, 250);
 		}
 	});
-	var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z.png">';
 	$(window).on("orientationchange", function () {
 		location.reload();
 	});
+
 	function updateData(background) {
 		background = getBackgroundSize(document.getElementById('body')); //or getElementsByTagName('body')[0]
 		$(".debug").css("display", "none");
-		document.getElementById('body').innerHTML = background.width + 'px';
-		document.getElementById('body').innerHTML = background.height + 'px';
+		//		document.getElementById('body').innerHTML = background.width + 'px';
+		//		document.getElementById('body').innerHTML = background.height + 'px';
 		bh = background.width;
 		bw = background.height;
 		hotspots = [
@@ -78,6 +79,7 @@
 				$("#hit" + i).css("height", circleWidth + circleWidth * .13 + "px");
 			};
 		})();
+		$('#body').attr('height',bh - $('header').height());
 	}
 	window.onload = window.onresize = updateData;
 	h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -92,6 +94,7 @@
 	var circleHeight = w / 25;
 	$("body").attr("width", w);
 	$("body").attr("height", h);
+	$("#body").css("height", h - $('header').height() * 1.5);
 	(function setupContainer() {
 		$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 	})();
