@@ -69,6 +69,9 @@
 	}
 ];
 		$(".score").html("0 of " + hotspots.length + " found");
+		//		$('#body').attr('height', bh - $('header').height());
+		$('#body').css('background-size', 'cover');
+	}
 		(function () {
 			for (var i = 0; i < hotspots.length; i++) {
 				$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
@@ -78,9 +81,6 @@
 				$("#hit" + i).css("height", circleWidth + circleWidth * .13 + "px");
 			};
 		})();
-		//		$('#body').attr('height', bh - $('header').height());
-		$('#body').css('background-size', 'cover');
-	}
 	window.onload = window.onresize = updateData;
 	h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 	w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
