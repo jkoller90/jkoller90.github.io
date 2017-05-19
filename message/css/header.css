@@ -1,7 +1,7 @@
 header {
 	color: white;
 	background-color: rgba(12, 26, 34, .9);
-	height: 2em;
+	height: 11%;
 	width: 100%;
 	display: block;
 	z-index: 15;
@@ -19,7 +19,7 @@ header {
 
 #rslogo {
 	position: absolute;
-	top: 2.65%;
+	top: 2.45%;
 	left: 3.25%;
 	width: 14.75%;
 }
@@ -30,12 +30,12 @@ header {
 }
 
 .scoreboard_glasses {
-	position: absolute;
+position: absolute;
 	left: 0%;
 	display: inline;
-	width: .5em;
+	width: .55em;
 	height: auto;
-	top: 1.75%;
+	top: 2%;
 	opacity: 0.25;
 }
 
@@ -65,18 +65,17 @@ header {
 
 .score {
 	position: absolute;
-	font-size: 1vw;
+	font-size: 1.25vw;
 	left: 27.7%;
-	top: 5.6%;
+	top: 5.3%;
 	opacity: 1;
 }
 
 #time1 {
-	font-family: 'Open Sans', sans-serif;
 	position: absolute;
 	left: 85%;
-	top: 5.6%;
-	font-size: 1vw;
+	top: 5.3%;
+	font-size: 1.25vw;
 	opacity: 1;
 }
 
@@ -84,7 +83,7 @@ header {
 	font-family: 'Open Sans', sans-serif;
 	position: absolute;
 	left: 88.75%;
-	top: 2.3%;
+	top: 1%;
 	display: inline;
 	letter-spacing: -.3;
 	font-size: 3.5vw;	
