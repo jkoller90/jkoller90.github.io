@@ -1,3 +1,8 @@
+	var hitCoordObjs = [];
+	var coordObj = function (l, t) {
+		this.l = l;
+		this.t = t;
+	}
 var debug = false; //adjust for debug info to show on site 
 //build debug library to include coordinate tap
 var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z.png">';
@@ -170,6 +175,11 @@ function updateData(background) {
 		};
 	})();
 	hitspots = document.getElementsByClassName("hit");
+
+
+	for (var i = 0; i < hitspots.length; i++) {
+		hitCoordObjs[i] = new coordObj($('.hit')[i].offsetLeft, $('.hit')[i].offsetTop);
+	}
 	for (var i = 0; i < hitspots.length; i++) {
 		var id = hitspots[i].getAttribute("id");
 	}
@@ -189,10 +199,9 @@ function updateData(background) {
 			}
 			score++;
 		}
-		setTimeout(function(){
-			
+		setTimeout(function () {
 			clickedBool = false;
-		}, 500)
+		}, 600)
 		index++;
 	});
 }
@@ -218,32 +227,46 @@ $("body").attr("height", h);
 })();
 var touchzone = document.getElementById("body");
 (function setupMissedClicks() {
-	touchzone.addEventListener("touchstart", drawCircle, false);
+	touchzone.addEventListener("touchstart", getPageVals, false);
+	touchzone.addEventListener("touchend", drawCircle, false);
 })();
+var pagX, pagY;
+var compareObj;
+$("#container").click(function (event) {
+	compareObj = new coordObj(event.offsetLeft, event.offsetTop);
+	console.log(compareObj);
+})
+
+function getPageVals(event) {
+	pagX = event.touches[0].pageX;
+	pagY = event.touches[0].pageY;
+}
 
 function drawCircle(event) {
 	setTimeout(function () {
-		setTimeout(function () {
-			if (!clickedBool) { // && allowed == true) {
-//				setTimeout(function () {
-					clickedBool = true;
-//				}, 200);
-				setTimeout(function () {
-					clickedBool = false;
-				}, 300)
-				$(".miss").css("width", circleWidth + "px");
-				$(".miss").css("height", circleHeight + "px");
-				$(".miss").css("left", event.touches[0].pageX - circleWidth / 2);
-				$(".miss").css("top", event.touches[0].pageY - headerSize - circleHeight / 2);
-				$(".miss").css("animation", "unborder .5s ease 1 forwards");
-				setTimeout(function () {
-					$(".miss").css("animation", "");
-					$(".miss").css("left", 0);
-					$(".miss").css("top", 0);
-				}, 300);
-			}
-		}, 150);
-	}, 150)
+			setTimeout(function () {
+				if (!clickedBool) { // && allowed == true) {
+					////				setTimeout(function () {
+					//					clickedBool = true;
+					////				}, 200);
+					//				setTimeout(function () {
+					//					clickedBool = false;
+					//				}, 300)
+					$(".miss").css("width", circleWidth + "px");
+					$(".miss").css("height", circleHeight + "px");
+					$(".miss").css("left", pagX - circleWidth / 2);
+					$(".miss").css("top", pagY - headerSize - circleHeight / 2);
+					$(".miss").css("animation", "unborder .45s ease 1 forwards");
+					if (!clickedBool) {
+						setTimeout(function () {
+							$(".miss").css("animation", "");
+							$(".miss").css("left", 0);
+							$(".miss").css("top", 0);
+						}, 400);
+					}
+				}
+			}, 150);
+		}, 100) //or 150
 }
 //function mouse_drawCircle(event) {
 //	clickedBool = true;
