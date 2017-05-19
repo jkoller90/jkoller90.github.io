@@ -136,4 +136,4 @@ var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z
 var $scoreboard = $(".score");
 setInterval(function(){
 			$scoreboard.text(score + " of 5 found");
-}, 650);
+}, 200);
