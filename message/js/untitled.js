@@ -77,8 +77,8 @@ var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z
 			$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
 			$("#hit" + i).css("top", hotspots[i].top + "px");
 			$("#hit" + i).css("left", hotspots[i].left + "px");
-			$("#hit" + i).css("width", circleWidth + circleWidth * .13 + "px");
-			$("#hit" + i).css("height", circleWidth + circleWidth * .13 + "px");
+			$("#hit" + i).css("width", circleWidth * 1.5 + "px");
+			$("#hit" + i).css("height", circleWidth * 1.5 + "px");
 		};
 	}, 1250)
 	window.onload = window.onresize = updateData;
