@@ -93,9 +93,7 @@
 	var circleHeight = w / 25;
 	$("body").attr("width", w);
 	$("body").attr("height", h - $('header').height());
-
-		$("#body").css("height", h - $('header').height());
-
+	$("#body").css("height", h - $('header').height());
 	(function setupContainer() {
 		$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 	})();
@@ -129,7 +127,7 @@
 		}
 		lastTouchEnd = now;
 	}, false);
-
-document.ontouchmove = function(event){
-    event.preventDefault();
-}
+	document.ontouchmove = function (e) {
+		e.stopPropagation();
+		e.stopImmediatePropagation();
+	}
