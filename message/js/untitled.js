@@ -39,12 +39,11 @@
 	$(window).on("orientationchange", function () {
 		location.reload();
 	});
-
 	function updateData(background) {
-		background = getBackgroundSize(document.getElementById('body'));
+		background = getBackgroundSize(document.getElementById('body')); //or getElementsByTagName('body')[0]
 		$(".debug").css("display", "none");
-		document.getElementById('width').innerHTML = background.width + 'px';
-		document.getElementById('height').innerHTML = background.height + 'px';
+		document.getElementById('body').innerHTML = background.width + 'px';
+		document.getElementById('body').innerHTML = background.height + 'px';
 		bh = background.width;
 		bw = background.height;
 		hotspots = [
@@ -52,7 +51,6 @@
 				top: bh * .22
 				, left: bw * .24
 	}
-
 		, {
 				top: bh * .43
 				, left: bw * .31
