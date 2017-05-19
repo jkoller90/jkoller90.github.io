@@ -10,17 +10,17 @@ header {
 
 #barrier {
 	position: absolute;
-	left: 8.9%;
-	top: 2%;
-	width: .25%;
+	left: 10.05%;
+	top: 2.1%;
+	width: .22%;
 	height: 5.5%;
-	background-color: rgba(240, 240, 240, .075);
+	background-color: rgba(240, 240, 240, .03);
 }
 
 #rslogo {
 	position: absolute;
-	top: 1.75%;
-	left: 2.1%;
+	top: 2.65%;
+	left: 3.25%;
 	width: 14.75%;
 }
 
@@ -33,30 +33,30 @@ header {
 	position: absolute;
 	left: 0%;
 	display: inline;
-	width: .825em;
+	width: .5em;
 	height: auto;
 	top: 1.75%;
 	opacity: 0.25;
 }
 
 #bottle1 {
-	left: 11%;
+	left: 12.15%;
 }
 
 #bottle2 {
-	left: 14%;
+	left: 15.15%;
 }
 
 #bottle3 {
-	left: 17%;
+	left: 18.15%;
 }
 
 #bottle4 {
-	left: 20%;
+	left: 21.15%;
 }
 
 #bottle5 {
-	left: 23%;
+	left: 24.15%;
 }
 
 #bottle6 {
@@ -65,28 +65,28 @@ header {
 
 .score {
 	position: absolute;
-	font-size: .5em;
-	left: 26.5%;
-	top: 5%;
+	font-size: 1vw;
+	left: 27.7%;
+	top: 5.6%;
 	opacity: 1;
 }
 
 #time1 {
 	font-family: 'Open Sans', sans-serif;
 	position: absolute;
-	left: 86.25%;
-	top: 5%;
-	font-size: .5em;
+	left: 85%;
+	top: 5.6%;
+	font-size: 1vw;
 	opacity: 1;
 }
 
 .time {
 	font-family: 'Open Sans', sans-serif;
 	position: absolute;
-	left: 91%;
-	top: 2.4%;
+	left: 88.75%;
+	top: 2.3%;
 	display: inline;
-/*	font-size: 1.55em;*/
-	1.45em;
+	letter-spacing: -.3;
+	font-size: 3.5vw;	
 	opacity: 1;
 }

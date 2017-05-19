@@ -22,6 +22,7 @@
 	$(document).on('tap', '#body', function (event) {
 		$(".score").text(score + " of " + hotspots.length + " found");
 		if (clickedBool == false) {
+			$(".score").text(score + " of " + hotspots.length + " found");
 			$(".miss").css("width", circleWidth + "px");
 			$(".miss").css("height", circleHeight + "px");
 			$(".miss").css("left", event.pageX - circleWidth / 2);
@@ -31,6 +32,7 @@
 				$(".miss").css("animation", "");
 				$(".miss").css("left", 0);
 				$(".miss").css("top", 0);
+				$(".score").text(score + " of " + hotspots.length + " found");
 			}, 250);
 		}
 	});
@@ -75,7 +77,7 @@
 				$("#hit" + i).css("height", circleWidth + circleWidth * .13 + "px");
 			};
 		})();
-//		$('#body').attr('height', bh - $('header').height());
+		//		$('#body').attr('height', bh - $('header').height());
 		$('#body').css('background-size', 'cover');
 	}
 	window.onload = window.onresize = updateData;
@@ -91,7 +93,7 @@
 	var circleHeight = w / 25;
 	$("body").attr("width", w);
 	$("body").attr("height", h);
-//	$("#body").css("height", h - $('header').height());
+	//	$("#body").css("height", h - $('header').height());
 	(function setupContainer() {
 		$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 	})();
@@ -110,21 +112,18 @@
 	var timer = setInterval(function () {
 		document.getElementsByClassName("time")[0].innerHTML = pad(parseInt(sec / 60, 10)) + ":" + pad(++sec % 60);
 	}, 1000);
-
-//stop pinch to zoom
-document.documentElement.addEventListener('touchstart', function (event) {
-  if (event.touches.length > 1) {
-    event.preventDefault();
-  }
-}, false);
-
-
-//stop double tap to zoom
-var lastTouchEnd = 0;
-document.documentElement.addEventListener('touchend', function (event) {
-  var now = (new Date()).getTime();
-  if (now - lastTouchEnd <= 300) {
-    event.preventDefault();
-  }
-  lastTouchEnd = now;
-}, false);
+	//stop pinch to zoom
+	document.documentElement.addEventListener('touchstart', function (event) {
+		if (event.touches.length > 1) {
+			event.preventDefault();
+		}
+	}, false);
+	//stop double tap to zoom
+	var lastTouchEnd = 0;
+	document.documentElement.addEventListener('touchend', function (event) {
+		var now = (new Date()).getTime();
+		if (now - lastTouchEnd <= 300) {
+			event.preventDefault();
+		}
+		lastTouchEnd = now;
+	}, false);
