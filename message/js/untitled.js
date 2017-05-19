@@ -75,8 +75,8 @@ var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z
 	setTimeout(function () {
 		for (var i = 0; i < hotspots.length; i++) {
 			$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
-			$("#hit" + i).css("top", hotspots[i].top + "px");
-			$("#hit" + i).css("left", hotspots[i].left + "px");
+			$("#hit" + i).css("top", hotspots[i].top * 1.5 + "px");
+			$("#hit" + i).css("left", hotspots[i].left * 1.5 + "px");
 			$("#hit" + i).css("width", circleWidth * 1.5 + "px");
 			$("#hit" + i).css("height", circleWidth * 1.5 + "px");
 		};
