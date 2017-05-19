@@ -75,7 +75,7 @@
 				$("#hit" + i).css("height", circleWidth + circleWidth * .13 + "px");
 			};
 		})();
-		$('#body').attr('height', bh - $('header').height() * 3);
+		$('#body').attr('height', bh - $('header').height() * 6);
 		$('#body').css('background-size', 'cover');
 	}
 	window.onload = window.onresize = updateData;
