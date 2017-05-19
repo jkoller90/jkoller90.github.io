@@ -92,8 +92,10 @@
 	var circleWidth = w / 25;
 	var circleHeight = w / 25;
 	$("body").attr("width", w);
-	$("body").attr("height", h);
-	//	$("#body").css("height", h - $('header').height());
+	$("body").attr("height", h - $('header').height());
+
+		$("#body").css("height", h - $('header').height());
+
 	(function setupContainer() {
 		$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 	})();
