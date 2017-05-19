@@ -23,21 +23,14 @@ function getBackgroundSize(elem) {
 		, elemDim = [elemW, elemH]
 		, computedDim = []
 		, ratio;
-	// Load the image with the extracted URL.
-	// Should be in cache already.
 	image.src = src;
-	// Determine the 'ratio'
 	ratio = image.width > image.height ? image.width / image.height : image.height / image.width;
 	// Split background-size properties into array
 	cssSize = cssSize.split(' ');
-	// First property is width. It is always set to something.
 	computedDim[0] = cssSize[0];
-	// If height not set, set it to auto
 	computedDim[1] = cssSize.length > 1 ? cssSize[1] : 'auto';
 	if (cssSize[0] === 'cover') {
-		// Width is greater than height
 		if (elemDim[0] > elemDim[1]) {
-			// Elem's ratio greater than or equal to img ratio
 			if (elemDim[0] / elemDim[1] >= ratio) {
 				computedDim[0] = elemDim[0];
 				computedDim[1] = 'auto';
@@ -110,13 +103,12 @@ var background = {
 	width: ""
 	, height: ""
 }
-
 var score = 0;
+var hitspots;
+
 function updateData(background) {
 	(function debug_click() {
-		// Get a reference to our touch-sensitive element
 		var touchzone = document.getElementById("container");
-		// Add an event handler for the touchstart event
 		if (debug === true) {
 			touchzone.addEventListener("click", clickHandler, false);
 			touchzone.addEventListener("touchdown", touchHandler, false);
@@ -131,9 +123,7 @@ function updateData(background) {
 	}
 
 	function touchHandler(event) {
-		// Get a reference to our coordinates div
 		var coords = document.getElementById("coords");
-		// Write the coordinates of the touch to the div
 		coords.innerHTML = 'x: ' + event.touches[0].pageX + ', y: ' + event.touches[0].pageY;
 	}
 	// background = getBackgroundSize(document.body);
@@ -142,36 +132,33 @@ function updateData(background) {
 	else $(".debug").css("display", "none");
 	document.getElementById('width').innerHTML = background.width + 'px';
 	document.getElementById('height').innerHTML = background.height + 'px';
-	document.getElementById('winWidth').innerHTML = getComputedStyle(document.body).width;
-	document.getElementById('winHeight').innerHTML = getComputedStyle(document.body).height;
-	
+	//	document.getElementById('winWidth').innerHTML = getComputedStyle(document.body).width;
+	//	document.getElementById('winHeight').innerHTML = getComputedStyle(document.body).height;
 	var bh = background.width;
 	var bw = background.height;
-
-		var hotspots = [
+	var hotspots = [
 		{
 			top: bh * .22
 			, left: bw * .24
 	}
-	, 	
-		{
+
+		, {
 			top: bh * .43
 			, left: bw * .31
-	}, 
-			{
+	}
+		, {
 			top: bh * .415
 			, left: bw * .485
-	}, 
-		{
+	}
+		, {
 			top: bh * .34
 			, left: bw * 1.485
-	},
-			{
+	}
+		, {
 			top: bh * .25
 			, left: bw * 1.475
 	}
 ];
-
 	$(".score").html("0 of " + hotspots.length + " found");
 	(function createHotspots() {
 		for (var i = 0; i < hotspots.length; i++) {
@@ -182,37 +169,42 @@ function updateData(background) {
 			$("#hit" + i).css("height", circleWidth + "px");
 		};
 	})();
-	//object/struct checked against to block future rendering of red circles on repeated clicks 	
-	var hotspots = document.getElementsByClassName("hit");
-	for (var i = 0; i < hotspots.length; i++) {
-		var id = hotspots[i].getAttribute("id");
+	hitspots = document.getElementsByClassName("hit");
+	for (var i = 0; i < hitspots.length; i++) {
+		var id = hitspots[i].getAttribute("id");
 	}
 	var index = 1;
 	$(".hit").on("click", function (event) {
+		clickedBool = true;
 		if (clickedBool === true) {
-			$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
-			$('#bottle' + index).css('opacity','1');
+			$("#" + this.getAttribute("id")).css("animation", "border .15s ease 1 forwards");
+			$('#bottle' + index).css('opacity', '1');
+			ios_inc_flag = true;
+			if (iOS && ios_inc_flag === true) {
+				var ios_length = hotspots.length / 2;
+				$(".score").text(score + " of " + hotspots.length + " found");
+			}
+			else {
+				$(".score").text(score + " of " + hotspots.length + " found");
+			}
 			score++;
 		}
+		setTimeout(function(){
+			
+			clickedBool = false;
+		}, 500)
 		index++;
 	});
 }
-// Execute onload, so that the background image is already loaded.
 window.onload = window.onresize = updateData;
-//requires redefinition for some reason. 
 h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 document.getElementById("container").style.width = w;
 document.getElementById("container").style.height = h;
-//"init"/"public static void main" block
-//boolean variable to check for safari 
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-//scoreboard		
 var time = 60;
-//def of circle dimensions 
 var circleWidth = w / 25;
 var circleHeight = w / 25;
-//setting body to fit screen 	
 $("body").attr("width", w);
 $("body").attr("height", h);
 //$("#body").attr("width", w);
@@ -224,95 +216,62 @@ $("body").attr("height", h);
 	$("#body").attr("width", w + "px");
 	$("#body").attr("height", h + "px");
 })();
+var touchzone = document.getElementById("body");
 (function setupMissedClicks() {
-	var touchzone = document.getElementById("body");
 	touchzone.addEventListener("touchstart", drawCircle, false);
-//	if (!iOS) {
-//		touchzone.addEventListener("mousedown", mouse_drawCircle, false);
-//	}
 })();
 
 function drawCircle(event) {
-	clickedBool = true;
 	setTimeout(function () {
-		clickedBool = false;
-	}, 900);
-	$(".miss").css("width", circleWidth + "px");
-	$(".miss").css("height", circleHeight + "px");
-	//left
-	$(".miss").css("left", event.touches[0].pageX - circleWidth / 2);
-	//top
-	$(".miss").css("top", event.touches[0].pageY - headerSize - circleHeight / 2);
-	$(".miss").css("animation", "unborder .5s ease 1 forwards");
-	setTimeout(function () {
-		$(".miss").css("animation", "");
-		//left reset for reclicking 
-		$(".miss").css("left", 0);
-		//top reset for reclicking 
-		$(".miss").css("top", 0);
-	}, 400);
+		setTimeout(function () {
+			if (!clickedBool) { // && allowed == true) {
+//				setTimeout(function () {
+					clickedBool = true;
+//				}, 200);
+				setTimeout(function () {
+					clickedBool = false;
+				}, 300)
+				$(".miss").css("width", circleWidth + "px");
+				$(".miss").css("height", circleHeight + "px");
+				$(".miss").css("left", event.touches[0].pageX - circleWidth / 2);
+				$(".miss").css("top", event.touches[0].pageY - headerSize - circleHeight / 2);
+				$(".miss").css("animation", "unborder .5s ease 1 forwards");
+				setTimeout(function () {
+					$(".miss").css("animation", "");
+					$(".miss").css("left", 0);
+					$(".miss").css("top", 0);
+				}, 300);
+			}
+		}, 150);
+	}, 150)
 }
-
-function mouse_drawCircle(event) {
-	clickedBool = true;
-	//	alert(clickedBool);
-	setTimeout(function () {
-		clickedBool = false;
-		//		alert(clickedBool);
-	}, 900);
-	$(".miss").css("width", circleWidth + "px");
-	$(".miss").css("height", circleHeight + "px");
-	//left
-	$(".miss").css("left", event.pageX - circleWidth / 2);
-	//top
-	$(".miss").css("top", event.pageY - circleHeight / 2);
-	//coordinates for debugging
-	$(".miss").css("animation", "unborder .5s ease 1 forwards");
-	setTimeout(function () {
-		$(".miss").css("animation", "");
-		//left reset for reclicking 
-		$(".miss").css("left", 0);
-		//top reset for reclicking 
-		$(".miss").css("top", 0);
-	}, 500);
-}
-
-/* keeping the time */
-//function time_count(elementName, minutes, seconds) {
-//	var element, endTime, hours, mins, msLeft, time;
-//
-//	function twoDigits(n) {
-//		return (n <= 9 ? "0" + n : n);
-//	}
-//
-//	function updateTimer() {
-//		msLeft = endTime - (+new Date);
-////		if (msLeft < 1000) {
-////			element.innerHTML = "Time's up!";
-////		}
-////		else {
-////			time = new Date(msLeft);
-//			time = new Date();
-//			timelabel = "";
-//			//					timelabel = "Time: ";
-//			mins = time.getUTCMinutes();
-//			element.innerHTML = time.getHours() + ":" + time.getMinutes();
-////			element.innerHTML = '0' + (timelabel ? timelabel + twoDigits(mins) : mins) + ':' + twoDigits(time.getUTCSeconds());
-//			setTimeout(updateTimer, time.getUTCMilliseconds() + 1000);
-////		}
-//	}
-//	element = document.getElementsByClassName(elementName)[0];
-//	endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
-//	updateTimer();
+//function mouse_drawCircle(event) {
+//	clickedBool = true;
+//	setTimeout(function () {
+//		clickedBool = false;
+//		//		alert(clickedBool);
+//	}, 900);
+//	$(".miss").css("width", circleWidth + "px");
+//	$(".miss").css("height", circleHeight + "px");
+//	//left
+//	$(".miss").css("left", event.pageX - circleWidth / 2);
+//	//top
+//	$(".miss").css("top", event.pageY - circleHeight / 2);
+//	//coordinates for debugging
+//	$(".miss").css("animation", "unborder .5s ease 1 forwards");
+//	setTimeout(function () {
+//		$(".miss").css("animation", "");
+//		//left reset for reclicking 
+//		$(".miss").css("left", 0);
+//		//top reset for reclicking 
+//		$(".miss").css("top", 0);
+//	}, 500);
 //}
-//time_count("time", 1, 0);
-
 var sec = 0;
 
 function pad(val) {
-    return val > 9 ? val : "0" + val;
+	return val > 9 ? val : "0" + val;
 }
 var timer = setInterval(function () {
-    document.getElementsByClassName("time")[0].innerHTML = pad(parseInt(sec / 60, 10)) + ":" + pad(++sec % 60); // + ":" + pad(parseInt(sec / 60, 10));
-//    document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
+	document.getElementsByClassName("time")[0].innerHTML = pad(parseInt(sec / 60, 10)) + ":" + pad(++sec % 60); // + ":" + pad(parseInt(sec / 60, 10));
 }, 1000);
