@@ -65,9 +65,9 @@ header {
 
 .score {
 	position: absolute;
-	font-size: .52em;
+	font-size: .5em;
 	left: 26.5%;
-	top: 6.3%;
+	top: 5.3%;
 	opacity: 1;
 }
 
@@ -75,17 +75,18 @@ header {
 	font-family: 'Open Sans', sans-serif;
 	position: absolute;
 	left: 86.25%;
-	top: 6.3%;
-	font-size: .65em;
+	top: 5.3%;
+	font-size: .5em;
 	opacity: 1;
 }
 
 .time {
 	font-family: 'Open Sans', sans-serif;
 	position: absolute;
-	left: 89.5%;
-	top: 3%;
+	left: 91%;
+	top: 2.4%;
 	display: inline;
-	font-size: 1.8em;
+/*	font-size: 1.55em;*/
+	1.45em;
 	opacity: 1;
 }
