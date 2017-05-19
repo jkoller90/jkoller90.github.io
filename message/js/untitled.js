@@ -142,8 +142,16 @@ function updateData(background) {
 	document.getElementById('height').innerHTML = background.height + 'px';
 	document.getElementById('winWidth').innerHTML = getComputedStyle(document.body).width;
 	document.getElementById('winHeight').innerHTML = getComputedStyle(document.body).height;
+	
+	
+	
+	/* 
+	coordinates 
+	*/
+	
 	var bh = background.width;
 	var bw = background.height;
+//	console.log(bh);
 	//struct array for coordinate input
 	//beach coordinates
 	var hotspots = [
@@ -299,31 +307,46 @@ function mouse_drawCircle(event) {
 	}, 350);
 }
 
-function time_count(elementName, minutes, seconds) {
-	var element, endTime, hours, mins, msLeft, time;
+/* keeping the time */
+//function time_count(elementName, minutes, seconds) {
+//	var element, endTime, hours, mins, msLeft, time;
+//
+//	function twoDigits(n) {
+//		return (n <= 9 ? "0" + n : n);
+//	}
+//
+//	function updateTimer() {
+//		msLeft = endTime - (+new Date);
+////		if (msLeft < 1000) {
+////			element.innerHTML = "Time's up!";
+////		}
+////		else {
+////			time = new Date(msLeft);
+//			time = new Date();
+//			timelabel = "";
+//			//					timelabel = "Time: ";
+//			mins = time.getUTCMinutes();
+//			element.innerHTML = time.getHours() + ":" + time.getMinutes();
+////			element.innerHTML = '0' + (timelabel ? timelabel + twoDigits(mins) : mins) + ':' + twoDigits(time.getUTCSeconds());
+//			setTimeout(updateTimer, time.getUTCMilliseconds() + 1000);
+////		}
+//	}
+//	element = document.getElementsByClassName(elementName)[0];
+//	endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
+//	updateTimer();
+//}
+//time_count("time", 1, 0);
 
-	function twoDigits(n) {
-		return (n <= 9 ? "0" + n : n);
-	}
+var sec = 0;
 
-	function updateTimer() {
-		msLeft = endTime - (+new Date);
-//		if (msLeft < 1000) {
-//			element.innerHTML = "Time's up!";
-//		}
-//		else {
-//			time = new Date(msLeft);
-			time = new Date();
-			timelabel = "";
-			//					timelabel = "Time: ";
-			mins = time.getUTCMinutes();
-			element.innerHTML = time.getHours() + ":" + time.getMinutes();
-//			element.innerHTML = '0' + (timelabel ? timelabel + twoDigits(mins) : mins) + ':' + twoDigits(time.getUTCSeconds());
-			setTimeout(updateTimer, time.getUTCMilliseconds() + 1000);
-//		}
-	}
-	element = document.getElementsByClassName(elementName)[0];
-	endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
-	updateTimer();
+function pad(val) {
+    return val > 9 ? val : "0" + val;
 }
-time_count("time", 1, 0);
+var timer = setInterval(function () {
+    document.getElementsByClassName("time")[0].innerHTML = pad(parseInt(sec / 60, 10)) + ":" + pad(++sec % 60); // + ":" + pad(parseInt(sec / 60, 10));
+//    document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
+}, 1000);
+
+setTimeout(function () {
+    clearInterval(timer);
+}, 11000);
