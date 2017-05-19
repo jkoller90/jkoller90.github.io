@@ -249,12 +249,14 @@ var circleHeight = w / 25;
 //setting body to fit screen 	
 $("body").attr("width", w);
 $("body").attr("height", h);
+//$("#body").attr("width", w);
+//$("#body").attr("height", h);
 (function setupContainer() {
 	$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 })();
 (function alignCanvas() {
-	$("#mycanvas").attr("width", w + "px");
-	$("#mycanvas").attr("height", h + "px");
+	$("#body").attr("width", w + "px");
+	$("#body").attr("height", h + "px");
 })();
 (function setupMissedClicks() {
 	var touchzone = document.getElementById("mycanvas");
@@ -270,13 +272,13 @@ function drawCircle(event) {
 	setTimeout(function () {
 		clickedBool = false;
 		//		alert(clickedBool);
-	}, 750);
+	}, 900);
 	$(".miss").css("width", circleWidth + "px");
 	$(".miss").css("height", circleHeight + "px");
 	//left
 	$(".miss").css("left", event.touches[0].pageX - circleWidth / 2);
 	//top
-	$(".miss").css("top", event.touches[0].pageY - circleHeight / 2);
+	$(".miss").css("top", event.touches[0].pageY - headerSize - circleHeight / 2);
 	$(".miss").css("animation", "unborder .5s ease 1 forwards");
 	setTimeout(function () {
 		$(".miss").css("animation", "");
@@ -284,7 +286,7 @@ function drawCircle(event) {
 		$(".miss").css("left", 0);
 		//top reset for reclicking 
 		$(".miss").css("top", 0);
-	}, 350);
+	}, 400);
 }
 
 function mouse_drawCircle(event) {
@@ -308,7 +310,7 @@ function mouse_drawCircle(event) {
 		$(".miss").css("left", 0);
 		//top reset for reclicking 
 		$(".miss").css("top", 0);
-	}, 350);
+	}, 500);
 }
 
 /* keeping the time */
