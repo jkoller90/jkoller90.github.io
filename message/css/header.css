@@ -1,7 +1,7 @@
 header {
 	color: white;
 /*	background-color: rgba(12, 26, 34, .7);*/
-	background-color: rgba(12, 26, 34, .8);
+	background-color: rgba(12, 26, 34, .9);
 	height: 4em;
 	width: 100%;
 	display: block;
@@ -64,49 +64,29 @@ header {
 	left: 24.1%;
 }
 
-#header {
-	color: white;
-	background-color: rgba(12, 26, 34, .7);
-	padding-bottom: 5.13%;
-	width: 100%;
-	position: absolute;
-	display: inline;
-	z-index: 15;
-}
-
 .score {
 	position: absolute;
 	font-size: .52em;
 	left: 24.5%;
 	top: 4.5%;
-	opacity: 0.4;
+	opacity: 1;
 }
-
-
-/*
-.stripeLogo {
-	margin: 2%;
-}
-*/
 
 #time1 {
-	/*	font-weight:300;*/
 	font-family: 'Open Sans', sans-serif;
 	position: absolute;
-	left: 89.25%;
-	top: 4%;
-	font-size: .1em;
-	opacity: .5;
+	left: 86.25%;
+	top: 6.3%;
+	font-size: .65em;
+	opacity: 1;
 }
 
 .time {
-	/*	font-weight:300;*/
 	font-family: 'Open Sans', sans-serif;
 	position: absolute;
-	left: 92%;
-	top: 2%;
+	left: 89.5%;
+	top: 3%;
 	display: inline;
-	font-size: 1.34em;
-	/*	letter-spacing: .05em;*/
-	opacity: .7;
+	font-size: 1.8em;
+	opacity: 1;
 }
