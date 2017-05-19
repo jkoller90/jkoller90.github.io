@@ -46,6 +46,7 @@ span {
 
 #container {
 	position: relative;
+	z-index:20;
 }
 
 #container canvas,
