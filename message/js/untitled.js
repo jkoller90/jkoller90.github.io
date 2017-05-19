@@ -1,4 +1,6 @@
-	var clickedBool = false;
+	var score = 0;
+	var hitspots;	
+var clickedBool = false;
 	var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 	var hitCoordObjs = [];
 	var clickHandler, index = 1;
@@ -7,13 +9,12 @@
 		$("#" + this.getAttribute("id")).css("animation", "border .25s ease 1 forwards");
 		$('#bottle' + index).css('opacity', '1');
 		if (iOS) {
-			var ios_length = hotspots.length;
-			$(".score").text(score + " of " + hotspots.length + " found");
 			score++;
+			$(".score").text(score + " of " + hotspots.length + " found");
 		}
 		else {
-			$(".score").text(score + " of " + hotspots.length + " found");
 			score++;
+			$(".score").text(score + " of " + hotspots.length + " found");
 		}
 		setTimeout(function () {
 			clickedBool = false;
@@ -21,32 +22,30 @@
 		index++;
 	})
 	$(document).on('tap', '#body', function (event) {
-		setTimeout(function () {
+//		setTimeout(function () {
 			if (clickedBool == false) {
-				pagX = event.pageX;
-				pagY = event.pageY;
+//				pagX = event.pageX;
+//				pagY = event.pageY;
 				$(".miss").css("width", circleWidth + "px");
 				$(".miss").css("height", circleHeight + "px");
-				$(".miss").css("left", pagX - circleWidth / 2);
-				$(".miss").css("top", pagY - headerSize - circleHeight / 2);
-				$(".miss").css("animation", "unborder .45s ease 1 forwards");
-				if (!clickedBool) {
+				$(".miss").css("left", event.pageX  - circleWidth / 2);
+				$(".miss").css("top", event.pageY - headerSize - circleHeight / 2);
+				$(".miss").css("animation", "unborder .5s ease 1 forwards");
+//				if (!clickedBool) {
 					setTimeout(function () {
 						$(".miss").css("animation", "");
 						$(".miss").css("left", 0);
 						$(".miss").css("top", 0);
-					}, 400);
-				}
+					}, 350);
+//				}
 			}
-		}, 100);
+//		}, 100);
 	});
 	var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z.png">';
 
 	$(window).on("orientationchange", function () {
 		location.reload();
 	});
-	var score = 0;
-	var hitspots, bh, bw, hotspots;
 
 	function updateData(background) {
 		background = getBackgroundSize(document.getElementById('body'));
@@ -55,29 +54,6 @@
 		document.getElementById('height').innerHTML = background.height + 'px';
 		bh = background.width;
 		bw = background.height;
-		hotspots = [
-			{
-				top: bh * .22
-				, left: bw * .24
-	}
-
-		, {
-				top: bh * .43
-				, left: bw * .31
-	}
-		, {
-				top: bh * .415
-				, left: bw * .485
-	}
-		, {
-				top: bh * .34
-				, left: bw * 1.485
-	}
-		, {
-				top: bh * .25
-				, left: bw * 1.475
-	}
-];
 		$(".score").html("0 of " + hotspots.length + " found");
 		for (var i = 0; i < hotspots.length; i++) {
 			$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
