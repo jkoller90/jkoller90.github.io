@@ -129,3 +129,7 @@
 		}
 		lastTouchEnd = now;
 	}, false);
+
+document.ontouchmove = function(event){
+    event.preventDefault();
+}
