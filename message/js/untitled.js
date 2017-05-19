@@ -17,7 +17,7 @@
 				clickedBool = false;
 			}, 300);
 			scored_hits.push($(this).attr('id'));
-			$(this).css('z-index','-1');
+			$(this).css('z-index', '-1');
 		}
 	})
 	$(document).on('tap', '#body', function (event) {
@@ -69,18 +69,17 @@
 	}
 ];
 		$(".score").html("0 of " + hotspots.length + " found");
-		//		$('#body').attr('height', bh - $('header').height());
 		$('#body').css('background-size', 'cover');
 	}
-		(function () {
-			for (var i = 0; i < hotspots.length; i++) {
-				$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
-				$("#hit" + i).css("top", hotspots[i].top + "px");
-				$("#hit" + i).css("left", hotspots[i].left + "px");
-				$("#hit" + i).css("width", circleWidth + circleWidth * .13 + "px");
-				$("#hit" + i).css("height", circleWidth + circleWidth * .13 + "px");
-			};
-		})();
+	setTimeout(function () {
+		for (var i = 0; i < hotspots.length; i++) {
+			$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
+			$("#hit" + i).css("top", hotspots[i].top + "px");
+			$("#hit" + i).css("left", hotspots[i].left + "px");
+			$("#hit" + i).css("width", circleWidth + circleWidth * .13 + "px");
+			$("#hit" + i).css("height", circleWidth + circleWidth * .13 + "px");
+		};
+	}, 1250)
 	window.onload = window.onresize = updateData;
 	h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 	w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
