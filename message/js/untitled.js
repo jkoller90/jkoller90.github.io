@@ -6,8 +6,8 @@
 	var scored_hits = [];
 	var clickHandler, index = 1;
 	$(document).on('tap', '.hit', function () {
+		clickedBool = true;
 		if (scored_hits.indexOf($(this).attr('id')) == -1) {
-			clickedBool = true;
 			$("#" + this.getAttribute("id")).css("animation", "border .25s ease 1 forwards");
 			$('#bottle' + index).css('opacity', '1');
 			score++;
@@ -17,9 +17,6 @@
 				clickedBool = false;
 			}, 300);
 			scored_hits.push($(this).attr('id'));
-		}
-		else{
-			
 		}
 	})
 	$(document).on('tap', '#body', function (event) {
@@ -78,7 +75,7 @@
 				$("#hit" + i).css("height", circleWidth + circleWidth * .13 + "px");
 			};
 		})();
-		$('#body').attr('height', bh - $('header').height() * 6);
+//		$('#body').attr('height', bh - $('header').height());
 		$('#body').css('background-size', 'cover');
 	}
 	window.onload = window.onresize = updateData;
@@ -94,7 +91,7 @@
 	var circleHeight = w / 25;
 	$("body").attr("width", w);
 	$("body").attr("height", h);
-	$("#body").css("height", h - $('header').height());
+//	$("#body").css("height", h - $('header').height());
 	(function setupContainer() {
 		$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 	})();

@@ -4,7 +4,6 @@
 }
 
 html {
-	position:fixed;
 	cursor: pointer;
 }
 
@@ -18,9 +17,6 @@ canvas {
 	height: auto;
 }
 
-span {
-	font-size: 1.75rem !important;
-}
 
 #body {
 	width: 100%;
