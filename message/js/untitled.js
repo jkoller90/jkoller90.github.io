@@ -1,5 +1,6 @@
 
 var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z.png">';
+var missclick = false;
 	var score = 0;
 	var bh, bw, background, hotspots;
 	var clickedBool = false;
@@ -7,8 +8,8 @@ var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z
 	var scored_hits = [];
 	var clickHandler, index = 1;
 	$(document).on('tap', '.hit', function () {
-		clickedBool = true;
-		if (scored_hits.indexOf($(this).attr('id')) == -1) {
+		if (scored_hits.indexOf($(this).attr('id')) == -1 && (missclick == false)) {
+			clickedBool = true;
 			$("#" + this.getAttribute("id")).css("animation", "border .25s ease 1 forwards");
 			$('#bottle' + index).css('opacity', '1');
 			score++;
@@ -24,6 +25,7 @@ var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z
 	$(document).on('tap', '#body', function (event) {
 //		$(".score").text(score + " of " + hotspots.length + " found");
 		if (clickedBool == false) {
+			missclick = true;
 //			$(".score").text(score + " of " + hotspots.length + " found");
 			$(".miss").css("width", circleWidth + "px");
 			$(".miss").css("height", circleHeight + "px");
@@ -34,7 +36,7 @@ var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z
 				$(".miss").css("animation", "");
 				$(".miss").css("left", 0);
 				$(".miss").css("top", 0);
-//				$(".score").text(score + " of " + hotspots.length + " found");
+				missclick = false;
 			}, 250);
 		}
 	});
@@ -75,12 +77,12 @@ var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z
 	setTimeout(function () {
 		for (var i = 0; i < hotspots.length; i++) {
 			$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
-			$("#hit" + i).css("top", hotspots[i].top * 1.5 + "px");
-			$("#hit" + i).css("left", hotspots[i].left * 1.5 + "px");
-			$("#hit" + i).css("width", circleWidth * 1.5 + "px");
-			$("#hit" + i).css("height", circleWidth * 1.5 + "px");
+			$("#hit" + i).css("top", hotspots[i].top + "px");
+			$("#hit" + i).css("left", hotspots[i].left + "px");
+			$("#hit" + i).css("width", circleWidth * 1.2 + "px");
+			$("#hit" + i).css("height", circleWidth * 1.2 + "px");
 		};
-	}, 1250)
+	}, 1250);
 	window.onload = window.onresize = updateData;
 	h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 	w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
