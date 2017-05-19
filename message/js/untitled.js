@@ -1,6 +1,29 @@
+$(document).on('tap', '#body', function(event) {
+	
+    		setTimeout(function () {
+				setTimeout(function () {
+					if (!clickedBool) {
+						pagX = event.pageX;
+						pagY = event.pageY;
+						$(".miss").css("width", circleWidth + "px");
+						$(".miss").css("height", circleHeight + "px");
+						$(".miss").css("left", pagX - circleWidth / 2);
+						$(".miss").css("top", pagY - headerSize - circleHeight / 2);
+						$(".miss").css("animation", "unborder .45s ease 1 forwards");
+						if (!clickedBool) {
+							setTimeout(function () {
+								$(".miss").css("animation", "");
+								$(".miss").css("left", 0);
+								$(".miss").css("top", 0);
+							}, 400);
+						}
+					}
+				}, 150);
+			}, 100) //or 150
+});
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 var hitCoordObjs = [];
-
+var clickHandler; 
 var coordObj = function (l, t) {
 		this.l = l;
 		this.t = t;
@@ -17,29 +40,9 @@ var coordObj = function (l, t) {
 	var hitspots;
 
 	function updateData(background) {
-		(function debug_click() {
-			var touchzone = document.getElementById("container");
-			if (debug === true) {
-				$('#container').click(touchHandler());
-//				touchzone.addEventListener("click", clickHandler, false);
-//				touchzone.addEventListener("touchdown", touchHandler, false);
-			}
-		})();
 
-		function clickHandler(event) {
-			// Get a reference to our coordinates div
-			var coords = document.getElementById("coords");
-			// Write the coordinates of the touch to the div
-			coords.innerHTML = 'x: ' + event.pageX + ', y: ' + event.pageY;
-		}
 
-		function touchHandler(event) {
-			if(clickedBool == false){
-				
-			var coords = document.getElementById("coords");
-			coords.innerHTML = 'x: ' + event.touches[0].pageX + ', y: ' + event.touches[0].pageY;
-			}
-		}
+
 		// background = getBackgroundSize(document.body);
 		background = getBackgroundSize(document.getElementById('body'));
 		if (debug) $(".debug").css("display", "block");
@@ -74,7 +77,6 @@ var coordObj = function (l, t) {
 	}
 ];
 		$(".score").html("0 of " + hotspots.length + " found");
-
 
 			for (var i = 0; i < hotspots.length; i++) {
 				$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
@@ -139,11 +141,11 @@ document.getElementById("body").style.width = w;
 //	(function setupMissedClicks() {
 //		touchzone.addEventListener("touchstart", getPageVals, false);
 //		touchzone.addEventListener("touchend", drawCircle, false);
-		$('#body').on('tap',function(){
-			if(clickedBool == false){
-				drawCircle;
-			}
-		});
+//		$('#body').on('tap',function(){
+//			if(clickedBool == false){
+//				drawCircle(event);
+//			}
+//		});
 //	})();
 	var pagX, pagY;
 	var compareObj;
