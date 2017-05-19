@@ -10,14 +10,8 @@
 		if (scored_hits.indexOf($(this).attr('id')) == -1) {
 			$("#" + this.getAttribute("id")).css("animation", "border .25s ease 1 forwards");
 			$('#bottle' + index).css('opacity', '1');
-//			if (iOS) {
-//				score++;
-//				$(".score").text(score + " of " + hotspots.length + " found");
-//			}
-//			else {
-				score++;
-				$(".score").text(score + " of " + hotspots.length + " found");
-//			}
+			score++;
+			$(".score").text(score + " of " + hotspots.length + " found");
 			index++;
 			setTimeout(function () {
 				clickedBool = false;
@@ -26,6 +20,7 @@
 		}
 	})
 	$(document).on('tap', '#body', function (event) {
+		$(".score").text(score + " of " + hotspots.length + " found");
 		if (clickedBool == false) {
 			$(".miss").css("width", circleWidth + "px");
 			$(".miss").css("height", circleHeight + "px");

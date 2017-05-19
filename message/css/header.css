@@ -1,8 +1,7 @@
 header {
 	color: white;
-/*	background-color: rgba(12, 26, 34, .7);*/
 	background-color: rgba(12, 26, 34, .9);
-	height: 4em;
+	height: 3.3em;
 	width: 100%;
 	display: block;
 	z-index: 15;
@@ -11,22 +10,22 @@ header {
 
 #barrier {
 	position: absolute;
-	left: 9.7%;
-	top: .75%;
+	left: 8.9%;
+	top: 2%;
 	width: .25%;
-	height: 7%;
+	height: 5.5%;
 	background-color: rgba(240, 240, 240, .075);
 }
 
 #rslogo {
 	position: absolute;
-	top: 1%;
-	left: 3%;
+	top: 1.75%;
+	left: 2.1%;
 	width: 14.75%;
 }
 
 #rslogo img {
-	width: 45%;
+	width: 33%;
 	top: 3.5%;
 }
 
@@ -67,8 +66,8 @@ header {
 .score {
 	position: absolute;
 	font-size: .52em;
-	left: 24.5%;
-	top: 4.5%;
+	left: 26.5%;
+	top: 6.3%;
 	opacity: 1;
 }
 
