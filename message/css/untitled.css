@@ -27,6 +27,7 @@ section {}
 canvas {
 	border: 0px;
 	width: 100%;
+	height: auto;
 	/*	position:absolute;
 	top:5.13%;*/
 }

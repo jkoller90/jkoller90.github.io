@@ -4,12 +4,12 @@
 	var clickHandler, index = 1;
 	$(document).on('tap', '.hit', function () {
 		clickedBool = true;		
-		$("#" + this.getAttribute("id")).css("animation", "border .15s ease 1 forwards");
+		$("#" + this.getAttribute("id")).css("animation", "border .25s ease 1 forwards");
 		$('#bottle' + index).css('opacity', '1');
 		if (iOS) {
 			var ios_length = hotspots.length;
 			$(".score").text(score + " of " + hotspots.length + " found");
-			score+=.5;
+			score++;
 		}
 		else {
 			$(".score").text(score + " of " + hotspots.length + " found");
@@ -41,7 +41,7 @@
 		}, 100);
 	});
 	var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z.png">';
-	//orientation change requires refresh for alignment			
+
 	$(window).on("orientationchange", function () {
 		location.reload();
 	});
@@ -105,10 +105,10 @@
 		$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 	})();
 	(function alignCanvas() {
+		$("#body").attr("height", w + "px");
 		$("#body").attr("width", w + "px");
-		$("#body").attr("width", w + "px");
-		$("#myCanvas").attr("height", h + "px");
-		$("#myCanvas").attr("height", h + "px");
+		$("#mycanvas").attr("height", h + "px");
+		$("#mycanvas").attr("width", h + "px");
 	})();
 	var touchzone = document.getElementById("body");
 	var sec = 0;
