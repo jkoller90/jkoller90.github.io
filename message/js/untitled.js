@@ -7,8 +7,8 @@ var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 var scored_hits = [];
 var clickHandler, index = 1;
 $(document).on('tap', '.hit', function () {
-	if (scored_hits.indexOf($(this).attr('id')) == -1 && (missclick == false)) {
 		clickedBool = true;
+	if (scored_hits.indexOf($(this).attr('id')) == -1 && (missclick == false)) {
 		$("#" + this.getAttribute("id")).css("animation", "border .25s ease 1 forwards");
 		$('#bottle' + index).css('opacity', '1');
 		score++;
