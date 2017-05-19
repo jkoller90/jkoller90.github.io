@@ -1,4 +1,5 @@
-$(window).ready(function(){
-	var headerSize = $("header").height();
+var headerSize;
+$(document).ready(function(){
+	headerSize = $("header").height();
 	console.log(headerSize);
 })

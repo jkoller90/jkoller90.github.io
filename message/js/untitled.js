@@ -299,7 +299,7 @@ function mouse_drawCircle(event) {
 	//left
 	$(".miss").css("left", event.pageX - circleWidth / 2);
 	//top
-	$(".miss").css("top", event.pageY - circleHeight / 2);
+	$(".miss").css("top", event.pageY - headerSize- circleHeight / 2);
 	//coordinates for debugging
 	$(".miss").css("animation", "unborder .5s ease 1 forwards");
 	setTimeout(function () {
