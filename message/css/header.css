@@ -30,19 +30,13 @@ header {
 }
 
 .scoreboard_glasses {
-	position: absolute;
+position: absolute;
 	left: 0%;
 	display: inline;
 	width: .55em;
 	height: auto;
 	top: 2%;
 	opacity: 0.25;
-}
-
-@media screen and (width: 559px) and (height:375px) {
-	.scoreboard_glasses {
-		top: 2.35%;
-	}
 }
 
 #bottle1 {
@@ -79,7 +73,7 @@ header {
 
 #time1 {
 	position: absolute;
-	left: 83.25%;
+	left: 85%;
 	top: 5.3%;
 	font-size: 1.25vw;
 	opacity: 1;
@@ -88,10 +82,10 @@ header {
 .time {
 	font-family: 'Open Sans', sans-serif;
 	position: absolute;
-	left: 87%;
+	left: 88.75%;
 	top: 1%;
 	display: inline;
 	letter-spacing: -.3;
-	font-size: 4.2vw;
+	font-size: 3.5vw;	
 	opacity: 1;
 }
