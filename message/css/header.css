@@ -80,8 +80,8 @@ header {
 .score {
 	position: absolute;
 	font-size: .52em;
-	left: 27%;
-	top: 55%;
+    left: 24.5%;
+    top: 4.5%;
 	opacity: 0.4;
 }
 
