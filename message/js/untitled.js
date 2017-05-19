@@ -1,6 +1,7 @@
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 var hitCoordObjs = [];
-	var coordObj = function (l, t) {
+
+var coordObj = function (l, t) {
 		this.l = l;
 		this.t = t;
 	}
@@ -115,8 +116,9 @@ var hitCoordObjs = [];
 		(function debug_click() {
 			var touchzone = document.getElementById("container");
 			if (debug === true) {
-				touchzone.addEventListener("click", clickHandler, false);
-				touchzone.addEventListener("touchdown", touchHandler, false);
+				$('#container').click(touchHandler());
+//				touchzone.addEventListener("click", clickHandler, false);
+//				touchzone.addEventListener("touchdown", touchHandler, false);
 			}
 		})();
 
@@ -128,8 +130,11 @@ var hitCoordObjs = [];
 		}
 
 		function touchHandler(event) {
+			if(clickedBool == false){
+				
 			var coords = document.getElementById("coords");
 			coords.innerHTML = 'x: ' + event.touches[0].pageX + ', y: ' + event.touches[0].pageY;
+			}
 		}
 		// background = getBackgroundSize(document.body);
 		background = getBackgroundSize(document.getElementById('body'));
@@ -185,18 +190,16 @@ var hitCoordObjs = [];
 		var index = 1;
 		$(".hit").on("click", function (event) {
 			clickedBool = true;
-			if (clickedBool === true) {
 				$("#" + this.getAttribute("id")).css("animation", "border .15s ease 1 forwards");
 				$('#bottle' + index).css('opacity', '1');				
 				if (iOS) {
-					var ios_length = hotspots.length / 2;
-					$(".score").text(score + " of " + hotspots.length/2 + " found");
+					var ios_length = hotspots.length ;
+					$(".score").text(score + " of " + hotspots.length+ " found");
 				}
 				else {
 					$(".score").text(score + " of " + hotspots.length + " found");
 				}
 				score++;
-			}
 			setTimeout(function () {
 				clickedBool = false;
 			}, 600)
@@ -207,15 +210,17 @@ var hitCoordObjs = [];
 	h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 	w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	document.getElementById("container").style.width = w;
+document.getElementById("body").style.width = w;
 	document.getElementById("container").style.height = h;
-	
+	document.getElementById("body").style.height = h;
+
 	var time = 60;
 	var circleWidth = w / 25;
 	var circleHeight = w / 25;
 	$("body").attr("width", w);
 	$("body").attr("height", h);
-	//$("#body").attr("width", w);
-	//$("#body").attr("height", h);
+	$("#body").attr("width", w);
+	$("#body").attr("height", h);
 	(function setupContainer() {
 		$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 	})();
@@ -268,4 +273,4 @@ var hitCoordObjs = [];
 	var timer = setInterval(function () {
 		document.getElementsByClassName("time")[0].innerHTML = pad(parseInt(sec / 60, 10)) + ":" + pad(++sec % 60); // + ":" + pad(parseInt(sec / 60, 10));
 	}, 1000);
-	alert(iOS);
+	
