@@ -4,6 +4,7 @@
 }
 
 html {
+	position:fixed;
 	cursor: pointer;
 }
 
