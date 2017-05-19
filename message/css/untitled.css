@@ -5,19 +5,8 @@
 
 body {
 	margin: 0;
-	/*	height: 100%;
-	margin: 0px !important;
-	background-attachment: scroll;
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center top;
-	position: absolute;
-	background-image:url('http://i.imgur*/
-	.com/IaaJX20.jpg');
-
-	/*	background-image: url("http://i.imgur.com/xbMvidl.png");*/
-	/*	background-image: url('http://i.imgur.com/vXYAuAL.png');*/
 }
+cursor: pointer;
 
 section {}
 
