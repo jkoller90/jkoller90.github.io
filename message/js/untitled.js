@@ -6,8 +6,8 @@
 	var scored_hits = [];
 	var clickHandler, index = 1;
 	$(document).on('tap', '.hit', function () {
-		clickedBool = true;
 		if (scored_hits.indexOf($(this).attr('id')) == -1) {
+			clickedBool = true;
 			$("#" + this.getAttribute("id")).css("animation", "border .25s ease 1 forwards");
 			$('#bottle' + index).css('opacity', '1');
 			score++;
@@ -17,6 +17,9 @@
 				clickedBool = false;
 			}, 300);
 			scored_hits.push($(this).attr('id'));
+		}
+		else{
+			
 		}
 	})
 	$(document).on('tap', '#body', function (event) {
@@ -110,3 +113,21 @@
 	var timer = setInterval(function () {
 		document.getElementsByClassName("time")[0].innerHTML = pad(parseInt(sec / 60, 10)) + ":" + pad(++sec % 60);
 	}, 1000);
+
+//stop pinch to zoom
+document.documentElement.addEventListener('touchstart', function (event) {
+  if (event.touches.length > 1) {
+    event.preventDefault();
+  }
+}, false);
+
+
+//stop double tap to zoom
+var lastTouchEnd = 0;
+document.documentElement.addEventListener('touchend', function (event) {
+  var now = (new Date()).getTime();
+  if (now - lastTouchEnd <= 300) {
+    event.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);
