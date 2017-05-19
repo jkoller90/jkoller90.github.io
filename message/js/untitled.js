@@ -18,7 +18,7 @@
 			}, 300);
 			scored_hits.push($(this).attr('id'));
 		}
-			$(this).unbind();
+//			$(this).unbind();
 	})
 	$(document).on('tap', '#body', function (event) {
 		$(".score").text(score + " of " + hotspots.length + " found");
