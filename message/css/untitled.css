@@ -3,6 +3,10 @@
 	overflow: hidden;
 }
 
+.ui-loader{
+	display: none !important;
+}
+
 body {
 	margin: 0;
 }
@@ -16,7 +20,7 @@ section {}
 	margin: 0px !important;
 	background-attachment: scroll;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: cover;
 	background-position: center top;
 	display: block;
 	/*	position: absolute;*/

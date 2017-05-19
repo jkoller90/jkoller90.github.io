@@ -1,6 +1,6 @@
 	var score = 0;
 	var hitspots;	
-var clickedBool = false;
+	var clickedBool = false;
 	var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 	var hitCoordObjs = [];
 	var clickHandler, index = 1;
@@ -67,16 +67,14 @@ var clickedBool = false;
 	h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 	w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	document.getElementById("container").style.width = w;
-	document.getElementById("body").style.width = w;
+//	document.getElementById("body").style.width = w;
 	document.getElementById("container").style.height = h;
-	document.getElementById("body").style.height = h;
+//	document.getElementById("body").style.height = h;
 	var time = 60;
 	var circleWidth = w / 25;
 	var circleHeight = w / 25;
 	$("body").attr("width", w);
 	$("body").attr("height", h);
-	$("#body").attr("width", w);
-	$("#body").attr("height", h);
 	(function setupContainer() {
 		$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 	})();
