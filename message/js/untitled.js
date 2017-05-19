@@ -17,6 +17,7 @@
 				clickedBool = false;
 			}, 300);
 			scored_hits.push($(this).attr('id'));
+			$(this).css('z-index','-1');
 		}
 	})
 	$(document).on('tap', '#body', function (event) {
