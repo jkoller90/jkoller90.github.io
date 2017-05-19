@@ -43,8 +43,6 @@
 	function updateData(background) {
 		background = getBackgroundSize(document.getElementById('body')); //or getElementsByTagName('body')[0]
 		$(".debug").css("display", "none");
-		//		document.getElementById('body').innerHTML = background.width + 'px';
-		//		document.getElementById('body').innerHTML = background.height + 'px';
 		bh = background.width;
 		bw = background.height;
 		hotspots = [
@@ -94,7 +92,7 @@
 	var circleHeight = w / 25;
 	$("body").attr("width", w);
 	$("body").attr("height", h);
-	$("#body").css("height", h - $('header').height() * 1.5);
+	$("#body").css("height", h - $('header').height());
 	(function setupContainer() {
 		$("#container").prepend('<canvas id="mycanvas" style="border: 1px solid #ccc"> Canvas element not supported	<br/> </canvas>');
 	})();
