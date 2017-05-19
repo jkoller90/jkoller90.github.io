@@ -259,11 +259,11 @@ $("body").attr("height", h);
 	$("#body").attr("height", h + "px");
 })();
 (function setupMissedClicks() {
-	var touchzone = document.getElementById("mycanvas");
+	var touchzone = document.getElementById("body");
 	touchzone.addEventListener("touchstart", drawCircle, false);
-	if (!iOS) {
-		touchzone.addEventListener("mousedown", mouse_drawCircle, false);
-	}
+//	if (!iOS) {
+//		touchzone.addEventListener("mousedown", mouse_drawCircle, false);
+//	}
 })();
 
 function drawCircle(event) {
