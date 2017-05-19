@@ -166,6 +166,7 @@ function updateData(background) {
 ];
 	$(".score").html("0 of " + hotspots.length + " found");
 	(function createHotspots() {
+//		alert(iOS);
 		for (var i = 0; i < hotspots.length; i++) {
 			$("#container").prepend('<div class="hit" id="hit' + i + '"/>');
 			$("#hit" + i).css("top", hotspots[i].top + "px");
@@ -298,3 +299,5 @@ function pad(val) {
 var timer = setInterval(function () {
 	document.getElementsByClassName("time")[0].innerHTML = pad(parseInt(sec / 60, 10)) + ":" + pad(++sec % 60); // + ":" + pad(parseInt(sec / 60, 10));
 }, 1000);
+
+alert(iOS);
