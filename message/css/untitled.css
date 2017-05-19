@@ -25,7 +25,7 @@ span {
 	margin: 0px !important;
 	background-attachment: scroll;
 	background-repeat: no-repeat;
-	background-size:cover;
+	background-size:contain;
 	background-position: center top;
 	display: block;
 	background-image: url('http://i.imgur.com/IaaJX20.jpg');

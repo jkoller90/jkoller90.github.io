@@ -78,6 +78,7 @@
 			};
 		})();
 		$('#body').attr('height',bh - $('header').height());
+		$('#body').css('background-size','cover');
 	}
 	window.onload = window.onresize = updateData;
 	h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
