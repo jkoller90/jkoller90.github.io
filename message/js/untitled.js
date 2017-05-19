@@ -111,6 +111,7 @@ var background = {
 	, height: ""
 }
 
+var score = 0;
 function updateData(background) {
 	(function debug_click() {
 		// Get a reference to our touch-sensitive element
@@ -144,17 +145,9 @@ function updateData(background) {
 	document.getElementById('winWidth').innerHTML = getComputedStyle(document.body).width;
 	document.getElementById('winHeight').innerHTML = getComputedStyle(document.body).height;
 	
-	
-	
-	/* 
-	coordinates 
-	*/
-	
 	var bh = background.width;
 	var bw = background.height;
-	console.log("bw " + bw);
-	console.log("bh " + bh);
-	
+
 		var hotspots = [
 		{
 			top: bh * .22
@@ -176,23 +169,9 @@ function updateData(background) {
 			{
 			top: bh * .25
 			, left: bw * 1.475
-	},
-	// 	{
-	// 		top: bh * .73
-	// 		, left: bw * .27
-	// }, //chair 3
-	// 	{
-	// 		top: bh * .6
-	// 		, left: bw * .83
-	// }, //chair 4	
-	// 	{
-	// 		top: bh * .43
-	// 		, left: bw * .82
-	// }
+	}
 ];
-	//struct array for coordinate input
-	//beach coordinates
-	//set score total
+
 	$(".score").html("0 of " + hotspots.length + " found");
 	(function createHotspots() {
 		for (var i = 0; i < hotspots.length; i++) {
@@ -204,28 +183,16 @@ function updateData(background) {
 		};
 	})();
 	//object/struct checked against to block future rendering of red circles on repeated clicks 	
-	var clicked = {};
 	var hotspots = document.getElementsByClassName("hit");
 	for (var i = 0; i < hotspots.length; i++) {
 		var id = hotspots[i].getAttribute("id");
 	}
 	var index = 1;
 	$(".hit").on("click", function (event) {
-		if (!clicked[this.getAttribute("id")] && clickedBool === false) {
+		if (clickedBool === true) {
 			$("#" + this.getAttribute("id")).css("animation", "border .5s ease 1 forwards");
-			clicked[this.getAttribute("id")] = true;
-//			$(".bottles").append(fullGlass);
 			$('#bottle' + index).css('opacity','1');
-			++score;
-			ios_inc_flag = true;
-			if (iOS && ios_inc_flag === true) {
-				var ios_length = hotspots.length / 2;
-				$(".score").text(score + " of " + hotspots.length + " found");
-			}
-			else {
-				$(".score").text(score + " of " + hotspots.length + " found");
-			}
-			ios_inc_flag = false;
+			score++;
 		}
 		index++;
 	});
@@ -241,7 +208,6 @@ document.getElementById("container").style.height = h;
 //boolean variable to check for safari 
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 //scoreboard		
-var score = 0;
 var time = 60;
 //def of circle dimensions 
 var circleWidth = w / 25;
@@ -268,10 +234,8 @@ $("body").attr("height", h);
 
 function drawCircle(event) {
 	clickedBool = true;
-	//	alert(clickedBool);
 	setTimeout(function () {
 		clickedBool = false;
-		//		alert(clickedBool);
 	}, 900);
 	$(".miss").css("width", circleWidth + "px");
 	$(".miss").css("height", circleHeight + "px");
