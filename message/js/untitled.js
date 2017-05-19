@@ -1,6 +1,7 @@
+	var clickedBool = false;
 $(document).on('tap', '#body', function(event) {
 	
-    		setTimeout(function () {
+//    		setTimeout(function () {
 				setTimeout(function () {
 					if (!clickedBool) {
 						pagX = event.pageX;
@@ -18,26 +19,25 @@ $(document).on('tap', '#body', function(event) {
 							}, 400);
 						}
 					}
-				}, 150);
-			}, 100) //or 150
+				}, 100);
+//			}, 100) //or 150
 });
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 var hitCoordObjs = [];
-var clickHandler; 
-var coordObj = function (l, t) {
-		this.l = l;
-		this.t = t;
-	}
-	var debug = false; //adjust for debug info to show on site 
-	//build debug library to include coordinate tap
+var clickHandler, index = 1;
+$(document).on('tap', '.hit', function(){
+	clickedBool = true;	
+})
+
+
+	
 	var fullGlass = '<img class="scoreboard_glasses" src="http://i.imgur.com/mA0nB2z.png">';
-	var clickedBool = false;
 	//orientation change requires refresh for alignment			
 	$(window).on("orientationchange", function () {
 		location.reload();
 	});
 	var score = 0;
-	var hitspots;
+	var hitspots, bh, bw, hotspots;
 
 	function updateData(background) {
 
@@ -45,15 +45,15 @@ var coordObj = function (l, t) {
 
 		// background = getBackgroundSize(document.body);
 		background = getBackgroundSize(document.getElementById('body'));
-		if (debug) $(".debug").css("display", "block");
-		else $(".debug").css("display", "none");
+		
+		$(".debug").css("display", "none");
 		document.getElementById('width').innerHTML = background.width + 'px';
 		document.getElementById('height').innerHTML = background.height + 'px';
 		//	document.getElementById('winWidth').innerHTML = getComputedStyle(document.body).width;
 		//	document.getElementById('winHeight').innerHTML = getComputedStyle(document.body).height;
-		var bh = background.width;
-		var bw = background.height;
-		var hotspots = [
+		bh = background.width;
+		bw = background.height;
+		hotspots = [
 			{
 				top: bh * .22
 				, left: bw * .24
@@ -86,14 +86,14 @@ var coordObj = function (l, t) {
 				$("#hit" + i).css("height", circleWidth + "px");
 			};
 
-		hitspots = document.getElementsByClassName("hit");
-		for (var i = 0; i < hitspots.length; i++) {
-			hitCoordObjs[i] = new coordObj($('.hit')[i].offsetLeft, $('.hit')[i].offsetTop);
-		}
-		for (var i = 0; i < hitspots.length; i++) {
-			var id = hitspots[i].getAttribute("id");
-		}
-		var index = 1;
+//		hitspots = document.getElementsByClassName("hit");
+//		for (var i = 0; i < hitspots.length; i++) {
+//			hitCoordObjs[i] = new coordObj($('.hit')[i].offsetLeft, $('.hit')[i].offsetTop);
+//		}
+//		for (var i = 0; i < hitspots.length; i++) {
+//			var id = hitspots[i].getAttribute("id");
+//		}
+//		var index = 1;
 		
 		$(".hit").on("tap", function (event) {
 			clickedBool = true;
@@ -147,17 +147,17 @@ document.getElementById("body").style.width = w;
 //			}
 //		});
 //	})();
-	var pagX, pagY;
+//	var pagX, pagY;
 	var compareObj;
-	$("#container").click(function (event) {
-		compareObj = new coordObj(event.offsetLeft, event.offsetTop);
-//		console.log(compareObj);
-	})
-
-	function getPageVals(event) {
-		pagX = event.touches[0].pageX;
-		pagY = event.touches[0].pageY;
-	}
+//	$("#container").click(function (event) {
+//		compareObj = new coordObj(event.offsetLeft, event.offsetTop);
+////		console.log(compareObj);
+//	})
+//
+//	function getPageVals(event) {
+//		pagX = event.touches[0].pageX;
+//		pagY = event.touches[0].pageY;
+//	}
 
 	function drawCircle(event) {
 		setTimeout(function () {
