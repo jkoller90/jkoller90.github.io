@@ -133,4 +133,4 @@ document.ontouchmove = function (e) {
 var $scoreboard = $(".score");
 setInterval(function () {
 	$scoreboard.text(score + " of 5 found");
-}, 100);
+}, 50);
