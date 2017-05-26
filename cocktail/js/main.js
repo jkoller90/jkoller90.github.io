@@ -1,3 +1,8 @@
+/*
+important to note: score being depicted is the score per round.
+The total value is accrued in the variable score 
+*/
+
 var drink_count = 0;
 var question_count = 1;
 var delay = 3000; //intro w/ shake before question

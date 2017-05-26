@@ -1,7 +1,7 @@
 function setRightGlass(a) {
 	$('#question').widowFix();
 	var thisscore = 4;
-	
+	roundScore = 0;
 	setInterval(function () {
 		if (totalSeconds == 15 && thisscore > 1) {
 			thisscore--; //3
@@ -22,7 +22,8 @@ function setRightGlass(a) {
 			$('div').off('click');
 			$('#minutes').text('00');
 			$('#seconds').text('00');
-			score+=thisscore;	
+			score+=thisscore;
+			roundScore+=thisscore;
 			totalSeconds = 0;
 			switchSequence();
 		});
@@ -68,6 +69,7 @@ function setRightGlass(a) {
 			$('#minutes').text('00');
 			$('#seconds').text('00');
 			score+=thisscore;	
+			roundScore+=thisscore;
 			totalSeconds = 0;
 			switchSequence();
 		});
@@ -112,7 +114,8 @@ function setRightGlass(a) {
 			$('div').off('click');
 			$('#minutes').text('00');
 			$('#seconds').text('00');
-			score+=thisscore;	
+			score+=thisscore;
+			roundScore+=thisscore;
 			totalSeconds = 0;
 			switchSequence();
 		});
@@ -158,6 +161,7 @@ function setRightGlass(a) {
 			$('#minutes').text('00');
 			$('#seconds').text('00');
 			score+=thisscore;	
+			roundScore+=thisscore;
 			totalSeconds = 0;
 			switchSequence();
 		});
