@@ -5,7 +5,7 @@ $('#cockquiz').click(function(){
 	window.location.href = "https://jkoller90.github.io/cocktail/main";
 })
 $('#msg').click(function(){
-	window.location.href = "https://jkoller90.github.io/greyCircle/untitled.html";
+	window.location.href = "https://jkoller90.github.io/message/bottle.html";
 })
 $('#rs_triv').click(function(){
 	window.location.href = "https://jkoller90.github.io/quiz/quiz.html";
