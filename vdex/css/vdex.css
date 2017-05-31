@@ -1,9 +1,11 @@
-body{
+body {
 	background-color: #313138;
 }
-html{
+
+html {
 	color: white;
 }
+
 #framebody {
 	position: absolute;
 	background-image: url('https://s-media-cache-ak0.pinimg.com/originals/8b/6b/cc/8b6bcc8c73c62625d572d973641190e9.jpg');
@@ -12,48 +14,71 @@ html{
 	background-repeat: no-repeat;
 	overflow: hidden;
 }
-.eye_select{
-	color:white;
-	position:absolute;
-	left: 10%;
-		padding-top:3.5%;
-	border-top: 1px solid black;
+
+.eye_select {
+	color: white;
+	position: absolute;
+	left: 0%;
+	padding-top: .7em;
+	/*	padding-top:3.5%;*/
+	/*	border-top: 1px solid black;*/
+	border-top: .09em solid black;
 	width: 90%;
 }
-#eye1{
+@media only screen and (max-width: 900px) {
+	.eye_select {
+		font-size: .8em;
+	}
+}
+@media only screen and (max-width: 720px) {
+	.eye_select {
+		font-size: .7em;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.eye_select {
+		font-size: .5em;
+	}
+}
+@media only screen and (max-width: 410px) {
+	.eye_select {
+		font-size: .4em;
+	}
+}
+#eye1 {
 	width: 367%;
-/*	top:%;*/
-/*
+	/*	top:%;*/
+	/*
 	padding-top:3.5%;
 	border-top: 1px solid black;
 */
 }
-#eye2{
+
+#eye2 {
 	top: 20%;
 }
-#eye3{
-	top:40%;
-}
-#eye4{
-	top:60%;
-}
-#eye5{
-	top:80%;
+
+#eye3 {
+	top: 40%;
 }
 
-#vid1Title{
-	
+#eye4 {
+	top: 60%;
 }
-#vid2Title{
-	
+
+#eye5 {
+	top: 80%;
 }
-#stopoff1Title{
-	
-}
-#stopoff2Title{
-	
-}
-#stopoff3Title{
+
+#vid1Title {}
+
+#vid2Title {}
+
+#stopoff1Title {}
+
+#stopoff2Title {}
+
+#stopoff3Title {
 	color: #575759;
 }
 
@@ -70,19 +95,25 @@ iframe {
 
 .indent {
 	font-size: 1.2em;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
-	border-top: 1px solid black;
-	margin-left:24%;
+	border-left: .07em solid black;
+	border-right: .07em solid black;
+	border-top: .07em solid black;
+	margin-left: 24%;
 	padding: .5em;
 }
 
+@media only screen and (max-width: 900px) {
+	.indent {
+		font-size: 1em;
+	}
+}
+
 #indent {
-		position: absolute;
-    z-index: 2;
-    left: -1.5%;
-    top: 10.5%;
-    width: 30%;
+	position: absolute;
+	z-index: 2;
+	left: -1.5%;
+	top: 10.5%;
+	width: 30%;
 }
 
 #menu {
@@ -102,9 +133,7 @@ iframe {
 	top: 3%
 }
 
-
-
-#myvideo{
-	width:100%;
-	height:auto;
+#myvideo {
+	width: 100%;
+	height: auto;
 }
