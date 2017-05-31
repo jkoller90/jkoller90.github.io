@@ -1,12 +1,9 @@
 
 html{
 	background-color:coral;
-	overflow:hidden;
 }
 div{
 	position:absolute;
-/*	font-size: 4em;*/
-/*	color:cornflowerblue;*/
 }
 #games{
 	left:5%;
@@ -23,7 +20,6 @@ div{
 	margin-bottom: 3%;
 	border: 3px solid cornflowerblue;
 	align-content: center;
-/*	left: 30%*/
 }
 #author{
 	border: 0;
