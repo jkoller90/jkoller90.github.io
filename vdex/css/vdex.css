@@ -16,6 +16,45 @@ html{
 	color:white;
 	position:absolute;
 	left: 10%;
+		padding-top:3.5%;
+	border-top: 1px solid black;
+	width: 90%;
+}
+#eye1{
+	width: 367%;
+/*	top:%;*/
+/*
+	padding-top:3.5%;
+	border-top: 1px solid black;
+*/
+}
+#eye2{
+	top: 20%;
+}
+#eye3{
+	top:40%;
+}
+#eye4{
+	top:60%;
+}
+#eye5{
+	top:80%;
+}
+
+#vid1Title{
+	
+}
+#vid2Title{
+	
+}
+#stopoff1Title{
+	
+}
+#stopoff2Title{
+	
+}
+#stopoff3Title{
+	color: #575759;
 }
 
 iframe {
@@ -24,23 +63,26 @@ iframe {
 	left: 29%;
 	height: 100%;
 	width: 80%;
-	top: 6.85%;
+	top: 11%;
 	border: 1em solid #575759;
 	border-left: .75em solid #575759;
 }
 
 .indent {
 	font-size: 1.2em;
-	margin: 1%;
-	border: 1px solid black;
-	margin-left:60%;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-top: 1px solid black;
+	margin-left:24%;
+	padding: .5em;
 }
 
 #indent {
-	position: absolute;
-	z-index: 2;
-	left: 2.5%;
-	top: 10.5%
+		position: absolute;
+    z-index: 2;
+    left: -1.5%;
+    top: 10.5%;
+    width: 30%;
 }
 
 #menu {
@@ -48,7 +90,7 @@ iframe {
 	background-color: #575759;
 	padding-right: 11.5%;
 	width: 100%;
-	height: 35%;
+	height: 50%;
 	left: 0;
 	top: 2.5%;
 }
