@@ -26,6 +26,7 @@ div{
 	margin-bottom: 3%;
 	border: 3px solid cornflowerblue;
 	align-content: center;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 880px) {
@@ -58,15 +59,12 @@ div{
         font-size:1.1em;
     }
 }
-
-
 #author{
 	border: 0;
 	font-weight:350;
 	left:0;
 	font-size: .65em;
 	position:absolute;
-/*	top:40%;*/
 }
 #title{
 	border: 0;
