@@ -5,21 +5,38 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
   <title>Jon Koller's Website</title>
   <link href="style.css" rel="stylesheet"> </head>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js'></script>
 <script src="js/sketch.js"></script>
+
 <header>
   <div class="black">Jon Koller Developments </div>
   <div class="blue"> Junior Developer and Master's student at Pace University </div>
 </header>
 
-<body id="page-top" class="index">
-  <iframe src="./js/text.html" width="50%" height="300em" scrolling="no"></iframe>
-  <iframe id='frameRight' src="./js/text.html" width="100%" height="300em" scrolling="no"></iframe>
+<body>
+  <iframe id='iframeLeft' src="./js/text.html" width="50%" height="300em" scrolling="no"></iframe>
+  <iframe id='iframeRight' src="./js/text.html" width="100%" height="300em" scrolling="no"></iframe>
+
+  <section id="about">
+        <div class="col-lg-12 text-center">
+          <h2>About Me</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-lg-offset-2">
+            <p>I've been coding for a year and change. I'm now a Master's student in computer science at Pace University.</p>
+            <p>I spent five years studying Jungian psychology while studying at Fordham University in New York City.</p>
+            <p>Artistic self-expression is how I seek to communicate complex ideas.</p>
+          </div>
+          <div class="col-lg-4">
+            <p> Node.js, React-Native, HTML Canvas, Unity 2D and 3D, Unreal Engine 3 and 4 </p>
+            <p> JavaScript, Java, C#, C/C++, Python </p>
+          </div>
+        </div>
+      </div>
+  </section>
   <section id="portfolio">
     <h4><a href="https://github.com/jkoller90">Github</a></h4> <span style="background-color:antiquewhite;"> <a href="https://github.com/jkoller90/VR_samples">Samples of VR Concepts paired with Node.js</a></span>
     <h4> <a href="https://www.youtube.com/watch?v=RK2L1uSDD1U"> Abstract House Concept in Unreal Engine 3</a></h4>
@@ -27,52 +44,32 @@
     <h4> <a href='pano_sample/index.html'>Panoramic Photo in HTML Using Pano2VR Tool</a></h4>
     <h4><a href="http://codepen.io/jkoller90/full/ORNKgE/">Prototype for KristinaKoller.net</a></h4>
     <h4> <a href="pat_Collins/index.html"> Prototype for the musician Patrick Collins </a></h4>
-    <div class="col-md-4">
-      <section id="portfolio">
-        <section class="success" id="about">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 text-center">
-                <h2>About Me</h2>
-              </div>
-              <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                  <p>I've been coding for a year and change. I'm now a Master's student in computer science at Pace University.</p>
-                  <p>I spent five years studying Jungian psychology while studying at Fordham University in New York City.</p>
-                  <p>Artistic self-expression is how I seek to communicate complex ideas.</p>
-                </div>
-                <div class="col-lg-4">
-                  <p> Node.js, React-Native, HTML Canvas, Unity 2D and 3D, Unreal Engine 3 and 4 </p>
-                  <p> JavaScript, Java, C#, C/C++, Python </p>
-                </div>
-              </div>
-            </div>
-        </section>
-        <section id="contact">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 text-center">
-                <h2>Contact Me</h2>
-                <h3> Cell: 914-330-1533 </h3>
-                <h3> Email: jmk4411@gmail.com </h3> <img id="grainyDog" src="grainyDog.jpg" alt=""> </div>
-            </div>
-          </div>
-        </section>
-          
-          <img class='me' id='meLeft' src='img/IMAG0647blue.png'>
-          <img class='me' id='meRight' src='img/IMAG0647darkBlue.png'>
-        <footer>
-          <div class="footer-above">
-            <p>Location: Westchester County in New York State </p>
-          </div>
-          <div class="footer-below">
-            <div class="col-lg-12"> &copy;Jon Koller 2017 </div>
-          </div>
-        </footer>
-        <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-          <a class="btn btn-primary" href="#page-top"> <i class="fa fa-chevron-up"></i> </a>
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2>Contact Me</h2>
+          <h3> Cell: 914-330-1533 </h3>
+          <h3> Email: jmk4411@gmail.com </h3> <img id="grainyDog" src="grainyDog.jpg" alt=""> </div>
+      </div>
+    </div>
+  </section>
+
+  <img class='me' id='meLeft' src='img/IMAG0647blue.png'>
+  <img class='me' id='meRight' src='img/IMAG0647darkBlue.png'>
+  <footer>
+    <div id="footer-above">
+      <p>Location: Westchester County in New York State </p>
+    </div>
+    <div id="footer-below">
+      <div> &copy;Jon Koller 2017 </div>
+    </div>
+  </footer>
+  <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 </body>
 

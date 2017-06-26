@@ -1,10 +1,22 @@
-body {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  overflow-x: hidden;
+html {
+  background-color: antiquewhite;
 }
 
 a {
   background-color: antiquewhite;
+}
+
+#about {
+  background: #814621;
+  color: white;
+}
+
+
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  position: absolute;
+  /*  width: */
 }
 
 .black {
@@ -15,19 +27,56 @@ a {
   background-color: #2C3E50;
 }
 
-html {
+footer {
+  color: white;
+  left: 10%;
+  top: 170%;
+  width: 80%;
+  position: absolute;
+}
+
+#footer-above{
+  
+}
+
+#footer-below{
+  
+}
+#grainyDog {
+  position: absolute;
+  top: 125%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  align-content: center;
+}
+header {
+  text-align: center;
+  color: white;
+  position: absolute;
+  display: inline;
+  width: 100%;
+}
+
+iframe {
+  overflow: hidden;
+  display: inline;
+  position: absolute;
+  z-index: -1;
   background-color: antiquewhite;
 }
 
-p {
-  font-size: 20px;
-  background-color: black;
-  color: azure
+#iframeLeft {
+  left: -15%;
 }
 
-p.small {
-  font-size: 16px;
+#iframeRight {
+  left: 50%;
+  z-index: -2;
 }
+
+
+
 
 h1,
 h2,
@@ -41,15 +90,11 @@ h6 {
   -webkit-margin-after: 0.55em !important;
 }
 
-.img-centered {
-  margin: 0 auto;
+p {
+  font-size: 20px;
+  background-color: black;
+  color: azure
 }
-
-header {
-  text-align: center;
-  color: white;
-}
-
 
 section {
   text-align: center;
@@ -58,11 +103,6 @@ section {
 section h2 {
   margin: 0;
   font-size: 3em;
-}
-
-section.success {
-  background: #814621;
-  color: white;
 }
 
 @media (max-width: 767px) {
@@ -74,72 +114,30 @@ section.success {
   }
 }
 
-footer {
-  color: white;
-  left: 10%;
-  top:170%;
-  width: 80%;
-  position:absolute;
-  
-}
-
-footer .footer-above {
-  padding-top: 1%;
-  background-color: #2C3E50;
-}
-
-footer .footer-col {
-  margin-bottom: 50px;
-}
-
-footer .footer-below {
-  padding: .5% 0;
-  background-color: #233140;
-}
 
 
 /* iframes */
-iframe {
-  overflow: hidden;
-  display: inline;
-  position: absolute;
-  z-index: -1;
-  background-color: antiquewhite;
-}
 
-#frameLeft{
-  left: -15%;
-}
-#frameRight {
-  left: 50%;
-  z-index: -2;
-}
 
 
 /* photos */
 
-#grainyDog {
-  position:absolute;
-  top:125%;
-  left: 0;
-  width: 100%;
-  height: auto;
-  align-content: center;
-}
 
-.me{
-    position: absolute;
-    z-index: -1;
-    width: 45%;
-    height: auto;
-    top: 75%;
+
+.me {
+  position: absolute;
+  z-index: -1;
+  width: 45%;
+  height: auto;
+  top: 75%;
 }
 
 #meLeft {
-    width:55%;
-    left: 1%;
+  width: 55%;
+  left: 1%;
 }
-#meRight{
-    width:55%;
-    left: 40%;
+
+#meRight {
+  width: 55%;
+  left: 40%;
 }
