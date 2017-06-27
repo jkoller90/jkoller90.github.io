@@ -10,32 +10,19 @@ header {
 }
 
 .black {
-  top: .5em;
-  width: 15%;
-  left: 5%;
+  top: 1em;
+  width: 7em;
+  left: 2.5%;
   background-color: black;
   color: aquamarine;
-  font-size: 2em;
+  font-size: 2.5em;
   display: inline;
   position: absolute;
   visibility: visible;
   border: .5em solid rgba(76, 127, 178, 0.7);
 }
 
-.blue {
-  background-color:rgba(76, 127, 178, 0.9);
-  color:aquamarine;
-  display: inline;
-  position: absolute;
-  visibility: visible;
-  font-size: 1.22em;
-  padding: 1em;
-  border: .5em solid black;
-  top: 14em;
-  left: 15%;
-  z-index:2;
-  /*  border-left: 0;*/
-}
+
 
 
 /*

@@ -1,34 +1,69 @@
+.blue {
+  background-color:rgba(76, 127, 178, 1);
+  color:aquamarine;
+  display: inline;
+  position: absolute;
+  visibility: visible;
+  font-size: 2em;
+  padding: .5em;
+  border: .125em solid black;
+  top: 41em;
+  left: 8%;
+  z-index:2;
+  /*  border-left: 0;*/
+}
+
+
 #about {
-  background-color:rgba(178, 127, 76, 0.7); /*burlywood azure */
-  border: .2em solid rgb(76, 178, 127); /* #814621; beige*/
+  background-color:rgba(178, 127, 76, 1); /*burlywood azure */
+  border: .2em solid rgba(76, 127, 228, 1); /* #814621; beige*/
   color: aliceblue;
   position: absolute;
   visibility:visible;
-    top: 40%;
-    left: 18.25%;
-  padding: 15% 32% 27% 5%;
-  
+    top: 150%;
+    left: 1%;
+  padding: 30% 70% 50% 10%;
+  border-radius: 1em;
 }
 #about > h3{
-  border: 0;
-  font-size: 1.33em;
   position: absolute;
-  display: inline !important; 
-  left: 5%;
-  width: 105%;
 }
 
 #aboutTitle{
-  top: 0;
+  border: 0;
+  width:70%;
+/*  left: -2em;*/
+  top: -.5em;
+  color: aquamarine;
+  font-size: 1.25em;
 }
 #techTitle{
-  top: 33%;
+  top: 7em;
+  font-size: 1.2em;
+  color: beige;
+}
+#inspTitle{
+    top: 20em;
+  font-size: 1.2em;
+  color: beige;
 }
 
 .aboutPoint{
+  padding: 0;
   font-size:1em;
-  padding: .2em 0 .2em 0;
   font-weight:500;
-  text-align: center; position: absolute;
-  top:40%;
+/*position: absolute;*/
+  display: block;
 }
+#tech1{
+  position:absolute;
+  top:11em;
+}
+
+
+
+/*
+artPoint
+tech1
+tech2
+*/
