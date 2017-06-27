@@ -10,18 +10,18 @@ function setup() {
   y = height;
 }
 var ellipseX = 4;
-var ellipseY = 24;
+var ellipseY = 2;
 
 function draw() {
   background(0, y * .5, 200);
 
   // Draw a circle
-  stroke(50)
+  stroke(1);
   fill(y, y, x+y);
 
   
   if (ellipseX < 500) {
-    ellipseX++;
+    ellipseX+=4;
     ellipse(x, y, ellipseX, ellipseX)
   } else {
     for (i = 0; i < 520; i++) {

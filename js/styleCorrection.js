@@ -4,15 +4,33 @@
 //})
 
 $(document).ready(function () {
-  $('#about').children().css('visibility', 'visible');
-  //  $('#about').children().css('visibility', 'visible');
-  $('#about').children().css('display', 'block');
+//  $('#about').children().css('visibility', 'visible');
+//  $('#about').children().css('display', 'block');
   $('#iframes').css('visibility', 'visible');
   $('#iframes').children().css('visibility', 'visible');
   $('.me').css('visibility', 'visible');
   $('.me').children().css('visibility', 'visible');
+    
 })
 
+$('.orange').click(function(){
+    $('#portfolio').css('visibility', 'visible');
+  $('#portfolio').children().css('visibility', 'visible');
+ $('#portfolio').children().children().css('visibility', 'visible');
+  
+})
+
+$('.blue').click(function(){
+    $('#about').css('visibility', 'visible');
+  $('#about').children().css('visibility', 'visible');
+ $('#about').children().children().css('visibility', 'visible');
+  $('#about').children().css('display','block');
+   $('#about').css('display','block');
+//  $('#about').css('height','60%');
+    $('#about').css('width','100%');
+ $('#about').css('padding', '30% 70% 3% 3%');
+  
+})
 
 /*
 var change = 0;

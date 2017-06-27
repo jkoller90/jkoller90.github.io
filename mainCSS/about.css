@@ -12,6 +12,20 @@
   z-index:2;
   /*  border-left: 0;*/
 }
+.orange {
+  background-color:rgba(176, 110, 88, 1);
+  color:aquamarine;
+  display: inline;
+  position: absolute;
+  visibility: visible;
+  font-size: 2em;
+  padding: .5em;
+  border: .125em solid black;
+  top: 41em;
+  left: 58%;
+  z-index:2;
+  /*  border-left: 0;*/
+}
 
 
 #about {
@@ -20,13 +34,35 @@
   color: aliceblue;
   position: absolute;
   visibility:visible;
+  display: none;
     top: 150%;
     left: 1%;
-  padding: 30% 70% 50% 10%;
+/*  padding: 30% 70% 3% 3%;*/
   border-radius: 1em;
+  width: 1%;
+  height: 40%;
 }
+@media (max-width: 505px) {
+  #about{
+    height: 55%;
+  }
+}
+
+@media (max-width: 315px) {
+  #about{
+    height: 60%;
+  }
+}
+@media (max-width: 300px) {
+  #about{
+    height: 80%;
+  }
+}
+
+
 #about > h3{
   position: absolute;
+  width: 50%;
 }
 
 #aboutTitle{
@@ -57,10 +93,15 @@
 }
 #tech1{
   position:absolute;
-  top:11em;
+  top:12em;
+  width: 42%;
 }
 
-
+#insp1{
+  position:absolute;
+  top:27.5em;
+  width: 42%;
+}
 
 /*
 artPoint
