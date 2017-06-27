@@ -1,13 +1,13 @@
 #about {
-  background-color:burlywood; /*burlywood azure */
-  border: .3em solid aquamarine; /* #814621; beige*/
+  background-color:rgba(178, 127, 76, 0.7); /*burlywood azure */
+  border: .2em solid rgb(76, 178, 127); /* #814621; beige*/
   color: aliceblue;
   position: absolute;
-  display: inline !important;
   visibility:visible;
-  top:41.5%;
-  left: 2.25%;
-  padding: 5% 22% 22% 1%;
+    top: 40%;
+    left: 18.25%;
+  padding: 15% 32% 27% 5%;
+  
 }
 #about > h3{
   border: 0;
@@ -15,7 +15,7 @@
   position: absolute;
   display: inline !important; 
   left: 5%;
-  width: 95%;
+  width: 105%;
 }
 
 #aboutTitle{

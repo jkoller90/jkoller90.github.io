@@ -19,19 +19,20 @@ header {
   display: inline;
   position: absolute;
   visibility: visible;
-  border: .5em solid black;
+  border: .5em solid rgba(76, 127, 178, 0.7);
 }
 
 .blue {
-  background-color: darkslategray;
+  background-color:rgba(76, 127, 178, 0.9);
+  color:aquamarine;
   display: inline;
   position: absolute;
   visibility: visible;
   font-size: 1.22em;
   padding: 1em;
   border: .5em solid black;
-  top: 13em;
-  left: 21em;
+  top: 14em;
+  left: 15%;
   z-index:2;
   /*  border-left: 0;*/
 }

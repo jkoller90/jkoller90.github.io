@@ -2,33 +2,39 @@ iframe {
   margin: 0;
   border: 0;
   overflow: hidden;
-  display: inline;
-  position:absolute;
-  z-index: -1;
-  top: 7%;
+  position: absolute;
+  z-index: 0;
 }
 
 #iframeLeft {
-    height: 18.5%;
-    position: absolute;
-    left: 6.3%;
-    top: 20.5%;
-    width: 33%;
-    z-index: 0;
+  position: absolute;
+    left: 14%;
+    top: 10%;
+  width: 100%;
+  height: auto;
+  z-index: 0;
 }
-
 
 #iframeRight {
-  height: 26.75%; position:absolute;
-  left: 32%;
-  width: 53%;
+  top: 40%;
+  left: -16.5%;
+  position: absolute;
+  width: 100%;
+  height: auto;
+       -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+  z-index:-1;
 }
-#iframeCenter{
-height: 36.5%;
-    position: absolute;
-    left: 5.9%;
-    top: 4.5%;
-    width: 69%;
-    z-index: -2;
-  
+
+#iframeCenter {
+  height: 26.5%;
+  position: absolute;
+  left: 32%;
+  top: 165.5%;
+  width: 69%;
+  z-index: 3;
 }

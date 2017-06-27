@@ -30,6 +30,7 @@ setInterval(function () {
 }, 1000);
 //1275
 */
+/*
 var aboutPadRight = 1;
 setInterval(function () {
   if(aboutPadRight < 90){
@@ -46,14 +47,21 @@ setInterval(function () {
 //    return;
 //  }
 }, 5);
+*/
+/*
 
-setInterval(function(){
-//  $('#iframeLeft').css('z-index', '2');
-  $('#iframeLeft').css('top','24%');
-  setTimeout(function(){
-    $('#iframeLeft').css('z-index','0');
-    $('#iframeLeft').css('top','20.5%');
-    $('#iframeCenter').css('-webkit-filter','grayscale(1)')
-    $('#iframeCenter').css('filter','grayscale(1)')
-  },120);
-},10000);
+var rightPlace = 7;
+setInterval(function () {
+  //  $('#iframeLeft').css('z-index', '2');
+  $('#iframeLeft').css('top', '24%');
+  setTimeout(function () {
+    $('#iframeLeft').css('z-index', '0');
+    $('#iframeLeft').css('top', '20.5%');
+    $('#iframeRight').css('top', rightPlace + '%');
+  }, 120);
+  if (rightPlace < 14) rightPlace += 7;
+  else {
+    rightPlace = 7;
+  }
+}, 10000);
+*/
