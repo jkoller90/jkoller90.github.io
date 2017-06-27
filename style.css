@@ -115,7 +115,7 @@ iframe {
 
 .me {
   position: absolute;
-  z-index: -1;
+/*  z-index: 0;*/
   width: 77%;
   height: auto;
   top: 100%;
@@ -123,7 +123,7 @@ iframe {
 
 #meLeft {
     left: 10%;
-    top: 107%;
+    top: 37%;
     height: auto;
 }
 
@@ -131,7 +131,7 @@ iframe {
   width: 84%;
   left: 15%;
   height: auto;
-  top: 110%;
+  top: 40%;
 }
 
 p {
@@ -139,7 +139,11 @@ p {
   background-color: black;
   color: azure
 }
-
+#portfolio{
+  background-color:aliceblue;
+  position:absolute;
+  top: 60%;
+}
 section {
   text-align: center;
 }
