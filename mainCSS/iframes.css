@@ -8,8 +8,9 @@ iframe {
 
 #iframeLeft {
   position: absolute;
+  left: 0;
     width: 100%;
-    height: auto;
+    height: 30%;
   z-index: -3;
    -moz-transform: scaleY(-1);
   -o-transform: scaleY(-1);

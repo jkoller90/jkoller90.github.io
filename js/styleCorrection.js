@@ -2,8 +2,11 @@
 //  $('#footer-above').css({'position':'absolute','top':'15%'});
 //  $('#footer-below').css({'position':'absolute','top':'40%'});
 //})
+var resizeEvent = new Event('resize');
 
 $(document).ready(function () {
+  $('iframe').css('width','100%');
+window.dispatchEvent(resizeEvent);
 //  $('#about').children().css('visibility', 'visible');
 //  $('#about').children().css('display', 'block');
   $('#iframes').css('visibility', 'visible');
