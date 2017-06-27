@@ -1,0 +1,18 @@
+iframe {
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+  display: inline;
+  z-index: -1;
+  background-color: antiquewhite;
+  top: 50%;
+}
+
+#iframeLeft {
+  left: -15%;
+}
+
+#iframeRight {
+  left: 50%;
+  z-index: -2;
+}

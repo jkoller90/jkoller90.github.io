@@ -1,0 +1,40 @@
+#footTop {
+  top: 154%;
+  z-index: 1;
+  left: 30%;
+}
+
+#footBot {
+  top: 181%;
+  left: 44%;
+  z-index: 1;
+}
+
+#grainyDog {
+  position: absolute;
+  top: 177%;
+  z-index: -1;
+  left: 10%;
+  width: 90%;
+  height: auto;
+  align-content: center;
+  display: inline;
+}
+
+
+/*
+#footer {
+  color: white;
+  left: 10%;
+  top: 170%;
+  width: 100%;
+  position: absolute;
+}
+*/
+
+/*
+.footerText {
+  position: absolute;
+  color: whitesmoke;
+  font-size: 1.4em;
+}*/

@@ -1,0 +1,20 @@
+header {
+  text-align: center;
+  color: white;
+  /*  position: absolute;*/
+  display: inline;
+  position: relative;
+  width: 100%;
+}
+
+.black {
+  background-color: black;
+  display: inline;
+  position: relative;
+}
+
+.blue {
+  background-color: #2C3E50;
+  display: inline;
+  position: relative;
+}

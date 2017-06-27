@@ -1,0 +1,25 @@
+* {
+  display: none;
+  border: 1px solid darksalmon;
+}
+
+a {
+  background-color: antiquewhite;
+}
+
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  position: absolute;
+  /*  width: */
+}
+
+html {
+  background-color: darkseagreen;
+  height: 100%;
+  display: inline;
+}
+
+section {
+  text-align: center;
+}
