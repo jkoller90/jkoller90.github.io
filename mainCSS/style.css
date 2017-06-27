@@ -1,10 +1,15 @@
-* {
-  display: none;
-  border: 1px solid darksalmon;
+html {
+  background-color: antiquewhite;
+  height: 100%;
 }
 
 a {
   background-color: antiquewhite;
+}
+
+#about {
+  background: #814621;
+  color: white;
 }
 
 body {
@@ -14,12 +19,142 @@ body {
   /*  width: */
 }
 
-html {
-  background-color: darkseagreen;
-  height: 100%;
+.black {
+  background-color: black;
+}
+
+.blue {
+  background-color: #2C3E50;
+}
+
+#contact {
+  top: 129%;
+  width: 100%;
+  position: absolute;
+  color: aqua;
+  left: -17%;
+}
+
+#footer {
+  color: white;
+  left: 10%;
+  top: 170%;
+  width: 100%;
+  position: absolute;
+}
+
+.footerText {
+  position: absolute;
+  color: whitesmoke;
+  font-size: 1.4em;
+}
+
+#footTop {
+  top: 154%;
+  z-index: 1;
+  left: 30%;
+}
+
+#footBot {
+  top: 181%;
+  left: 44%;
+  z-index: 1;
+}
+
+#grainyDog {
+  position: absolute;
+  top: 177%;
+  z-index: -1;
+  left: 10%;
+  width: 90%;
+  height: auto;
+  align-content: center;
   display: inline;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  -webkit-margin-before: 0.55em !important;
+  -webkit-margin-after: 0.55em !important;
+}
+
+header {
+  text-align: center;
+  color: white;
+  position: absolute;
+  display: inline;
+  width: 100%;
+}
+
+iframe {
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+  display: inline;
+  z-index: -1;
+  background-color: antiquewhite;
+  top: 50%;
+}
+
+#iframeLeft {
+  left: -15%;
+}
+
+#iframeRight {
+  left: 50%;
+  z-index: -2;
+}
+
+
+
+.me {
+  position: absolute;
+/*  z-index: 0;*/
+  width: 77%;
+  height: auto;
+  top: 100%;
+}
+
+#meLeft {
+    left: 10%;
+    top: 37%;
+    height: auto;
+}
+
+#meRight {
+  width: 84%;
+  left: 15%;
+  height: auto;
+  top: 40%;
+}
+
+p {
+  font-size: 20px;
+  background-color: black;
+  color: azure
+}
+#portfolio{
+  background-color:aliceblue;
+  position:absolute;
+  top: 60%;
+}
 section {
   text-align: center;
+}
+
+section h2 {
+  margin: 0;
+  font-size: 2em;
+}
+
+@media (max-width: 767px) {
+  section {
+    padding: 12px 0;
+  }
 }
