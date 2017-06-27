@@ -1,19 +1,19 @@
 .me {
   position: absolute;
-  width: 77%;
+  width: 36%;
   height: auto;
   top: 100%;
 }
 
 #meLeft {
-  left: 10%;
-  top: 37%;
+  left: 24%;
+  top: 91%;
   height: auto;
 }
 
 #meRight {
-  width: 84%;
-  left: 15%;
+  top: 89%;
+  left: 19%;
+  width: 44%;
   height: auto;
-  top: 40%;
 }

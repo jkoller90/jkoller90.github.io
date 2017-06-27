@@ -1,20 +1,106 @@
 header {
   text-align: center;
   color: white;
-  /*  position: absolute;*/
+  position: absolute;
   display: inline;
-  position: relative;
+  visibility: visible;
   width: 100%;
+  border-left: 0;
+  z-index: 2;
 }
 
 .black {
+  top: .5em;
+  width: 15%;
+  left: 5%;
   background-color: black;
+  color: aquamarine;
+  font-size: 2em;
   display: inline;
-  position: relative;
+  position: absolute;
+  visibility: visible;
+  border: .5em solid black;
 }
 
 .blue {
-  background-color: #2C3E50;
+  background-color: darkslategray;
   display: inline;
-  position: relative;
+  position: absolute;
+  visibility: visible;
+  font-size: 1.22em;
+  padding: 1em;
+  border: .5em solid black;
+  top: 13em;
+  left: 21em;
+  z-index:2;
+  /*  border-left: 0;*/
+}
+
+
+/*
+@media (max-width: 802px) {
+  .blue {
+    display: block;
+  }
+  .black{
+    border-bottom: 0;
+  }
+  header{
+    border-bottom: 0;
+  }
+}
+*/
+
+@media (max-width: 715px) {
+  /*
+  header{
+    border-bottom: 0;
+  }
+*/
+}
+
+@media (max-width: 525px) {
+  .blue {
+    font-size: .85em;
+    font-weight: 600;
+    padding-top: .2em;
+    padding-bottom: .2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .blue {
+    font-size: .8em;
+  }
+}
+
+@media (max-width: 453px) {
+  .blue {
+    font-size: .7em;
+  }
+}
+
+@media (max-width: 402px) {
+  .blue {
+    font-size: .65em;
+    margin-top: .2em;
+  }
+}
+
+@media (max-width: 380px) {
+  .blue {
+    font-size: .7em;
+  }
+}
+
+@media (max-width: 320px) {
+  .black {
+    font-size: 1.25em;
+  }
+}
+
+@media (max-width: 273px) {
+  .black {
+    font-size: 1.1em;
+  }
 }
