@@ -9,6 +9,38 @@ header {
   z-index: 2;
 }
 
+
+.blue {
+  background-color:rgba(76, 127, 178, 1);
+  color:aquamarine;
+  display: inline;
+  position: absolute;
+  visibility: visible;
+  font-size: 2em;
+  padding: .5em;
+  border: .125em solid black;
+  border-radius: 1em;
+    top:11em;
+    left: 1em;
+    z-index: 2;
+}
+.orange {
+  background-color:rgba(176, 110, 88, 1);
+  color:aquamarine;
+  display: inline;
+  position: absolute;
+  visibility: visible;
+  font-size: 2em;
+  padding: .5em;
+  border: .125em solid black;
+  border-radius: 1em;
+  top: 11em;
+  left: 1em;
+  z-index:2;
+  /*  border-left: 0;*/
+}
+
+
 .black {
   top: 1em;
   width: 7em;

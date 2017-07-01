@@ -3,18 +3,34 @@
 }
 
 #meLeft {
-  left: 11%;
-  top: 59%;
-   z-index: -4;
-  width:77%;
-/*  height: auto;*/
+    top: 22em;
+    left: 14em;
+    z-index: -4;
+    width: 40em;
 }
 
+
+/*
+
+#meLeft {
+    top: 32em;
+    left: 1em;
+    z-index: -4;
+    width: 40em;
+}
 #meRight {
-  top: 48%;
-/*  left: -8%;*/
-  width: 100%;
-/*  width: 55em;*/
-/*  height: auto;*/
+  top: 12.5em;
+  left: 1%;
+  width: 98%;
   z-index: -4;
+}
+*/
+#meRight{
+      top: 22em;
+    left: 18em;
+    /* left: -8%; */
+    width: 40em;
+    /* width: 55em; */
+    /* height: auto; */
+    z-index: -4;
 }

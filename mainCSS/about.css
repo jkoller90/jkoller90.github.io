@@ -1,33 +1,3 @@
-.blue {
-  background-color:rgba(76, 127, 178, 1);
-  color:aquamarine;
-  display: inline;
-  position: absolute;
-  visibility: visible;
-  font-size: 2em;
-  padding: .5em;
-  border: .125em solid black;
-  top: 41em;
-  left: 8%;
-  z-index:2;
-  /*  border-left: 0;*/
-}
-.orange {
-  background-color:rgba(176, 110, 88, 1);
-  color:aquamarine;
-  display: inline;
-  position: absolute;
-  visibility: visible;
-  font-size: 2em;
-  padding: .5em;
-  border: .125em solid black;
-  top: 41em;
-  left: 58%;
-  z-index:2;
-  /*  border-left: 0;*/
-}
-
-
 #about {
   background-color:rgba(178, 127, 76, 1); /*burlywood azure */
   border: .2em solid rgba(76, 127, 228, 1); /* #814621; beige*/
