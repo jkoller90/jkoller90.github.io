@@ -2,9 +2,9 @@
 var i, x, y, originalWidth, originalHeight;
 
 function setup() {
-  createCanvas(600, 300);
   originalWidth = window.innerWidth;
   originalHeight = window.innerHeight;
+  createCanvas(originalWidth, 300);
   // Starts in the middle
   x = width / 2;
   y = height;

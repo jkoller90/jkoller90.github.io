@@ -1,7 +1,5 @@
 * {
-/*  display: none;*/
   visibility: hidden;
-
 }
 
 a {
@@ -9,25 +7,14 @@ a {
 }
 
 body {
-/*  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
   overflow-x: hidden;
-/*  position: absolute;*/
    visibility:visible;
   border: 0;
    border-bottom: 0;
-  /*  width: */
 }
 
 html {
-/*  background-color: darkseagreen;
-  */
   background-color: antiquewhite;
   height: 100%;
-/*  display: inline;*/
 }
 
-/*
-section {
-  text-align: center;
-}
-*/

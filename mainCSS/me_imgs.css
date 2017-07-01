@@ -3,7 +3,7 @@
 }
 
 #meLeft {
-/*  left: 11%;*/
+  left: 11%;
   top: 59%;
    z-index: -4;
   width:77%;
@@ -13,8 +13,8 @@
 #meRight {
   top: 48%;
 /*  left: -8%;*/
-  width: 77%;
-  width: 55em;
+  width: 100%;
+/*  width: 55em;*/
 /*  height: auto;*/
   z-index: -4;
 }

@@ -2,37 +2,33 @@
 //  $('#footer-above').css({'position':'absolute','top':'15%'});
 //  $('#footer-below').css({'position':'absolute','top':'40%'});
 //})
-var resizeEvent = new Event('resize');
 
 $(document).ready(function () {
-  $('iframe').css('width','100%');
-window.dispatchEvent(resizeEvent);
-//  $('#about').children().css('visibility', 'visible');
-//  $('#about').children().css('display', 'block');
   $('#iframes').css('visibility', 'visible');
   $('#iframes').children().css('visibility', 'visible');
   $('.me').css('visibility', 'visible');
   $('.me').children().css('visibility', 'visible');
-    
+
 })
 
-$('.orange').click(function(){
-    $('#portfolio').css('visibility', 'visible');
+var portfolio = document.getElementById('portfolio');
+$('.orange').click(function () {
+  $('#portfolio').css('visibility', 'visible');
   $('#portfolio').children().css('visibility', 'visible');
- $('#portfolio').children().children().css('visibility', 'visible');
-  
+  $('#portfolio').children().children().css('visibility', 'visible');
+  portfolio.scrollIntoView();
 })
 
-$('.blue').click(function(){
-    $('#about').css('visibility', 'visible');
+$('.blue').click(function () {
+  $('#about').css('visibility', 'visible');
   $('#about').children().css('visibility', 'visible');
- $('#about').children().children().css('visibility', 'visible');
-  $('#about').children().css('display','block');
-   $('#about').css('display','block');
-//  $('#about').css('height','60%');
-    $('#about').css('width','100%');
- $('#about').css('padding', '30% 70% 3% 3%');
-  
+  $('#about').children().children().css('visibility', 'visible');
+  $('#about').children().css('display', 'block');
+  $('#about').css('display', 'block');
+  //  $('#about').css('height','60%');
+  $('#about').css('width', '100%');
+  $('#about').css('padding', '30% 70% 3% 3%');
+
 })
 
 /*

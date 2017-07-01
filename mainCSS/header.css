@@ -23,30 +23,6 @@ header {
 }
 
 
-
-
-/*
-@media (max-width: 802px) {
-  .blue {
-    display: block;
-  }
-  .black{
-    border-bottom: 0;
-  }
-  header{
-    border-bottom: 0;
-  }
-}
-*/
-
-@media (max-width: 715px) {
-  /*
-  header{
-    border-bottom: 0;
-  }
-*/
-}
-
 @media (max-width: 525px) {
   .blue {
     font-size: .85em;
