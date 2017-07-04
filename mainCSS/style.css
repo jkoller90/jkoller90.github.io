@@ -211,11 +211,11 @@ iframe {
 	z-index: 0;
 }
 
-#iframeLeft {
+#headerFrame {
 	position: absolute;
 	left: -.5em;
 	top: -7.5em;
-	width: 150%;
+	width: 88em;
 	height: 21.5em;
 	z-index: -5;
 	-moz-transform: scaleY(-1);
@@ -226,28 +226,12 @@ iframe {
 	-ms-filter: "FlipV";
 }
 
-#iframeRight {
-	top: 40%;
-	left: -16.5%;
-	position: absolute;
-	width: 100%;
-	height: auto;
-	-moz-transform: scaleX(-1);
-	-o-transform: scaleX(-1);
-	-webkit-transform: scaleX(-1);
-	transform: scaleX(-1);
-	filter: FlipH;
-	-ms-filter: "FlipH";
+#portfolioFrame{
+	position:aboslute;
+	top: 15em;
 	z-index: -1;
-}
-
-#iframeCenter {
-	height: 26.5%;
-	position: absolute;
-	left: 32%;
-	top: 165.5%;
-	width: 69%;
-	z-index: 3;
+	width:33em;
+	height: 33em;
 }
 
 #footTop {
@@ -285,7 +269,7 @@ iframe {
 
 #meLeft {
 	top: 16em;
-	left: 32em;
+	left: 31.5em;
 	z-index: -4;
 	width: 26.5em;
 	height: 23.5em;
@@ -293,7 +277,7 @@ iframe {
 
 #meRight {
 	top: 17em;
-	left: 32em;
+	left: 31.5em;
 	/* left: -8%; */
 	width: 25em;
 	/* width: 55em; */
