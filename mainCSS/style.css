@@ -1,6 +1,11 @@
+
 html {
   background-color: antiquewhite;
   height: 100%;
+}
+
+* {
+  visibility: hidden;
 }
 
 a {
@@ -13,12 +18,13 @@ a {
 }
 
 body {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
-  position: absolute;
-  /*  width: */
+   visibility:visible;
+  border: 0;
+   border-bottom: 0;
 }
 
+<<<<<<< HEAD
 .black {
   background-color: black;
 }
@@ -104,8 +110,19 @@ iframe {
 
 #iframeLeft {
   left: -15%;
+||||||| merged common ancestors
+html {
+  background-color: darkseagreen;
+  height: 100%;
+  display: inline;
+=======
+html {
+  background-color: antiquewhite;
+  height: 100%;
+>>>>>>> master
 }
 
+<<<<<<< HEAD
 #iframeRight {
   left: 50%;
   z-index: -2;
@@ -158,3 +175,9 @@ section h2 {
     padding: 12px 0;
   }
 }
+||||||| merged common ancestors
+section {
+  text-align: center;
+}
+=======
+>>>>>>> master
