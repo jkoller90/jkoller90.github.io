@@ -1,15 +1,5 @@
 var resizeEvent = new Event('resize');
 
-$(document).ready(function () {
-  $('iframe').css('width', '100%');
-  window.dispatchEvent(resizeEvent);
-  $('#iframes').css('visibility', 'visible');
-  $('#iframes').children().css('visibility', 'visible');
-  $('.me').css('visibility', 'visible');
-  $('.me').children().css('visibility', 'visible');
-
-})
-
 var portfolio = document.getElementById('portfolio');
 $('.portfolio').click(function () {
   $('#portfolio').css('visibility', 'visible');

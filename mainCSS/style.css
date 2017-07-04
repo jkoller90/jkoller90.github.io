@@ -1,20 +1,327 @@
 * {
-  visibility: hidden;
+	border-radius: 5px;
 }
 
 a {
-  background-color: antiquewhite;
+	background-color: antiquewhite;
 }
 
 body {
-  overflow-x: hidden;
-   visibility:visible;
-  border: 0;
-   border-bottom: 0;
+	overflow-x: hidden;
+	visibility: visible;
+	border: 0;
+	border-bottom: 0;
 }
 
 html {
-  background-color: antiquewhite;
-  height: 100%;
+	height: 100%;
 }
 
+#about {
+	background-color: rgba(178, 127, 76, 1);
+	/*burlywood azure */
+	border: .2em solid rgba(76, 127, 228, 1);
+	/* #814621; beige*/
+	color: aliceblue;
+	position: absolute;
+	visibility: visible;
+	display: none;
+	top: 150%;
+	left: 1%;
+	border-radius: 1em;
+	width: 1%;
+	height: 40%;
+}
+
+@media (max-width: 505px) {
+	#about {
+		height: 55%;
+	}
+}
+
+@media (max-width: 315px) {
+	#about {
+		height: 60%;
+	}
+}
+
+@media (max-width: 300px) {
+	#about {
+		height: 80%;
+	}
+}
+
+#about > h3 {
+	position: absolute;
+	width: 50%;
+}
+
+#aboutTitle {
+	border: 0;
+	width: 70%;
+	top: -.5em;
+	color: aquamarine;
+	font-size: 1.25em;
+}
+
+#contact {
+	top: 89%;
+	width: 100%;
+	position: absolute;
+	color: aqua;
+	/*	left: -17%;*/
+}
+
+#techTitle {
+	top: 7em;
+	font-size: 1.2em;
+	color: beige;
+}
+
+#inspTitle {
+	top: 20em;
+	font-size: 1.2em;
+	color: beige;
+}
+
+.aboutPoint {
+	padding: 0;
+	font-size: 1em;
+	font-weight: 500;
+	display: block;
+}
+
+#tech1 {
+	position: absolute;
+	top: 12em;
+	width: 42%;
+}
+
+#insp1 {
+	position: absolute;
+	top: 27.5em;
+	width: 42%;
+}
+
+header {
+	text-align: center;
+	color: white;
+	position: absolute;
+	display: inline;
+	visibility: visible;
+	width: 100%;
+	border-left: 0;
+	z-index: 2;
+}
+
+.blue {
+	background-color: rgba(76, 127, 178, 1);
+	color: aquamarine;
+	display: inline;
+	position: absolute;
+	visibility: visible;
+	font-size: 2em;
+	padding: .5em;
+	border: .125em solid black;
+	border-radius: 1em;
+	top: 11em;
+	left: 1em;
+	z-index: 2;
+}
+
+.orange {
+	background-color: rgba(176, 110, 88, 1);
+	color: aquamarine;
+	display: inline;
+	position: absolute;
+	visibility: visible;
+	font-size: 2em;
+	padding: .5em;
+	border: .125em solid black;
+	border-radius: 1em;
+	top: 11em;
+	left: 1em;
+	z-index: 2;
+	/*  border-left: 0;*/
+}
+
+.black {
+	top: 1em;
+	width: 7em;
+	left: 2.5%;
+	background-color: rgb(31, 209, 209);
+	color: rgb(0, 102, 204);
+	font-size: 2.5em;
+	display: inline;
+	position: absolute;
+	visibility: visible;
+}
+
+@media (max-width: 525px) {
+	.blue {
+		font-size: .85em;
+		font-weight: 600;
+		padding-top: .2em;
+		padding-bottom: .2em;
+	}
+}
+
+@media (max-width: 480px) {
+	.blue {
+		font-size: .8em;
+	}
+}
+
+@media (max-width: 453px) {
+	.blue {
+		font-size: .7em;
+	}
+}
+
+@media (max-width: 402px) {
+	.blue {
+		font-size: .65em;
+		margin-top: .2em;
+	}
+}
+
+@media (max-width: 380px) {
+	.blue {
+		font-size: .7em;
+	}
+}
+
+@media (max-width: 320px) {
+	.black {
+		font-size: 1.25em;
+	}
+}
+
+@media (max-width: 273px) {
+	.black {
+		font-size: 1.1em;
+	}
+}
+
+iframe {
+	margin: 0;
+	border: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: 0;
+}
+
+#iframeLeft {
+	position: absolute;
+	left: -.5em;
+	top: -7.5em;
+	width: 150%;
+	height: 21.5em;
+	z-index: -5;
+	-moz-transform: scaleY(-1);
+	-o-transform: scaleY(-1);
+	-webkit-transform: scaleY(-1);
+	transform: scaleY(-1);
+	filter: FlipH;
+	-ms-filter: "FlipV";
+}
+
+#iframeRight {
+	top: 40%;
+	left: -16.5%;
+	position: absolute;
+	width: 100%;
+	height: auto;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+	z-index: -1;
+}
+
+#iframeCenter {
+	height: 26.5%;
+	position: absolute;
+	left: 32%;
+	top: 165.5%;
+	width: 69%;
+	z-index: 3;
+}
+
+#footTop {
+	top: 154%;
+	z-index: 1;
+	left: 30%;
+}
+
+#footBot {
+	top: 181%;
+	left: 44%;
+	z-index: 1;
+}
+
+#grainyDog {
+	position: absolute;
+	top: 177%;
+	z-index: -1;
+	left: 10%;
+	width: 90%;
+	height: auto;
+	align-content: center;
+	display: inline;
+}
+
+#me_imgs {
+	position: absolute;
+	/*	top: em;*/
+	left: 3em;
+}
+
+.me {
+	position: absolute;
+}
+
+#meLeft {
+	top: 16em;
+	left: 32em;
+	z-index: -4;
+	width: 26.5em;
+	height: 23.5em;
+}
+
+#meRight {
+	top: 17em;
+	left: 32em;
+	/* left: -8%; */
+	width: 25em;
+	/* width: 55em; */
+	/* height: auto; */
+	z-index: -3;
+}
+
+
+/*
+
+#meLeft {
+    top: 32em;
+    left: 1em;
+    z-index: -4;
+    width: 40em;
+}
+#meRight {
+  top: 12.5em;
+  left: 1%;
+  width: 98%;
+  z-index: -4;
+}
+*/
+
+#portfolio {
+	background-color: aliceblue;
+	position: absolute;
+	top: 60%;
+	visibility: hidden;
+	z-index: 5;
+}
