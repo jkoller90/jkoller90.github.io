@@ -6,19 +6,6 @@
 a {
 	background-color: antiquewhite;
 }
-
-body {
-	overflow-x: hidden;
-	visibility: visible;
-	border: 0;
-	margin: 0 !important;
-	border-bottom: 0;
-}
-
-html {
-	height: 100%;
-}
-
 #about {
 	background-color: rgba(178, 127, 76, 1);
 	/*burlywood azure */
@@ -34,6 +21,41 @@ html {
 	width: 1%;
 	height: 40%;
 }
+
+.blue {
+	background-color: rgba(76, 127, 178, 1);
+	color: aquamarine;
+	display: inline;
+	position: absolute;
+	visibility: visible;
+	font-size: 2em;
+	padding: .5em;
+	border: .125em solid black;
+	border-radius: 1em;
+	top: 11em;
+	left: 1em;
+	z-index: 2;
+}
+
+body {
+	overflow-x: hidden;
+	visibility: visible;
+	border: 0;
+	margin: 0 !important;
+	border-bottom: 0;
+}
+
+#cockquiz {
+	top: 72%;
+}
+
+html {
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+
 
 @media (max-width: 505px) {
 	#about {
@@ -67,31 +89,16 @@ html {
 }
 
 #contact {
-	left: 26%;
-	top: 20%;
+    left: 51%;
+    top: 12%;
 	width: 80%;
 	position: absolute;
-/*	color: darksalmon;*/
-	/*	left: -17%;*/
 }
 
 #inspTitle {
 	top: 20em;
 	font-size: 1.2em;
 	color: beige;
-}
-
-.aboutPoint {
-	padding: 0;
-	font-size: 1em;
-	font-weight: 500;
-	display: block;
-}
-
-#tech1 {
-	position: absolute;
-	top: 12em;
-	width: 42%;
 }
 
 #insp1 {
@@ -111,20 +118,7 @@ header {
 	z-index: 2;
 }
 
-.blue {
-	background-color: rgba(76, 127, 178, 1);
-	color: aquamarine;
-	display: inline;
-	position: absolute;
-	visibility: visible;
-	font-size: 2em;
-	padding: .5em;
-	border: .125em solid black;
-	border-radius: 1em;
-	top: 11em;
-	left: 1em;
-	z-index: 2;
-}
+
 
 .orange {
 	background-color: rgba(176, 110, 88, 1);
@@ -244,12 +238,15 @@ iframe {
 	filter: FlipH;
 	-ms-filter: "FlipV";
 }
-.button{
+#buttonMenu{
 	cursor:pointer;
-	top: 40%;
-	position:absolute;
+	top: 50%;
+	left: 80%;
+	position:absolute;	
+}
+.button{
 background-color:white;
-	padding: 1%;
+	padding: 5% 900% 5% 5%;
 	border: 1px solid darksalmon;
 }
 #aboutButton{
@@ -264,19 +261,19 @@ background-color:white;
 
 
 #me_imgs {
-	display:none;
 	position: absolute;
-	top: 31%;
-	left: 44%;
+	top: 35%;
+	z-index: -4;
+	left: 4%;
 }
 
 .me {
 	display: block;
-	width: 60%;
+	width: 15%;
 }
 
 #meLight {
-	width: 70%;
+	width: 35%;
 	z-index: -3;
 }
 
@@ -284,19 +281,28 @@ background-color:white;
 	position: absolute;
 	left: 0;
 	top: -10%;
-	width: 60%;
+	width: 45%;
 	z-index: -4;
 }
 
 @media (max-width: 320px) {
+	.button{
+		font-size: .9em;
+			padding: 5% 160% 5% 5%;
+	}
+	#buttonMenu{
+		lefT: 73%;
+		top: 40%;
+	}
+	#contact{
+		
+	}
 	#headerFrame {
 		width: 22em;
 		height: 4em;
 	}
 	#me_imgs {
-		top: 21%;
-		left: 49%;
-		width: 70%
+
 	}
 }
 
@@ -307,9 +313,6 @@ background-color:white;
 	display: none;
 }
 
-#cockquiz {
-	top: 72%;
-}
 
 #msg {
 	top: 67%;
@@ -318,15 +321,15 @@ background-color:white;
 #portMenu {
 	position: absolute;
 	width: 70%;
-	height: auto%;
-/*	background-color: ;*/
+	height: auto;
 	border: 1px solid darksalmon;
-	top: 50%;
+	top: 28%;
+	background-color: white;
 }
 
 #portTitle {
 	top: 50%;
-	color: white;
+	font-size: 1.2em;
 	display: inline;
 }
 

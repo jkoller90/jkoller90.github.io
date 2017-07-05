@@ -1,7 +1,7 @@
 var resizeEvent = new Event('resize');
 var portfolio = document.getElementById('portMenu');
 
-var i, buttons, classGame;
+var i, buttons, classGame, classWriting, classAbout;
 document.addEventListener("DOMContentLoaded", function (event) {
 	buttons = document.getElementsByClassName('button');
 	classGame = document.getElementsByClassName('game');
