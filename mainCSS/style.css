@@ -245,9 +245,10 @@ iframe {
 	-ms-filter: "FlipV";
 }
 .button{
+	cursor:pointer;
 	top: 40%;
 	position:absolute;
-background-color:antiquewhite;
+background-color:white;
 	padding: 1%;
 	border: 1px solid darksalmon;
 }
@@ -260,13 +261,7 @@ background-color:antiquewhite;
 #cvButton{
 	left: 70%;
 }
-#portfolioFrame {
-	position: aboslute;
-	top: 15em;
-	z-index: -1;
-	width: 33em;
-	height: 33em;
-}
+
 
 #me_imgs {
 	display:none;
@@ -305,13 +300,6 @@ background-color:antiquewhite;
 	}
 }
 
-#portfolio {
-	background-color: aliceblue;
-	position: absolute;
-	top: 60%;
-	visibility: hidden;
-	z-index: 5;
-}
 
 .game {
 	margin-left: 5%;
