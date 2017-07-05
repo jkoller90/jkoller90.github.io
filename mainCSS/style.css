@@ -302,8 +302,8 @@ background-color:white;
 
 
 .game {
-	margin-left: 5%;
-	color: white;
+	margin-left: 2%;
+	color: black;
 	display: none;
 }
 
@@ -317,9 +317,10 @@ background-color:white;
 
 #portMenu {
 	position: absolute;
-	width: 50%;
-	height: 50%;
-	background-color: black;
+	width: 70%;
+	height: auto%;
+/*	background-color: ;*/
+	border: 1px solid darksalmon;
 	top: 50%;
 }
 
