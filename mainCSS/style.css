@@ -213,10 +213,10 @@ iframe {
 
 #headerFrame {
 	position: absolute;
-	left: -.5em;
+	left: 0;
 	top: -7.5em;
-	width: 88em;
-	height: 21.5em;
+	width: 100em;
+	height: 20em;
 	z-index: -5;
 	-moz-transform: scaleY(-1);
 	-o-transform: scaleY(-1);
