@@ -4,6 +4,7 @@ var about = document.getElementById('aboutMenu');
 var i, buttons, classGame, classWriting, classAbout;
 var portFlag = false;
 document.addEventListener("DOMContentLoaded", function (event) {
+	swal("This site is in development; please be careful with resizing the page! Formatting is underway.");
 	buttons = document.getElementsByClassName('button');
 	classGame = document.getElementsByClassName('game');
 	for (i = 0; i < buttons.length; i++) {
