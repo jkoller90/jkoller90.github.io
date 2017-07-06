@@ -7,10 +7,8 @@ a {
 	background-color: antiquewhite;
 }
 #about {
-	background-color: rgba(178, 127, 76, 1);
-	/*burlywood azure */
-	border: .2em solid rgba(76, 127, 228, 1);
-	/* #814621; beige*/
+	background-color: rgba(178, 127, 76, 1);	
+	border: .2em solid rgba(76, 127, 228, 1);	
 	color: aliceblue;
 	position: absolute;
 	visibility: visible;
@@ -52,7 +50,7 @@ body {
 html {
 	height: 100%;
 	overflow-x: hidden;
-	overflow-y: hidden;
+/*	overflow-y: hidden;*/
 }
 
 
