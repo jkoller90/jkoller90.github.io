@@ -264,7 +264,7 @@ background-color:white;
 	position: absolute;
 	top: 35%;
 	z-index: -4;
-	left: 4%;
+	left: 1%;
 }
 
 .me {
@@ -273,7 +273,7 @@ background-color:white;
 }
 
 #meLight {
-	width: 35%;
+	width: 42%;
 	z-index: -3;
 }
 
@@ -320,15 +320,26 @@ background-color:white;
 
 #portMenu {
 	position: absolute;
-	width: 70%;
+	width: 73%;
 	height: auto;
 	border: 1px solid darksalmon;
 	top: 28%;
 	background-color: white;
 }
+#aboutMenu{
+	display: none;
+	position: absolute;
+	width: 73%;
+	height: auto;
+	border: 1px solid darksalmon;
+	top: 28%;
+	background-color: white;
+}
+}
 
 #portTitle {
 	top: 50%;
+	margin-left: 1%;
 	font-size: 1.2em;
 	display: inline;
 }
