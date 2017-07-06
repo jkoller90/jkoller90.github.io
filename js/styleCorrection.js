@@ -2,6 +2,7 @@ var resizeEvent = new Event('resize');
 var portfolio = document.getElementById('portMenu');
 var about = document.getElementById('aboutMenu');
 var i, buttons, classGame, classWriting, classAbout;
+var portFlag = false;
 document.addEventListener("DOMContentLoaded", function (event) {
 	buttons = document.getElementsByClassName('button');
 	classGame = document.getElementsByClassName('game');
@@ -19,18 +20,30 @@ document.addEventListener("DOMContentLoaded", function (event) {
 					classGame[i].style.display = 'none';
 				}
 				portfolio.style.display = 'none';
+				swal('Under development!');
 			}
 			else if (this.id == 'cvButton') {
 				for (i = 0; i < classGame.length; i++) {
 					classGame[i].style.display = 'none';
 				}
 				portfolio.style.display = 'none';
+				swal('Under development!');
 			}
 			else if (this.id == 'portButton') {
-				for (i = 0; i < classGame.length; i++) {
-					classGame[i].style.display = 'block';
+				if (!portFlag) {
+					portFlag = true;
+					for (i = 0; i < classGame.length; i++) {
+						classGame[i].style.display = 'block';
+					}
+					portfolio.style.display = 'inline';
 				}
-				portfolio.style.display = 'inline';
+				else {
+					portFlag = false;
+					for (i = 0; i < classGame.length; i++) {
+						classGame[i].style.display = 'none';
+					}
+					portfolio.style.display = 'none';
+				}
 			}
 		}
 	}
