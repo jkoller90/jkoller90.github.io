@@ -27,10 +27,10 @@ boutButton {
 
 #aboutMenu {
 	position: absolute;
-	width: 53%;
+	width: 55%;
 	height: auto;
 	border: 1px solid darksalmon;
-	top: 44%;
+	top: 33%;
 	background-color: white;
 }
 
@@ -118,7 +118,7 @@ body {
 	display: none;
 }
 
-hefader {
+header {
 	text-align: center;
 	color: white;
 	position: absolute;
