@@ -1,70 +1,132 @@
+@media(max-width: 744px) {
+  #aboutMenu{
+    left: 8%;
+    top:55%;
+    font-size:90%;
+  }
+  #portMenu {
+    top: 33%;
+    width: 44%;
+  }
+}
+
+@media(max-width:615px) {
+  #meDark {
+    top: 50%;
+    left: 20%;
+  }
+}
+
 @media (max-width: 525px) {
-	.blue {
-		font-size: .85em;
-		font-weight: 600;
-		padding-top: .2em;
-		padding-bottom: .2em;
-	}
+    #aboutMenu{
+    width: 77%;
+    font-size:84%;
+  }
+  .blue {
+    font-size: .85em;
+    font-weight: 600;
+    padding-top: .2em;
+    padding-bottom: .2em;
+  }
+  #contact {
+    top: 37%;
+    left: 65%;
+  }
+  #meDark {
+    top: 40%;
+    left: 12.5%;
+  }
+  #meLight {
+    top: 17.5%;
+    left: 10%;
+  }
+  #portMenu {
+    top: 33%;
+    width: 55.5%;
+  }
 }
 
 @media (max-width: 480px) {
-	.blue {
-		font-size: .8em;
-	}
+  
+  .blue {
+    font-size: .8em;
+  }
+  #contact {
+    /*    left: 64%;*/
+  }
+  #meDark {
+    left: 7.87%;
+  }
 }
 
 @media (max-width: 453px) {
-	.blue {
-		font-size: .7em;
-	}
+  .blue {
+    font-size: .7em;
+  }
+  .black {
+    left: 35%;
+  }
+  #contact {
+/*    left: 6%;*/
+  }
+}
+
+@media (max-width: 450px) {
+  .button {
+    font-size: .9em;
+    padding: 5% 160% 5% 5%;
+  }
+  #buttonMenu {
+    lefT: 73%;
+    top: 40%;
+  }
+  #contact {
+    top: 17%;
+/*    left:;*/
+  }
+  #headerFrame {
+    width: 22em;
+    height: 4em;
+  }
+  #meLight {
+    width: 65%;
+  }
+  #meDark {
+    widtH: 62%;
+  }
+  #portMenu {
+    width: 66%;
+  }
 }
 
 @media (max-width: 402px) {
-	.blue {
-		font-size: .65em;
-		margin-top: .2em;
-	}
+  .blue {
+    font-size: .65em;
+    margin-top: .2em;
+  }
+  #portMenu {
+    width: 67%;
+  }
 }
 
 @media (max-width: 380px) {
-	.blue {
-		font-size: .7em;
-	}
+  #aboutMenu{
+    width: 88%;
+    left: 4%;
+  }
+  .blue {
+    font-size: .7em;
+  }
+  #portMenu {
+    width: 72%;
+  }
 }
 
-@media (max-width: 320px) {
-	.black {
-		font-size: 1.25em;
-	}
-}
-
-@media (max-width: 273px) {
-	.black {
-		font-size: 1.1em;
-	}
+@media (max-width: 340px) {
+  .black {
+    left: 25%;
+  }
 }
 
 
-@media (max-width: 450px) {
-	.button {
-		font-size: .9em;
-		padding: 5% 160% 5% 5%;
-	}
-	#buttonMenu {
-		lefT: 73%;
-		top: 40%;
-	}
-	#contact {
-		top: 17%;
-	}
-	#headerFrame {
-		width: 22em;
-		height: 4em;
-	}
-	#meLight {
-		width: 65%;
-	}
-	#meDark {
-		widtH: 62%;
-	}
-}
+/*645*/

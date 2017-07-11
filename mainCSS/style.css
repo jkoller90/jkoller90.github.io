@@ -30,7 +30,8 @@ boutButton {
 	width: 55%;
 	height: auto;
 	border: 1px solid darksalmon;
-	top: 33%;
+    left: 22%;
+	top: 66%;
 	background-color: white;
 }
 
@@ -55,12 +56,14 @@ boutButton {
 }
 
 .black {
-	top: 1em;
-	width: 7em;
-	left: 2.5%;
+    top: 1.66em;
+	width: 100%;
+  text-align: left;
+/*	left: 1.25%;*/
 	background-color: rgb(31, 209, 209);
 	color: rgb(0, 102, 204);
-	font-size: 2.5em;
+/*	font-size: 2.5em;*/
+    font-size: 185%;
 	display: inline;
 	position: absolute;
 	visibility: visible;
@@ -90,8 +93,8 @@ body {
 }
 
 #contact {
-	left: 51%;
-	top: 12%;
+	left: 71%;
+	top: 33%;
 	width: 80%;
 	position: absolute;
 }
@@ -132,7 +135,8 @@ header {
 #headerFrame {
 	position: absolute;
 	left: 0;
-	width: 50%;
+/*	width: 50%;*/
+  width: 100%;
 	height: auto;
 	z-index: -5;
 	-moz-transform: scaleY(-1);
@@ -217,8 +221,9 @@ iframe {
 }
 
 #portMenu {
+    font-size: 95%;
 	position: absolute;
-	width: 53%;
+	width: 39%;
 	height: auto;
 	border: 1px solid darksalmon;
 	top: 44%;

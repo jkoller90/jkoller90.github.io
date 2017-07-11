@@ -3,6 +3,8 @@ var portfolio = document.getElementById('portMenu');
 var about = document.getElementById('aboutMenu');
 var i, buttons, classGame, classWriting, classAbout;
 var portFlag = false;
+
+//window.onresize = function(){ location.reload(); }
 document.addEventListener("DOMContentLoaded", function (event) {
   //	swal("This site is in development; please be careful with resizing the page! Formatting is underway.");
   buttons = document.getElementsByClassName('button');
@@ -28,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           for (i = 0; i < classAbout.length; i++) {
             classAbout[i].style.display = 'block';
           }
-          portfolio.style.display = 'inline';
+//          portfolio.style.display = 'inline';
         } else {
           portFlag = false;
           for (i = 0; i < classAbout.length; i++) {
