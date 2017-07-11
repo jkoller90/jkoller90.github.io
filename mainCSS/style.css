@@ -33,6 +33,7 @@ boutButton {
     left: 22%;
 	top: 66%;
 	background-color: white;
+    margin-bottom: 4%;
 }
 
 .classAbout {
@@ -102,19 +103,12 @@ body {
 #cockquiz {
 	top: 72%;
 }
-
-#footTop {
-	top: 154%;
-	z-index: 1;
-	left: 30%;
+#footer{
+  position:static;
+/*  margin-top: 75%;*/
+  margin-top: 60em;
+  left: 4%;
 }
-
-#footBot {
-	top: 181%;
-	left: 44%;
-	z-index: 1;
-}
-
 .game {
 	margin-left: 2%;
 	color: black !important;

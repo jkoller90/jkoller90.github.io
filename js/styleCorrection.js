@@ -4,7 +4,7 @@ var about = document.getElementById('aboutMenu');
 var i, buttons, classGame, classWriting, classAbout;
 var portFlag = false;
 
-//window.onresize = function(){ location.reload(); }
+window.onresize = function(){ location.reload(); }
 document.addEventListener("DOMContentLoaded", function (event) {
   //	swal("This site is in development; please be careful with resizing the page! Formatting is underway.");
   buttons = document.getElementsByClassName('button');
