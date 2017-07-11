@@ -5,6 +5,7 @@
 
 a {
 	background-color: antiquewhite;
+  color: black !important;
 }
 
 #about {
@@ -20,20 +21,25 @@ a {
 	width: 1%;
 	height: 40%;
 }
-
-#aboutButton {
+boutButton {
 	left: 37%;
 }
 
 #aboutMenu {
-	display: none;
 	position: absolute;
-	width: 73%;
+	width: 53%;
 	height: auto;
 	border: 1px solid darksalmon;
-	top: 28%;
+	top: 44%;
 	background-color: white;
 }
+
+.classAbout {
+	margin-left: 2%;
+	color: black !important;
+	display: none;
+}
+
 
 #buttonMenu {
 	cursor: pointer;
@@ -108,11 +114,11 @@ body {
 
 .game {
 	margin-left: 2%;
-	color: black;
+	color: black !important;
 	display: none;
 }
 
-header {
+hefader {
 	text-align: center;
 	color: white;
 	position: absolute;
@@ -212,13 +218,12 @@ iframe {
 
 #portMenu {
 	position: absolute;
-	width: 73%;
+	width: 53%;
 	height: auto;
 	border: 1px solid darksalmon;
-	top: 28%;
+	top: 44%;
 	background-color: white;
 }
-
 
 }
 #portTitle {
