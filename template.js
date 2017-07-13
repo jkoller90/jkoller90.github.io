@@ -1,0 +1,1 @@
+//document.getElementById('some_frame_id').contentWindow.location.reload();
