@@ -1,0 +1,40 @@
+img{
+  height: 50%;
+  width: 50%;
+}
+
+.aboutButton{
+  color:blue;
+  background-color:aquamarine;
+}
+.portButton{
+  color:blue;
+  background-color:aquamarine;
+}
+
+
+
+
+#frontEnd{
+  display:none;
+}
+#redStripe{
+ display:none;
+}
+#UnityUnreal{
+  display:none;
+}
+
+#aboutMe{
+  display:none;
+}
+.aboutMe{
+  display:none;
+}
+/*
+#WritingSamples{
+  display:none;
+}
+#VideoPhotography{
+  display:none;
+}*/
