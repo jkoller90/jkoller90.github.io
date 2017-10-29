@@ -1,0 +1,13 @@
+<a href='https://www.youtube.com/watch?v=3IQDwl7IAXI'> Source </a><br>
+"[Ideal patch is 5.6.1p2]" <br>
+1. Flip normals in Ico Sphere in Blender (add Ico, then increase subdivisions to 6 and generate UV's in bottom left menu)<br>
+2. Press W and then Flip Normals<br>
+3. Bring sphere into Unity and change ((all scale dimensions to 5 in 5.6.1p2)) <br>
+4. Put camera to 0. <br>
+5. Go to sphere, add component: Video Player <br> 
+At this point, there's no audio and the material is wrong because it is influenced by the light around it <br>
+<br>
+6. Add component to sphere called Audio Source and then under Video Player, select audio source with its own name 
+(e.g. ico sphere normals inside was the name of my 3d object so that's the name of the audio source in my project) <br>
+7. Right click, create, material: <br>
+8. Set shader to unlit texture <br>
