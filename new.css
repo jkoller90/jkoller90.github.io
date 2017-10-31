@@ -1,6 +1,7 @@
 img{
   height: 50%;
   width: 50%;
+	margin-left: 30%;
 }
 
 .aboutButton{
@@ -12,24 +13,28 @@ img{
   background-color:aquamarine;
 }
 
+#contact{
+	background-color:antiquewhite;
+	font-family:monospace;
+}
 
 
 
 #frontEnd{
-  display:none;
+/*  display:none;*/
 }
 #redStripe{
- display:none;
+/* display:none;*/
 }
 #UnityUnreal{
-  display:none;
+/*  display:none;*/
 }
 
 #aboutMe{
-  display:none;
+/*  display:none;*/
 }
 .aboutMe{
-  display:none;
+/*  display:none;*/
 }
 /*
 #WritingSamples{

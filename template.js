@@ -1,5 +1,4 @@
-//document.getElementById('some_frame_id').contentWindow.location.reload();
-// $('html').animate({scrollTop: $('.aboutMe').offset().top)}, 'slow');
+/*
 $('#frontEndButton').on('click',function(){
   $('#frontEnd').css('display','block');
   $('html, body').animate({
@@ -31,3 +30,4 @@ $('#WritingSamplesButton').click(function(){
 $('#VideoPhotographyButton').click(function(){
   $('#VideoPhotography').css('display','block');
 });
+*/

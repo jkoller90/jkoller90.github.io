@@ -6,6 +6,7 @@
 a {
 	background-color: antiquewhite;
   color: black !important;
+	cursor: auto !important;
 }
 
 #about {
@@ -44,7 +45,7 @@ boutButton {
 
 
 #buttonMenu {
-	cursor: pointer;
+/*	cursor: pointer;*/
 	top: 50%;
 	left: 80%;
 	position: absolute;
@@ -98,11 +99,14 @@ body {
 	top: 33%;
 	width: 80%;
 	position: absolute;
+/*	font-size: 1em;*/
 }
 
 #cockquiz {
 	top: 72%;
 }
+
+
 #footer{
   position:static;
 /*  margin-top: 75%;*/
@@ -165,6 +169,8 @@ iframe {
 	position: absolute;
 	z-index: 0;
 }
+
+
 
 #me_imgs {
 	position: absolute;
