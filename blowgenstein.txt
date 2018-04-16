@@ -1,0 +1,15 @@
+ began Fall 2017 with an idea to be a gameplay programmer.
+
+What I found as I peered into what turned into a very isolated personal abyss was the excellent work by Jonathan Blow. 
+Blow is an independent game developer who designed and programmed Braid and The Witness.
+What first drew me to his work was his outspoken commitment to what I would term a very humanistic awareness of human-computer interaction which hinged on abrasive to the ears of more commercially-oriented developers. Some of his targets included free-to-play mobile Skinner boxes as well as perhaps more benign escapist titles.
+
+Secondly, I am very intrigued by his approach to programming the immensely complex state machines that games are. 
+By extension, I'm intrigued by his programming language, Jai.
+
+Third, I propose to conclude that there are worthwhile parallels between Jai and Ludwig Wittgenstein's <logic> which inverts an object-oriented perspective of the world itself.
+>By extension, Wittgenstein takes aim at set theory. 
+
+inheritance 
+5-6 render passes 
+
