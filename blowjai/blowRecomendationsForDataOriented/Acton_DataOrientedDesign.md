@@ -1,49 +1,6 @@
 # Data-Oriented Design and C++
-Engine Director 
 
-
-Engine team builds runtime systems:
-
-rendering
-animation and gestures
-streaming
-cinematics
-vfx
-post-fx
-navigation
-localization
-
-
-dev tools:
-
-level creation
-lighting
-material editing
-vfx creation
-animation/state machine editing
-visual scripting
-scene painting
-cinematics creation
-
-
-				[side-note] <b>Values</b>
-				Hard deadlines because of million-dollar budgets for marketing
-				Soft realtime performance requirements (Soft=33ms / ns is the scale )
-				Usability
-				Performance in general
-				Maintinence in general for post-launch
-				Debugability 
-
-				<b>languages used</b>
-				C
-				C++ is 70% 
-				Asm (most preferred)
-				Perl
-				JS
-				C#
-				Shaders for pixels, vertices, geometry, compute shader
-
-### cool points
+### Games design is similar to building the Mars Rover
 Games are like Mars Rover in what's generally avoided:
 > Exceptions are turned off 
 > Templates are avoided 
@@ -96,7 +53,7 @@ By extension, solving problems you don't have complicates the problems that are 
 	>>This further promotes the costly implication that information represented in the data is related to the transformations executed upon it (Acton, 2014).
 
 
-	In real life a chair is a chair but it's only superficial in terms of object-oriented coding because it's an abstracted representation. We cannot write the logic such that it can maintain an abstracted reconstruction/simulated virtual object as an atomic fact with respect to the compiler (Acton, 2014).
+	In real life a chair is a chair but it's only superficial in terms of object-oriented coding because it's an abstracted representation. We cannot write the logic such that it can maintain an abstracted reconstruction/simulated virtual object as an atomic fact with respect to the wy the compiler treats the code (Acton, 2014).
 
 In general, world modeling leads to <b><em>monolithic</em></b>, unrelated data structures and transforms (Acton, 2014). 
 It's a problem of being idealistic with one's design decisions (Acton, 2014).
@@ -224,5 +181,88 @@ Consider further the notion that the count of each instance is 32, one can then 
 		  }
 		}
 
-### Example (3) : booleans in structs:
+### Example (3) : booleans in structs: a case in extremely low information density
+Low information density: this is a waste of at least 7 bits. Therefore there's an extra ~200 cycles to read this value. 
 
+
+### Example (4) : bools for last-minute decision making 
+[side notes about another boolean example:] 
+the next few minutes discusses MSVC compiler (naive transformation through a function that returns boolean)
+Clang
+
+	int Foo::Bar(int count){
+		int value = 0;
+		for ( int i =0 ; i < count ; ++i){
+			if(m_NeedParentUpdate){
+				value++; 						
+			}
+		}
+		return (value);
+	}
+
+### Example (5) : a slightly more complex example which is very predictable in production
+
+	int Foo::Bar(int count){
+		int value = 0;
+		for ( int i =0 ; i < count ; ++i){
+			if(m_NeedParentUpdate){
+				value++; 						
+			}
+		}
+		return (value);
+	}
+
+		int AnotherFoo::AnotherBar(int count){
+		int value = 0;
+		for ( int i =0 ; i < count ; ++i){
+			if(m_NeedParentUpdate){
+				value++; 						
+			}
+		}
+		return (value);
+	}
+
+
+
+
+
+[side-notes] 
+-Acton is an Engine Director
+
+<b>The components required for a robust game development system</b>
+<ul>Engine team builds runtime systems:</ul>
+rendering
+animation and gestures
+streaming
+cinematics
+vfx
+post-fx
+navigation
+localization
+
+<ul>dev tools:</ul>
+level creation
+lighting
+material editing
+vfx creation
+animation/state machine editing
+visual scripting
+scene painting
+cinematics creation
+
+[side-note] <b>Values</b>
+Hard deadlines because of million-dollar budgets for marketing
+Soft realtime performance requirements (Soft=33ms / ns is the scale )
+Usability
+Performance in general
+Maintinence in general for post-launch
+Debugability 
+
+<b>languages used</b>
+C
+C++ is 70% 
+Asm (most preferred)
+Perl
+JS
+C#
+Shaders for pixels, vertices, geometry, compute shader
