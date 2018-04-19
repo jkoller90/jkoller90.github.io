@@ -4,11 +4,6 @@ watch?v=fHNmRkzxHWs
 Acton, Mike "Data-Oriented Design in C++" by Acton (2014)
 watch?v=rX0ItVEVjHc
 
-
-
-
-
-
 Practical extractions:
 
 Acton 2014:
@@ -23,3 +18,5 @@ Llopis 2009:
 Caruth 2014: 
 Just use vectors instead of other standard queues and stacks.
 Use open addresses for key-value pairs instead of buckets for maps. 
+
+

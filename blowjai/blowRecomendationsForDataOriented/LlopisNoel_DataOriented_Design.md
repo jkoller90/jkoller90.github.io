@@ -1,15 +1,15 @@
 http://gamesfromwithin.com/data-oriented-design
 
-Data-Oriented Design (Or Why You Might Be Shooting Yourself in The Foot With OOP) by LLopis, 2009 
+Data-Oriented Design (Or Why You Might Be Shooting Yourself in The Foot With OOP) by Llopis, 2009 
 
 "The culprit? Random memory access patterns and constant cache misses. "
 
 ### With regards to Procedural Programming and OOP:
 "Notice that the main focus of both approaches is code: plain procedures (or functions) in one case, and grouped code associated with some internal state in the other. Data-oriented design shifts the perspective of programming from objects to the data itself: The type of the data, how it is laid out in memory, and how it will be read and processed in the game."
-Can be thought of as <b>particle-driven programming</b>
+This can be thought of as <b>particle-driven programming</b> (Llopis, 2009). 
 
 ### Clearing up confusion
-"A data-driven game is usually a game that exposes a large amount of functionality outside of code and lets the data determine the behavior of the game." This is orthogonal to data-oriented and so this is applicable to any type of programming approach. 
+"A data-driven game is usually a game that exposes a large amount of functionality outside of code and lets the data determine the behavior of the game." This is orthogonal to data-oriented and so this is applicable to any type of programming approach (Llopis, 2009).
 
 ## Ideal data
 What's the format?

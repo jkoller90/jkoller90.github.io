@@ -120,7 +120,7 @@ Object-oriented and procedural-oriented coding solve problems by beginning with 
 5)  means of testing 
 
 
-### Example: a table full of key-value pairs, which is common in code-first design
+### Example (1): a table full of key-value pairs, which is common in code-first design
 The problem is that keys are not associated with the values in memory. 
 
 In most cases, we are not dealing with the values but are concerned with the keys in our mental models. 
@@ -136,3 +136,93 @@ and when the value is looked up it will likely result in a cache miss (Acton, 20
 
 
 ## Solution: solve for the most common case first! 
+
+#### solution times for context using AMD Piledriver (by Agner Fog, T Uni of Denmark, 1996-2014)
+
+<b>square-roots:</b>
+<ul>Instruction</ul> 					<ul>Latency</ul>
+SQRTSS/PS 								13-15
+VSQRTPS									14-15
+SQRTSD/PD 							      24-26
+VSQRTPD									24-26
+
+<b>transcendental calculations</b>
+<em>on the more expensive side...</em>:
+<ul>Instruction</ul> 					<ul>Latency</ul>
+FSIN										60-146
+FCOS 										~154
+FSINCOS									86-141
+FPTAN 									86-204
+FPATAN									60-352
+
+
+### A more concrete example (2): float math operations loaded onto an update function
+The ratio of executions that are peripheral compared to those that are required to transform to the data is about ten-to-one (Acton, 2014). 
+(from http://deplinenoise.wordpress.com/2013/12/28/optimizable-code/)
+
+
+		class GameObject{
+			float m_Pos[2]; float m_Velocity[2]; 
+			char m_Name[32];
+			Model* m_Model;
+			float m_Foo;
+
+			void UpdateFoo(float f){
+			float mag = sqrtf(
+				m_Velocity[0] * m_Velocity[0] +  // (1) memory read
+				m_Velocity[1] * m_Velocity[1]);   // (2) float math
+				m_Foo += mag * f; 			    // (3) memory r/m/w, float math
+			}
+		};
+
+<b>Sound logic</b>
+Typically, an L2 cache miss has a window of 150 cycles. 
+A square root costs 13-26 cycles based on the aforementioned Piledriver system. Essentially, though, this code roughly equates to four steps per update tick (which occurs on each frame in a typical game engine): (1) access to m_Velocity and m_foo variables cost about 150 cycles each, (2) float math costs 10 cycles, and (3) float math costs about 30 cycles. In summation, this results in a total of about 340 cycles, 300 of which are essentially peripheral operations to the data's transformation.  
+
+A suggested fix reads in the following manner:
+
+		struct FooUpdateIn {
+		  float m_Velocity[2];
+		  float m_Foo;
+		};
+
+		struct FooUpdateOut {
+		  float m_Foo;
+		};
+
+		void UpdateFoos(const FooUpdateIn* in, size_t count, FooUpdateOut* out, float f)
+		{
+		  for (size_t i = 0; i < count; ++i) {
+		    float mag = sqrtf(
+		      in[i].m_Velocity[0] * in[i].m_Velocity[0] +
+		      in[i].m_Velocity[1] * in[i].m_Velocity[1]);
+		      out[i].m_Foo = in[i].m_Foo + mag * f;
+		  }
+		}
+
+This is a refined block which takes advantage of memory locality within the cache. In this new version, a cache misses once every fifth iteration given FooUpdateIn is 12 bytes; about 5.3 of these variables can be aligned on a single cache line. 
+
+Consider further the notion that the count of each instance is 32, one can then produce a value of objects that fit with the architecture: 
+
+
+		struct FooUpdateIn { 	
+		  float m_Velocity[2];
+		  float m_Foo;
+		}; 						// 12 bytes * count(32) == 384 == 64 * 6 
+
+		struct FooUpdateOut {
+		  float m_Foo;
+		};						//  4 bytes * count(32) == 128 == 64 * 2 
+
+		void UpdateFoos(const FooUpdateIn* in, size_t count, FooUpdateOut* out, float f)
+		{
+		  for (size_t i = 0; i < count; ++i) {
+		    float mag = sqrtf(
+		      in[i].m_Velocity[0] * in[i].m_Velocity[0] +		// 6 / 32 = ~5.33 loop/cache line 
+		      in[i].m_Velocity[1] * in[i].m_Velocity[1]);		// Sqrt + math = ~40 * 5.33 = 213.33 cycles/cache line 
+		      out[i].m_Foo = in[i].m_Foo + mag * f;			// + streaming prefetch bonus (?)
+		  }
+		}
+
+### Example (3) : booleans in structs:
+
