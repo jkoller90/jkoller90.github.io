@@ -3,11 +3,17 @@
 ### Games design is similar to building the Mars Rover
 Games are like Mars Rover in what's generally avoided:
 > Exceptions are turned off 
+
 > Templates are avoided 
+
 > Iostream are avoided
+
 > Multiple inheritance is out
+
 > Operator overloading is avoided 
+
 > RTTI/Runtime type information 
+
 > STL not used because it doesn't solve a lot of the problems
 
 And what's commonly used across both development fields:
@@ -49,25 +55,31 @@ By extension, solving problems you don't have complicates the problems that are 
 	>No: hardware is the platform and so each set requires a different solution between 6502, x86, ARM, CELL, PPC, ATI 5870 
 
 2) Code should be architected based on a model of the world that can be imagined. 
-	>No: this means that hiding the data is somehow implicit. But this convolutes maintenance and understanding properties of the data (Acton, 2014).
-	>>This further promotes the costly implication that information represented in the data is related to the transformations executed upon it (Acton, 2014).
+
+>No: this means that hiding the data is somehow implicit. But this convolutes maintenance and understanding properties of the data (Acton, 2014).
+
+>This further promotes the costly implication that information represented in the data is related to the transformations executed upon it (Acton, 2014).
 
 
-	In real life a chair is a chair but it's only superficial in terms of object-oriented coding because it's an abstracted representation. We cannot write the logic such that it can maintain an abstracted reconstruction/simulated virtual object as an atomic fact with respect to the wy the compiler treats the code (Acton, 2014).
+>In real life a chair is a chair but it's only superficial in terms of object-oriented coding because it's an abstracted representation. We cannot write the logic such that it can maintain an abstracted reconstruction/simulated virtual object as an atomic fact with respect to the way the compiler treats the code (Acton, 2014).
 
 In general, world modeling leads to <b><em>monolithic</em></b>, unrelated data structures and transforms (Acton, 2014). 
 It's a problem of being idealistic with one's design decisions (Acton, 2014).
 
 [I may be beating a dead horse with this note:]
 Object-oriented and procedural-oriented coding solve problems by beginning with non-sequitors relevant to their solutions (Acton, 2014).
-->Engineering by analogy
-->Engineering via storytelling
+
+_Engineering by analogy
+
+_Engineering via storytelling
 
  3) Code is more important than the data it carries. The only purpose of code is to transform the data; our responsibility is to the data not the code. 
  
  [beating the dead horse again]
-->Only write code that has provable value. 
-->Future-proofing is an imaginary ideal (Acton, 2014)
+
+_Only write code that has provable value. 
+
+_Future-proofing is an imaginary ideal (Acton, 2014)
 
 ### These lies cause 5 deficiencies:
 1)  performance
@@ -118,19 +130,19 @@ The ratio of executions that are peripheral compared to those that are required 
 (from http://deplinenoise.wordpress.com/2013/12/28/optimizable-code/)
 
 
-		class GameObject{
-			float m_Pos[2]; float m_Velocity[2]; 
-			char m_Name[32];
-			Model* m_Model;
-			float m_Foo;
+	class GameObject{
+	  float m_Pos[2]; float m_Velocity[2]; 
+	  char m_Name[32];
+	  Model* m_Model;
+	  float m_Foo;
 
-			void UpdateFoo(float f){
-			float mag = sqrtf(
-				m_Velocity[0] * m_Velocity[0] +  // (1) memory read
-				m_Velocity[1] * m_Velocity[1]);   // (2) float math
-				m_Foo += mag * f; 			    // (3) memory r/m/w, float math
-			}
-		};
+	  void UpdateFoo(float f){
+	  float mag = sqrtf(
+	    m_Velocity[0] * m_Velocity[0] +  // (1) memory read
+	    m_Velocity[1] * m_Velocity[1]);   // (2) float math
+	    m_Foo += mag * f; 	  // (3) memory r/m/w, float math
+	   }
+	};
 
 <b>Sound logic</b>
 Typically, an L2 cache miss has a window of 150 cycles. 
@@ -138,25 +150,25 @@ A square root costs 13-26 cycles based on the aforementioned Piledriver system. 
 
 A suggested fix reads in the following manner:
 
-		struct FooUpdateIn {
-		  float m_Velocity[2];
-		  float m_Foo;
-		};
+	struct FooUpdateIn {
+	  float m_Velocity[2];
+	  float m_Foo;
+	};
 
-		struct FooUpdateOut {
-		  float m_Foo;
-		};
+	struct FooUpdateOut {
+	  float m_Foo;
+	};
 
-		void UpdateFoos(const FooUpdateIn* in, size_t count, FooUpdateOut* out, float f)
-		{
-		  for (size_t i = 0; i < count; ++i) {
-		    float mag = sqrtf(
-		      in[i].m_Velocity[0] * in[i].m_Velocity[0] +
-		      in[i].m_Velocity[1] * in[i].m_Velocity[1]);
-		      out[i].m_Foo = in[i].m_Foo + mag * f;
-		  }
-		}
-
+	void UpdateFoos(const FooUpdateIn* in, size_t count, FooUpdateOut* out, float f)
+	{
+	  for (size_t i = 0; i < count; ++i) {
+	    float mag = sqrtf(
+	      in[i].m_Velocity[0] * in[i].m_Velocity[0] +
+	      in[i].m_Velocity[1] * in[i].m_Velocity[1]);
+	      out[i].m_Foo = in[i].m_Foo + mag * f;
+	  }
+	}
+ 
 This is a refined block which takes advantage of memory locality within the cache. In this new version, a cache misses once every fifth iteration given FooUpdateIn is 12 bytes; about 5.3 of these variables can be aligned on a single cache line. 
 
 Consider further the notion that the count of each instance is 32, one can then produce a value of objects that fit with the architecture: 
@@ -165,19 +177,19 @@ Consider further the notion that the count of each instance is 32, one can then 
 		struct FooUpdateIn { 	
 		  float m_Velocity[2];
 		  float m_Foo;
-		}; 						// 12 bytes * count(32) == 384 == 64 * 6 
+		}; 	// 12 bytes * count(32) == 384 == 64 * 6 
 
 		struct FooUpdateOut {
 		  float m_Foo;
-		};						//  4 bytes * count(32) == 128 == 64 * 2 
+		};	//  4 bytes * count(32) == 128 == 64 * 2 
 
 		void UpdateFoos(const FooUpdateIn* in, size_t count, FooUpdateOut* out, float f)
 		{
 		  for (size_t i = 0; i < count; ++i) {
 		    float mag = sqrtf(
-		      in[i].m_Velocity[0] * in[i].m_Velocity[0] +		// 6 / 32 = ~5.33 loop/cache line 
-		      in[i].m_Velocity[1] * in[i].m_Velocity[1]);		// Sqrt + math = ~40 * 5.33 = 213.33 cycles/cache line 
-		      out[i].m_Foo = in[i].m_Foo + mag * f;			// + streaming prefetch bonus (?)
+		      in[i].m_Velocity[0] * in[i].m_Velocity[0] +	  // 6 / 32 = ~5.33 loop/cache line 
+		      in[i].m_Velocity[1] * in[i].m_Velocity[1]);	  // Sqrt + math = ~40 * 5.33 = 213.33 cycles/cache line 
+		      out[i].m_Foo = in[i].m_Foo + mag * f;		  // + streaming prefetch bonus (?)
 		  }
 		}
 
@@ -212,7 +224,7 @@ Clang
 		return (value);
 	}
 
-		int AnotherFoo::AnotherBar(int count){
+	int AnotherFoo::AnotherBar(int count){
 		int value = 0;
 		for ( int i =0 ; i < count ; ++i){
 			if(m_NeedParentUpdate){
@@ -224,45 +236,3 @@ Clang
 
 
 
-
-
-[side-notes] 
--Acton is an Engine Director
-
-<b>The components required for a robust game development system</b>
-<ul>Engine team builds runtime systems:</ul>
-rendering
-animation and gestures
-streaming
-cinematics
-vfx
-post-fx
-navigation
-localization
-
-<ul>dev tools:</ul>
-level creation
-lighting
-material editing
-vfx creation
-animation/state machine editing
-visual scripting
-scene painting
-cinematics creation
-
-[side-note] <b>Values</b>
-Hard deadlines because of million-dollar budgets for marketing
-Soft realtime performance requirements (Soft=33ms / ns is the scale )
-Usability
-Performance in general
-Maintinence in general for post-launch
-Debugability 
-
-<b>languages used</b>
-C
-C++ is 70% 
-Asm (most preferred)
-Perl
-JS
-C#
-Shaders for pixels, vertices, geometry, compute shader
