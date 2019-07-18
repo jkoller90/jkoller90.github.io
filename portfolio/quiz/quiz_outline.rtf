@@ -1,0 +1,44 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red16\green60\blue192;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Red Stripe Trivia Quiz Game (proper name to be determined) \
+\
+*Meant to be portrait-only \
+\
+//// //// //// //// //// //// //// //// //// //// //// //// //// //// //// //// \
+Basic requirements\
+1. Displays questions which will be answered by tapping or clicking on the right answer.\
+2. Scoreboard and progress bar at the top \
+3. \'93Back\'94 button at top left\
+4. On answering right answer, the selected answer stays highlighted and a \'93Next\'94 button appears after a timeout, which simulates the program processing the answer for UX purposes.\
+5. Else, after a timeout, an alert displays telling the user to try again. \
+6. When all questions are completed, a results page is displayed. This has yet to be completed along with the introductory splash screen. \
+\
+//// //// //// //// //// //// //// //// //// //// //// //// //// //// //// //// \
+questions.js\
+\
+1. Insert JSON or CSV to be Transferred to JSON. This is currently represented by questions.js.\
+	a. There is a directory called csv_2_json which contains the front-end for a conversion script if 	needed. \
+\
+\
+//// //// //// //// //// //// //// //// //// //// //// //// //// //// //// //// \
+quiz.js\
+\
+1. Appends randomized set of 4 questions from questions.js onto div#quiz in a (void) function renderQuiz which is a function for readability. (Each question is given display:none on initialization).\
+\
+	a.This blocks reuse of any questions by use of collections with index check in for-loop; further 	elaboration of current implementation within the (String) function getRandomOrder in the 	comments of	this Repl: {\field{\*\fldinst{HYPERLINK "https://repl.it/GZVR/1"}}{\fldrslt 
+\f1\fs26 \cf2 \expnd0\expndtw0\kerning0
+\ul \ulc2 https://repl.it/GZVR/1}}
+\f1\fs26 \cf2 \expnd0\expndtw0\kerning0
+\ul \ulc2 .\
+\
+	
+\f0\fs24 \cf0 \kerning1\expnd0\expndtw0 \ulnone b. Choices rendered are also randomized using the same function.\
+\
+2. Contains click handlers which includes blocking for multiple simultaneous choices; it looks sloppy if multiple choices are highlighted concurrently. \
+\
+3. Public void move() which controls the progress bar. \
+	}

@@ -1,0 +1,25 @@
+CTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CSV to JSON</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p id="heading">CSV to JSON Converter</p>
+    <p class="small"><a href="http://jsfiddle.net/sturtevant/vUnF9/" target="_blank">JSON to CSV Converter</a>
+    <hr />
+    <p>Paste Your CSV Here:</p>
+    <textarea id="csv" class="text">"Id","UserName"
+"1","Sam Smith"
+"2","Fred Frankly"
+"1","Zachary Zupers"</textarea>
+    <br />
+    <button id="convert">Convert to JSON</button>
+    &nbsp;&nbsp;
+    <button id="download">Download JSON</button>
+    <textarea id="json" class="text"></textarea>
+    <p>Based on code posted <a href="http://www.bennadel.com/blog/1504-Ask-Ben-Parsing-CSV-Strings-With-Javascript-Exec-Regular-Expression-Command.htm" target="_blank">here on Ben Nadel's blog</a></p>
+	<script src="script.js"></script>
+</body>
+</html>
+

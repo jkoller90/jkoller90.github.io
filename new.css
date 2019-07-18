@@ -1,0 +1,69 @@
+/*@font-face {
+  font-family: SansForgetica;
+  src: url('SansForgetica-Regular.woff') format("woff");
+}*/
+
+
+@font-face {
+font-family: 'Sans Forgetica Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Sans Forgetica Regular'), url('SansForgetica-Regular.woff') format('woff');
+}
+
+
+h2{
+  font-family: "Sans Forgetica Regular";
+  font-size: 50px;
+}
+
+
+img{
+  height: 50%;
+  width: 50%;
+}
+
+.aboutButton{
+  color:blue;
+  background-color:aquamarine;
+}
+.portButton{
+  color:blue;
+  background-color:aquamarine;
+}
+
+
+
+#frontEnd{
+  display:block;
+}
+#UnityUnreal{
+  display:block;
+}
+
+#aboutMe{
+  display:block;
+}
+.aboutMe{
+  display:none;
+}
+
+#aboutImg{
+  margin-left: 30%;
+  height: 40%;
+  width: 40%;
+}
+
+
+iframe{
+  width:50%;
+  height: 50%;
+}
+
+@media only screen 
+and (min-device-width:1900px){
+  iframe{
+    width: 100%;
+    height: auto;
+  }
+}

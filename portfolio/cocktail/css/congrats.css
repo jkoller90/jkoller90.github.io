@@ -1,0 +1,131 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.congrats {
+	display: none;
+}
+
+#bloodyback {
+	background-size: 100% 109%;
+	background-repeat: no-repeat;
+}
+
+#congrats_line {
+	font-family: 'Roboto';
+	top: 4%;
+    left: 25.5%;
+    font-size: 1.7em;
+	text-shadow: 1px 1px black;
+}
+
+#earned {
+	font-family: 'Roboto';
+	text-shadow: 1px 1px black;
+	top: 12%;
+	left: 2.5%;
+	font-size: 1em;
+	width: 93%;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+#continue {
+	top: 22%;
+	left: 56%;
+/*	border: 1px solid rgb(160, 160, 160);*/
+/*	-webkit-box-shadow: rgb(0, 0, 0) 1px 1px 0px;*/
+/*	box-shadow: rgb(0, 0, 0) 1px 1px 0px;*/
+	background-color: black;
+	font-size: .95em;
+	border-top-right-radius: 1px;
+	color: white;
+	height: 5%;
+	text-align: center;
+/*	padding: .2em;*/
+	padding: .235em;
+	z-index: 4;
+	width: 39%;
+	border-bottom-right-radius: 1px;
+	border-bottom-left-radius: 1px;
+	border-top-left-radius: 1px;
+	opacity: 1;
+/*	line-height: 1.9;*/
+	line-height: 1.85;
+}
+#leaderboard {
+	top: 22%;
+	left: 3%;
+/*	border: 1px solid rgb(160, 160, 160);*/
+/*	-webkit-box-shadow: rgb(0, 0, 0) 1px 1px 0px;*/
+/*	box-shadow: rgb(0, 0, 0) 1px 1px 0px;*/
+	background-color: black;
+	font-size: .95em;
+	border-top-right-radius: 1px;
+	color: white;
+	height: 5%;
+	text-align: center;
+	padding: .2em;
+	z-index: 4;
+	width: 39%;
+	border-bottom-right-radius: 1px;
+	border-bottom-left-radius: 1px;
+	border-top-left-radius: 1px;
+	opacity: 1;
+	line-height: 1.9;
+}
+
+
+#bloodycongrats {
+/*	background-image: url("http://i.imgur.com/IdqDvS5.png");*/
+	background-image:url("http://i.imgur.com/JN5P5XS.png");
+}
+
+#islandercongratscongrats {
+/*	background-image: url("http://i.imgur.com/6WVVkS1.jpg");*/
+		background-image:url("http://i.imgur.com/ena7zeU.png");
+}
+
+#strawbellinicongrats {
+	background-image: url("http://i.imgur.com/zIgLaTu.png");
+	
+}
+
+#southboundcongrats {
+	background-image: url("http://i.imgur.com/uODw4A4.png");
+	
+}
+
+#strawmintcongrats {
+	background-image: url("http://i.imgur.com/rw6mqfE.png");
+/*		background-image:url(*/
+}
+
+#dobelcongrats {
+	background-image: url("http://i.imgur.com/InGIUuy.png");
+/*		background-image:url(*/
+}
+
+#gingingercongrats {
+	background-image: url("http://i.imgur.com/rqWXRPE.png");
+/*		background-image:url(*/
+}
+
+#pomcongrats {
+	background-image: url("http://i.imgur.com/eK9oXXp.png");
+}
+
+#peachcongrats {
+	background-image: url("http://i.imgur.com/NhBRhTu.png");
+}
+
+
+@media screen and (max-width: 360px) {
+	#congrats_line{
+		left: 24%;
+		font-size: 1.4em;			
+	}
+	#earned{
+		font-size: .9em;
+	}
+	#leaderboard, #continue{
+		font-size:.85em;
+	}	
+}
