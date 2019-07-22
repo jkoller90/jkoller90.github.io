@@ -41,12 +41,20 @@ img{
   display:block;
 }
 
-#aboutMe{
+#aboutMe {
   display:block;
+
 }
-.aboutMe{
-  display:none;
+
+#aboutMe img{
+  margin-left: 10%;
 }
+
+#aboutMe p{
+  margin-top:4%;
+  margin-left: -50%;
+}
+
 
 #aboutImg{
   margin-left: 30%;
