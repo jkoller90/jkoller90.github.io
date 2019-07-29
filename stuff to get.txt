@@ -1,0 +1,14 @@
+Must haves
+
+    Fluent in Java.
+    Know your way around a relational database.
+    Familiar with asynchronous patterns and messaging technologies.
+    Familiar with Design Patterns and making scalable stable systems.
+    Understanding of distributed computing principles and algorithms.
+
+Nice to have
+
+    Experience with Python.
+    Experience with ML algorithms.
+    Experience with Frontend technologies: Javascript,  React, Redux.
+    Cloud technology experience: Athena, ElasticSearch, S3, Kinesis; AWS Lambda; infrastructure as code, Terraform.
